@@ -1,12 +1,12 @@
 # based on 
 # https://www.linuxtechi.com/install-kubernetes-on-ubuntu-22-04/
-
+export DEBIAN_FRONTEND=noninteractive 
 apt update 
 apt upgrade -y
 
-hostnamectl set-hostname "c-her-fsn-control.medici.loan"     
+hostnamectl set-hostname "c-her-fsn-control.xXX.xxx"     
 
-ssh-import-id-gh pfc-developer
+ssh-import-id-gh  pfc-developer
 echo 'export EDITOR=vi' >> /etc/bash.bashrc
 export EDITOR=vi
 echo Domains=medici.loan >> /etc/systemd/resolved.conf 
