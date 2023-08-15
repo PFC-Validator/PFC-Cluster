@@ -2,3 +2,4 @@
 /pki/*.crt
 /pki/etcd/*.key
 /pki/etcd/*.crt
+/token.sh
