@@ -1,0 +1,4 @@
+/pki/*.key
+/pki/*.crt
+/pki/etcd/*.key
+/pki/etcd/*.crt
