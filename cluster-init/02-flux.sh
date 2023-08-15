@@ -11,3 +11,5 @@ flux bootstrap github \
   --repository=PFC-Cluster \
   --branch=main \
   --path=./clusters/main-cluster \
+
+  # might need --personal for individual github accounts
