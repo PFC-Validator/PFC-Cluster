@@ -26,3 +26,9 @@ flux create kustomization podinfo \
 
 ## open questions
 still TBD how does one update the token every X days
+
+
+# commands that are useful
+`
+flux get kustomizations --watch
+`
