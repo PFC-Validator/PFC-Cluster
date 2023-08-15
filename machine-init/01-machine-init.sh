@@ -4,7 +4,7 @@ export DEBIAN_FRONTEND=noninteractive
 apt update 
 apt upgrade -y
 
-hostnamectl set-hostname "c-her-fsn-control.xXX.xxx"     
+hostnamectl set-hostname "w-her-hel-01.xXX.xxx"     
 
 ssh-import-id-gh  pfc-developer
 echo 'export EDITOR=vi' >> /etc/bash.bashrc
@@ -52,7 +52,7 @@ sysctl --system
 
 sudo apt install -y curl gnupg2 software-properties-common apt-transport-https ca-certificates
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/docker.gpg
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
 apt update
 sudo apt install -y containerd.io
@@ -67,7 +67,7 @@ systemctl enable containerd
 
 # kubernetes repo
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/kubernetes-xenial.gpg
-sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+sudo apt-add-repository -y "deb http://apt.kubernetes.io/ kubernetes-xenial main"
 
 # Install Kubectl, Kubeadm and Kubelet
 apt update
