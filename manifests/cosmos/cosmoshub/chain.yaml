@@ -2,7 +2,7 @@ apiVersion: cosmos.strange.love/v1
 kind: CosmosFullNode
 metadata:
   name: cosmoshub
-  namespace: default
+  namespace: cosmos
 spec:
   chain:
     app:
@@ -16,7 +16,7 @@ spec:
     skipInvariants: true
     snapshotURL: "https://snapshots.polkachu.com/snapshots/cosmos/cosmos_16591676.tar.lz4"
   podTemplate:
-    image: ghcr.io/strangelove-ventures/heighliner/gaia:v11.0.0
+    image: ghcr.io/strangelove-ventures/heighliner/gaia:v10.0.0
     resources:
       requests:
         memory: 16Gi
