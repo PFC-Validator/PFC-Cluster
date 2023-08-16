@@ -1,0 +1,28 @@
+apiVersion: cosmos.strange.love/v1
+kind: CosmosFullNode
+metadata:
+  name: cosmoshub
+  namespace: default
+spec:
+  chain:
+    app:
+      minGasPrice: 0.001uatom
+    binary: gaiad
+    chainID: cosmoshub-4
+    config:
+      seeds: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:14956"
+    genesisURL: https://snapshots.polkachu.com/genesis/cosmos/genesis.json
+    network: mainnet
+    skipInvariants: true
+    snapshotURL: "https://snapshots.polkachu.com/snapshots/cosmos/cosmos_16591676.tar.lz4"
+  podTemplate:
+    image: ghcr.io/strangelove-ventures/heighliner/gaia:v11.0.0
+    resources:
+      requests:
+        memory: 16Gi
+  replicas: 1 # TODO change to 1 to use less resources
+  volumeClaimTemplate:
+    resources:
+      requests:
+        storage: 200Gi
+    storageClassName: ssd-block-store
