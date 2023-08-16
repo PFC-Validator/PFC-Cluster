@@ -4,7 +4,7 @@ export DEBIAN_FRONTEND=noninteractive
 apt update 
 apt upgrade -y
 
-hostnamectl set-hostname "w-her-hel-01.xXX.xxx"     
+hostnamectl set-hostname "w-her-fsn-01.xXX.xxx"     
 
 ssh-import-id-gh  pfc-developer
 echo 'export EDITOR=vi' >> /etc/bash.bashrc
