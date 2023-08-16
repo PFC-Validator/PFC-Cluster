@@ -38,4 +38,4 @@ parameters:
   csi.storage.k8s.io/fstype: ext4
 # Delete the rbd volume when a PVC is deleted
 reclaimPolicy: Delete
-allowVolumeExpansion: false
+allowVolumeExpansion: true

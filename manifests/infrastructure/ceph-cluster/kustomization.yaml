@@ -5,4 +5,5 @@ resources:
 - cluster.yaml
 - replicated-x3-block-store.yaml
 - ssd-impermanent-block-store.yaml
+- ssd-block-store.yaml
 - storage-class-workaround.yaml
