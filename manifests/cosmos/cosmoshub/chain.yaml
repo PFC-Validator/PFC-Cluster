@@ -26,3 +26,8 @@ spec:
       requests:
         storage: 200Gi
     storageClassName: ssd-block-store
+  service:
+    p2pTemplate:
+      type: NodePort
+    rpcTemplate:
+      type: NodePort
