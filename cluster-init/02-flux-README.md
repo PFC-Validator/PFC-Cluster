@@ -24,6 +24,10 @@ flux create kustomization podinfo \
 
 (and commit)
 
+# secrets 
+you will also need to create a GPG2 key and put that up in the secret manager.
+this should match what the (sops.yaml)[../.sops.yaml] contains.
+
 ## open questions
 still TBD how does one update the token every X days
 
