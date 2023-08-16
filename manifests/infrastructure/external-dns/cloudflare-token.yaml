@@ -1,0 +1,84 @@
+# manifests/infrastructure/external-dns/cloudflare-token.yaml
+apiVersion: v1
+data:
+    CLOUDFLARE_TOKEN: ENC[AES256_GCM,data:xmVd1R3koOETGdYwTnXUq3Y4xYrSMgrO4yPX3RcqcnBBMw7f3f+kGaVaLiA91i1oUtpSpTuYG04=,iv:IFNwALRacqj+EdcnVO5oqzyx4VEy8LHzakt5jPoPDTY=,tag:ig+2a2+UI25jP50m8d70XQ==,type:str]
+kind: Secret
+metadata:
+    name: cloudflare-token
+    namespace: external-dns
+type: Opaque
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-08-16T22:15:59Z"
+    mac: ENC[AES256_GCM,data:II1zN43ESL+1lK1Lec+XwOBwU/YicYUffCzgBfkCJuoFEM6m3D0aCbt0cwpYz4QpmWfGwtEEv238CE3kpX3g0q0n/e+ecQrKlPA9R/YZe2a6VGM/y2YSaLTKwqdBfvEH+kRgHPVope2Y++UQxmRXuRg15AZ7rkAlJkUpY8Ov7Lw=,iv:jmJ1nc9rveWIF6gqkbA1ia76X3syw8QpvWGUR6Zhco8=,tag:SamA1AL87KUo+y8uJGF1Ew==,type:str]
+    pgp:
+        - created_at: "2023-08-16T22:15:57Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DYj1NN/0GA4USAQdA6gTES7O7TzDEox6j7Mg3XhCiviri6pvvx3uBLiq7T1ww
+            gJjh1TDWOOirAdM1p2B9OYOs25JPImg56W5mm8ZGWj/UgF6huvbWcWm0lPGrUs9X
+            0l4BQd/nvQknB6J+pBr4bPM64+xFKW74sWyGOlMPCfCTaDBolODCGR1x0k2JHkwW
+            Rvn1mck8R3+dq0D3hzT2ZxPLPfCdC0QrOLA3jD4I0Msx6gd17yP1DbLHaBOLfcBt
+            =jqHz
+            -----END PGP MESSAGE-----
+          fp: 4C653A7AD53BC071B149AC6F05C9A59CE6F61D40
+        - created_at: "2023-08-16T22:15:57Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DlnT2alMWtDoSAQdA/P7dCePl61yf2GiH08NrdVdH7ak6qQfWw7/Dlnjaq0Uw
+            uqYZYIdZLqmVC8m5FV3Yqy8RB00lk58rXPaeQKRuzvEiTeGm3kRuSet7qOzHgMMk
+            0l4BAxQPqcA4BHCnl+fbRwZb82hVFYzQR6we4GZLfrhsYnYJMUgM/GhfVo4O6Sdu
+            nwHkmB1N1EOeX6+GUD7if838Hl6yqxPaxI4eFuiDvDzYthXwuFfRfdTojdg9S0Xu
+            =LzFl
+            -----END PGP MESSAGE-----
+          fp: 72C2A2A23FD55033E9FACA100A4AEEEFD51A640E
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
+---
+apiVersion: v1
+data:
+    CLOUDFLARE_EMAIL: ENC[AES256_GCM,data:oHZM+jEfxF9KhSxgnnQUdelBUCY=,iv:8RfSfiChx+hmQoJAGC5uKu534soQXeah6od9hwFBC5A=,tag:T7Uad7cHyRJnT2brkktoMA==,type:str]
+kind: Secret
+metadata:
+    name: cloudflare-email
+    namespace: external-dns
+type: Opaque
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-08-16T22:15:59Z"
+    mac: ENC[AES256_GCM,data:II1zN43ESL+1lK1Lec+XwOBwU/YicYUffCzgBfkCJuoFEM6m3D0aCbt0cwpYz4QpmWfGwtEEv238CE3kpX3g0q0n/e+ecQrKlPA9R/YZe2a6VGM/y2YSaLTKwqdBfvEH+kRgHPVope2Y++UQxmRXuRg15AZ7rkAlJkUpY8Ov7Lw=,iv:jmJ1nc9rveWIF6gqkbA1ia76X3syw8QpvWGUR6Zhco8=,tag:SamA1AL87KUo+y8uJGF1Ew==,type:str]
+    pgp:
+        - created_at: "2023-08-16T22:15:57Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DYj1NN/0GA4USAQdA6gTES7O7TzDEox6j7Mg3XhCiviri6pvvx3uBLiq7T1ww
+            gJjh1TDWOOirAdM1p2B9OYOs25JPImg56W5mm8ZGWj/UgF6huvbWcWm0lPGrUs9X
+            0l4BQd/nvQknB6J+pBr4bPM64+xFKW74sWyGOlMPCfCTaDBolODCGR1x0k2JHkwW
+            Rvn1mck8R3+dq0D3hzT2ZxPLPfCdC0QrOLA3jD4I0Msx6gd17yP1DbLHaBOLfcBt
+            =jqHz
+            -----END PGP MESSAGE-----
+          fp: 4C653A7AD53BC071B149AC6F05C9A59CE6F61D40
+        - created_at: "2023-08-16T22:15:57Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DlnT2alMWtDoSAQdA/P7dCePl61yf2GiH08NrdVdH7ak6qQfWw7/Dlnjaq0Uw
+            uqYZYIdZLqmVC8m5FV3Yqy8RB00lk58rXPaeQKRuzvEiTeGm3kRuSet7qOzHgMMk
+            0l4BAxQPqcA4BHCnl+fbRwZb82hVFYzQR6we4GZLfrhsYnYJMUgM/GhfVo4O6Sdu
+            nwHkmB1N1EOeX6+GUD7if838Hl6yqxPaxI4eFuiDvDzYthXwuFfRfdTojdg9S0Xu
+            =LzFl
+            -----END PGP MESSAGE-----
+          fp: 72C2A2A23FD55033E9FACA100A4AEEEFD51A640E
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3

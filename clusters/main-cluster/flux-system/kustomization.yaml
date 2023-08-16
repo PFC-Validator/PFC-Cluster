@@ -4,4 +4,5 @@ resources:
 - gotk-components.yaml
 - gotk-sync.yaml
 - rook-ceph.yaml
+- ingress.yaml
 - chains.yaml

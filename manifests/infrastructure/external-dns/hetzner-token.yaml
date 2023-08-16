@@ -1,0 +1,42 @@
+# manifests/infrastructure/external-dns/hetzner-token.yaml
+apiVersion: v1
+data:
+    HETZNER_TOKEN: ENC[AES256_GCM,data:Hp+eIyvgv/6YD1Bg59QAbZZjlN3zKfd6IBwpjBlmIf8T9GxkdcVtMECduSw=,iv:dlQKBg/rp+FQGeKmq0/kvkG+q7BRWUUoUFbzYi9SK+I=,tag:860mVDzhPW+Q7WaQr/hoTg==,type:str]
+kind: Secret
+metadata:
+    name: hetzner-token
+    namespace: external-dns
+type: Opaque
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-08-16T22:16:08Z"
+    mac: ENC[AES256_GCM,data:8/NkUL74vZeSDq1KjaCZaJn3rNvPIvl6Hx5MJLWK1Z3Hv5cIs2q8bDLzrx+v+2bGqD/9aKNO2Kv9C82QHSYlrw23fNM3fRS5hIwjhq5DmhcvmxPkyPrVkSGyLauhM102ZrLxTEWXvUlxWSJi3ATIu643e4ZPFko0lP2j3BMftPA=,iv:VAnUcc3o4JJ5Mhvka2jKu/RaPV3I07A3N6gApIMDhIk=,tag:uscpqlItL7a2FDxHiSXVFw==,type:str]
+    pgp:
+        - created_at: "2023-08-16T22:16:07Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DYj1NN/0GA4USAQdANDXYP+o4uAf6IQQivN7Ky4RPIUntHxtBtjp3FdXyCW0w
+            kGPx7/E0ZixhRjpwLxVRR3In1kLqi5t6/hngEKZS85xTmWA5GmTKmNoHKSBK421/
+            0l4BjMjaqt2zFnPWwHf+o7YcDz2QB3CQ5Nb5IKCc+03CTCyKwk4Bws/mm2bcDi4g
+            TLkSEs5E+2YpWQm7HYNZaZ+TeLkUSB7d4J1H/EGUVqNdw9cbQRmVVekA3Qb3xbkD
+            =UesL
+            -----END PGP MESSAGE-----
+          fp: 4C653A7AD53BC071B149AC6F05C9A59CE6F61D40
+        - created_at: "2023-08-16T22:16:07Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DlnT2alMWtDoSAQdAcSNKuwBVy7YUg0Z+VQnnfdP2HDwmD0RNWyTkdvBUATAw
+            RNSnovhVPSb4PO5xKRH3YO7e8CPVJvO98tuMXcNSRJmoDfQBmI57UCzxPdmdq2qH
+            0l4BEvsqbF35yNYrSMOE+o8Jbs253cu67W2PC/Qy0IPyEGdWy/5quqORJmejW5hN
+            AyNe+cHCKJxgkmzOU9WKSdsnlw6OXSnCjRrJOTyd9Wi4B74jON7a0/wP0Dgz22h4
+            =vKiB
+            -----END PGP MESSAGE-----
+          fp: 72C2A2A23FD55033E9FACA100A4AEEEFD51A640E
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
