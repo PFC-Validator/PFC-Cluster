@@ -29,8 +29,8 @@ spec:
   service:
     p2pTemplate:
       type: NodePort
-    rpcTemplate:
-      type: ClusterIP
+#    rpcTemplate:
+#      type: ClusterIP
 #      metadata:
 #        annotations:
 #          cert-manager.io/cluster-issuer: letsencrypt-production
