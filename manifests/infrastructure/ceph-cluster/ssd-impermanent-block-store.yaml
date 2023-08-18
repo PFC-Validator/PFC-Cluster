@@ -15,7 +15,7 @@ kind: StorageClass
 metadata:
   name: ssd-impermanent-block-store
   annotations:
-    storageclass.kubernetes.io/is-default-class: "true"
+    storageclass.kubernetes.io/is-default-class: "false"
 provisioner: rook-ceph.rbd.csi.ceph.com
 parameters:
   # clusterID is the namespace where the rook cluster is running
