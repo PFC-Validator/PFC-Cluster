@@ -7,7 +7,7 @@ spec:
   interval: 10m0s
   path: ./manifests/apps/podinfo
   prune: true
-  targetNamespace: podinfo
+  targetNamespace: default
   sourceRef:
     kind: GitRepository
     name: flux-system
