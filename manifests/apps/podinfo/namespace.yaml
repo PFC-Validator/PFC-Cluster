@@ -1,0 +1,6 @@
+# manifests/apps/podinfo/namespace.yaml
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: podinfo

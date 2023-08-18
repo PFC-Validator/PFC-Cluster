@@ -1,0 +1,41 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: podinfo
+  namespace: default
+spec:
+  interval: 5m0s
+  url: https://stefanprodan.github.io/podinfo
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: podinfo
+  namespace: default
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: podinfo
+      version: "=6.4.0"
+      sourceRef:
+        kind: HelmRepository
+        name: podinfo
+        namespace: default
+      interval: 1m
+  values:
+    ingress:
+      enabled: true
+      className: nginx
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-production
+        external-dns.alpha.kubernetes.io/hostname: test.yieldpay.finance
+      hosts:
+      - host: test.yieldpay.finance
+        paths:
+        - path: /
+          pathType: Prefix
+      tls:
+      - hosts:
+        - test.yieldpay.finance
+        secretName: podinfo-tls-secret
