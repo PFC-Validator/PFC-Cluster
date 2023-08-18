@@ -10,7 +10,7 @@ spec:
     binary: gaiad
     chainID: cosmoshub-4
     config:
-      seeds: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:14956"
+      seeds: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:14956,4ddba29a7dfa740a4edeb5c620c963f67f951e1d@5.9.72.212:2000"
     genesisURL: https://snapshots.polkachu.com/genesis/cosmos/genesis.json
     network: mainnet
     skipInvariants: true
