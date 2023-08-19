@@ -53,3 +53,4 @@ kubectl rook-ceph ceph status
 ..
 # eg
 kubectl label nodes w-ovh-war-01.xxx.xxx provider=ovh zone=war
+kubectl get nodes --show-labels
