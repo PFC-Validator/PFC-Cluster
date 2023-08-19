@@ -5,3 +5,4 @@
 /token.sh
 /notes.sh 
 *.dont_use
+/machine-init/config.yaml

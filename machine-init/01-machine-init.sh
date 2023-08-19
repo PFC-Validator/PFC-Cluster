@@ -4,7 +4,7 @@ export DEBIAN_FRONTEND=noninteractive
 apt update 
 apt upgrade -y
 
-hostnamectl set-hostname "w-her-fsn-01.xXX.xxx"     
+hostnamectl set-hostname w-lsw-fsn-01.xXX.xxx
 
 ssh-import-id-gh  pfc-developer
 echo 'export EDITOR=vi' >> /etc/bash.bashrc
@@ -16,8 +16,11 @@ adduser user  --disabled-password --gecos ""
 usermod -aG sudo  user
 usermod -aG adm  user
 mkdir -m=700 /home/user/.ssh 
+# for OVH
+#cp ~ubuntu/.ssh/authorized_keys /home/user/.ssh
 cp /root/.ssh/authorized_keys /home/user/.ssh
 chown -R user:user /home/user/.ssh
+
 
 tee /etc/sudoers.d/sudo-user-conf <<EOF
 # user is admin
@@ -74,4 +77,7 @@ apt update
 apt install -y kubelet kubeadm kubectl
 apt-mark hold kubelet kubeadm kubectl
 
-export KUBECONFIG=/etc/kubernetes/admin.conf
+#export KUBECONFIG=/etc/kubernetes/admin.conf
+reboot
+# for OVH
+#userdel ubuntu
