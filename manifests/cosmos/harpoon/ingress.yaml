@@ -21,8 +21,6 @@ spec:
   - hosts:
     - rpc.harpoon.yieldpay.finance
     secretName: rpc-harpoon-tls-secret
-    - api.harpoon.yieldpay.finance
-    secretName: api-harpoon-tls-secret
   rules:
   - host: rpc.harpoon.yieldpay.finance
     http:
@@ -34,13 +32,3 @@ spec:
               number: 26657
         path: /
         pathType: Prefix
-  - host: api.harpoon.yieldpay.finance
-    http:
-      paths:
-      - backend:
-          service:
-            name: harpoon-rpc
-            port:
-              number: 1317
-        path: /
-        pathType: Prefix        
