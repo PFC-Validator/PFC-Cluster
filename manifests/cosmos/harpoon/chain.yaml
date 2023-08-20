@@ -29,8 +29,8 @@ spec:
     resources:
       requests:
         memory: 16Gi
-    nodeSelector:
-      nodeLabel: harpoon
+#    nodeSelector:
+#      nodeLabel: harpoon
     affinity:
       podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
