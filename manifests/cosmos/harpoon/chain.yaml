@@ -8,10 +8,11 @@ spec:
     app:
       minGasPrice: "0.00125ukuji,0.00125factory/kujira1ltvwg69sw3c5z99c6rr08hal7v0kdzfxz07yj5/demo"
       overrides: |-
-        index-events: ["tx.hash", "tx.height"]
+        # Set app.toml overrides here. Such as:
+        index-events = ["tx.hash", "tx.height"]
         [rosetta]
-        enable=false
-        
+        enable = false
+
     binary: kujirad
     chainID: harpoon-4
     config:
