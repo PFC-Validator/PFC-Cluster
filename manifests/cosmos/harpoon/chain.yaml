@@ -17,7 +17,7 @@ spec:
     chainID: harpoon-4
     config:
       seeds: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@testnet-seeds.polkachu.com:11856"
-      overides: |-
+      overrides: |-
         [tx_index]
         indexer = "kv"
     genesisURL: https://snapshots.polkachu.com/testnet-genesis/kujira/genesis.json
