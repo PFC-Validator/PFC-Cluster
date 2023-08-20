@@ -17,6 +17,12 @@ metadata:
   namespace: cosmos
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts:
+    - rpc.harpoon.yieldpay.finance
+    secretName: rpc-harpoon-tls-secret
+    - api.harpoon.yieldpay.finance
+    secretName: api-harpoon-tls-secret
   rules:
   - host: rpc.harpoon.yieldpay.finance
     http:
@@ -38,10 +44,3 @@ spec:
               number: 1317
         path: /
         pathType: Prefix        
-  tls:
-  - hosts:
-    - rpc.harpoon.yieldpay.finance
-    secretName: rpc-harpoon-tls-secret
-    - api.harpoon.yieldpay.finance
-    secretName: api-harpoon-tls-secret
-
