@@ -1,0 +1,54 @@
+apiVersion: cosmos.strange.love/v1
+kind: CosmosFullNode
+metadata:
+  name: harpoon 
+  namespace: cosmos
+spec:
+  chain:
+    app:
+      minGasPrice: "0.00125ukuji,0.00125factory/kujira1ltvwg69sw3c5z99c6rr08hal7v0kdzfxz07yj5/demo"
+      overrides: |-
+      index-events: ["tx.hash", "tx.height"]
+      [rosetta]
+      enable=false
+
+    binary: kujirad
+    chainID: harpoon-4
+    config:
+      seeds: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@testnet-seeds.polkachu.com:11856"
+      overides: |-
+        [tx_index]
+        indexer = "kv"
+    genesisURL: https://snapshots.polkachu.com/testnet-genesis/kujira/genesis.json
+    network: testnet
+    skipInvariants: true
+    snapshotURL: "https://snapshots.polkachu.com/testnet-snapshots/kujira/kujira_17365245.tar.lz4"
+  podTemplate:
+    image: ghcr.io/strangelove-ventures/heighliner/kujira:v0.8.8
+    resources:
+      requests:
+        memory: 16Gi
+    nodeSelector:
+      nodeLabel: harpoon
+    affinity:
+      podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - store
+            topologyKey: "zone"
+  replicas: 3 # TODO change to 1 to use less resources
+  volumeClaimTemplate:
+    resources:
+      requests:
+        storage: 200Gi
+    storageClassName: ssd-block-store
+  service:
+    p2pTemplate:
+      type: NodePort
+#    rpcTemplate:
+#      type: ClusterIP
+  type: Sentry

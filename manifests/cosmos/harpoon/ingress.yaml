@@ -1,0 +1,47 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    external-dns.alpha.kubernetes.io/hostname:
+    - rpc.harpoon.yieldpay.finance    
+    - api.harpoon.yieldpay.finance    
+  labels:
+    app.kubernetes.io/name: harpoon-rpc
+    app.kubernetes.io/version: 1.0.0
+  name: harpoon-rpc
+  namespace: cosmos
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: rpc.harpoon.yieldpay.finance
+    http:
+      paths:
+      - backend:
+          service:
+            name: harpoon-rpc
+            port:
+              number: 26657
+        path: /
+        pathType: Prefix
+  - host: api.harpoon.yieldpay.finance
+    http:
+      paths:
+      - backend:
+          service:
+            name: harpoon-rpc
+            port:
+              number: 1317
+        path: /
+        pathType: Prefix        
+  tls:
+  - hosts:
+    - rpc.harpoon.yieldpay.finance
+    secretName: rpc-harpoon-tls-secret
+    - api.harpoon.yieldpay.finance
+    secretName: api-harpoon-tls-secret
+
