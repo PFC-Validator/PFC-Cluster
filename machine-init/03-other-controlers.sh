@@ -5,7 +5,7 @@ scp -r pki/..list of files it needs /etc/kubernets/pki
 
 export KUBECONFIG=/etc/kubernetes/admin.conf
 
-kubeadm join api.medici.loan:6443 --token XXXX \
+kubeadm join api.xxx.xxx:6443 --token XXXX \
 	--discovery-token-ca-cert-hash sha256:xxxx \
 	--control-plane
 
