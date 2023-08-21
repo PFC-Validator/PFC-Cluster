@@ -4,5 +4,7 @@ echo "key=$KEY"
 
 rm -f token.sh.asc
 gpg2 --armor --encrypt --recipient $KEY token.sh
+rm -f kube-config.asc
+gpg2 --armor --encrypt --recipient $KEY kube-config
 
 

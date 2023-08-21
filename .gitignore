@@ -6,3 +6,4 @@
 /notes.sh 
 *.dont_use
 /machine-init/config.yaml
+/kube-config
