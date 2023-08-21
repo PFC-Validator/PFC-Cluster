@@ -25,6 +25,8 @@ spec:
     skipInvariants: true
     snapshotURL: "https://snapshots.polkachu.com/testnet-snapshots/kujira/kujira_17365245.tar.lz4"
   podTemplate:
+    probes:
+      strategy: None
     image:  ghcr.io/pfc-developer/heighliner/kujira:v0.8.8.1
     resources:
       requests:
