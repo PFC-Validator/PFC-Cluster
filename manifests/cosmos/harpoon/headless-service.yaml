@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: harpoon-priv
+  name: harpoon
   namespace: cosmos
 spec:
   selector:
