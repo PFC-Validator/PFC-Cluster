@@ -6,3 +6,6 @@ resources:
 - namespace.yaml
 - chain.yaml
 - ingress.yaml
+- shards.yaml
+- signers.yaml
+- headless-service.yaml

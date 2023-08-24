@@ -1,0 +1,126 @@
+# signers
+apiVersion: v1
+data:
+    shard: ENC[AES256_GCM,data:0hF58MqjlbAQEDInl9E1BknKL143OlLbYkaR6l1mtgkYAb4EX0mXedw11VvZBJJv/mfpTmi87WieHH5YIaaBFHC6Z4qbjCZcGCZK/oohaWk1laISTcP3dBYrcQn19AUHChdBonXEdOICFSWFdTH8Ci+ug8yaaB10/TwuQR8+8blVvxy8lo7DuMIHfSDG0rSqSURBUVsffOAuRxrKvs/KgGbYXln4v8NwKrM1c2Zo6b8=,iv:7GeJTCoRzbvePzj32Gviz7NlZpFfQmeWEh2lYJn9TXw=,tag:ZMJt2CXiMIhlcqAJ/wuK8g==,type:str]
+kind: Secret
+metadata:
+    name: harpoon-shard-1
+    namespace: cosmos
+type: Opaque
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-08-24T18:44:50Z"
+    mac: ENC[AES256_GCM,data:kOJ7Pa0W+zDLz2ZnlnJfinjsH63s83OvkgCr9rdrrmBHZcJtyvDoQtYfDIi0Mw12wCBW1CuNYbdQeU36TshKJ745MLkLZ2jBh3SAPvCkz3MaeuUFkYyprF99BnwkxfWZpfljMt7b9lYRxhjLMTJW2sC/HZ5p7kD7d5t2Y25IfzE=,iv:4geQ4c8HDNV4Pv9/BXrNCDqXxPoP7ThwYQWy2+Qw1Hc=,tag:Yjkf5gt9F22o0hmchhY2sg==,type:str]
+    pgp:
+        - created_at: "2023-08-24T18:44:50Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DYj1NN/0GA4USAQdAcpf5T4shi+e5rblNEvomFuDPxj8lh6lsvPLPm3HhgEsw
+            NzdKZbRH0EP27XzlmVsj/dI2eYJByFqSeCweCG8zhZijOzEJ/I3w8GnyfH+aAmZs
+            0l4BP/p8cGsvuoLomULsb3C10q33X/Fu7RdBsQXUYXbdNggh7qCAd+X8X/Dm7ioN
+            B77rqyWdRUxp8Sb1B3NjOvKiub0uFtIaDgFrOdyWs6Z1sDnbHShLWsKFQ80uAldQ
+            =eACh
+            -----END PGP MESSAGE-----
+          fp: 4C653A7AD53BC071B149AC6F05C9A59CE6F61D40
+        - created_at: "2023-08-24T18:44:50Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DlnT2alMWtDoSAQdAQLXjNKlMtNtawHFTPwjAIVEExcANPbgwRAeBGa9H+0sw
+            H3rwNq8EPJUcO5+DISfoQJk8moiuk8DyZKVkRsU6o7+XljIXNBHHNRGma6DHhvdR
+            0l4BOLgYV1loNgk6ocRyh42pCfFh8tvZWAbqz1nYn2HbEzp9ZBV5Z6wa/rw83eEd
+            XpKnwAchLE17gvW1rJzk373w8C09MlpH7VHu+HbwMmeuAafk2HVHjE+Q3y0UzEOD
+            =4hmv
+            -----END PGP MESSAGE-----
+          fp: 72C2A2A23FD55033E9FACA100A4AEEEFD51A640E
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
+---
+apiVersion: v1
+data:
+    shard: ENC[AES256_GCM,data:+lrywHGCBI/JQmiJ89XinRzz0Oy6J/fCvI6qjfDR303jhnsKS3ifZOoRFKEoV+5KljrfPuYIxC1jDkbphmx20F0wDxLeuRfEFulA1y5U37XHOacssafQ9PleP458KhVu+jxcaA6AkLSI142kuvYpTZLLXXBlc1h4zaPiXK4Jq1ULpD6vJJIbQDl9St9Ris1KpCwjgYzGWoUO/uGBqn2vaMEZgkXSm3QpFfut2aiTIOM=,iv:k180F/HHrqZfjBPAFnueYJzzOo0/QCIsUScstGb5KiQ=,tag:fje7pfAZyBUk+PE3/+l7pg==,type:str]
+kind: Secret
+metadata:
+    name: harpoon-shard-2
+    namespace: cosmos
+type: Opaque
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-08-24T18:44:50Z"
+    mac: ENC[AES256_GCM,data:kOJ7Pa0W+zDLz2ZnlnJfinjsH63s83OvkgCr9rdrrmBHZcJtyvDoQtYfDIi0Mw12wCBW1CuNYbdQeU36TshKJ745MLkLZ2jBh3SAPvCkz3MaeuUFkYyprF99BnwkxfWZpfljMt7b9lYRxhjLMTJW2sC/HZ5p7kD7d5t2Y25IfzE=,iv:4geQ4c8HDNV4Pv9/BXrNCDqXxPoP7ThwYQWy2+Qw1Hc=,tag:Yjkf5gt9F22o0hmchhY2sg==,type:str]
+    pgp:
+        - created_at: "2023-08-24T18:44:50Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DYj1NN/0GA4USAQdAcpf5T4shi+e5rblNEvomFuDPxj8lh6lsvPLPm3HhgEsw
+            NzdKZbRH0EP27XzlmVsj/dI2eYJByFqSeCweCG8zhZijOzEJ/I3w8GnyfH+aAmZs
+            0l4BP/p8cGsvuoLomULsb3C10q33X/Fu7RdBsQXUYXbdNggh7qCAd+X8X/Dm7ioN
+            B77rqyWdRUxp8Sb1B3NjOvKiub0uFtIaDgFrOdyWs6Z1sDnbHShLWsKFQ80uAldQ
+            =eACh
+            -----END PGP MESSAGE-----
+          fp: 4C653A7AD53BC071B149AC6F05C9A59CE6F61D40
+        - created_at: "2023-08-24T18:44:50Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DlnT2alMWtDoSAQdAQLXjNKlMtNtawHFTPwjAIVEExcANPbgwRAeBGa9H+0sw
+            H3rwNq8EPJUcO5+DISfoQJk8moiuk8DyZKVkRsU6o7+XljIXNBHHNRGma6DHhvdR
+            0l4BOLgYV1loNgk6ocRyh42pCfFh8tvZWAbqz1nYn2HbEzp9ZBV5Z6wa/rw83eEd
+            XpKnwAchLE17gvW1rJzk373w8C09MlpH7VHu+HbwMmeuAafk2HVHjE+Q3y0UzEOD
+            =4hmv
+            -----END PGP MESSAGE-----
+          fp: 72C2A2A23FD55033E9FACA100A4AEEEFD51A640E
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
+---
+apiVersion: v1
+data:
+    shard: ENC[AES256_GCM,data:jJV0urkEdcEWveYwFHENfZV4PTQe2tYZ/N4tPk/z7pChhHyyo9UuW9MuziIoYC43Qwm/4c0ybRZ+T8zhmxjD5zITXw9A1soAP7MDYcpCWFERQzlkJFR45OdikUJmsiICVyVNbnUNnLV0fIWN5Uwr/Q6uKTj7arDorfSB1vfdeAaU0pTXefelmj6FCDos2kvfSs1N2wIp5dT78ATxzsD8+IBcl3QYQZgB4MfkhD4qBzg=,iv:s+z6OfR7eBMqyiFCuMfNANvOvj0P+9wTTTWCHAeA4I0=,tag:pNr1t8BsZA2YuWGbn7b2Gw==,type:str]
+kind: Secret
+metadata:
+    name: harpoon-shard-3
+    namespace: cosmos
+type: Opaque
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-08-24T18:44:50Z"
+    mac: ENC[AES256_GCM,data:kOJ7Pa0W+zDLz2ZnlnJfinjsH63s83OvkgCr9rdrrmBHZcJtyvDoQtYfDIi0Mw12wCBW1CuNYbdQeU36TshKJ745MLkLZ2jBh3SAPvCkz3MaeuUFkYyprF99BnwkxfWZpfljMt7b9lYRxhjLMTJW2sC/HZ5p7kD7d5t2Y25IfzE=,iv:4geQ4c8HDNV4Pv9/BXrNCDqXxPoP7ThwYQWy2+Qw1Hc=,tag:Yjkf5gt9F22o0hmchhY2sg==,type:str]
+    pgp:
+        - created_at: "2023-08-24T18:44:50Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DYj1NN/0GA4USAQdAcpf5T4shi+e5rblNEvomFuDPxj8lh6lsvPLPm3HhgEsw
+            NzdKZbRH0EP27XzlmVsj/dI2eYJByFqSeCweCG8zhZijOzEJ/I3w8GnyfH+aAmZs
+            0l4BP/p8cGsvuoLomULsb3C10q33X/Fu7RdBsQXUYXbdNggh7qCAd+X8X/Dm7ioN
+            B77rqyWdRUxp8Sb1B3NjOvKiub0uFtIaDgFrOdyWs6Z1sDnbHShLWsKFQ80uAldQ
+            =eACh
+            -----END PGP MESSAGE-----
+          fp: 4C653A7AD53BC071B149AC6F05C9A59CE6F61D40
+        - created_at: "2023-08-24T18:44:50Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DlnT2alMWtDoSAQdAQLXjNKlMtNtawHFTPwjAIVEExcANPbgwRAeBGa9H+0sw
+            H3rwNq8EPJUcO5+DISfoQJk8moiuk8DyZKVkRsU6o7+XljIXNBHHNRGma6DHhvdR
+            0l4BOLgYV1loNgk6ocRyh42pCfFh8tvZWAbqz1nYn2HbEzp9ZBV5Z6wa/rw83eEd
+            XpKnwAchLE17gvW1rJzk373w8C09MlpH7VHu+HbwMmeuAafk2HVHjE+Q3y0UzEOD
+            =4hmv
+            -----END PGP MESSAGE-----
+          fp: 72C2A2A23FD55033E9FACA100A4AEEEFD51A640E
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3

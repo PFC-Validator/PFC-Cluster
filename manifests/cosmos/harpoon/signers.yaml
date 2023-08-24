@@ -1,0 +1,126 @@
+# signers
+apiVersion: v1
+data:
+    signer: ENC[AES256_GCM,data:EBCApzuo5RfKJIDGPdV2Awt5gCDk571P/ByEr2Gk/xRz2VkvKZdetjiAM/lOSQPEEuAEYBALVKScKTG5UrYDWhRaebqiPqwjDgEWZbQRHjedsZx+6vMt32cMlf4BhmD3vimQwkCQnanZTqPhM20zUWX9RVrh3QpmvuvGJbOux/HpvNulhHlgBDHcbhcbKbZxImdUWXwYmsBVUnWfv7OoUbFOqZ7K7KoJr7rXzxQwMy6Giwdu+J18+PwMb+uW4Ydc95u6ECPXrRGPUw27y+A4Fv8g7G3o/sbtn6YcXgOEqOx/buBAuVKydT6dS6WzEQBta42MaBLeU1mOP7E/3mOLT8mLKIRWUUCh81X0WC7K2pbjTJiwZwHO/FOgZZolkDkb/mrrKb+U3iPkx05Fn+aOzGoDzYbbiQtIYb9zfODit0wkcuxB1+Tl6w1aGqDsW0iLcdQJJU7m5JzNrzrndEiF14ZKlSqh5dZb5ir8EtRz8uKaA+KvNn7adc3m6p89BuJKJvJ5hfspFNDTLsSlUYMWEQjshnbyYMdeFJeVwW1alk0Q3wRyLPzq110RShAU0qbr2M/zSeo7zpgUK2Vev2tGslUf47L8h3NzfsKj08XxlR2VN1WIGBYCow==,iv:1bSABeAVo7mKs2jO2OByUJWhseT7VIim8EZrYl8pp8U=,tag:QJyytQr56aUjh6cYwEe1CQ==,type:str]
+kind: Secret
+metadata:
+    name: harpoon-signer-1
+    namespace: cosmos
+type: Opaque
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-08-24T18:44:17Z"
+    mac: ENC[AES256_GCM,data:kYQpiMx+z5uY2nTmb/stNfSQK2If6r9H9CjN6kixaig6mrG4iVO/+7/cfRsg5y8HLajQLnEX4Z1ZuW68Rbp2NizqU05EbNEK9On7V9tPfclkZFumhyps9LooEwPwi85L2l8F+U6/YwjiA3wgvVYNsQbF46zFukFpqoaeFmMptPU=,iv:nmaTNi7pUgAQatxMYyHKPk26ItLElkaX6l5R0gANCrk=,tag:L6pFDbH1gio4sZUycpACPQ==,type:str]
+    pgp:
+        - created_at: "2023-08-24T18:44:16Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DYj1NN/0GA4USAQdALpV7QBxxSJSKdzK3D7F5NyNfISnQdQG1blGxK9/xm20w
+            g4eKUQFO33mLfZZwLg0/o5vY++4OCqLqR9FHIqdjUorTtqezoRSzxXTcZLjP18rG
+            0l4BQ5TnJqqsVuqUS7XgVMdaLIhoyYE7QiXF/vDnjZXnxz50EXd8yXrvaDsQ1Rnt
+            jdArAYqTUQCPTACth4118GPjiWcCWzq5aj0HOHayfWE8c6OM/nkuRbwtdLqN573+
+            =Ggsg
+            -----END PGP MESSAGE-----
+          fp: 4C653A7AD53BC071B149AC6F05C9A59CE6F61D40
+        - created_at: "2023-08-24T18:44:16Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DlnT2alMWtDoSAQdAJvpWfanI0ngQT2BhvUJdcAOytVNQslWdGXay+NTAehgw
+            GywP6jceXY/IH6gjD+srClJOY/TJio6NWIVfaMSBNxf1bhl/korrAdjhAUbAIN70
+            0l4BuLJukLG6vCdDR/vPOp/DZv3rDKdefKmKFukviJhdwAJmKJAXitAC9hwoJPu2
+            cOaHdmy1A+jaR2HfZ/fIN61cbR/2sFs/J0j0rPI0ePeoR3rIKj7gkqv3K6/M74aG
+            =zVbX
+            -----END PGP MESSAGE-----
+          fp: 72C2A2A23FD55033E9FACA100A4AEEEFD51A640E
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
+---
+apiVersion: v1
+data:
+    signer: ENC[AES256_GCM,data:2QezLXwE9aEDrDtoBkqLNVbhhoEuKb0nNRsey/8oSzhNqBlR50jjcWkwfTtkNcWzCK5yqL5j3zXYXtDbsHPZMU0VoKgphl5xy2GMb6P93GelvyBDkmD1w3r7eSBlkJQo+23+IcrnT/c43efQ8FxDhCDuCQLiG7LYowvkk05+hEv2nkdTHExPpuZxBoRKyXfA+SlCMgVBZSGvr7sVFvDjXJj+4+nl9DqhMVGaxd67wrmIMPm7CbJo6NYTlOrrM8rPoCoWbcnF8pGufTrpieuUhdDCEP8FtU75P+Neu7+NOIaubwMXFYxWDT0QSYCkEPlNan/7VlkHaqEz/+onB609d2YxQeNQ8ALYPXta8q8evDaOE1ohY8HX8naUXR0TWmtPzKTFp12RdbMkEUCCm6otMPnyS+Pe/xU47BkWkPemWem/2vaVbtycWQeuclX7J0o9mv4zn/cxR8198sDdhU0j99hFyc2eShWG+1i78ftHr6frx42X+/WppFBQdWC9AUkzhNpShC1YNG2uIz3uecJ4slnupibxgAf4M+0o45U9SoZ8mmrHs8KRCkRU/44oe3kSFzYEfEvtC6WhW5t3TQ/rINWO1lKjeXxnqW75KzYqnxxUKhLuxSYK8g==,iv:OTq3ojBSPoEM9nzo8YW/OTMg7oFgWujc/1V14YvvrFI=,tag:vT2Cq+e3bNg2fImzoSuA6A==,type:str]
+kind: Secret
+metadata:
+    name: harpoon-signer-2
+    namespace: cosmos
+type: Opaque
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-08-24T18:44:17Z"
+    mac: ENC[AES256_GCM,data:kYQpiMx+z5uY2nTmb/stNfSQK2If6r9H9CjN6kixaig6mrG4iVO/+7/cfRsg5y8HLajQLnEX4Z1ZuW68Rbp2NizqU05EbNEK9On7V9tPfclkZFumhyps9LooEwPwi85L2l8F+U6/YwjiA3wgvVYNsQbF46zFukFpqoaeFmMptPU=,iv:nmaTNi7pUgAQatxMYyHKPk26ItLElkaX6l5R0gANCrk=,tag:L6pFDbH1gio4sZUycpACPQ==,type:str]
+    pgp:
+        - created_at: "2023-08-24T18:44:16Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DYj1NN/0GA4USAQdALpV7QBxxSJSKdzK3D7F5NyNfISnQdQG1blGxK9/xm20w
+            g4eKUQFO33mLfZZwLg0/o5vY++4OCqLqR9FHIqdjUorTtqezoRSzxXTcZLjP18rG
+            0l4BQ5TnJqqsVuqUS7XgVMdaLIhoyYE7QiXF/vDnjZXnxz50EXd8yXrvaDsQ1Rnt
+            jdArAYqTUQCPTACth4118GPjiWcCWzq5aj0HOHayfWE8c6OM/nkuRbwtdLqN573+
+            =Ggsg
+            -----END PGP MESSAGE-----
+          fp: 4C653A7AD53BC071B149AC6F05C9A59CE6F61D40
+        - created_at: "2023-08-24T18:44:16Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DlnT2alMWtDoSAQdAJvpWfanI0ngQT2BhvUJdcAOytVNQslWdGXay+NTAehgw
+            GywP6jceXY/IH6gjD+srClJOY/TJio6NWIVfaMSBNxf1bhl/korrAdjhAUbAIN70
+            0l4BuLJukLG6vCdDR/vPOp/DZv3rDKdefKmKFukviJhdwAJmKJAXitAC9hwoJPu2
+            cOaHdmy1A+jaR2HfZ/fIN61cbR/2sFs/J0j0rPI0ePeoR3rIKj7gkqv3K6/M74aG
+            =zVbX
+            -----END PGP MESSAGE-----
+          fp: 72C2A2A23FD55033E9FACA100A4AEEEFD51A640E
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
+---
+apiVersion: v1
+data:
+    signer: ENC[AES256_GCM,data:sSl0o4Iu6hDoLyEUX0Rhh6pl/ozhfwlKBlx8Hhb2QIpEZ9AvlHlmICg46tK9IyG8wwEU+YEwG/10pFu20HpJjAZ3W2MJLbp4NY9LhqdK8kN7ViaudVaiHiV8uyqPdrVeIFbcS1CDrPV1Cq0+I6gxyCa+VZno4H6kdOq/WocLygDu27LsaVkXLcqPXKCgY6TblxiGdvS0ZGoFt8LKi1Nzxr6NHNE5Qb+vYEs93yiMrmqWL3LmAMtHC55auHE/7uMwbUWmSIaHtdnTO0LbQtQwPsq8A/OfKJ2w/386DCGDgynEVs9va/A+sVps6cbmRrEuQu1ONg17PjByDAGOaUPPfqqiltIsUu46BOg6wzqK3EnNS7MOLR+rFEPhqoYslDwInRI74aPOZMLNPadzsVzNicomf9e0/Bp4wJtSTjB3lonu4x6eHGRUWlCtpDYxTmukACxA92e+eHlUkUvK6emY+tZ9Yyd/Qn0mj+tPkHp9oCFBYr0gHxpWkMHYqUAB4D0VYh3sz8/1rPFZTSMPbIgZt89M5WjeYT5Ne1vPJArlIOomgGYptaxBB+eC3pudzXHglyDPzCHYgp6nq0qNZkrBJqHF0sIGOlg6coG6YQsmjrJeuQYKJX5gaw==,iv:eHkGXF4IBPMg6zUINZAypQnWfWgkPYoOiCsJA0F9R/c=,tag:9XPFgDPBKnTQ5ZAc8f/8cQ==,type:str]
+kind: Secret
+metadata:
+    name: harpoon-signer-3
+    namespace: cosmos
+type: Opaque
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-08-24T18:44:17Z"
+    mac: ENC[AES256_GCM,data:kYQpiMx+z5uY2nTmb/stNfSQK2If6r9H9CjN6kixaig6mrG4iVO/+7/cfRsg5y8HLajQLnEX4Z1ZuW68Rbp2NizqU05EbNEK9On7V9tPfclkZFumhyps9LooEwPwi85L2l8F+U6/YwjiA3wgvVYNsQbF46zFukFpqoaeFmMptPU=,iv:nmaTNi7pUgAQatxMYyHKPk26ItLElkaX6l5R0gANCrk=,tag:L6pFDbH1gio4sZUycpACPQ==,type:str]
+    pgp:
+        - created_at: "2023-08-24T18:44:16Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DYj1NN/0GA4USAQdALpV7QBxxSJSKdzK3D7F5NyNfISnQdQG1blGxK9/xm20w
+            g4eKUQFO33mLfZZwLg0/o5vY++4OCqLqR9FHIqdjUorTtqezoRSzxXTcZLjP18rG
+            0l4BQ5TnJqqsVuqUS7XgVMdaLIhoyYE7QiXF/vDnjZXnxz50EXd8yXrvaDsQ1Rnt
+            jdArAYqTUQCPTACth4118GPjiWcCWzq5aj0HOHayfWE8c6OM/nkuRbwtdLqN573+
+            =Ggsg
+            -----END PGP MESSAGE-----
+          fp: 4C653A7AD53BC071B149AC6F05C9A59CE6F61D40
+        - created_at: "2023-08-24T18:44:16Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DlnT2alMWtDoSAQdAJvpWfanI0ngQT2BhvUJdcAOytVNQslWdGXay+NTAehgw
+            GywP6jceXY/IH6gjD+srClJOY/TJio6NWIVfaMSBNxf1bhl/korrAdjhAUbAIN70
+            0l4BuLJukLG6vCdDR/vPOp/DZv3rDKdefKmKFukviJhdwAJmKJAXitAC9hwoJPu2
+            cOaHdmy1A+jaR2HfZ/fIN61cbR/2sFs/J0j0rPI0ePeoR3rIKj7gkqv3K6/M74aG
+            =zVbX
+            -----END PGP MESSAGE-----
+          fp: 72C2A2A23FD55033E9FACA100A4AEEEFD51A640E
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
