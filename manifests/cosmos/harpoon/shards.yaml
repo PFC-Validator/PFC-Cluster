@@ -1,7 +1,7 @@
 # signers
 apiVersion: v1
 stringData:
-    SHARD: ENC[AES256_GCM,data:4x4bRys5xAsgbXwXU/H3kv+xJCVsqDO/4u1uE9HUxZB2CVa/bhQZwyONwzBVg0Fe9lu6qlpr1jt8W3WxfXUHuk7/mOXAX6F9Yi9L+kiwWHgQ0qe9DSBz3hFGDLKxhF2qOjLrvLOLehqLPg6YyyDVoJv9wUYnwCvJ50wBQfSwKSG/3w==,iv:MG627z5LORfo1jt24aFhkfFXXAqPjmMZtx1rXy4qeqg=,tag:DPP8WsAROpVDw+ao7YckaQ==,type:str]
+    SHARD: ENC[AES256_GCM,data:DCW2mmHQqbAOBmVtH4yF7hubtgqPYeG2vPN6nyO18OUhW2FGVlG+U27b35TBZ/4bDP9d6dbNR3hTRUBMsWOirCZR/vKYyGKfqA0YyXMCxRt1BfdMabgENs7KLeaZk6cqVYbx91aX7vcn9I6gThXw1edi4RVLG42b+cjVSR+toU7Jig==,iv:CWCcauZonGA7KgKPQeDLiiFIGmQmlyDUA5FQzbWgsgs=,tag:v+Ir3C4jeGUzsdGVUTl01g==,type:str]
 kind: Secret
 metadata:
     name: harpoon-shard-1
@@ -13,29 +13,29 @@ sops:
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2023-08-25T13:15:12Z"
-    mac: ENC[AES256_GCM,data:jqPkwkAH46V9bpT0jbfaxNXbPPBZsusFO7qmgrY4d8MS5U7SjmgaEo08QXFRD1r6TuAwllqnjdFtIBOdT3SCLxp98+1YaSV0nymHavHZpkoEneQwNJeR6yOOdJ+Nag7xhYKynwYb1ryFTN8LtKcjo5zzRcLBFoaESo62ZHnpuIg=,iv:lfpTyuYR7tEiaovACmxBfe8ekEYngMzX35XXz6seywU=,tag:btwEdL6hWHhVeH/jXsxQ6Q==,type:str]
+    lastmodified: "2023-08-25T13:16:54Z"
+    mac: ENC[AES256_GCM,data:hwnpFcdQUKmgxjTDfOHbkOF+bP07nS0HX97XagFo2M8pgmTmvKtjkH9rHI7xYKEIJtzVHRDfY2oAS80L0ywZU47iGsLxUglxnuPoV8sbQF/31v4V6/AlSJcA5d7JkjcJM7DddeNM02iOt6CCroJFKJKtEWkwOaNBlCgMvIE/cyY=,iv:g4rI7V2FJLceH5mhP507Q0PECkKgbmpQkvhDEPdpVxI=,tag:3P9goW+h212wlEaqyMZM3A==,type:str]
     pgp:
-        - created_at: "2023-08-25T13:15:11Z"
+        - created_at: "2023-08-25T13:16:53Z"
           enc: |
             -----BEGIN PGP MESSAGE-----
 
-            hF4DYj1NN/0GA4USAQdAAWqIOa5ZPpkEaAvqRNAZLl2fCtxfnPMhPsj7x7XFR0Mw
-            2MJv9mPzB9rTDPw4JgChlhY/0JDyHk5YAKMmz/5GNG1SuqyUda5zu1EwvbI8X74R
-            0l4B7gOcYzTh6lwxWrpVD4gOI2OA8GNgN14IZTjn60URS8n1FFT73O5O7Irq72/+
-            dJ4CyuyYUWWwKMk+ucE/m4rJrKEKnCo4+DcrNdSdPjSSQhSUgSFP0wwKB7OmNu82
-            =hrWR
+            hF4DYj1NN/0GA4USAQdA0GB3HGq7dqWWO1MvxziucawBIZcnHpNdUrmG7HIEZUww
+            gs+4NBqA+ChU9A1NxjJFr0fMfBMtEj5WRAqjoiVacQDwS6YntJ9mW3R50JXy7ri5
+            0l4BPfCSlCLVrH7xx3P2CvU5sdb419rVdB/yhq0C6dwm253g7gvxneFVWU70yis0
+            Q2GObsxa3ejIUM8wd3Cts3Mmj9j5PoJtM6diBTqnR6WrW4ESmfZvjDYJ/Gf+RcTM
+            =S0Va
             -----END PGP MESSAGE-----
           fp: 4C653A7AD53BC071B149AC6F05C9A59CE6F61D40
-        - created_at: "2023-08-25T13:15:11Z"
+        - created_at: "2023-08-25T13:16:53Z"
           enc: |
             -----BEGIN PGP MESSAGE-----
 
-            hF4DlnT2alMWtDoSAQdAb/YpAwuBEhgy1xDAqclKtYtS2TIcqppJJOxKd05avDEw
-            LCYcmAbNHl1HwZHeYeUk9LCy+sMdk7cGWAOGt5dD+Kq3ej9LlMqfOySnJD7CWTV1
-            0l4Ba42360KEbSrRBLsYSvSLRPAYgsnMyQYXVaY2w4F1pKU/rnNgHiNzL7/VEMZt
-            Su+3SZOxCJsZ8wnoJJpGbuAdhANbbz60Kpl/4WEyZT0gDdBM6XOhJHs/S2uN7Txo
-            =NkRc
+            hF4DlnT2alMWtDoSAQdAY0znIUh2AiMicsbXb7JfpJK6liI2tF8npsUT3uvbYTww
+            LLGwKMhqEcANjhQs5QFh5pDbDDtoDF0SgfKq2uEPYPYug3VaiqLEaPqyTLYFa9w+
+            0l4BcbK92z7h5bAxbXB0kYqQpHXkL/I4L0nAJLTVwkWhrbVfaPR4YFVMThljfESV
+            +FvxNEpTuNAmPQ3P/mj+v7zSlobZyHrvQSsOcpPHW4NOosGp/yjIdE9yNPByFYhm
+            =lw/B
             -----END PGP MESSAGE-----
           fp: 72C2A2A23FD55033E9FACA100A4AEEEFD51A640E
     encrypted_regex: ^(data|stringData)$
@@ -43,10 +43,7 @@ sops:
 ---
 apiVersion: v1
 stringData:
-    SHARD:
-        pubKey: ENC[AES256_GCM,data:k86woXvgriOgsO+s3RYZq8VhKaBk4nKKfCIxUXl87+YUuaa/BejrIDtZWMrGaGTG,iv:bw8DC/wBx+6kD8NmWmq6BuUNsDt3NwnDsmajVbTKizI=,tag:V2JDSHfa8/TWYL0ui9fx8g==,type:str]
-        privateShard: ENC[AES256_GCM,data:SwRCtNO6Bf+e6F6jSCFoZK1J79yjl5agwFYMBFnEOQZtQeaDxRHsNmfyL24=,iv:GG0nGurPjod6e6zL1m0J2hITkmwfcTGwNbU8fYXiSUc=,tag:cHpgimq0ERirZOxb7e/Xog==,type:str]
-        id: ENC[AES256_GCM,data:/A==,iv:XqUkYzIhebYBv+6zZEbQIjWq0BonqjHRPF5opm4liS0=,tag:OILIF9h04EQnZOO8x74FgA==,type:int]
+    SHARD: ENC[AES256_GCM,data:0I0h6pYEZBVOmaxNSErKtSmZWgEfdTD7GUs5ulzlOrz7E1Lzm8LQS6d7zU5cSUedLSMX9+iCxMKg7Qg//BGt/k1Q32bSFdauZuE/3x3KttZjuRhJ4klAxgK3A1Rp1JfX/3uZ7cbAPldE0URm200boCAEFMurepHWgauKk7pOXejQyg==,iv:ayomQXdXpZipDgNKL0QPe6KpIQQZUHClwKYnEC2ijyY=,tag:AZK2FTzHqk87Xl83h4VqMg==,type:str]
 kind: Secret
 metadata:
     name: harpoon-shard-2
@@ -58,29 +55,29 @@ sops:
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2023-08-25T13:15:12Z"
-    mac: ENC[AES256_GCM,data:jqPkwkAH46V9bpT0jbfaxNXbPPBZsusFO7qmgrY4d8MS5U7SjmgaEo08QXFRD1r6TuAwllqnjdFtIBOdT3SCLxp98+1YaSV0nymHavHZpkoEneQwNJeR6yOOdJ+Nag7xhYKynwYb1ryFTN8LtKcjo5zzRcLBFoaESo62ZHnpuIg=,iv:lfpTyuYR7tEiaovACmxBfe8ekEYngMzX35XXz6seywU=,tag:btwEdL6hWHhVeH/jXsxQ6Q==,type:str]
+    lastmodified: "2023-08-25T13:16:54Z"
+    mac: ENC[AES256_GCM,data:hwnpFcdQUKmgxjTDfOHbkOF+bP07nS0HX97XagFo2M8pgmTmvKtjkH9rHI7xYKEIJtzVHRDfY2oAS80L0ywZU47iGsLxUglxnuPoV8sbQF/31v4V6/AlSJcA5d7JkjcJM7DddeNM02iOt6CCroJFKJKtEWkwOaNBlCgMvIE/cyY=,iv:g4rI7V2FJLceH5mhP507Q0PECkKgbmpQkvhDEPdpVxI=,tag:3P9goW+h212wlEaqyMZM3A==,type:str]
     pgp:
-        - created_at: "2023-08-25T13:15:11Z"
+        - created_at: "2023-08-25T13:16:53Z"
           enc: |
             -----BEGIN PGP MESSAGE-----
 
-            hF4DYj1NN/0GA4USAQdAAWqIOa5ZPpkEaAvqRNAZLl2fCtxfnPMhPsj7x7XFR0Mw
-            2MJv9mPzB9rTDPw4JgChlhY/0JDyHk5YAKMmz/5GNG1SuqyUda5zu1EwvbI8X74R
-            0l4B7gOcYzTh6lwxWrpVD4gOI2OA8GNgN14IZTjn60URS8n1FFT73O5O7Irq72/+
-            dJ4CyuyYUWWwKMk+ucE/m4rJrKEKnCo4+DcrNdSdPjSSQhSUgSFP0wwKB7OmNu82
-            =hrWR
+            hF4DYj1NN/0GA4USAQdA0GB3HGq7dqWWO1MvxziucawBIZcnHpNdUrmG7HIEZUww
+            gs+4NBqA+ChU9A1NxjJFr0fMfBMtEj5WRAqjoiVacQDwS6YntJ9mW3R50JXy7ri5
+            0l4BPfCSlCLVrH7xx3P2CvU5sdb419rVdB/yhq0C6dwm253g7gvxneFVWU70yis0
+            Q2GObsxa3ejIUM8wd3Cts3Mmj9j5PoJtM6diBTqnR6WrW4ESmfZvjDYJ/Gf+RcTM
+            =S0Va
             -----END PGP MESSAGE-----
           fp: 4C653A7AD53BC071B149AC6F05C9A59CE6F61D40
-        - created_at: "2023-08-25T13:15:11Z"
+        - created_at: "2023-08-25T13:16:53Z"
           enc: |
             -----BEGIN PGP MESSAGE-----
 
-            hF4DlnT2alMWtDoSAQdAb/YpAwuBEhgy1xDAqclKtYtS2TIcqppJJOxKd05avDEw
-            LCYcmAbNHl1HwZHeYeUk9LCy+sMdk7cGWAOGt5dD+Kq3ej9LlMqfOySnJD7CWTV1
-            0l4Ba42360KEbSrRBLsYSvSLRPAYgsnMyQYXVaY2w4F1pKU/rnNgHiNzL7/VEMZt
-            Su+3SZOxCJsZ8wnoJJpGbuAdhANbbz60Kpl/4WEyZT0gDdBM6XOhJHs/S2uN7Txo
-            =NkRc
+            hF4DlnT2alMWtDoSAQdAY0znIUh2AiMicsbXb7JfpJK6liI2tF8npsUT3uvbYTww
+            LLGwKMhqEcANjhQs5QFh5pDbDDtoDF0SgfKq2uEPYPYug3VaiqLEaPqyTLYFa9w+
+            0l4BcbK92z7h5bAxbXB0kYqQpHXkL/I4L0nAJLTVwkWhrbVfaPR4YFVMThljfESV
+            +FvxNEpTuNAmPQ3P/mj+v7zSlobZyHrvQSsOcpPHW4NOosGp/yjIdE9yNPByFYhm
+            =lw/B
             -----END PGP MESSAGE-----
           fp: 72C2A2A23FD55033E9FACA100A4AEEEFD51A640E
     encrypted_regex: ^(data|stringData)$
@@ -88,10 +85,7 @@ sops:
 ---
 apiVersion: v1
 stringData:
-    SHARD:
-        pubKey: ENC[AES256_GCM,data:RGC6DBwXDcVBZ2E7Dij+i8hE6pU2P5BdTrnZkEdKLJhS3QrEZEKX6OnOu2U5QJRK,iv:m8Ykd8M90vAOswnx8aNMbxdDqLKiZ4jJcV7k+Gl6o6I=,tag:6qbABXrPa5T8b+DY8iunQQ==,type:str]
-        privateShard: ENC[AES256_GCM,data:7lTywuAsuFiaEG/5scFATweTyhv83Z3plkVm3QSjvs/4H/ydI8Vb3d1Gzg0=,iv:n5xHfYKyfiNMvB53tkKif3LC8KH7VUOQK9nTovEo2u0=,tag:elwifxcHsiaBP8gYyfwl4g==,type:str]
-        id: ENC[AES256_GCM,data:/Q==,iv:0fIh5dYLnETi0BW29Bv+pgy2qIM5Whdnmt4lpx8n/L0=,tag:SthnVNpV2lOgfltTXlRtxA==,type:int]
+    SHARD: ENC[AES256_GCM,data:IiGW10XAoObEMfS7fRhj87MpxICXDV9Fs/9usCynQQQtQPYu0vA4wHn+GKY8E/kkJklzNP9TlpO97Xk4yh8dw/W+8SxormNu3yA8z+cVPVqnsNT9mQm3dDgQIKeqvuh7HNfWfHOd5t7czQtaaLbORcSueD752Xki7wzWEvQdHzoEHw==,iv:ARiHRdy8EDN2qxpH2SI1wClP/8P7gx0J9olBk+y+Q6s=,tag:S+gkjyn6EuJ5rgDb2TyO/A==,type:str]
 kind: Secret
 metadata:
     name: harpoon-shard-3
@@ -103,29 +97,29 @@ sops:
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2023-08-25T13:15:12Z"
-    mac: ENC[AES256_GCM,data:jqPkwkAH46V9bpT0jbfaxNXbPPBZsusFO7qmgrY4d8MS5U7SjmgaEo08QXFRD1r6TuAwllqnjdFtIBOdT3SCLxp98+1YaSV0nymHavHZpkoEneQwNJeR6yOOdJ+Nag7xhYKynwYb1ryFTN8LtKcjo5zzRcLBFoaESo62ZHnpuIg=,iv:lfpTyuYR7tEiaovACmxBfe8ekEYngMzX35XXz6seywU=,tag:btwEdL6hWHhVeH/jXsxQ6Q==,type:str]
+    lastmodified: "2023-08-25T13:16:54Z"
+    mac: ENC[AES256_GCM,data:hwnpFcdQUKmgxjTDfOHbkOF+bP07nS0HX97XagFo2M8pgmTmvKtjkH9rHI7xYKEIJtzVHRDfY2oAS80L0ywZU47iGsLxUglxnuPoV8sbQF/31v4V6/AlSJcA5d7JkjcJM7DddeNM02iOt6CCroJFKJKtEWkwOaNBlCgMvIE/cyY=,iv:g4rI7V2FJLceH5mhP507Q0PECkKgbmpQkvhDEPdpVxI=,tag:3P9goW+h212wlEaqyMZM3A==,type:str]
     pgp:
-        - created_at: "2023-08-25T13:15:11Z"
+        - created_at: "2023-08-25T13:16:53Z"
           enc: |
             -----BEGIN PGP MESSAGE-----
 
-            hF4DYj1NN/0GA4USAQdAAWqIOa5ZPpkEaAvqRNAZLl2fCtxfnPMhPsj7x7XFR0Mw
-            2MJv9mPzB9rTDPw4JgChlhY/0JDyHk5YAKMmz/5GNG1SuqyUda5zu1EwvbI8X74R
-            0l4B7gOcYzTh6lwxWrpVD4gOI2OA8GNgN14IZTjn60URS8n1FFT73O5O7Irq72/+
-            dJ4CyuyYUWWwKMk+ucE/m4rJrKEKnCo4+DcrNdSdPjSSQhSUgSFP0wwKB7OmNu82
-            =hrWR
+            hF4DYj1NN/0GA4USAQdA0GB3HGq7dqWWO1MvxziucawBIZcnHpNdUrmG7HIEZUww
+            gs+4NBqA+ChU9A1NxjJFr0fMfBMtEj5WRAqjoiVacQDwS6YntJ9mW3R50JXy7ri5
+            0l4BPfCSlCLVrH7xx3P2CvU5sdb419rVdB/yhq0C6dwm253g7gvxneFVWU70yis0
+            Q2GObsxa3ejIUM8wd3Cts3Mmj9j5PoJtM6diBTqnR6WrW4ESmfZvjDYJ/Gf+RcTM
+            =S0Va
             -----END PGP MESSAGE-----
           fp: 4C653A7AD53BC071B149AC6F05C9A59CE6F61D40
-        - created_at: "2023-08-25T13:15:11Z"
+        - created_at: "2023-08-25T13:16:53Z"
           enc: |
             -----BEGIN PGP MESSAGE-----
 
-            hF4DlnT2alMWtDoSAQdAb/YpAwuBEhgy1xDAqclKtYtS2TIcqppJJOxKd05avDEw
-            LCYcmAbNHl1HwZHeYeUk9LCy+sMdk7cGWAOGt5dD+Kq3ej9LlMqfOySnJD7CWTV1
-            0l4Ba42360KEbSrRBLsYSvSLRPAYgsnMyQYXVaY2w4F1pKU/rnNgHiNzL7/VEMZt
-            Su+3SZOxCJsZ8wnoJJpGbuAdhANbbz60Kpl/4WEyZT0gDdBM6XOhJHs/S2uN7Txo
-            =NkRc
+            hF4DlnT2alMWtDoSAQdAY0znIUh2AiMicsbXb7JfpJK6liI2tF8npsUT3uvbYTww
+            LLGwKMhqEcANjhQs5QFh5pDbDDtoDF0SgfKq2uEPYPYug3VaiqLEaPqyTLYFa9w+
+            0l4BcbK92z7h5bAxbXB0kYqQpHXkL/I4L0nAJLTVwkWhrbVfaPR4YFVMThljfESV
+            +FvxNEpTuNAmPQ3P/mj+v7zSlobZyHrvQSsOcpPHW4NOosGp/yjIdE9yNPByFYhm
+            =lw/B
             -----END PGP MESSAGE-----
           fp: 72C2A2A23FD55033E9FACA100A4AEEEFD51A640E
     encrypted_regex: ^(data|stringData)$
