@@ -30,3 +30,33 @@ spec:
   - hosts:
     - rpc.cosmoshub.yieldpay.finance
     secretName: cosmoshub-rpc-tls-secret
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+    external-dns.alpha.kubernetes.io/hostname: grpc.cosmoshub.yieldpay.finance
+    cert-manager.io/cluster-issuer: letsencrypt-production
+  name: cosmoshub-grpc
+  namespace: cosmos
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: grpc.cosmoshub.yieldpay.finance
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: cosmoshub-rpc
+            port:
+              number: 9090
+  tls:
+  - hosts:
+    - grpc.cosmoshub.yieldpay.finance
+    secretName: cosmoshub-grpc-tls-secret
+
+   
