@@ -6,4 +6,5 @@ resources:
 - rook-ceph.yaml
 - ingress.yaml
 - chains.yaml
-- podinfo.yaml
+#- podinfo.yaml
+- monitoring.yaml
