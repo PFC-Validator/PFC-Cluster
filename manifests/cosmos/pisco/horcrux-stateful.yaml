@@ -1,0 +1,101 @@
+#
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+    name: pisco-horcrux
+    namespace: cosmos
+spec:
+    serviceName: pisco-horcrux
+    replicas: 3
+    selector:
+        matchLabels:
+            app: pisco-horcrux
+    template:
+        metadata:
+            labels:
+                app: pisco-horcrux
+        spec:
+            initContainers:
+                - name: init
+                  image: busybox:1.28
+                  command: ['sh','-c','POD_NAME=$(hostname) && INDEX=${POD_NAME##*-} &&  cp /run/secrets/sign-${INDEX}/ecies.json /run/sign/ecies_keys.json && cp /run/secrets/shard-${INDEX}/shard.json /run/sign/shard.json']
+                  # note kube starts at 0, horcrux starts at 1
+                  volumeMounts:
+                  - name: signer-1
+                    mountPath: /run/secrets/sign-0
+                  - name: signer-2
+                    mountPath: /run/secrets/sign-1
+                  - name: signer-3
+                    mountPath: /run/secrets/sign-2
+                  - name: shard-1
+                    mountPath: /run/secrets/shard-0
+                  - name: shard-2
+                    mountPath: /run/secrets/shard-1
+                  - name: shard-3
+                    mountPath: /run/secrets/shard-2
+                  - name: signer
+                    mountPath: /run/sign
+            containers:
+                - name: horcrux-container
+                  image: ghcr.io/pfc-developer/horcrux-container:0.07
+                  command: ["/bin/launch-single.sh","pisco-1"]
+                  ports:
+                    - containerPort: 2222
+                      name: cosigner
+                    - containerPort: 6001
+                      name: prometheus   
+                  volumeMounts:
+                    - name: signer                    
+                      mountPath: /run/sign                      
+            volumes:  
+                  - name: signer-1
+                    secret:
+                      secretName: pisco-signer-1
+                      items: 
+                      - key: signer
+                        path: ecies.json
+                        mode: 511
+                  - name: signer-2
+                    secret:
+                      secretName: pisco-signer-2
+                      items: 
+                      - key: signer
+                        path: ecies.json
+                        mode: 511
+                  - name: signer-3
+                    secret:
+                      secretName: pisco-signer-3
+                      items: 
+                      - key: signer
+                        path: ecies.json
+                        mode: 511
+                  - name: shard-1
+                    secret:
+                      secretName: pisco-shard-1
+                      items: 
+                      - key: SHARD
+                        path: shard.json
+                        mode: 511
+                  - name: shard-2
+                    secret:
+                      secretName: pisco-shard-2
+                      items: 
+                      - key: SHARD
+                        path: shard.json
+                        mode: 511
+                  - name: shard-3
+                    secret:
+                      secretName: pisco-shard-3
+                      items: 
+                      - key: SHARD
+                        path: shard.json
+                        mode: 511
+    volumeClaimTemplates:
+    - metadata:
+        name: signer
+      spec:
+        accessModes: [ "ReadWriteOncePod" ]
+        storageClassName: ssd-impermanent-block-store
+        resources:
+          requests:
+            storage: 10Mi                              

@@ -1,0 +1,126 @@
+# signers
+apiVersion: v1
+stringData:
+    SHARD: ENC[AES256_GCM,data:Vjd+s5ndzLXLpGHVeE2ZSJwdGuT82r2WYtrQqxEAEOTHv/5DZeHfYYWdCtpDRkjbDL+nb2ymMlPBNa4/Et9LORHsc81NTk8hm2Uc8IBwlPp6PMIm00IyTM3h/Vj9SxPZR1cHuKNPmH2qUtyHyyPQi/v1sW+NOsvlRfaz3a8jH06r7g==,iv:GZxh/5Tqdhh5yJm1JZfjzXrjAQnSuJD//4ybapp3Pvw=,tag:wPxNse0nIbzOkkn9iRhqyA==,type:str]
+kind: Secret
+metadata:
+    name: pisco-shard-1
+    namespace: cosmos
+type: Opaque
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-08-30T00:48:14Z"
+    mac: ENC[AES256_GCM,data:OHbRcqt2AA7FywlHHD9r6pRKjkudXBUnQWLfqVZU+AY9tPYpKQUfZ7Q0B0BK+nD9PSOuGfFl1ilot3q+aJGNaQiEs9HnhNTbyRG3Aoqb59hIweYtefBVV1yicCcssqXVfmcdpAEcgIsfioPFic2bE718k07CBI3+8SO88TbVwMw=,iv:6JPkgLYBCrC8AJ3TAsvvdAu+er+Ojq/870w7N1l97G0=,tag:doX54mmr6UrCrfeeLwLbeg==,type:str]
+    pgp:
+        - created_at: "2023-08-30T00:48:13Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DYj1NN/0GA4USAQdA56D28Zhpwx6y2ADdSwfL8pd3BBN00U+9aX/lSTckfgww
+            kLLyblr6jpd3C7u0Rcrp8CAqhPuXFdUE3nbFvoW9Ms9PvPX1VZR+qKe+KaJ70iEi
+            0l4BmT6hK3mbMwo9asKQ19BMkM+phI0jy+VNvtyLxaQSoZRb05tdNeqhu+vgpfbh
+            Nls+S2ZIyteatDy9p8QNXE2d5ZC4DJPihYqjVZznljWKl9T/zM2h6wT9DqAoJOql
+            =tqRx
+            -----END PGP MESSAGE-----
+          fp: 4C653A7AD53BC071B149AC6F05C9A59CE6F61D40
+        - created_at: "2023-08-30T00:48:13Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DlnT2alMWtDoSAQdABrkj29Uid/OF0s60+neJs279jdxn0kXleUMrTkzJQBww
+            PLB5LmkObUU2nfc2D5m5ZCiYfBTDr4kOacjFXqaCzWc3zuM32QtqKkdBgwlMU+Ho
+            0l4BvHHN6TvPLxLjwYg025UTNpueiYZb5APZh0ctUH3/cTUnFOtZBFYi4VvN7hHU
+            ErGwOg/0EnU8zLY/ex9ypBf42Caow249He1lqEIAckCQefStEqQAYNQCAd2vOFYx
+            =/em4
+            -----END PGP MESSAGE-----
+          fp: 72C2A2A23FD55033E9FACA100A4AEEEFD51A640E
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
+---
+apiVersion: v1
+stringData:
+    SHARD: ENC[AES256_GCM,data:gNyQMblwFfdoxzQndY9conSlVH5PL/oJRcyQxbnfa370SnlZ4wbumzRaHYPKWdPJC7z0qo7zPNyThfOCZOWfTxer7MQaISEfWA5X769ziSSAm3BI3HxIA7/dc+QNGrxpesI1NdKjTC0AUQLixQDRuJZw8HSpMvH53BkqmPxNw0F2lg==,iv:JNQ0Yqef4She8mMUMdb8wtlVBURdfwCfgwEiDqu9JbA=,tag:rn65+rseHIWsTaM2pLU6fg==,type:str]
+kind: Secret
+metadata:
+    name: pisco-shard-2
+    namespace: cosmos
+type: Opaque
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-08-30T00:48:14Z"
+    mac: ENC[AES256_GCM,data:OHbRcqt2AA7FywlHHD9r6pRKjkudXBUnQWLfqVZU+AY9tPYpKQUfZ7Q0B0BK+nD9PSOuGfFl1ilot3q+aJGNaQiEs9HnhNTbyRG3Aoqb59hIweYtefBVV1yicCcssqXVfmcdpAEcgIsfioPFic2bE718k07CBI3+8SO88TbVwMw=,iv:6JPkgLYBCrC8AJ3TAsvvdAu+er+Ojq/870w7N1l97G0=,tag:doX54mmr6UrCrfeeLwLbeg==,type:str]
+    pgp:
+        - created_at: "2023-08-30T00:48:13Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DYj1NN/0GA4USAQdA56D28Zhpwx6y2ADdSwfL8pd3BBN00U+9aX/lSTckfgww
+            kLLyblr6jpd3C7u0Rcrp8CAqhPuXFdUE3nbFvoW9Ms9PvPX1VZR+qKe+KaJ70iEi
+            0l4BmT6hK3mbMwo9asKQ19BMkM+phI0jy+VNvtyLxaQSoZRb05tdNeqhu+vgpfbh
+            Nls+S2ZIyteatDy9p8QNXE2d5ZC4DJPihYqjVZznljWKl9T/zM2h6wT9DqAoJOql
+            =tqRx
+            -----END PGP MESSAGE-----
+          fp: 4C653A7AD53BC071B149AC6F05C9A59CE6F61D40
+        - created_at: "2023-08-30T00:48:13Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DlnT2alMWtDoSAQdABrkj29Uid/OF0s60+neJs279jdxn0kXleUMrTkzJQBww
+            PLB5LmkObUU2nfc2D5m5ZCiYfBTDr4kOacjFXqaCzWc3zuM32QtqKkdBgwlMU+Ho
+            0l4BvHHN6TvPLxLjwYg025UTNpueiYZb5APZh0ctUH3/cTUnFOtZBFYi4VvN7hHU
+            ErGwOg/0EnU8zLY/ex9ypBf42Caow249He1lqEIAckCQefStEqQAYNQCAd2vOFYx
+            =/em4
+            -----END PGP MESSAGE-----
+          fp: 72C2A2A23FD55033E9FACA100A4AEEEFD51A640E
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
+---
+apiVersion: v1
+stringData:
+    SHARD: ENC[AES256_GCM,data:Ag5B0KGjjDX+ZFuCTH+TLTilQKHexNufqG2qjV/mZPSN2KN/bvrV+VjdaPuQjnU1W545O7saK/EAD2ZMQrJI3vfMxaXA2eRj6hLAxMKt6WO7o8AoAtXQ5UwtNgaVazjwkxDv58pkQ4MSetovWfnfJZ4H9P4dixA7zpkU3l/NrAb0zg==,iv:kXbXXwANE3ChMRIK6fFsJP5loDkdxJjjxkayqBNtqJA=,tag:dPk3I1wA1QIIU+TuSguG1w==,type:str]
+kind: Secret
+metadata:
+    name: pisco-shard-3
+    namespace: cosmos
+type: Opaque
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-08-30T00:48:14Z"
+    mac: ENC[AES256_GCM,data:OHbRcqt2AA7FywlHHD9r6pRKjkudXBUnQWLfqVZU+AY9tPYpKQUfZ7Q0B0BK+nD9PSOuGfFl1ilot3q+aJGNaQiEs9HnhNTbyRG3Aoqb59hIweYtefBVV1yicCcssqXVfmcdpAEcgIsfioPFic2bE718k07CBI3+8SO88TbVwMw=,iv:6JPkgLYBCrC8AJ3TAsvvdAu+er+Ojq/870w7N1l97G0=,tag:doX54mmr6UrCrfeeLwLbeg==,type:str]
+    pgp:
+        - created_at: "2023-08-30T00:48:13Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DYj1NN/0GA4USAQdA56D28Zhpwx6y2ADdSwfL8pd3BBN00U+9aX/lSTckfgww
+            kLLyblr6jpd3C7u0Rcrp8CAqhPuXFdUE3nbFvoW9Ms9PvPX1VZR+qKe+KaJ70iEi
+            0l4BmT6hK3mbMwo9asKQ19BMkM+phI0jy+VNvtyLxaQSoZRb05tdNeqhu+vgpfbh
+            Nls+S2ZIyteatDy9p8QNXE2d5ZC4DJPihYqjVZznljWKl9T/zM2h6wT9DqAoJOql
+            =tqRx
+            -----END PGP MESSAGE-----
+          fp: 4C653A7AD53BC071B149AC6F05C9A59CE6F61D40
+        - created_at: "2023-08-30T00:48:13Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DlnT2alMWtDoSAQdABrkj29Uid/OF0s60+neJs279jdxn0kXleUMrTkzJQBww
+            PLB5LmkObUU2nfc2D5m5ZCiYfBTDr4kOacjFXqaCzWc3zuM32QtqKkdBgwlMU+Ho
+            0l4BvHHN6TvPLxLjwYg025UTNpueiYZb5APZh0ctUH3/cTUnFOtZBFYi4VvN7hHU
+            ErGwOg/0EnU8zLY/ex9ypBf42Caow249He1lqEIAckCQefStEqQAYNQCAd2vOFYx
+            =/em4
+            -----END PGP MESSAGE-----
+          fp: 72C2A2A23FD55033E9FACA100A4AEEEFD51A640E
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3

@@ -1,0 +1,34 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    external-dns.alpha.kubernetes.io/hostname:
+    - rpc.pisco.yieldpay.finance    
+    - api.pisco.yieldpay.finance    
+  labels:
+    app.kubernetes.io/name: pisco-rpc
+    app.kubernetes.io/version: 1.0.0
+  name: pisco-rpc
+  namespace: cosmos
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - rpc.pisco.yieldpay.finance
+    secretName: rpc-pisco-tls-secret
+  rules:
+  - host: rpc.pisco.yieldpay.finance
+    http:
+      paths:
+      - backend:
+          service:
+            name: pisco-rpc
+            port:
+              number: 26657
+        path: /
+        pathType: Prefix

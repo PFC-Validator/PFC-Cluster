@@ -1,0 +1,126 @@
+# signers
+apiVersion: v1
+stringData:
+    signer: ENC[AES256_GCM,data:iFxmh/qrBzaUsmk7k6/zMg+ZxmLaFwFdQ9j2sKcbZs1AxXxww0EZQBbVWsctBS6XaO35Ry2jHRS6NvukeK8btFvkNh3Aj52ubd9A1Am/4EeO9M3p2jkyUlUaK+oQxdbgaR8+4CLoqxJqLG8fSMJ+o045I2/QHLfTkcunvMFe1T2GdlQwULgmRM4eiGIbjqDBJgLZKWbwlazJPc0xHYiZIEyM6u8vS7NPkEL9FiCgoPBYuzI9vXls+8jU4Sq67VwFQv/+p26jqJS/UJR2ZS9FZ71s2CWt5EWUzUIYAvHXyfANvrGHA7yH/U924g6/bVz8MXIjZ0KQ0hel2J1QatnjlV8ZyJOBu5NGj1Hf5IZYzOAl6bpzahjlZtlI5WgISAcfY5vJr8DbHqtl01FsKUUswmH5XhyBPX6ja7lp/y+sXrzed4buM92IJU9galQSKAQEvbAg34xexeOs6o6oGSa2DhQ=,iv:LYXUQrHWBwX5MvvEewDzGEVJ3Og0BF/15BE70A5EvGE=,tag:5DvcjMhQnGh/4bG/l6iagg==,type:str]
+kind: Secret
+metadata:
+    name: pisco-signer-1
+    namespace: cosmos
+type: Opaque
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-08-30T00:46:16Z"
+    mac: ENC[AES256_GCM,data:4mRA4AAucGB09Vx0/Ea+LBD1wehxLxKEO6VFED1sgZW+1+iITBixABtTVDUmgU7Ra706X4xtJABtWvE94NOCysPFLW3CK8Sa7AX6tzbcUijPJObx0WJ97fAGa2FRSE1CJomFREmrCmcxpPXU3VhDGiufFJUbQ8EJXkmm21pxaR8=,iv:/2hCZRBEZS/kcbDFt0Rj1LSq3wSUf1iBqYdOwxHHWfg=,tag:j/mYEZ5SeD0Gl5ljFJ8Cmg==,type:str]
+    pgp:
+        - created_at: "2023-08-30T00:46:15Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DYj1NN/0GA4USAQdAckpOOeVYGMQ7cJuNNcWNgizDWVXkC4UMRrv1tIWPCkww
+            hHfxOcFGJpvjYXKrAJZRsOKq6OKNt0BXUBggGmtFz/LZzBjrhNDcvLmnxF2FjlRq
+            0l4BtMrETkeEvlaQIXH9WQwwjcmLrnxVtxq9Kj/ZuqMDxRPRIlDM0d3IKvDinVXg
+            0AN0CLTrOx/N87BK+tT/IN/i2FtepjD5Jb3ZdNi6ZXz7/5AEdT/owYFMoaJwRX4l
+            =O5uN
+            -----END PGP MESSAGE-----
+          fp: 4C653A7AD53BC071B149AC6F05C9A59CE6F61D40
+        - created_at: "2023-08-30T00:46:15Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DlnT2alMWtDoSAQdAav1fR5sIDRdxYusCr5tR2Phmwa1ejr6mQS3GVn305AIw
+            7EVwEhv7DVoBH9slwgnEwwAjtuyJsHbrz1clKnrPCubCNUD7NhCkRQGTRtXlp5eY
+            0l4BqAO4poHpyCHNEonEGpC2vRFFsHaHNYT8ccDSY9OYMl8u+hf/K8/jPD9koLrt
+            IBFsa3J6On+7hjenpOMMWTk1hwgUUSJJkmJNI2JuWoIZMx5qOHhDj+aurHNr3mju
+            =Bydw
+            -----END PGP MESSAGE-----
+          fp: 72C2A2A23FD55033E9FACA100A4AEEEFD51A640E
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
+---
+apiVersion: v1
+stringData:
+    signer: ENC[AES256_GCM,data:VYoCtMDPMZVwnsNmNIglscKAbUCwvDLll1NonkFMc41rxqYbJVIs3X+fR/pymLS8Xa0jo7czHBVzZKpxmoncSw+T8093AOxM48qIIRxOUM/9KvntFluUss4AtZc3ouF7O/caXrOLXM8ctLGJb3kygAl4shgfm89usbqyiowaL/C+ADaH82G1XaEnaqq6hhqW1PpVLvI9urjlUvf7+Lnuuk6ycUjKcODlZXs9gl4yifXIPbIuvPKBJmn8Au4v0NeXRjurTW4Mti2xE8ucG+JnUHASw4zeMGT0vxQYM01UsigA8NJ+4nX8DgXwqXfJYa2NSGkh5CBwk7zH+soYiR1slczLKPGjhYemGouQIHI0KHq5hLbnLt+KBTZ6j4srxCngOiO/a1sXiNvusp/xwvADxjy38garjiIDz38PdxNwPsQMMDDvZW6QcfHFebXIoh0J8O3kt1D613jMyv0BskahPZU=,iv:sAKl2J5zT+mLIOemEb5YjbsYhPRH4I9KmRnNDBLpH30=,tag:v8z8IurIWnObh929XUgzTg==,type:str]
+kind: Secret
+metadata:
+    name: pisco-signer-2
+    namespace: cosmos
+type: Opaque
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-08-30T00:46:16Z"
+    mac: ENC[AES256_GCM,data:4mRA4AAucGB09Vx0/Ea+LBD1wehxLxKEO6VFED1sgZW+1+iITBixABtTVDUmgU7Ra706X4xtJABtWvE94NOCysPFLW3CK8Sa7AX6tzbcUijPJObx0WJ97fAGa2FRSE1CJomFREmrCmcxpPXU3VhDGiufFJUbQ8EJXkmm21pxaR8=,iv:/2hCZRBEZS/kcbDFt0Rj1LSq3wSUf1iBqYdOwxHHWfg=,tag:j/mYEZ5SeD0Gl5ljFJ8Cmg==,type:str]
+    pgp:
+        - created_at: "2023-08-30T00:46:15Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DYj1NN/0GA4USAQdAckpOOeVYGMQ7cJuNNcWNgizDWVXkC4UMRrv1tIWPCkww
+            hHfxOcFGJpvjYXKrAJZRsOKq6OKNt0BXUBggGmtFz/LZzBjrhNDcvLmnxF2FjlRq
+            0l4BtMrETkeEvlaQIXH9WQwwjcmLrnxVtxq9Kj/ZuqMDxRPRIlDM0d3IKvDinVXg
+            0AN0CLTrOx/N87BK+tT/IN/i2FtepjD5Jb3ZdNi6ZXz7/5AEdT/owYFMoaJwRX4l
+            =O5uN
+            -----END PGP MESSAGE-----
+          fp: 4C653A7AD53BC071B149AC6F05C9A59CE6F61D40
+        - created_at: "2023-08-30T00:46:15Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DlnT2alMWtDoSAQdAav1fR5sIDRdxYusCr5tR2Phmwa1ejr6mQS3GVn305AIw
+            7EVwEhv7DVoBH9slwgnEwwAjtuyJsHbrz1clKnrPCubCNUD7NhCkRQGTRtXlp5eY
+            0l4BqAO4poHpyCHNEonEGpC2vRFFsHaHNYT8ccDSY9OYMl8u+hf/K8/jPD9koLrt
+            IBFsa3J6On+7hjenpOMMWTk1hwgUUSJJkmJNI2JuWoIZMx5qOHhDj+aurHNr3mju
+            =Bydw
+            -----END PGP MESSAGE-----
+          fp: 72C2A2A23FD55033E9FACA100A4AEEEFD51A640E
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
+---
+apiVersion: v1
+stringData:
+    signer: ENC[AES256_GCM,data:DHO4BHPD29yYnso7J1pu9dGHuabmTIRXAZo/c6P5Wc9Ju8kFk0KpT0PUXxjn1CfqLeiEUe4MMl2AiaLVAIlsVNJbhAvsvZ9IbK2Nnyjsg6kMOsMOdpomx8HMGDN9AEbeZe+eCAP89AAaBHDMEhxPNLlkkGKA5bMtNImG1cutsSo3HOWin1gWKARIS3m8QP0ucHtcEVLjPa3Ws+CrUNKDF1KLuxCNxNz8G6w+dTsF4oFDopMbroFDoA6EGtj/9dsCNTaZ01jRcHbJnJ2vxW/WoECCZcSEXU9n6mlOid9JwLkcRxFGcOIHsuFvkVOW7YXa27/OKXuT2vGY9sGICtwAFkkdzJUVWYPzem9nBi5PRl0V2+BWvjcqhtaIF6rVFHudlHe7OQRowESlsLXkqe8HqRKWtnuvM9HRxTQdMGDDXRB/MP69x0/3yUgZgNx+C+rbva+FYiqNvML40DiHKnLUGAU=,iv:TSdAfoQgxiPmoRkcc2Qpgt5X+xqKK7md1UsHLzz6cg0=,tag:xjUHGHZN1e0mc3GVd9PJjg==,type:str]
+kind: Secret
+metadata:
+    name: pisco-signer-3
+    namespace: cosmos
+type: Opaque
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-08-30T00:46:16Z"
+    mac: ENC[AES256_GCM,data:4mRA4AAucGB09Vx0/Ea+LBD1wehxLxKEO6VFED1sgZW+1+iITBixABtTVDUmgU7Ra706X4xtJABtWvE94NOCysPFLW3CK8Sa7AX6tzbcUijPJObx0WJ97fAGa2FRSE1CJomFREmrCmcxpPXU3VhDGiufFJUbQ8EJXkmm21pxaR8=,iv:/2hCZRBEZS/kcbDFt0Rj1LSq3wSUf1iBqYdOwxHHWfg=,tag:j/mYEZ5SeD0Gl5ljFJ8Cmg==,type:str]
+    pgp:
+        - created_at: "2023-08-30T00:46:15Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DYj1NN/0GA4USAQdAckpOOeVYGMQ7cJuNNcWNgizDWVXkC4UMRrv1tIWPCkww
+            hHfxOcFGJpvjYXKrAJZRsOKq6OKNt0BXUBggGmtFz/LZzBjrhNDcvLmnxF2FjlRq
+            0l4BtMrETkeEvlaQIXH9WQwwjcmLrnxVtxq9Kj/ZuqMDxRPRIlDM0d3IKvDinVXg
+            0AN0CLTrOx/N87BK+tT/IN/i2FtepjD5Jb3ZdNi6ZXz7/5AEdT/owYFMoaJwRX4l
+            =O5uN
+            -----END PGP MESSAGE-----
+          fp: 4C653A7AD53BC071B149AC6F05C9A59CE6F61D40
+        - created_at: "2023-08-30T00:46:15Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DlnT2alMWtDoSAQdAav1fR5sIDRdxYusCr5tR2Phmwa1ejr6mQS3GVn305AIw
+            7EVwEhv7DVoBH9slwgnEwwAjtuyJsHbrz1clKnrPCubCNUD7NhCkRQGTRtXlp5eY
+            0l4BqAO4poHpyCHNEonEGpC2vRFFsHaHNYT8ccDSY9OYMl8u+hf/K8/jPD9koLrt
+            IBFsa3J6On+7hjenpOMMWTk1hwgUUSJJkmJNI2JuWoIZMx5qOHhDj+aurHNr3mju
+            =Bydw
+            -----END PGP MESSAGE-----
+          fp: 72C2A2A23FD55033E9FACA100A4AEEEFD51A640E
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
