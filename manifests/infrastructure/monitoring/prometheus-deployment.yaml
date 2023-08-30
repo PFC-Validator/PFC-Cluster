@@ -36,7 +36,7 @@ spec:
   
         - name: prometheus-storage-volume
           emptyDir: {}
-   volumeClaimTemplates:
+  volumeClaimTemplates:
     - metadata:
         name: prometheus-storage-volume
       spec:
