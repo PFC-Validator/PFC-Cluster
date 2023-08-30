@@ -8,6 +8,7 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
     external-dns.alpha.kubernetes.io/hostname: rpc.stride.yieldpay.finance    
+    external-dns.alpha.kubernetes.io/hostname: grpc.stride.yieldpay.finance    
   labels:
     app.kubernetes.io/name: stride-rpc
     app.kubernetes.io/version: 1.0.0
@@ -26,7 +27,20 @@ spec:
               number: 26657
         path: /
         pathType: Prefix
+  - host: grpc.stride.yieldpay.finance
+    http:
+      paths:
+      - backend:
+          service:
+            name: stride-rpc
+            port:
+              number: 9090
+        path: /
+        pathType: Prefix        
   tls:
   - hosts:
     - rpc.stride.yieldpay.finance
+    secretName: stride-rpc-tls-secret
+  - hosts:
+    - grpc.stride.yieldpay.finance
     secretName: stride-rpc-tls-secret
