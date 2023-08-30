@@ -30,7 +30,7 @@ spec:
   - hosts:
     - rpc.stride.yieldpay.finance
     secretName: stride-rpc-tls-secret
- ---
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
