@@ -7,8 +7,7 @@ kind: Ingress
 metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
-    external-dns.alpha.kubernetes.io/hostname: rpc.stride.yieldpay.finance    
-    external-dns.alpha.kubernetes.io/hostname: grpc.stride.yieldpay.finance    
+    external-dns.alpha.kubernetes.io/hostname: rpc.stride.yieldpay.finance       
   labels:
     app.kubernetes.io/name: stride-rpc
     app.kubernetes.io/version: 1.0.0
@@ -26,21 +25,39 @@ spec:
             port:
               number: 26657
         path: /
-        pathType: Prefix
-  - host: grpc.stride.yieldpay.finance
-    http:
-      paths:
-      - backend:
-          service:
-            name: stride-rpc
-            port:
-              number: 9090
-        path: /
-        pathType: Prefix        
+        pathType: Prefix   
   tls:
   - hosts:
     - rpc.stride.yieldpay.finance
     secretName: stride-rpc-tls-secret
-  - hosts:
-    - grpc.stride.yieldpay.finance
-    secretName: stride-rpc-tls-secret
+ ---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+    external-dns.alpha.kubernetes.io/hostname: grpc.stride.yieldpay.finance
+    cert-manager.io/cluster-issuer: letsencrypt-production
+  name: stride-grpc
+  namespace: cosmos
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: grpc.stride.yieldpay.finance
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: stride-rpc
+            port:
+              number: 9090
+  tls:
+  # This secret must exist beforehand
+  # The cert must also contain the subj-name grpctest.dev.mydomain.com
+  # https://github.com/kubernetes/ingress-nginx/blob/master/docs/examples/PREREQUISITES.md#tls-certificates
+  - secretName: stride-grpc-tls-secret
+    hosts:
+      - grpc.stride.yieldpay.finance
