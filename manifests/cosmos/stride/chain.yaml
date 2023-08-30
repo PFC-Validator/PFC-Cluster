@@ -1,0 +1,31 @@
+apiVersion: cosmos.strange.love/v1
+kind: CosmosFullNode
+metadata:
+  name: stride
+  namespace: cosmos
+spec:
+  chain:
+    app:
+      minGasPrice: "0.0005ustrd,0.001stuosmo,0.0001stuatom,0.001ibc/D24B4564BCD51D3D02D9987D92571EAC5915676A9BD6D9B0C1D0254CB8A5EA34,0.0001ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2"
+    binary: strided
+    chainID: stride-1
+    config:
+      seeds: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:12256"
+    genesisURL: https://snapshots.polkachu.com/genesis/stride/genesis.json
+    network: mainnet
+    skipInvariants: true
+    snapshotURL: "https://snapshots.polkachu.com/snapshots/stride/stride_5210976.tar.lz4"
+  podTemplate:
+    image: ghcr.io/strangelove-ventures/heighliner/stride:v13.1.0
+    resources:
+      requests:
+        memory: 16Gi
+  replicas: 1 # TODO change to 1 to use less resources
+  volumeClaimTemplate:
+    resources:
+      requests:
+        storage: 200Gi
+    storageClassName: ssd-block-store
+  service:
+    p2pTemplate:
+      type: NodePort
