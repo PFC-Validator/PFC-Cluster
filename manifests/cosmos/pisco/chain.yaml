@@ -37,7 +37,7 @@ spec:
     resources:
       requests:
         storage: 200Gi
-    accessModes: [ "ReadWriteMany" ]
+    accessModes: [ "ReadWriteOnce" ]
     storageClassName: ssd-block-store
   service:
     p2pTemplate:

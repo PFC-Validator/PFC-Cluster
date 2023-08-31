@@ -50,7 +50,7 @@ spec:
       requests:
         storage: 200Gi
     storageClassName: ssd-block-store
-    accessModes: [ "ReadWriteMany" ]
+    accessModes: [ "ReadWriteOnce" ]
   service:
     p2pTemplate:
       type: NodePort
