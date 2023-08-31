@@ -94,7 +94,7 @@ spec:
     - metadata:
         name: signer
       spec:
-        accessModes: [ "ReadWriteOnce" ]
+        accessModes: [ "ReadWriteMany" ]
         storageClassName: ssd-impermanent-block-store
         resources:
           requests:
