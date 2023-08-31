@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
 - gotk-components.yaml
 - gotk-sync.yaml
-#- rook-ceph.yaml
+- rook-ceph.yaml
 - ingress.yaml
 #- chains.yaml
 #- podinfo.yaml
