@@ -8,8 +8,7 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
     external-dns.alpha.kubernetes.io/hostname:
-    - rpc.pisco.yieldpay.finance    
-    - api.pisco.yieldpay.finance    
+    - rpc.pisco.yieldpay.finance     
   labels:
     app.kubernetes.io/name: pisco-rpc
     app.kubernetes.io/version: 1.0.0
@@ -30,5 +29,35 @@ spec:
             name: pisco-rpc
             port:
               number: 26657
+        path: /
+        pathType: Prefix
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    external-dns.alpha.kubernetes.io/hostname:  
+    - api.pisco.yieldpay.finance    
+  labels:
+    app.kubernetes.io/name: pisco-api
+    app.kubernetes.io/version: 1.0.0
+  name: pisco-api
+  namespace: cosmos
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - api.pisco.yieldpay.finance
+    secretName: api-pisco-tls-secret
+  rules:
+  - host: api.pisco.yieldpay.finance
+    http:
+      paths:
+      - backend:
+          service:
+            name: pisco-rpc
+            port:
+              number: 1317
         path: /
         pathType: Prefix
