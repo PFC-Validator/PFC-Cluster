@@ -29,19 +29,3 @@ spec:
   service:
     p2pTemplate:
       type: NodePort
-#    rpcTemplate:
-#      type: ClusterIP
-#      metadata:
-#        annotations:
-#          cert-manager.io/cluster-issuer: letsencrypt-production
-#          external-dns.alpha.kubernetes.io/hostname: gaia.yieldpay.finance
-#        hosts: 
-#        - host: gaia.yeildpay.finance
-#          paths: 
-#            - path: /
-#              pathType: Prefix
-#        tls:
-#        - hosts:
-#          - gaia.yieldpay.finance
-#          secretName: yieldpay-tls-secret
-# 
