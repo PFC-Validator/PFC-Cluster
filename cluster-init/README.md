@@ -22,6 +22,11 @@ you need a github token for this to work. i have them in (token.sh)[../token.sh.
 * installs flux locally
 * set's up some things to use this repo to deploy stuff.
 
+## kustomize (needed for multi-tenancy)
+```
+brew install kustomize
+```
+
 ## cosmos operator
 (might need to install this before flux)
 you'll need to download another repo and run make on it. see (cosmos-operator)[../03-cosmos-operator].

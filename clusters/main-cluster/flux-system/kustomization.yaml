@@ -3,9 +3,10 @@ kind: Kustomization
 resources:
 - gotk-components.yaml
 - gotk-sync.yaml
-- rook-ceph.yaml
-- ingress.yaml
-- chains.yaml
-#- podinfo.yaml
-- monitoring.yaml
+- infrastructure.yaml
+#- rook-ceph.yaml
+#- ingress.yaml
+- cosmos.yaml
+#- apps.yaml
+#- monitoring.yaml
 #- github-private.yaml
