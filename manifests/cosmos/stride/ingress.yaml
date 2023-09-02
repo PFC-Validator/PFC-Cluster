@@ -55,9 +55,6 @@ spec:
             port:
               number: 9090
   tls:
-  # This secret must exist beforehand
-  # The cert must also contain the subj-name grpctest.dev.mydomain.com
-  # https://github.com/kubernetes/ingress-nginx/blob/master/docs/examples/PREREQUISITES.md#tls-certificates
   - hosts:
     - grpc.stride.yieldpay.finance
     secretName: stride-grpc-tls-secret

@@ -9,9 +9,6 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-production
     external-dns.alpha.kubernetes.io/hostname: rpc.pisco.yieldpay.finance     
     nginx.ingress.kubernetes.io/enable-cors: "true"
-   # nginx.ingress.kubernetes.io/configuration-snippet: |
-   #   add_header Access-Control-Allow-Headers * always;
- 
   labels:
     app.kubernetes.io/name: pisco-rpc
     app.kubernetes.io/version: 1.0.0
@@ -40,7 +37,8 @@ kind: Ingress
 metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
-    external-dns.alpha.kubernetes.io/hostname: api.pisco.yieldpay.finance    
+    external-dns.alpha.kubernetes.io/hostname: api.pisco.yieldpay.finance   
+    nginx.ingress.kubernetes.io/enable-cors: "true"
   labels:
     app.kubernetes.io/name: pisco-api
     app.kubernetes.io/version: 1.0.0

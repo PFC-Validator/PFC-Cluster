@@ -7,9 +7,9 @@ kind: Ingress
 metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
-    external-dns.alpha.kubernetes.io/hostname:
-    - rpc.harpoon.yieldpay.finance    
-    - api.harpoon.yieldpay.finance    
+    external-dns.alpha.kubernetes.io/hostname: rpc.harpoon.yieldpay.finance  
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+  
   labels:
     app.kubernetes.io/name: harpoon-rpc
     app.kubernetes.io/version: 1.0.0
