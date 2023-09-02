@@ -25,10 +25,4 @@ spec:
   sourceRef:
     kind: GitRepository
     name: gh-private
-  patchesStrategicMerge:
-    - apiVersion: apps/v1
-      kind: Deployment
-      metadata:
-        name: app
-      spec:
-        replicas: 2
+ 
