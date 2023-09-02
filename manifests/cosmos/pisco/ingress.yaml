@@ -8,6 +8,9 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
     external-dns.alpha.kubernetes.io/hostname: rpc.pisco.yieldpay.finance     
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "* always"
+    nginx.ingress.kubernetes.io/cors-allow-headers: "* always"
   labels:
     app.kubernetes.io/name: pisco-rpc
     app.kubernetes.io/version: 1.0.0
