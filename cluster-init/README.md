@@ -48,7 +48,8 @@ kubectl rook-ceph operator restart
 ```
 
 
-this may help you recovin
+this may help you recoving
 ```
 kubectl -n rook-ceph patch cephcluster rook-ceph --type merge -p '{"spec":{"cleanupPolicy":{"confirmation":"yes-really-destroy-data"}}}'
 ```
+or (rtfm)[https://rook.io/docs/rook/v1.11/Getting-Started/ceph-teardown/#removing-the-cluster-crd-finalizer] it.
