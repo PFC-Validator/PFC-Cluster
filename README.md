@@ -29,6 +29,7 @@ I mention this as if this screws up you could tombstone, or some hacker could co
 * state-syncing vs hard-coded snapshots
 * auto-upgrades via cosmovisor
 * more testing
+* make prometheus discover the cosmos stuff
 
 # thank you too
 this relies heavily on:
