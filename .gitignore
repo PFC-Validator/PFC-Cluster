@@ -11,3 +11,5 @@
 
 /ansible/machines/*.yaml
 /ansible/files
+
+/cluster-init/env.sh

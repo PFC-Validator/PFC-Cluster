@@ -1,0 +1,6 @@
+export GITHUB_USER="PFC-Validator"
+export GITHUB_TOKEN="xxx"
+#export CLUSTER_DOMAIN="xxx"
+export KUBERNETES_API_SERVER_PORT=6443
+export KUBERNETES_API_SERVER_ADDRESS=api.example.com
+export KUBERNETES_GPG_KEY=""

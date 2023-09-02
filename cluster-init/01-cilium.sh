@@ -1,9 +1,6 @@
 ## brew install cilium-cli
-
+source env.sh
 helm repo add cilium https://helm.cilium.io/
-export KUBERNETES_API_SERVER_ADDRESS=api.medici.loan
-export KUBERNETES_API_SERVER_PORT=6443
-export CLUSTER_DOMAIN=yieldpay.finance
 
 #helm install                                         \
 #    cilium                                                      \
@@ -36,6 +33,6 @@ cilium status --wait
 #cilium hubble enable
 cilium hubble enable --ui
 exit
-kubectl apply -f ./cilium-control-plane.yaml
+#kubectl apply -f ./cilium-control-plane.yaml
 
-kubectl exec -n kube-system  cilium-796pc
+#kubectl exec -n kube-system  cilium-796pc
