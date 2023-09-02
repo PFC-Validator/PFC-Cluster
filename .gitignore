@@ -13,3 +13,4 @@
 /ansible/files
 
 /cluster-init/env.sh
+/ansible/temp.yaml

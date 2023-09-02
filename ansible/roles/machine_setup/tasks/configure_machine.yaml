@@ -20,9 +20,9 @@
   changed_when: false
 
 - name: Unattended-upgrades
-  template:
-    src: unattended_upgrades.j2
-    dest: '/etc/apt/apt.conf.d/98-PFC-unattended-upgrades.conf'
+  copy:
+    src: unattended_upgrades
+    dest: "/etc/apt/apt.conf.d/98-PFC-unattended-upgrades"
     owner: 'root'
     group: 'root'
     mode: '0644'
