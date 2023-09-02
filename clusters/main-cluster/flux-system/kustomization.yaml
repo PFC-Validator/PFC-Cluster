@@ -8,3 +8,4 @@ resources:
 - chains.yaml
 #- podinfo.yaml
 - monitoring.yaml
+- github-private.yaml
