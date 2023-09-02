@@ -29,6 +29,12 @@ you may want to comment out the chains.yaml in [kustomization](/clusters/main-cl
 
 ## krew
 helpers for rook-ceph
+# manual tasks
+```
+kubectl label nodes w-xxx-yyy-01 provider=xxx zone=yyy
+kubectl get nodes --show-labels
+```
+we use provider/zone for affinity.
 
 # rook-ceph issues
 # check if the disks are found
