@@ -11,14 +11,23 @@ this is my 'working' (more like work in progress) kubernets cluster
 * [kube infra](./manifests/infrastructure)
 * [cosmos nodes](./manifests/cosmos/) - running RPC and validators
 
-please note. we put our validator key shards in the 'secret' area, as we run the horcrux signers in the cluster itself. 
+### security warning
+please note. 
+
+This repo contains secrets, API tokens, and other sensitive things.
+
+we put our validator key shards in this github, as we run the horcrux signers in the cluster itself. 
+
+they are encrypted via GPG2 and we use sops, so i'm fairly confident.. but you'll notice no mainnet servers in here ;-)
 
 I mention this as if this screws up you could tombstone, or some hacker could come in and steal them, and we are still improving the overall security footprint of this install. buyer beware, no warranties, your risk etc etc.
 
-### still to do
+### still to do - PRs welcome
 * price oracles
 * relaying
 * making horcrux more automated
+* state-syncing vs hard-coded snapshots
+* auto-upgrades via cosmovisor
 * more testing
 
 # thank you too
