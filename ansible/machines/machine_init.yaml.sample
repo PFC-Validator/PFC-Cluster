@@ -1,0 +1,30 @@
+all:   
+  vars:
+    domain_name: xxx.xxx
+    deployment_user: xxx
+leaseweb:
+  vars:
+    ansible_ssh_user: root    
+  hosts:
+    c-lsw-xxx-1:
+      ansible_host: c-lsw-xxx-1
+
+hetzner:
+  vars:
+    ansible_ssh_user: root
+  hosts:
+    c-her-xxx-1:
+      ansible_host: c-her-xxx-1
+    c-her-xxx-2:
+      ansible_host: c-her-xxx-2
+    w-her-xxx-01:
+      ansible_host: w-her-xxx-01
+    w-her-yyy-01:
+      ansible_host: w-her-yyy-01
+
+ovh:
+  vars:
+    ansible_ssh_user: ubuntu    
+  hosts:
+    w-ovh-xxx-01:
+      ansible_host: w-ovh-fra-03

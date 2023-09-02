@@ -1,0 +1,6 @@
+---
+#- name: configure machine
+#  import_tasks: configure_machine.yaml
+
+#- name: install packages
+#  import_tasks: install_essentials.yaml  

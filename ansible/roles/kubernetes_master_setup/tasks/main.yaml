@@ -1,0 +1,9 @@
+---
+- name: has admin.conf
+  stat:
+    path: /etc/kubernetes/admin.conf
+  register: kube_conf
+
+- name: init control plane
+  import_tasks: init.yaml
+  when: not kube_conf.stat.exists

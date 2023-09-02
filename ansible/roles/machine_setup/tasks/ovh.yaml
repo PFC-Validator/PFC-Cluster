@@ -1,0 +1,31 @@
+---
+- name: OVH SGdisk nvme0n1
+  command: "sgdisk -N=0 -s /dev/nvme0n1"
+- name: OVH SGdisk nvme1n1
+  command: "sgdisk -N=0 -s /dev/nvme1n1"
+
+- name: OVH remove adm group
+  command: "gpasswd -d  ubuntu adm"
+  #changed_when: "not 'is not a member of' in command_result.stderr"
+  #failed_when: false
+  #when: inventory_hostname in groups['ovh']
+
+- name: OVH remove sudo group
+  command: "gpasswd -d ubuntu sudo"
+  #changed_when: "not 'is not a member of' in command_result.stderr"
+  #failed_when: false     
+
+- name: OVH remove ssh access ubu
+  become: false
+  copy:   
+    src: no_login
+    dest: /home/ubuntu/.ssh/authorized_keys
+    owner: ubuntu
+    group: ubuntu
+    mode: '0600'
+
+- name: OVH delete sudoer file
+  file: 
+    path: /etc/sudoers.d/90-cloud-init-users
+    state: absent
+    

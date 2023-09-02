@@ -1,0 +1,8 @@
+---
+- name: restart sshd
+  import_tasks: restart_sshd.yaml
+
+- name: update/upgrade APT packages
+  apt:
+    upgrade: yes 
+    update_cache: yes

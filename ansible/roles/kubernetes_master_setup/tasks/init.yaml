@@ -1,0 +1,69 @@
+---
+- name: init
+  shell: |
+    export KUBECONFIG=/etc/kubernetes/admin.conf
+    kubeadm config images pull
+
+- name: set defaults
+  shell: |
+    kubeadm config print init-defaults > /tmp/init-defaults
+- name: get ip
+  shell: |
+    dig +short {{ master1 }}
+  register: master1_ip
+- name: fix cluster-name 
+  replace:
+    path:  /tmp/init-defaults
+    regexp: '^clusterName: .*?$'
+    replace: 'clusterName: {{ cluster_name }}'
+- name: fix node-name 
+  replace:
+    path:  /tmp/init-defaults
+    regexp: '^  name: node$'
+    replace: '  name: {{ master1 }}'
+
+- name: fix controlPaneEndPoint
+  lineinfile:
+    path:  /tmp/init-defaults
+    insertafter: "certificatesDir: /etc/kubernetes/pki"
+    line: 'controlPlaneEndpoint: {{ endpoint }}:6443'
+    state: present
+- name: fix advertise Address 
+  replace:
+    path:  /tmp/init-defaults
+    regexp: '^  advertiseAddress: .*?$'
+    replace: "  advertiseAddress: {{ master1_ip.stdout }}"
+
+- name: control plane init
+  shell: kubeadm init  --config /tmp/init-defaults --upload-certs
+  register: kubeadmout
+  args:
+    creates: /etc/kubernetes/admin.conf
+
+- name: fetch /etc/kubernetes/admin.conf
+  fetch:
+    src: /etc/kubernetes/admin.conf
+    dest: "files/kubeconfig.yaml"
+    fail_on_missing: yes
+    flat: True
+
+- shell: netstat -anp|grep {{item}}
+  ignore_errors: yes
+  vars:
+      portcheck:
+          - 6443
+          - 10259
+  with_items: "{{ portcheck }}"
+  register: netstat
+
+- name: get token x1
+  copy:
+     content: "{{ kubeadmout.stdout }}"
+     dest: /root/join-command
+
+- name: get token x2
+  fetch:
+      src: /root/join-command
+      dest: "files/join-command"
+      fail_on_missing: yes
+      flat: True

@@ -1,0 +1,21 @@
+masters: 
+  vars:
+    ansible_ssh_user: user
+    domain_name: example.com
+
+  hosts:
+    k8s-master-1:
+      ansible_host: master-1.example.com
+
+workers:
+  vars:
+    ansible_ssh_user: ubuntu
+    deployment_user: user
+    domain_name: example.com 
+  hosts:
+    vm01:
+      ansible_host: 172.17.0.2
+    vm02:
+      ansible_host: 172.17.0.3
+    vm03:
+      ansible_host: 172.17.0.4

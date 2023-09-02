@@ -1,0 +1,9 @@
+---
+- name: dependencies have been installed already
+  stat:
+    path: /root/kube-dependencies_installed.txt
+  register: kube_dependencies
+
+- name: configure machine
+  import_tasks: install.yaml
+  when: not kube_dependencies.stat.exists

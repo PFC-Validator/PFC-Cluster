@@ -1,0 +1,98 @@
+---
+- hosts: all
+  gather_facts: no
+  become: true
+  roles:
+    - machine_post_setup
+
+- hosts: k8_master
+  gather_facts: no
+  become: true
+  roles:
+    - kube-dependencies
+    - kubernetes_master_setup
+
+- hosts: k8_master
+  become: true    
+  gather_facts: false
+
+  tasks:
+  - name: generate the join command
+    shell: kubeadm token create --print-join-command --kubeconfig /etc/kubernetes/admin.conf
+    register: join_command
+
+  - name: set join command file
+    copy:
+      content: "{{join_command.stdout_lines[0]}}"
+      dest: "/root/join.txt"
+
+  - name: generate the control plane cert key
+    shell: kubeadm init phase upload-certs --upload-certs --kubeconfig /etc/kubernetes/admin.conf
+    register: kubeadm_cert_key
+
+  - name: register the cert key
+    copy:
+      content: "{{kubeadm_cert_key.stdout_lines[2]}}"
+      dest: "/root/certfile.txt"
+  - name: fetch join
+    fetch:
+      src: /root/join.txt
+      dest: "files/join.txt"
+      fail_on_missing: yes
+      flat: True
+  - name: fetch cert
+    fetch:
+      src: /root/certfile.txt
+      dest: "files/certfile.txt"
+      fail_on_missing: yes
+      flat: True
+
+    
+- hosts: k8_control_plane
+  become: true
+  roles:
+      - kube-dependencies
+  tasks:
+  - name: control plane - has admin.conf
+    stat:
+      path: /etc/kubernetes/admin.conf
+    register: kube_conf
+
+  - name: copy cert
+    copy: 
+      dest: /root/certfile.txt
+      src: "files/certfile.txt"  
+
+  - name: copy join
+    copy: 
+      dest: /root/join.txt
+      src: "files/join.txt"  
+  - name: join it
+    shell: |
+      echo $(cat /root/join.txt) --control-plane --certificate-key $(cat /root/certfile.txt)  > /root/cmd.sh
+      chmod 755 /root/cmd.sh
+      /root/cmd.sh    
+    when: not kube_conf.stat.exists
+
+#    register: joinmaster
+
+- hosts: k8_worker
+  become: True
+  roles:
+      - kube-dependencies
+
+  tasks:
+  - name: worker plane - has kubelet.conf
+    stat:
+      path:  /etc/kubernetes/kubelet.conf
+    register: kubelet_conf
+
+  - name: copy join
+    copy: 
+      dest: /root/join.sh
+      src: "files/join.txt" 
+      mode: 0755 
+  - name: join 
+    shell: /root/join.sh
+    when: not kubelet_conf.stat.exists
+

@@ -1,0 +1,34 @@
+---
+- name: Install essentials
+  apt:
+    name:
+      - net-tools
+      - ncdu
+      - vnstat
+      - tree
+      - htop
+      - zip
+      - git
+      - ufw
+      - jq
+      - bash-completion
+      - cpufrequtils
+      - host
+      - pv
+      - iotop
+      - liblz4-tool
+      - aria2 
+      - vim
+      - unattended-upgrades 
+      - ethtool
+      - sysstat
+      - unzip
+      - cmake
+      - libclang-dev
+      - curl 
+      - gnupg2 
+      - software-properties-common 
+      - apt-transport-https 
+      - ca-certificates
+    state: latest
+    update_cache: true

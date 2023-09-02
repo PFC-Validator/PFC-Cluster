@@ -1,0 +1,1 @@
+no-port-forwarding,no-agent-forwarding,no-X11-forwarding,command="echo 'Please login as the user \"xxx\" rather than the user \"ubuntu\".';echo;sleep 10;exit 142" ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBSyukNMbg2YUJCgnDtasCfG8qdO9h+tMh8Fhk6jY8uz sunbelt

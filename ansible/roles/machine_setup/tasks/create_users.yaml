@@ -1,0 +1,37 @@
+---
+- name: Create administrator user
+  user:
+    name: '{{ deployment_user }}'
+    comment: 'admin user'
+    shell: /bin/bash
+    append: true
+    groups: "adm,sudo"
+
+- name: Creates directory
+  file:
+    path: '/home/{{ deployment_user }}/.ssh/'
+    state: directory
+    owner: '{{ deployment_user }}'
+    group: '{{ deployment_user }}'
+    mode: '0700'
+  
+- name: Add deployment_user authorized key
+  copy:
+    src: authorized_keys
+    dest: /home/{{ deployment_user }}/.ssh/authorized_keys
+    owner: '{{ deployment_user }}'
+    group: '{{ deployment_user }}'
+    mode: '0600'
+  
+- name: Allow sudo for administrator
+  copy:
+    content: '{{ deployment_user }} ALL=(ALL) NOPASSWD: ALL'
+    dest: '/etc/sudoers.d/{{ deployment_user }}'
+    mode: '0600'
+
+- name: remove root login
+  copy:
+    src: sshd-config.conf
+    dest: /etc/ssh/sshd_config.d/sshd-config-PFC.conf
+    mode: '0440'
+    owner: root

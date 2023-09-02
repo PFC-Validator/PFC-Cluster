@@ -8,3 +8,6 @@
 /machine-init/config.yaml
 /kube-config
 *.tmp.yaml
+
+/ansible/machines/*.yaml
+/ansible/files

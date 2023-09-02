@@ -1,0 +1,21 @@
+all:   
+  vars:
+    ansible_ssh_user: xxx    
+    cluster_name: PFC-Cluster
+    endpoint: api.example.com
+    master1: c-ovh-xxx-0
+
+k8_master:
+  hosts:
+    c-lsw-nl-control:
+      ansible_host: c-ovh-xxx-0
+ 
+k8_control_plane:
+  hosts:
+    c-lsw-xxx-xxx:
+      ansible_host: c-xxx-xxx-xxx
+
+k8_worker:    
+  hosts:
+    w-ovh-fra-03:
+      ansible_host: w-ovh-xxx-00

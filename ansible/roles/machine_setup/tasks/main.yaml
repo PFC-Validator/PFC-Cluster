@@ -1,0 +1,23 @@
+---
+- name: Create users
+  import_tasks: create_users.yaml
+
+- name: Install essentials
+  import_tasks: install_essentials.yaml
+
+- name: Configure Machine
+  import_tasks: configure_machine.yaml
+
+- name: Create Aliases
+  import_tasks: create_aliases.yaml
+
+- name: Update machine
+  import_tasks: update_machine.yaml
+
+- name: OVH
+  import_tasks: ovh.yaml
+  when: inventory_hostname in groups['ovh']
+
+- name: HETZNER
+  import_tasks: hetzner.yaml
+  when: inventory_hostname in groups['hetzner']

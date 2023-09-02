@@ -1,0 +1,55 @@
+---
+- name: change hostname
+  hostname:
+    name: '{{ inventory_hostname }}'
+
+- name: Set governor as performance
+  template:
+    src: cpufrequtils.j2
+    dest: '/etc/default/cpufrequtils'
+    owner: 'root'
+    group: 'root'
+    mode: '0644'
+
+- name: start cpufrequtils service
+  systemd:
+    name: cpufrequtils
+    state: restarted
+    daemon_reload: yes
+    enabled: yes
+  changed_when: false
+
+- name: Unattended-upgrades
+  template:
+    src: unattended_upgrades.j2
+    dest: '/etc/apt/apt.conf.d/98-PFC-unattended-upgrades.conf'
+    owner: 'root'
+    group: 'root'
+    mode: '0644'
+
+- name: SysCTL
+  template:
+    src: sysctl.conf.j2
+    dest: '/etc/sysctl.d/98-PFC-sysctl.conf'
+    owner: 'root'
+    group: 'root'
+    mode: '0644'
+    
+- name: refresh sysctl
+  command: 'sudo /usr/sbin/sysctl -p /etc/sysctl.d/*.conf'
+  changed_when: false
+
+- name: configure search domain
+  become: yes
+  lineinfile:
+    path: /etc/systemd/resolved.conf
+    regexp: '^Domains='
+    line: 'Domains={{ domain_name }}'
+
+- name: refresh resolv
+  systemd: 
+    name: systemd-resolved
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
+  changed_when: false

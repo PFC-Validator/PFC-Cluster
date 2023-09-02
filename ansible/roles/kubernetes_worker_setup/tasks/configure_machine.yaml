@@ -1,0 +1,42 @@
+---
+- name: no swap
+  shell: |
+    swapoff -a
+  changed_when: false
+
+- name: no swap - fstab
+  replace:
+    path: /etc/fstab
+    regexp: '^([^#].*?\sswap\s+sw\s+.*)$'
+    replace: '# \1'
+
+- name: modules
+  template:
+    src: modules.containerd.j2
+    dest: '/etc/modules-load.d/containerd-PFC.conf'
+    owner: 'root'
+    group: 'root'
+    mode: '0644'
+
+- name: modprobe overlay
+  modprobe: 
+    name: overlay
+    state: present
+
+- name: modprobe br_netfilter
+  modprobe: 
+    name: br_netfilter
+    state: present
+
+- name: SySCTL
+  template:
+    src: sysctl.conf.j2
+    dest: '/etc/sysctl.d/99-PFC-kubernetes.conf'
+    owner: 'root'
+    group: 'root'
+    mode: '0644'
+
+- name: refresh sysctl
+  command: 'sudo /usr/sbin/sysctl --system'
+  changed_when: false
+   

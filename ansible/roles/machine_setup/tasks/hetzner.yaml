@@ -1,0 +1,6 @@
+---
+- name: HER SGdisk nvme0n1
+  command: "sgdisk -N=0 -s /dev/nvme0n1"
+- name: HER SGdisk nvme1n1
+  command: "sgdisk -N=0 -s /dev/nvme1n1"
+  
