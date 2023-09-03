@@ -49,4 +49,6 @@ still TBD how does one update the token every X days
 # commands that are useful
 `
 flux get kustomizations --watch
+
+flux get all -A --status-selector ready=false
 `
