@@ -5,4 +5,4 @@ resources:
 - rook-ceph.yaml
 - ingress.yaml
 - monitoring.yaml
-- tenants/mainnet/kustomization.yaml
+- tenants/mainnet
