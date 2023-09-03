@@ -1,13 +1,13 @@
-#    
+#
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: cosmos-harpoon
+  name: cosmos-cosmoshub
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./manifests/cosmos/harpoon
+  path: ./manifests/cosmos/cosmoshub
   prune: true
   targetNamespace: cosmos
   sourceRef:
@@ -16,16 +16,16 @@ spec:
   decryption:
     provider: sops
     secretRef:
-      name: sops-gpg
+      name: sops-gpg    
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: cosmos-pisco
+  name: cosmos-stride
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./manifests/cosmos/pisco
+  path: ./manifests/cosmos/stride
   prune: true
   targetNamespace: cosmos
   sourceRef:
