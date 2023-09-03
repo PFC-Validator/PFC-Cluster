@@ -2,12 +2,10 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: mainnet
-  namespace: cosmos-mainnet
+  name: cosmos-mainnet
+  namespace: flux-system
 spec:
   interval: 1m0s
   ref:
     branch: main
   url: ssh://git@github.com/PFC-Validator/PFC-Cluster-Private.git
- # secretRef:
- #   name: cosmos-mainnet
