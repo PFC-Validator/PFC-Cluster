@@ -1,0 +1,11 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: mainnet
+  namespace: cosmos-mainnet
+spec:
+  interval: 1m0s
+  ref:
+    branch: main
+  url: https://github.com/PFC-Validator/PFC-Cluster-Private.git

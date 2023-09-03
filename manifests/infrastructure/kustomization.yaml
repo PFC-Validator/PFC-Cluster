@@ -5,3 +5,4 @@ resources:
 - rook-ceph.yaml
 - ingress.yaml
 - monitoring.yaml
+- tenants/mainnet.yaml
