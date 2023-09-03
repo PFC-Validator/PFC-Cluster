@@ -1,3 +1,10 @@
+# 
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cosmos
+---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
@@ -5,9 +12,67 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./manifests/cosmos/
+  path: ./manifests/cosmos/cosmoshub
   prune: true
   targetNamespace: cosmos
   sourceRef:
     kind: GitRepository
     name: flux-system
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg        
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: cosmos-harpoon
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  path: ./manifests/cosmos/harpoon
+  prune: true
+  targetNamespace: cosmos
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: cosmos-pisco
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  path: ./manifests/cosmos/pisco
+  prune: true
+  targetNamespace: cosmos
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: cosmos-stride
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  path: ./manifests/cosmos/stride
+  prune: true
+  targetNamespace: cosmos
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
