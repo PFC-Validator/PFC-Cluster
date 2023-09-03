@@ -11,6 +11,8 @@ flux create tenant ${TENANT_NAME} \
 
 
 # this will generate a SSH deploy key that you manually need to add to the repo
+# (when you run without 'export')
+
 flux create source git ${TENANT_NAME} \
     --namespace=${TENANT_NS} \
     --url=${GITHUB_REPO} \
