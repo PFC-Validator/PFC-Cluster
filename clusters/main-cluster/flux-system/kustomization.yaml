@@ -5,3 +5,4 @@ resources:
 - gotk-sync.yaml
 - infrastructure.yaml
 - cosmos.yaml
+- tenants.yaml

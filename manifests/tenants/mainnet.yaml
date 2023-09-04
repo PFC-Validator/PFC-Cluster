@@ -1,0 +1,13 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: tenant-mainnet
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  path: ./manifests/tenants/mainnet
+  prune: true
+  targetNamespace: default
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
