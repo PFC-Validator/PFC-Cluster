@@ -6,3 +6,4 @@ resources:
 - flux-kustomize.yaml
 - mainnet-git.yaml
 - mainnet-tenant.yaml
+- gh-secret.yaml
