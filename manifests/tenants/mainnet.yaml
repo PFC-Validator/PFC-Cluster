@@ -7,7 +7,7 @@ spec:
   interval: 10m0s
   path: ./manifests/tenants/mainnet
   prune: true
-  targetNamespace: default
+  targetNamespace: cosmos-mainnet
   sourceRef:
     kind: GitRepository
     name: flux-system
