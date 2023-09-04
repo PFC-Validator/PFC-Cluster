@@ -7,3 +7,8 @@ resources:
 - mainnet-git.yaml
 - mainnet-tenant.yaml
 - gh-secret.yaml
+spec:
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
