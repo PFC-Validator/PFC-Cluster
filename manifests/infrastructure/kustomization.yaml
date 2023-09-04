@@ -6,3 +6,4 @@ resources:
 - rook-ceph.yaml
 - ingress.yaml
 - monitoring.yaml
+- private-repo.yaml
