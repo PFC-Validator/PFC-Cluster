@@ -30,3 +30,10 @@ flux create kustomization ${TENANT_NAME} \
 
 cd ./${TENANT_NAME}/ \
    && kustomize create --autodetect
+
+# TBD GPG key should be different than the other one
+gpg2 --export-secret-keys --armor $KUBERNETES_GPG_KEY |
+  kubectl create secret generic sops-mainnet-gpg \
+  --namespace=cosmos-mainnet \
+  --from-file=sops.asc=/dev/stdin
+  

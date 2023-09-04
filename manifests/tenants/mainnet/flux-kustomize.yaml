@@ -16,5 +16,4 @@ spec:
   decryption:
     provider: sops
     secretRef:
-      name: sops-gpg
-      namespace: flux-system
+      name: sops-mainnet-gpg
