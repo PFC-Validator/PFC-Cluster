@@ -3,7 +3,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: mainnet
+  name: cosmos-mainnet
   namespace: cosmos-mainnet
 spec:
   interval: 1m10s
@@ -16,7 +16,7 @@ spec:
 #apiVersion: source.toolkit.fluxcd.io/v1
 #kind: GitRepository
 #metadata:
-#  name: cosmos-mainnet
+#  name: mainnet
 #  namespace: cosmos-mainnet
 #spec:
 #  interval: 1m0s
