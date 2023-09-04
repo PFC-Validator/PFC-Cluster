@@ -3,7 +3,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: mainnet
+  name: cosmos-mainnet
   namespace: cosmos-mainnet
 spec:
   interval: 1m0s
