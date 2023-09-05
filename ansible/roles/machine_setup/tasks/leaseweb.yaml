@@ -1,0 +1,4 @@
+---
+- name: LSW SGdisk sda
+  command: "sgdisk -N=0 -s /dev/sda"
+  

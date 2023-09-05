@@ -21,3 +21,7 @@
 - name: HETZNER
   import_tasks: hetzner.yaml
   when: inventory_hostname in groups['hetzner']
+
+- name: LEASEWEB
+  import_tasks: leaseweb.yaml
+  when: inventory_hostname in groups['leaseweb']
