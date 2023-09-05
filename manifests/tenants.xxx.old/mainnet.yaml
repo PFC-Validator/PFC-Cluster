@@ -5,12 +5,12 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./manifests/tenants/mainnet
+  path: ./
   prune: true
   targetNamespace: cosmos-mainnet
   sourceRef:
     kind: GitRepository
-    name: flux-system
+    name: gh-private
   decryption:
     provider: sops
     secretRef:
