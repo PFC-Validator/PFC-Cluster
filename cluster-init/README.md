@@ -36,7 +36,7 @@ you may want to comment out the chains.yaml in [kustomization](/clusters/main-cl
 helpers for rook-ceph
 # manual tasks
 ```
-kubectl label nodes w-xxx-yyy-01 provider=xxx zone=yyy
+kubectl label nodes w-xxx-yyy-01 provider=xxx zone=xxx-yyy
 kubectl get nodes --show-labels
 ```
 we use provider/zone for affinity.
