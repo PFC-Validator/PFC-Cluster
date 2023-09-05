@@ -15,6 +15,27 @@ spec:
             labels:
                 app: harpoon-horcrux
         spec:
+            affinity:
+              # place the horcrux in the same zone as the sentry
+              podAffinity:
+                requiredDuringSchedulingIgnoredDuringExecution:
+                - labelSelector:
+                    matchExpressions:
+                    - key: app.kubernetes.io/name
+                      operator: In
+                      values:
+                      - harpoon
+                  topologyKey: "zone"
+              # don't put two horcruxs in the same zone
+              podAntiAffinity:
+                  requiredDuringSchedulingIgnoredDuringExecution:
+                  - labelSelector:
+                      matchExpressions:
+                      - key: app
+                        operator: In
+                        values:
+                        - harpoon-horcrux
+                    topologyKey: "zone"
             initContainers:
                 - name: init
                   image: busybox:1.28
