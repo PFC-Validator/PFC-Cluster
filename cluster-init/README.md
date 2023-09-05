@@ -64,3 +64,17 @@ this may help you recoving
 kubectl -n rook-ceph patch cephcluster rook-ceph --type merge -p '{"spec":{"cleanupPolicy":{"confirmation":"yes-really-destroy-data"}}}'
 ```
 or (rtfm)[https://rook.io/docs/rook/v1.11/Getting-Started/ceph-teardown/#removing-the-cluster-crd-finalizer] it.
+
+## remove a OSD
+kubectl cordon xxxx
+
+kubectl rook-ceph ceph osd tree
+kubectl rook-ceph ceph osd stop osd.11
+kubectl rook-ceph ceph osd out osd.11
+kubectl rook-ceph ceph osd down osd.11
+kubectl rook-ceph ceph -w
+-- this may take a while
+kubectl rook-ceph ceph auth del osd.11
+
+kubectl rook-ceph ceph osd crush rm osd.11
+kubectl rook-ceph ceph osd rm osd.11
