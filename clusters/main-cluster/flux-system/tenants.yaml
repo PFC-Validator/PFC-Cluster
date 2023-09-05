@@ -5,9 +5,9 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./manifests/tenants/
+  path: ./
   prune: true
  # targetNamespace: rook-ceph
   sourceRef:
     kind: GitRepository
-    name: flux-system
+    name: gh-private
