@@ -39,7 +39,7 @@ spec:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
               matchExpressions:
-              - key: app
+              - key: name
                 operator: In
                 values:
                 - harpoon
