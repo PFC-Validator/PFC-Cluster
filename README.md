@@ -38,13 +38,18 @@ this relies heavily on:
 
 
 # revision history
-3. ansible machine installs - current
+## Sep-23 - current
+* ansible machine installs 
+* added some monitoring (nothing cosmos specific)
+* adding 2nd repo 
 
-2. working ok, manual manual machine installs:
+## Aug-23
+working ok, manual manual machine installs:
     - didn't survive 40% machine failure at once
     - exposed kubeconfig
 
-1. mainly manual - result bricked by cilium
+## July-23
+mainly manual - result bricked by cilium
 
 
 # feel free to use
