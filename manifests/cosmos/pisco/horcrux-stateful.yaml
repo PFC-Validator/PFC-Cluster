@@ -15,6 +15,17 @@ spec:
             labels:
                 app: pisco-horcrux
         spec:
+            affinity:
+              # place the horcrux in the same zone as the sentry
+              podAffinity:
+                requiredDuringSchedulingIgnoredDuringExecution:
+                - labelSelector:
+                    matchExpressions:
+                    - key: app.kubernetes.io/name
+                      operator: In
+                      values:
+                      - pisco
+                  topologyKey: "zone"
             initContainers:
                 - name: init
                   image: busybox:1.28
