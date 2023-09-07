@@ -3,8 +3,8 @@ ideally only needs to be run once.
 
 we use 
 * cilium
-* flux
 * cosmos-operator
+* flux
 * krew
 
 ## cilium
@@ -15,8 +15,13 @@ This just installs the basic setup. (cilium)[./01-cilium.sh]
 * restrict IPs
 * don't brick the entire cluster
 
+## cosmos operator
+(might need to install this before flux)
+you'll need to download another repo and run make on it. see (cosmos-operator)[../02-cosmos-operator].
+you may want to comment out the chains.yaml in [kustomization](/clusters/main-cluster/flux-system/kustomization.yaml) before installing flux. (aren't you glad you read ahead?)
+
 ## flux
-see (detailed readme)[./02-flux.sh]
+see (detailed readme)[./03-flux.sh]
 you need a github token for this to work. i have them in (token.sh)[../token.sh.sample] 
 
 * installs flux locally
@@ -27,10 +32,6 @@ you need a github token for this to work. i have them in (token.sh)[../token.sh.
 brew install kustomize
 ```
 
-## cosmos operator
-(might need to install this before flux)
-you'll need to download another repo and run make on it. see (cosmos-operator)[../03-cosmos-operator].
-you may want to comment out the chains.yaml in [kustomization](/clusters/main-cluster/flux-system/kustomization.yaml) before installing flux. (aren't you glad you read ahead?)
 
 ## krew
 helpers for rook-ceph

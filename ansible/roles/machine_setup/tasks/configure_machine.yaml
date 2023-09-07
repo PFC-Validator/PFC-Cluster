@@ -40,7 +40,7 @@
   changed_when: false
 
 - name: configure search domain
-  become: yes
+  become: true
   lineinfile:
     path: /etc/systemd/resolved.conf
     regexp: '^Domains='
