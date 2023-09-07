@@ -24,7 +24,7 @@ spec:
     genesisURL: https://snapshots.polkachu.com/testnet-genesis/kujira/genesis.json
     network: testnet
     skipInvariants: true
-    snapshotURL: "https://snapshots.polkachu.com/testnet-snapshots/kujira/kujira_17931205.tar.lz4"
+    snapshotURL: "https://snapshots.polkachu.com/testnet-snapshots/kujira/kujira_18149998.tar.lz4"
   podTemplate:
     probes:
       strategy: None
