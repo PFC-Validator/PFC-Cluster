@@ -6,7 +6,13 @@ we use
 * cosmos-operator
 * flux
 * krew
+## Lablel your nodes!
+this cluster is using 'zone' for affinity.
 
+for example. 
+```
+kubectl label node w-lsw-nl-01 provider=lsw zone=lsw-nl
+```
 ## cilium
 This just installs the basic setup. (cilium)[./01-cilium.sh]
 
