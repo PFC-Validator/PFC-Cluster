@@ -24,7 +24,7 @@ spec:
     genesisURL: "https://snapshots.polkachu.com/testnet-genesis/terra/genesis.json"
     network: testnet
     skipInvariants: true
-    snapshotURL: "https://snapshots.polkachu.com/testnet-snapshots/terra/terra_7416930.tar.lz4"
+    snapshotURL: "https://snapshots.polkachu.com/testnet-snapshots/terra/terra_7433937.tar.lz4"
   podTemplate:
     probes:
       strategy: None
