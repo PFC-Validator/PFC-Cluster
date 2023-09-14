@@ -20,7 +20,7 @@ spec:
     snapshotURL: "https://snapshots.polkachu.com/snapshots/cosmos/cosmos_16982039.tar.lz4"
     
   podTemplate:
-    image: ghcr.io/strangelove-ventures/heighliner/gaia:v11.0.0
+    image: ghcr.io/strangelove-ventures/heighliner/gaia:v12.0.0
     resources:
       requests:
         memory: 16Gi
