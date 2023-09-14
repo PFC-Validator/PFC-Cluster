@@ -32,5 +32,5 @@ spec:
         table_manager:
           retention_deletes_enabled: true
           retention_period: 12h
-    grafana:
-      enabled: true
+#    grafana:
+#      enabled: false
