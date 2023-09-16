@@ -3,6 +3,9 @@ kind: CosmosFullNode
 metadata:
   name: stride
   namespace: cosmos
+  annotations:
+    prometheus.io/port: "prometheus"
+    prometheus.io/scrape: "true"
 spec:
   chain:
     app:
