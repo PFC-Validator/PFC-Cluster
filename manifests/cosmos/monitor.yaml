@@ -30,7 +30,7 @@ spec:
     targetPort: prometheus
     protocol: TCP
   selector: 
-      app: horcrux 
+      kind-of: horcrux 
 ---      
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
