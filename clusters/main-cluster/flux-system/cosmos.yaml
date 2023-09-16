@@ -4,6 +4,20 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: cosmos
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: cosmos
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  path: ./manifests/cosmos
+  prune: true
+  targetNamespace: cosmos
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
 #---
 #apiVersion: kustomize.toolkit.fluxcd.io/v1
 #kind: Kustomization

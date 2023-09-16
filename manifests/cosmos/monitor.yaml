@@ -1,0 +1,73 @@
+###
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cosmos-metrics 
+  namespace: cosmos
+  labels:
+    app: cosmos-metrics 
+spec:
+  ports:
+  - name: prometheus # expose metrics port
+    port: 26660
+    targetPort: prometheus
+    protocol: TCP
+  selector: 
+      app.kubernetes.io/component: CosmosFullNode
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cosmos-horcrux-metrics 
+  namespace: cosmos
+  labels:
+    app: cosmos-horcrux-metrics 
+spec:
+  ports:
+  - name: prometheus # expose metrics port
+    port: 6001
+    targetPort: prometheus
+    protocol: TCP
+  selector: 
+      app: horcrux 
+---      
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: cosmos-metrics-servicemonitor
+  # Change this to the namespace the Prometheus instance is running in
+  namespace: monitoring
+  labels:
+    app: cosmos-metrics-runner
+    release: kube-prometheus-stack
+spec:
+  selector:
+    matchLabels:
+      app: cosmos-metrics 
+  namespaceSelector:
+    matchNames:
+      - cosmos 
+  endpoints:
+  - port: prometheus
+    interval: 15s
+---      
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: cosmos-horcrux-metrics-servicemonitor
+  # Change this to the namespace the Prometheus instance is running in
+  namespace: monitoring
+  labels:
+    app: cosmos-horcrux-metrics-runner
+    release: kube-prometheus-stack
+spec:
+  selector:
+    matchLabels:
+      app: cosmos-horcrux-metrics 
+  namespaceSelector:
+    matchNames:
+      - cosmos 
+  endpoints:
+  - port: prometheus
+    interval: 15s    

@@ -4,6 +4,7 @@ kind: StatefulSet
 metadata:
     name: pisco-horcrux
     namespace: cosmos
+    app: horcrux
 spec:
     serviceName: pisco-horcrux
     replicas: 3
