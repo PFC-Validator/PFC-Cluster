@@ -1,0 +1,4 @@
+---
+- name: configure machine
+  import_tasks: update.yaml
+  

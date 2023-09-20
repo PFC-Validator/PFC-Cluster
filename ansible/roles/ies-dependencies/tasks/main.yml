@@ -1,0 +1,9 @@
+---
+- name: dependencies have been installed already
+  stat:
+    path: /root/ies-dependencies_installed.txt
+  register: ies_dependencies
+
+- name: configure machine
+  import_tasks: install.yaml
+  when: not ies_dependencies.stat.exists

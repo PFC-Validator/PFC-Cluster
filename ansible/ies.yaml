@@ -1,0 +1,13 @@
+---
+- hosts: ies
+  gather_facts: no
+  become: true
+  roles:
+    - machine_post_setup
+
+- hosts: ies
+  gather_facts: no
+  become: true
+  roles:
+    - ies-dependencies
+    - ies 

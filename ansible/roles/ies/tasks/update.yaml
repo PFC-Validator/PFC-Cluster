@@ -1,0 +1,29 @@
+---
+- name: apt update 
+  apt: 
+    update_cache: true 
+
+- name:  freshen git
+  shell: |
+    cd /opt/injective-chain-releases/docker
+    git pull
+    cp .env.testnet.example .env 
+- name: provision the network 
+  shell: | 
+    cd /opt/injective-chain-releases/docker
+    docker compose -f docker-compose.yaml -f addons/docker-compose.provisioner.yaml down provisioner    
+    docker compose -f docker-compose.yaml -f addons/docker-compose.provisioner.yaml up -d provisioner
+
+- name: wait for it to finish
+  shell: docker container inspect -f \'\{\{.State.Running\}\}\'  injective-provisioner
+  register: result
+  until:  result.stdout.find("true") == -1
+  # 144 x 5 minutes =12 hours
+  retries: 144     
+  delay: 300
+
+# there is an issue if you restarted the provisioner. the old logs are still present
+- name: check if it finished correctly
+  shell: docker logs injective-provisioner 2>/dev/null | grep "Provisioning Finished. Cleaning..."
+  register: result
+  failed_when: result.stdout.find("Provisioning Finished") == -1

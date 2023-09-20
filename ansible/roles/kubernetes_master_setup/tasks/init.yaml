@@ -48,7 +48,7 @@
     flat: True
 
 - shell: netstat -anp|grep {{item}}
-  ignore_errors: yes
+  ignore_errors: true
   vars:
       portcheck:
           - 6443

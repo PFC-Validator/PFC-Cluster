@@ -1,0 +1,82 @@
+---
+- name: reboot and wait for reboot to complete
+  reboot:
+
+- name: disable SWAP
+  shell: |
+    swapoff -a
+
+- name: disable SWAP in fstab
+  replace:
+    path: /etc/fstab
+    regexp: '^([^#].*?\sswap\s+sw\s+.*)$'
+    replace: '# \1'
+
+
+- name: install APT Transport HTTPS
+  apt:
+    pkg: 
+      - apt-transport-https
+      - ca-certificates
+      - software-properties-common
+      - python3-pip
+      - virtualenv
+      - python3-setuptools
+      - gnupg
+      - curl
+    state: latest
+    update_cache: true
+
+- name: add Docker apt-key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: add Docker's APT repository
+  apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable"
+    filename: "docker-jammy"
+
+- name: install docker-ce
+  apt:
+    pkg: 
+    - docker-ce
+    - docker-ce-cli
+    - docker-compose-plugin
+    - containerd.io 
+    - docker-buildx-plugin
+    state: latest
+    update_cache: true
+ 
+- name: Install Docker Module for Python
+  pip:
+   name: docker
+
+- name: add Mongo apt-key
+  apt_key:
+    url: https://pgp.mongodb.com/server-7.0.asc
+    state: present
+
+- name: add mongo's APT repository
+  apt_repository:    
+    repo: "deb [arch=amd64] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse"
+    filename: "mongo-jammy"
+
+- name: install mongo-tools
+  apt:
+    name: mongodb-org-tools
+    state: latest
+    update_cache: true
+ 
+- name: get injective-releases
+  shell: |
+    cd /opt 
+    git clone https://github.com/PFC-developer/injective-chain-releases
+  args:
+    creates: /opt/injective-chain-releases/docker
+
+- name: set last-updated
+  shell: date > /root/ies-dependencies_installed.txt
+
+- name: reboot and wait for reboot to complete
+  reboot:
