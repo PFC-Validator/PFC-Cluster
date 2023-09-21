@@ -14,7 +14,7 @@ spec:
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: ssd-block-store
+  name: sentry-block-store
   annotations:
     storageclass.kubernetes.io/is-default-class: "true"
 provisioner: rook-ceph.rbd.csi.ceph.com
@@ -22,7 +22,7 @@ parameters:
   # clusterID is the namespace where the rook cluster is running
   clusterID: rook-ceph
   # Ceph pool into which the RBD image shall be created
-  pool: ssd-block-store
+  pool: sentry-block-store
 
   imageFormat: "3"
   # For more information about these features see: https://docs.ceph.com/en/latest/rbd/rbd-config-ref/#image-features

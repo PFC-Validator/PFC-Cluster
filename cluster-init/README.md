@@ -44,6 +44,9 @@ helpers for rook-ceph
 # manual tasks
 ```
 kubectl label nodes w-xxx-yyy-01 provider=xxx zone=xxx-yyy
+kubectl label node mynode topology.kubernetes.io/region=xxx
+kubectl label node mynode topology.kubernetes.io/zone=xxx-yyy
+
 kubectl get nodes --show-labels
 ```
 we use provider/zone for affinity.
