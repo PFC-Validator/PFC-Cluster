@@ -1,3 +1,10 @@
+```
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+```
+I had to modify and add
+  - --kubelet-insecure-tls
+  and remove 'InternalIP' to the metrics server.
+
 # shouldn't be needed
 ```
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
