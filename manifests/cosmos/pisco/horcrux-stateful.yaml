@@ -117,7 +117,7 @@ spec:
         name: signer
       spec:
         accessModes: [ "ReadWriteOnce" ]
-        storageClassName: ssd-impermanent-block-store
+        storageClassName: ssd-persistent-block-store
         resources:
           requests:
             storage: 10Mi                              

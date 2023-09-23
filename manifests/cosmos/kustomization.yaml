@@ -5,7 +5,7 @@ resources:
 - namespace.yaml 
 - stride.yaml
 - cosmoshub.yaml
-#- pisco.yaml 
+- pisco.yaml 
 
 #---
 #apiVersion: kustomize.toolkit.fluxcd.io/v1
