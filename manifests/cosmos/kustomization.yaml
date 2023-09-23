@@ -2,6 +2,24 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 - monitor.yaml
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: cosmos-stride
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  path: stride
+  prune: true
+  targetNamespace: cosmos
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
 
 #---
 #apiVersion: kustomize.toolkit.fluxcd.io/v1
@@ -48,24 +66,6 @@ resources:
 #spec:
 #  interval: 10m0s
 #  path: ./manifests/cosmos/pisco
-#  prune: true
-#  targetNamespace: cosmos
-#  sourceRef:
-#    kind: GitRepository
-#    name: flux-system
-#  decryption:
-#    provider: sops
-#    secretRef:
-#      name: sops-gpg
-#---
-#apiVersion: kustomize.toolkit.fluxcd.io/v1
-#kind: Kustomization
-#metadata:
-#  name: cosmos-stride
-#  namespace: flux-system
-#spec:
-#  interval: 10m0s
-#  path: ./manifests/cosmos/stride
 #  prune: true
 #  targetNamespace: cosmos
 #  sourceRef:
