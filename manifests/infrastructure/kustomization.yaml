@@ -8,3 +8,4 @@ resources:
 - ingress.yaml
 - monitoring.yaml
 - private-repo.yaml
+- storage/
