@@ -24,6 +24,16 @@ spec:
     resources:
       requests:
         memory: 16Gi
+    affinity:
+      podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app.kubernetes.io/name
+                operator: In
+                values:
+                - cosmoshub
+            topologyKey: "zone"            
   replicas: 2 # TODO change to 1 to use less resources
   volumeClaimTemplate:
     resources:
