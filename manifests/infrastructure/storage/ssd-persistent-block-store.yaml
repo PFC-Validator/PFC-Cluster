@@ -6,3 +6,4 @@ parameters:
   storage: "lvm"
   volgroup: "VG-topolvm"
 provisioner: local.csi.openebs.io
+volumeBindingMode: WaitForFirstConsumer
