@@ -50,6 +50,11 @@ kubectl label node mynode topology.kubernetes.io/zone=xxx-yyy
 kubectl get nodes --show-labels
 ```
 we use provider/zone for affinity.
+# topolvm
+still a WIP (waiting for it to support 1.28). 
+we are using localstorage for now
+see (topolvm notes)[./06-topoLVM.md]
+
 
 # rook-ceph issues
 # check if the disks are found
