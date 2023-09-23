@@ -17,7 +17,7 @@ spec:
     genesisURL: https://snapshots.polkachu.com/genesis/cosmos/genesis.json
     network: mainnet
     skipInvariants: true
-    snapshotURL: "https://snapshots.polkachu.com/snapshots/cosmos/cosmos_16995705.tar.lz4"
+    snapshotURL: https://snapshots.polkachu.com/snapshots/cosmos/cosmos_17122551.tar.lz4
     
   podTemplate:
     image: ghcr.io/strangelove-ventures/heighliner/gaia:v12.0.0
@@ -30,7 +30,7 @@ spec:
       requests:
         storage: 200Gi
     accessModes: [ "ReadWriteOnce" ]        
-    storageClassName: ssd-block-store
+    storageClassName: ssd-persistent-block-store
   service:
     p2pTemplate:
       type: NodePort

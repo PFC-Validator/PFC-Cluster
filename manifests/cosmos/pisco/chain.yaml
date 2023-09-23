@@ -24,7 +24,7 @@ spec:
     genesisURL: "https://snapshots.polkachu.com/testnet-genesis/terra/genesis.json"
     network: testnet
     skipInvariants: true
-    snapshotURL: "https://snapshots.polkachu.com/testnet-snapshots/terra/terra_7433937.tar.lz4"
+    snapshotURL: https://snapshots.polkachu.com/testnet-snapshots/terra/terra_7563556.tar.lz4
   podTemplate:
     probes:
       strategy: None
@@ -48,7 +48,7 @@ spec:
       requests:
         storage: 200Gi
     accessModes: [ "ReadWriteOnce" ]
-    storageClassName: ssd-block-store
+    storageClassName: ssd-persistent-block-store
   service:
     p2pTemplate:
       type: NodePort
