@@ -1,13 +1,12 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: monitoring
+  name: cosmos-operator
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./manifests/infrastructure/monitoring
+  path: ./manifests/infrastructure/cosmos-operator/default
   prune: true
-  targetNamespace: monitoring
   sourceRef:
     kind: GitRepository
     name: flux-system

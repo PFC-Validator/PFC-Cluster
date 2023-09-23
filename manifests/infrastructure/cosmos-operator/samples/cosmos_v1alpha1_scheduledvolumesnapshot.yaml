@@ -1,0 +1,14 @@
+apiVersion: cosmos.strange.love/v1alpha1
+kind: ScheduledVolumeSnapshot
+metadata:
+  name: scheduledvolumesnapshot-sample
+spec:
+  # Required
+  fullNodeRef: # must be a CosmosFullNode
+    namespace: default
+    name: cosmoshub
+  schedule: "0 * * * *" # hourly
+  volumeSnapshotClassName: cosmos-snapshot
+
+  # Optional
+  minAvailable: 2 # optional

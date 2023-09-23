@@ -1,0 +1,33 @@
+apiVersion: cosmos.strange.love/v1alpha1
+kind: StatefulJob
+metadata:
+  name: statefuljob-sample
+spec:
+  # optional
+  interval: 24h
+  # required
+  selector:
+    target: value
+  # optional
+  jobTemplate:
+    activeDeadlineSeconds: 3600
+    backoffLimit: 1
+    ttlSecondsAfterFinished: 30
+  # required
+  podTemplate:
+    spec:
+      containers:
+      - name: test
+        image: busybox:stable
+        command:
+          - ls
+        args:
+          - "/home/operator/cosmos"
+        volumeMounts:
+          - mountPath: /home/operator/cosmos
+            name: snapshot # StatefulJob always injects volume "snapshot" into pod spec.
+  # required
+  volumeClaimTemplate:
+    storageClassName: premium-rwo
+    accessModes:
+      - ReadWriteOnce

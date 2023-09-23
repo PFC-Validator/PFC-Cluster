@@ -1,0 +1,156 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  - persistentvolumeclaims
+  - pods
+  - services
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - events
+  verbs:
+  - create
+  - patch
+  - update
+- apiGroups:
+  - ""
+  resources:
+  - persistentvolumeclaims
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - secrets
+  verbs:
+  - create
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - batch
+  resources:
+  - jobs
+  verbs:
+  - create
+  - get
+  - list
+  - watch
+- apiGroups:
+  - cosmos.strange.love
+  resources:
+  - cosmosfullnodes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - cosmos.strange.love
+  resources:
+  - cosmosfullnodes/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - cosmos.strange.love
+  resources:
+  - cosmosfullnodes/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - cosmos.strange.love
+  resources:
+  - scheduledvolumesnapshots
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - cosmos.strange.love
+  resources:
+  - scheduledvolumesnapshots/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - cosmos.strange.love
+  resources:
+  - scheduledvolumesnapshots/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - cosmos.strange.love
+  resources:
+  - statefuljobs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - cosmos.strange.love
+  resources:
+  - statefuljobs/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - cosmos.strange.love
+  resources:
+  - statefuljobs/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - snapshot.storage.k8s.io
+  resources:
+  - volumesnapshots
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - watch

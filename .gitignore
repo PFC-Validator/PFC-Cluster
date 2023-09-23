@@ -14,3 +14,4 @@
 
 /cluster-init/env.sh
 /ansible/temp.yaml
+.DS_Store
