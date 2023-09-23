@@ -4,7 +4,7 @@ resources:
 - monitor.yaml
 - namespace.yaml 
 - stride.yaml
-- cosmoshub.yaml
+#- cosmoshub.yaml
 #- pisco.yaml 
 
 #---
