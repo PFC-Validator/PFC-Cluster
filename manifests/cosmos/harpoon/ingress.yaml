@@ -32,3 +32,58 @@ spec:
               number: 26657
         path: /
         pathType: Prefix
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+    external-dns.alpha.kubernetes.io/hostname: grpc.harpoon.yieldpay.finance
+    cert-manager.io/cluster-issuer: letsencrypt-production
+  name: harpoon-grpc
+  namespace: cosmos
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: grpc.harpoon.yieldpay.finance
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: harpoon-rpc
+            port:
+              number: 9090
+  tls:
+  - hosts:
+    - grpc.harpoon.yieldpay.finance
+    secretName: harpoon-grpc-tls-secret
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: api.harpoon.yieldpay.finance
+    nginx.ingress.kubernetes.io/enable-cors: "true"    
+    cert-manager.io/cluster-issuer: letsencrypt-production
+  name: harpoon-api
+  namespace: cosmos
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: api.harpoon.yieldpay.finance
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: harpoon-rpc
+            port:
+              number: 1317
+  tls:
+  - hosts:
+    - api.harpoon.yieldpay.finance
+    secretName: harpoon-cosmos-api-tls-secret    

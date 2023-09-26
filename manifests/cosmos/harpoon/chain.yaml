@@ -12,19 +12,20 @@ spec:
         index-events = ["tx.hash", "tx.height"]
         [rosetta]
         enable = false
-
+        [wasm]
+        query-contract-gas-limit = "10000000"
+        query-gas-limit = "10000000"
     binary: kujirad
     chainID: harpoon-4
     config:
       seeds: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@testnet-seeds.polkachu.com:11856"
-      peers: "99f2227bda41d63bbb5f2d8d16071a3494602724@190.2.142.46:26656,0c899c47a1f0726a7edcc4a40d1681ffaecbcf3a@65.108.225.158:11856,1b99038e9116d8f0aca5b8ec3355ef5b2e34aa98@142.132.203.60:26656,34df42305ad1db935ca6e177f36d3ed89b69bdcb@5.9.145.125:15610,eb9742d81b436b95e324816794229a9efdaf8ea8@195.201.146.164:26656,1da94e6a3a718e243de9f6f7afce9563675a84fc@107.181.234.234:20656,a7bab0f25d638f913f558fe9be16718b07cfccda@65.108.72.175:29655,66c551ebcb68fe343c7e2720593dc47426813a68@93.189.30.104:26656,3b559791de3da2137b802fc33884b3817781532f@65.108.234.126:14656,b53203020aed2505849f444239150faa66d9c883@65.108.192.123:24656"
       overrides: |-
         [tx_index]
         indexer = "kv"
     genesisURL: https://snapshots.polkachu.com/testnet-genesis/kujira/genesis.json
     network: testnet
     skipInvariants: true
-    snapshotURL: "https://snapshots.polkachu.com/testnet-snapshots/kujira/kujira_18149998.tar.lz4"
+    snapshotURL: https://snapshots.polkachu.com/testnet-snapshots/kujira/kujira_18981069.tar.lz4
   podTemplate:
     probes:
       strategy: None
