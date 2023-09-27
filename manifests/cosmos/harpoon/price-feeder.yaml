@@ -1,0 +1,74 @@
+###
+--- 
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name:  harpoon-price-feeder-state
+  namespace: cosmos
+spec:
+  storageClassName: ssd-persistent-block-store
+  capacity:
+    storage: 10Mi
+  accessModes:
+    - ReadWriteOnce
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: harpoon-price-feeder-state
+  namespace: cosmos
+spec:
+  storageClassName: ssd-persistent-block-store
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Mi
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name:  harpoon-price-feeder
+  namespace: cosmos
+  labels:
+    name: harpoon-price-feeder
+spec:
+  volumes: 
+    - name: harpoon-price-feeder-state
+      persistentVolumeClaim:
+        claimName: harpoon-price-feeder-state
+
+  containers:
+  - name: harpoon-price-feeder
+    image: ghcr.io/pfc-developer/kujira-price-feeder:v0.6.2
+    resources:
+      limits:
+        memory: "16Gi"
+        cpu: "500m"
+    env:
+      - name: ADDRESS
+        valueFrom:
+          secretKeyRef: 
+            name: harpoon-price-feeder-secrets
+            key: ADDRESS
+      - name: VALIDATOR
+        valueFrom:
+          secretKeyRef: 
+            name: harpoon-price-feeder-secrets
+            key: VALIDATOR
+      - name: APISERVER
+        value: htttp://harpoon-0.harpoon:1317
+      - name: RPCSERVER
+        value: htttp://harpoon-0.harpoon:26657
+      - name: GRPCSERVER
+        value: harpoon-0.harpoon:9090        
+      - name: CONFIGFILE
+        value: https://raw.githubusercontent.com/PFC-Validator/PFC-Cluster/main/external-docker/kujira-price-feeder/harpoon.toml 
+      - name: SEEDPHRASE
+        valueFrom:
+          secretKeyRef: 
+            name: harpoon-price-feeder-secrets
+            key: SEEDPHRASE
+    volumeMounts:
+      - mountPath: /state
+        name: harpoon-price-feeder-state

@@ -11,3 +11,5 @@ resources:
 - headless-service.yaml
 - headless-service-horcrux.yaml
 - horcrux-stateful.yaml
+- price-feeder-secrets.yaml
+- price-feeder.yaml
