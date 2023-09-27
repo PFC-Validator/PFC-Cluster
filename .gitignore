@@ -15,3 +15,5 @@
 /cluster-init/env.sh
 /ansible/temp.yaml
 .DS_Store
+/external-docker/kujira-price-feeder/run.sh
+/external-docker/kujira-price-feeder/test.sh
