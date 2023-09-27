@@ -66,7 +66,7 @@ providers = ["binance", "bitget", "bkex", "bybit", "crypto", "gate", "hitbtc", "
 base = "KUJI"
 quote = "USDT"
 providers = ["mexc"]
-derivative = "tvwap"
+derivative = "twap"
 derivative_period = "30m"
 
 [[currency_pairs]]
@@ -103,14 +103,14 @@ providers = ["binance", "bitget", "bybit", "crypto", "kucoin", "lbank", "mexc", 
 base = "STATOM"
 quote = "USD"
 providers = ["osmosis"]
-derivative = "tvwap"
+derivative = "twap"
 derivative_period = "30m"
 
 [[currency_pairs]]
 base = "STOSMO"
 quote = "USD"
 providers = ["osmosis"]
-derivative = "tvwap"
+derivative = "twap"
 derivative_period = "30m"
 
 [[currency_pairs]]
