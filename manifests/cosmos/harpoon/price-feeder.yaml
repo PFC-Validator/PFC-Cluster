@@ -27,7 +27,7 @@ metadata:
       requiredDuringSchedulingIgnoredDuringExecution:
       - labelSelector:
           matchExpressions:
-          - key: name
+          - key:  app.kubernetes.io/instance
             operator: In
             values:
             - harpoon-0
