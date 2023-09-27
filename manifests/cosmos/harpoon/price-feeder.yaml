@@ -25,10 +25,18 @@ spec:
     - name: harpoon-price-feeder-state
       persistentVolumeClaim:
         claimName: harpoon-price-feeder-state
+  initContainers:
+  - name: fix-ownership
+    image: busybox:latest
+    command: ["sh","-c", "mkdir -p /state && chown -R 1137:1137 /state && ls -lR /state"]
 
+    volumeMounts:
+    - name: harpoon-price-feeder-state
+      mountPath: /state
   containers:
   - name: harpoon-price-feeder
     image: ghcr.io/pfc-developer/kujira-price-feeder:v0.6.2
+      
     resources:
       limits:
         memory: "16Gi"
