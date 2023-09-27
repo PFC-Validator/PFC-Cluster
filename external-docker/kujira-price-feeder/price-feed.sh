@@ -23,12 +23,13 @@ echo VALIDATOR=$VALIDATOR
 echo SEEDPHRASE=XXXXX
 
 if [ "$CONFIGFILE" != "${CONFIGFILE#http://}" ] ; then
-    curl -s -LO /home/user/config.original $CONFIGFILE
-elif [ "$CONFIGFILE" != "${CONFIGFILE#http://}" ]  ;then
-    curl -s -LO /home/user/config.original $CONFIGFILE
+    curl -s -L $CONFIGFILE -o /home/user/config.original
+elif [ "$CONFIGFILE" != "${CONFIGFILE#https://}" ]  ;then
+    curl  -L $CONFIGFILE -o /home/user/config.original
 else
     cp $CONFIGFILE /home/user/config.original
 fi
+
 
 sed -e 's#\$API#'"${APISERVER}"'#g' /home/user/config.original > /home/user/config.toml
 sed -i -e "s#\$RPC#${RPCSERVER}#g;"  /home/user/config.toml
