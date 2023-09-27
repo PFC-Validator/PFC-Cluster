@@ -20,7 +20,18 @@ metadata:
   namespace: cosmos
   labels:
     name: harpoon-price-feeder
-spec:
+  spec:
+  affinity:
+  # place the horcrux in the same zone as the sentry
+    podAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+          - key: name
+            operator: In
+            values:
+            - harpoon-0
+      topologyKey: "zone"            
   volumes: 
     - name: harpoon-price-feeder-state
       persistentVolumeClaim:
