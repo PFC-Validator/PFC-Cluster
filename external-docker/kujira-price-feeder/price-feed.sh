@@ -45,5 +45,7 @@ echo $SEEDPHRASE > /home/user/makekey
 echo purple123 >> /home/user/makekey
 echo purple123 >> /home/user/makekey
 cat /home/user/makekey | kujirad keys add price-feed --recover --keyring-backend file
+echo "available keys"
 echo purple123 | kujirad keys list
+echo "starting feeder"
 echo 'purple123' | /bin/price-feeder config.toml
