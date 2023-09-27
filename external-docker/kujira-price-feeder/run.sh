@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-docker rm foo
-docker run -it --name foo -v ./test:/config \
+docker kill kujira-price-feeder
+docker rm  kujira-price-feeder
+docker run -d --name kujira-price-feeder \
     -e ADDRESS=kujira.... \
     -e VALIDATOR=kujiravaloper1670dvuv348eynr9lsmdrhqu3g7vpmzx9ugf8fk \
     -e APISERVER=https://api.kujira.money \

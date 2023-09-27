@@ -65,7 +65,8 @@ FROM scratch
 WORKDIR /bin
 
 # Label should match your github repo
-LABEL org.opencontainers.image.source="https://github.com/PFC-Developer/kujirad:${VERSION}"
+LABEL org.opencontainers.image.source="https://github.com/PFC-Validator/PFC-Cluster/external-docker/kujira-price-feeder"
+LABEL org.opencontainers.image.description="Kujira Price Feeder"
 
 # Installs all binaries built with go.
 COPY --from=build-env /go/bin/kujirad /bin
@@ -149,6 +150,8 @@ ENV RPCSERVER=NONE
 ENV GRPCSERVER=NONE
 ENV ADDRESS=kuji...
 ENV VALIDATOR=kujivaloper...
-ENV CONFIGFILE=file://none 
+ENV CONFIGFILE=file://none
+EXPOSE 8171
+
 VOLUME [ "/state","/config" ]
 CMD ["/home/user/price-feed.sh"]

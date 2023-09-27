@@ -9,7 +9,7 @@ provider_timeout = "500ms"
 history_db = "/state/feeder.db_v2"
 
 [server]
-listen_addr = "0.0.0.0:8173"
+listen_addr = "0.0.0.0:8171"
 read_timeout = "20s"
 verbose_cors = true
 write_timeout = "20s"
