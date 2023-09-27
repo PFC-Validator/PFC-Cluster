@@ -1,4 +1,9 @@
 # sourced from polkachu - https://raw.githubusercontent.com/polkachu/cosmos-validators/main/roles/support_price_feeder/templates/sei/testnet.toml.j2
+gas_adjustment = 1.7
+gas_prices = "0.00125ukuji"
+enable_server = true
+enable_voter = true
+provider_timeout = "500ms"
 
 history_db = "/state/feeder.db_v2"
 
