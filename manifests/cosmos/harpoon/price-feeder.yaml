@@ -32,50 +32,50 @@ metadata:
             values:
             - harpoon-0
       topologyKey: "zone"            
-  volumes: 
-    - name: harpoon-price-feeder-state
-      persistentVolumeClaim:
-        claimName: harpoon-price-feeder-state
-  initContainers:
-  - name: fix-ownership
-    image: busybox:latest
-    command: ["sh","-c", "mkdir -p /state && chown -R 1137:1137 /state && ls -lR /state"]
+    volumes: 
+      - name: harpoon-price-feeder-state
+        persistentVolumeClaim:
+          claimName: harpoon-price-feeder-state
+    initContainers:
+    - name: fix-ownership
+      image: busybox:latest
+      command: ["sh","-c", "mkdir -p /state && chown -R 1137:1137 /state && ls -lR /state"]
 
-    volumeMounts:
-    - name: harpoon-price-feeder-state
-      mountPath: /state
-  containers:
-  - name: harpoon-price-feeder
-    image: ghcr.io/pfc-developer/kujira-price-feeder:v0.6.2
-      
-    resources:
-      limits:
-        memory: "16Gi"
-        cpu: "500m"
-    env:
-      - name: ADDRESS
-        valueFrom:
-          secretKeyRef: 
-            name: harpoon-price-feeder-secrets
-            key: ADDRESS
-      - name: VALIDATOR
-        valueFrom:
-          secretKeyRef: 
-            name: harpoon-price-feeder-secrets
-            key: VALIDATOR
-      - name: APISERVER
-        value: http://harpoon-0.harpoon:1317
-      - name: RPCSERVER
-        value: http://harpoon-0.harpoon:26657
-      - name: GRPCSERVER
-        value: harpoon-0.harpoon:9090        
-      - name: CONFIGFILE
-        value: https://raw.githubusercontent.com/PFC-Validator/PFC-Cluster/main/external-docker/kujira-price-feeder/harpoon.toml 
-      - name: SEEDPHRASE
-        valueFrom:
-          secretKeyRef: 
-            name: harpoon-price-feeder-secrets
-            key: SEEDPHRASE
-    volumeMounts:
-      - mountPath: /state
-        name: harpoon-price-feeder-state
+      volumeMounts:
+      - name: harpoon-price-feeder-state
+        mountPath: /state
+    containers:
+    - name: harpoon-price-feeder
+      image: ghcr.io/pfc-developer/kujira-price-feeder:v0.6.2
+        
+      resources:
+        limits:
+          memory: "16Gi"
+          cpu: "500m"
+      env:
+        - name: ADDRESS
+          valueFrom:
+            secretKeyRef: 
+              name: harpoon-price-feeder-secrets
+              key: ADDRESS
+        - name: VALIDATOR
+          valueFrom:
+            secretKeyRef: 
+              name: harpoon-price-feeder-secrets
+              key: VALIDATOR
+        - name: APISERVER
+          value: http://harpoon-0.harpoon:1317
+        - name: RPCSERVER
+          value: http://harpoon-0.harpoon:26657
+        - name: GRPCSERVER
+          value: harpoon-0.harpoon:9090        
+        - name: CONFIGFILE
+          value: https://raw.githubusercontent.com/PFC-Validator/PFC-Cluster/main/external-docker/kujira-price-feeder/harpoon.toml 
+        - name: SEEDPHRASE
+          valueFrom:
+            secretKeyRef: 
+              name: harpoon-price-feeder-secrets
+              key: SEEDPHRASE
+      volumeMounts:
+        - mountPath: /state
+          name: harpoon-price-feeder-state
