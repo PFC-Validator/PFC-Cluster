@@ -45,9 +45,9 @@ spec:
             name: harpoon-price-feeder-secrets
             key: VALIDATOR
       - name: APISERVER
-        value: htttp://harpoon-0.harpoon:1317
+        value: http://harpoon-0.harpoon:1317
       - name: RPCSERVER
-        value: htttp://harpoon-0.harpoon:26657
+        value: http://harpoon-0.harpoon:26657
       - name: GRPCSERVER
         value: harpoon-0.harpoon:9090        
       - name: CONFIGFILE
