@@ -11,6 +11,9 @@ this is my 'working' (more like work in progress) kubernets cluster
 * [kube infra](./manifests/infrastructure)
 * [cosmos nodes](./manifests/cosmos/) - running RPC and validators
 
+## Price Oracles
+We are currently running LUNC's and [Kujira](/external-docker/kujira-price-feeder/)'s price feeder. 
+
 ### security warning
 please note. 
 
@@ -23,14 +26,15 @@ they are encrypted via GPG2 and we use sops, so i'm fairly confident.. but you'l
 I mention this as if this screws up you could tombstone, or some hacker could come in and steal them, and we are still improving the overall security footprint of this install. buyer beware, no warranties, your risk etc etc.
 
 ### still to do - PRs welcome
-* price oracles
 * relaying
 * making horcrux more automated
 * state-syncing vs hard-coded snapshots
 * auto-upgrades via cosmovisor
 * more testing
-* make prometheus discover the cosmos stuff
 
+### stuff completed
+* make prometheus discover the cosmos stuff
+* price oracles
 # thank you too
 this relies heavily on:
 - [Strangelove](https://twitter.com/strangelovelabs)'s [cosmos-operator](https://github.com/strangelove-ventures/cosmos-operator/), [horcrux](https://github.com/strangelove-ventures/horcrux/), and [heighlinger](https://github.com/strangelove-ventures/heighliner/)
@@ -38,7 +42,13 @@ this relies heavily on:
 
 
 # revision history
-## Sep-23 - current
+## Sep-28 - current
+* kujira price oracle
+* removed rook-ceph and switched to openEBS LVMs, resulting in much faster performance. Our aim is to migrate to TopoLVM
+* add prometheus monitoring to cosmos stuff
+* 20+ chains are running
+
+## Sep-23 
 * ansible machine installs 
 * added some monitoring (nothing cosmos specific)
 * adding 2nd repo 
