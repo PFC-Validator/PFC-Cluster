@@ -13,7 +13,7 @@
       - jq
       - bash-completion
       - cpufrequtils
-      - host
+      - bind9-host
       - pv
       - iotop
       - liblz4-tool

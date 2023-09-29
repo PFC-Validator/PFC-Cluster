@@ -52,8 +52,9 @@ kubectl get nodes --show-labels
 we use provider/zone for affinity.
 # topolvm
 still a WIP (waiting for it to support 1.28). 
-we are using localstorage for now
-see (topolvm notes)[./06-topoLVM.md]
+we are using localstorage/openebs for now
+see [openebs notes](./06-openebs.md)
+see [topolvm notes]()./06-topoLVM.md)
 
 
 # rook-ceph issues
