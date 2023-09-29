@@ -1,0 +1,46 @@
+apiVersion: cosmos.strange.love/v1
+kind: CosmosFullNode
+metadata:
+  name: noble
+  namespace: cosmos
+  annotations:
+    prometheus.io/port: "prometheus"
+    prometheus.io/scrape: "true"
+spec:
+  chain:
+    app:
+      minGasPrice: "0.000uusdc"
+      pruning: 
+        interval: 137
+        strategy: custom 
+        keepRecent: 4889
+      overrides: |-
+        # Set app.toml overrides here. Such as:
+        index-events = ["tx.hash", "tx.height"]
+        [rosetta]
+        enable = false
+
+    binary: nobled
+    chainID: noble-1
+    config:
+      seeds: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:21556"
+      maxOutboundPeers: 70
+    genesisURL: https://snapshots.polkachu.com/genesis/noble/genesis.json
+    network: mainnet
+    skipInvariants: true
+    snapshotURL: https://snapshots.polkachu.com/snapshots/noble/noble_2801591.tar.lz4
+  podTemplate:
+    image: ghcr.io/strangelove-ventures/heighliner/noble:v3.1.0
+    resources:
+      requests:
+        memory: 16Gi
+  replicas: 1 # TODO change to 1 to use less resources
+  volumeClaimTemplate:
+    resources:
+      requests:
+        storage: 200Gi
+    accessModes: [ "ReadWriteOnce" ]
+    storageClassName: ssd-persistent-block-store
+  service:
+    p2pTemplate:
+      type: NodePort
