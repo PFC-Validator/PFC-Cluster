@@ -5,5 +5,5 @@ resources:
 - namespace.yaml 
 - stride.yaml
 - cosmoshub.yaml
-- pisco.yaml 
+#- pisco.yaml
 - harpoon.yaml 
