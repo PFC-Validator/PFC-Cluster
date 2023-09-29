@@ -7,11 +7,11 @@ main readme is here - https://github.com/topolvm/topolvm/blob/main/deploy/README
 
 ## create the Volume Group
 ### NVMe example
-blkdiscard /dev/nvme0n1p5 -f
-blkdiscard /dev/nvme1n1p5 -f
+blkdiscard /dev/nvme0n1p4 -f
+blkdiscard /dev/nvme1n1p4 -f
 partprobe
-pvcreate /dev/nvme0n1p5 /dev/nvme1n1p5
-vgcreate VG-topolvm /dev/nvme0n1p5 /dev/nvme1n1p5
+pvcreate /dev/nvme0n1p4 /dev/nvme1n1p4
+vgcreate VG-topolvm /dev/nvme0n1p4 /dev/nvme1n1p4
 vgs
 
 ### SDA example
