@@ -31,7 +31,7 @@ spec:
     image: ghcr.io/pfc-developer/heighliner/terra:v2.5.0-rc6
     resources:
       requests:
-        memory: 32Gi
+        memory: 16Gi
     affinity:
       podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
