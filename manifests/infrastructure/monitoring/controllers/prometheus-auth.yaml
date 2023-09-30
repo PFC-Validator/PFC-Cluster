@@ -1,0 +1,42 @@
+# http auth created via htpasswd -c auth username
+apiVersion: v1
+stringData:
+    auth: ENC[AES256_GCM,data:VCRgR8icHSHnEajknzz7IJ9cDcYPM+eGn3XlV+0K5jzZqph/jqEcqdc=,iv:Bii3RDdKjYxQKLJaI1iUohjU4lLCTWnzak0Cd5OKNjo=,tag:8YjFfRzKdM9QMD9cwQZflA==,type:str]
+kind: Secret
+metadata:
+    name: prometheus-auth
+    namespace: monitoring
+type: Opaque
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-09-30T17:38:25Z"
+    mac: ENC[AES256_GCM,data:m53Ud7L0gNNDUdvuUtCHtUJGm7U9Tk8+nc87/GFakVH67NJOKQig2/XfrKDG/HbwwDH5yvEa995bihDfafmwi0+w+0yeT4ztALrI18uiuZ2+3HptGYgGlwGaCS66yEh2HYHC4j1BOxzzwR47RF2QFc75zgSXd8FVLV2FqXjPBOg=,iv:8H2VPsvXTWATFkrTl704lLzy051cToWEEQI15tH71XU=,tag:ChW9vsafSYGzZRSEgBlS1A==,type:str]
+    pgp:
+        - created_at: "2023-09-30T17:38:24Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DYj1NN/0GA4USAQdANPUJhF8nJGKEb/WHj9WEFHkP9JjaMjQiM909DU1ElmMw
+            cHiz/Uz6UpnD+1Nbbvmgp7ICqMSBNVdzIk69PqSpy9FbNovzcXM/8mFSNPleIltj
+            0l4BSeeZIF+RQYBOg/LfzxPGGWZEFZa7jKLBwMvbiazqX7NEjivO4IA+I5Iemnc2
+            DE1zdcHXRkXTJE2P8C6qOohTE9phxjMu6kzU4SMgf8XRPl5F5o+KJkQ4acYaBYpS
+            =HVMI
+            -----END PGP MESSAGE-----
+          fp: 4C653A7AD53BC071B149AC6F05C9A59CE6F61D40
+        - created_at: "2023-09-30T17:38:24Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DlnT2alMWtDoSAQdApZbVTx4/f8jUm4T3MQCnPB4jmMtrvCXiZw2khAyMxTYw
+            HYJX41s0xm9q0+fSTfFNb8s3a46fwbISwCrBNlc5ZuCwe5kPtV0hR6xmE9L+VaYu
+            0l4BtDysSfVOQ/yi2twTrgCeyrekT5wOFbaybicRFPjEFFlAdgLTScwOSmIrsRHA
+            aSB6LYjDtZfZ6JfwuIFItpstwlN+AH88BPHCdmiDaLQ+MZG8hlmUZlv9u5qHcI8p
+            =aK8B
+            -----END PGP MESSAGE-----
+          fp: 72C2A2A23FD55033E9FACA100A4AEEEFD51A640E
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
