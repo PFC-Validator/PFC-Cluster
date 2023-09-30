@@ -25,25 +25,25 @@ spec:
     alertmanager:      
       enabled: true
       config:
-          global:
-            resolve_timeout: 5m
-          route:
-            group_wait: 20s
-            group_interval: 4m
-            repeat_interval: 4h
-            receiver: 'null'
-            routes: 
-              - receiver: 'slack-k8s-admin'
-                matcher:
-                - severity = 'warning'
-          receivers:
-          - name: null
-          - name: 'slack-k8s-admin'
-            slack_configs:
-              api_url: 
-                name: alertmanager-secrets
-                key: slack
-              channel: '#alerts'
+        global:
+          resolve_timeout: 4m
+        route:
+          group_wait: 20s
+          group_interval: 4m
+          repeat_interval: 4h
+          receiver: 'null'
+          routes: 
+            - receiver: 'slack-k8s-admin'
+              matcher:
+              - severity = 'warning'
+        receivers:
+        - name: null
+        - name: 'slack-k8s-admin'
+          slack_configs:
+            api_url: 
+              name: alertmanager-secrets
+              key: slack
+            channel: '#alerts'
     prometheus:
       prometheusSpec:
         retention: 24h
