@@ -22,10 +22,7 @@ spec:
     valuesKey: kube-state-metrics-config.yaml
   # https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml
   values:
-    alertmanager:
-      alertmanagerConfigNamespaceSelector:
-        matchLabels:
-        name: kube-prometheus-stack
+    alertmanager:      
       enabled: true
       config:
           global:
@@ -34,7 +31,19 @@ spec:
             group_wait: 20s
             group_interval: 4m
             repeat_interval: 4h
-
+            receiver: 'null'
+            routes: 
+              - receiver: 'slack-k8s-admin'
+                matcher:
+                - severity = 'warning'
+          receivers:
+          - name: null
+          - name: 'slack-k8s-admin'
+            slack_configs:
+              api_url: 
+                name: alertmanager-secrets
+                key: slack
+              channel: '#alerts'
     prometheus:
       prometheusSpec:
         retention: 24h
