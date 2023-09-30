@@ -36,6 +36,38 @@ kind: Ingress
 metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
+    external-dns.alpha.kubernetes.io/hostname: alerts.pfc.zone    
+    nginx.ingress.kubernetes.io/auth-type: basic
+    nginx.ingress.kubernetes.io/auth-secret: prometheus-auth
+    nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - PFC Cluster'
+  labels:
+    app.kubernetes.io/name: alerts
+    app.kubernetes.io/version: 1.0.0
+  name: alerts
+  namespace: monitoring
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - alerts.pfc.zone
+    secretName: alerts-tls-secret
+  rules:
+  - host: alerts.pfc.zone
+    http:
+      paths:
+      - backend:
+          service:
+            name: alertmanager-operated
+            port:
+              number: 9093
+        path: /
+        pathType: Prefix
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
     external-dns.alpha.kubernetes.io/hostname: grafana.pfc.zone    
   
   labels:
