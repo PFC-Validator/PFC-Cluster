@@ -6,18 +6,15 @@ metadata:
   labels:
     app.kubernetes.io/instance: kube-prometheus-stack
     app.kubernetes.io/name: alertmanagerconfig
+    alertmanagerConfig: slack
 spec:
-  inhibitRules: []
   route:
-    receiver: "null"
-    routes:
-      - groupBy:
-          - email_to
-        receiver: slack_router
-        groupWait: 0s
-        groupInterval: 5m
-        repeatInterval: 2h      
-    receivers:
+    groupBy: ['job']
+    receiver: slack_router
+    groupWait: 0s
+    groupInterval: 5m
+    repeatInterval: 2h      
+  receivers:
     - name: slack_router
       slack_configs:
         - api_url:
