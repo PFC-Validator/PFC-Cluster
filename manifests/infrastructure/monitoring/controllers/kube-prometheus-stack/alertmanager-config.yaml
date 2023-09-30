@@ -1,0 +1,26 @@
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: AlertmanagerConfig
+metadata:
+  name: kube-prometheus-stack-alertmanagerconfig
+  namespace: kube-prometheus-stack
+  labels:
+    app.kubernetes.io/instance: kube-prometheus-stack
+    app.kubernetes.io/name: alertmanagerconfig
+spec:
+  inhibitRules: []
+  route:
+    receiver: "null"
+    routes:
+      - groupBy:
+          - email_to
+        receiver: slack_router
+        groupWait: 0s
+        groupInterval: 5m
+        repeatInterval: 2h      
+    receivers:
+    - name: slack_router
+      slack_configs:
+        - api_url:
+            name: alertmanager-secrets
+            key: slack
+          channel: '#alerts'
