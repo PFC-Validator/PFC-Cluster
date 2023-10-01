@@ -40,10 +40,10 @@ spec:
         - name: null
         - name: 'slack-k8s-admin'
           slack_configs:
-            api_url: 
-              name: alertmanager-secrets
-              key: slack
-            channel: '#alerts'
+            - api_url: 
+                name: 'alertmanager-secrets'
+                key: 'slack'
+              channel: '#alerts'
     prometheus:
       prometheusSpec:
         retention: 24h
