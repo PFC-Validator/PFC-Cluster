@@ -46,7 +46,7 @@ spec:
         resources:
           limits:
             memory: "1Gi"
-            cpu: "500m"
+            cpu: "1500m"
         env:
           - name: ADDRESS
             valueFrom:
