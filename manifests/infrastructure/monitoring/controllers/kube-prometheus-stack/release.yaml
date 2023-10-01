@@ -36,8 +36,8 @@ spec:
 #            - receiver: 'slack-k8s-admin'
 #              matcher:
 #              - severity = 'warning'
-        receivers:
-        - name: null
+#        receivers:
+#        - name: null
 
     prometheus:
       prometheusSpec:
