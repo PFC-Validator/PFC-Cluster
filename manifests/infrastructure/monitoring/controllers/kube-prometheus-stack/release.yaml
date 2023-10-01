@@ -32,18 +32,13 @@ spec:
           group_interval: 4m
           repeat_interval: 4h
           receiver: 'null'
-          routes: 
-            - receiver: 'slack-k8s-admin'
-              matcher:
-              - severity = 'warning'
+#          routes: 
+#            - receiver: 'slack-k8s-admin'
+#              matcher:
+#              - severity = 'warning'
         receivers:
         - name: null
-        - name: 'slack-k8s-admin'
-          slack_configs:
-            - api_url: "http://slack.com/dummy"
-               # name: 'alertmanager-secrets'
-               # key: 'slack'
-              channel: '#alerts'
+
     prometheus:
       prometheusSpec:
         retention: 24h
