@@ -6,6 +6,6 @@ resources:
 #- rook-ceph.yaml
 - cosmos-operator.yaml
 - ingress.yaml
-- monitoring.yaml
+#- monitoring.yaml
 - private-repo.yaml
 - storage/
