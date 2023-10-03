@@ -438,6 +438,7 @@ name = "binance"
 rest = "https://api1.binance.com"
 websocket = "stream.binance.us:9443"
 
+# this neeeds to be a mainnet API/LCD URL
 [[provider_endpoints]]
 name = "finv2"
 urls = [

@@ -58,14 +58,19 @@ spec:
               secretKeyRef: 
                 name: harpoon-price-feeder-secrets
                 key: VALIDATOR
+          # this links to a API server of a mainnet node.
           - name: APISERVER
-            value: http://harpoon-0.harpoon:1317
+            valueFrom:
+              secretKeyRef: 
+                name: harpoon-price-feeder-secrets
+                key: APISERVER
+
           - name: RPCSERVER
             value: http://harpoon-0.harpoon:26657
           - name: GRPCSERVER
             value: harpoon-0.harpoon:9090        
           - name: CONFIGFILE
-            value: https://raw.githubusercontent.com/PFC-Validator/PFC-Cluster/main/external-docker/kujira-price-feeder/harpoon.toml?3=4
+            value: https://raw.githubusercontent.com/PFC-Validator/PFC-Cluster/main/external-docker/kujira-price-feeder/harpoon.toml?3=5
           - name: SEEDPHRASE
             valueFrom:
               secretKeyRef: 
