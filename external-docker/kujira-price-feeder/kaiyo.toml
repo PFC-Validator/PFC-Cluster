@@ -454,9 +454,6 @@ MNTAUSDC = "kujira1ws9w7wl68prspv3rut3plv8249rm0ea0kk335swye3sl2slld4lqdmc0lv"
 WINKUSK = "kujira1qxtd87qus6uzvqs4jv9r0j9ccd4yla42s6qag7y8fp7hhv68nzas6hqxgw"
 AMPKUJIKUJI = "kujira1lse59wt7a5yksdd08mennt299katjkfzdhmh8hvck8ln08jktcmsxrnh8s"
 
-[contract_addresses.uniswapv3]
-USDCWETH = "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
-WSTETHWETH = "0x109830a1AAaD605BbF02a9dFA7B0B92EC2FB7dAa"
 
 [[provider_min_overrides]]
 denoms = ["NTRN"]
@@ -540,6 +537,8 @@ quote = "USDT"
 providers = ["uniswapv3"]
 
 [contract_addresses.uniswapv3]
+USDCWETH = "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
+WSTETHWETH = "0x109830a1AAaD605BbF02a9dFA7B0B92EC2FB7dAa"
 RLBUSDC = "0x2322e5517a3cbc75a3f02d74c96f82dda120d841"
 RLBWETH = "0x510100d5143e011db24e2aa38abe85d73d5b2177"
 RLBUSDT = "0x33676385160f9d8f03a0db2821029882f7c79e93"
