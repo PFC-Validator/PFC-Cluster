@@ -41,7 +41,7 @@ spec:
           mountPath: /state            
       containers:
       - name: harpoon-price-feeder
-        image: ghcr.io/pfc-developer/kujira-price-feeder:v0.6.2
+        image: ghcr.io/pfc-developer/kujira-price-feeder:v0.7.1
           
         resources:
           limits:
@@ -65,7 +65,7 @@ spec:
           - name: GRPCSERVER
             value: harpoon-0.harpoon:9090        
           - name: CONFIGFILE
-            value: https://raw.githubusercontent.com/PFC-Validator/PFC-Cluster/main/external-docker/kujira-price-feeder/harpoon.toml 
+            value: https://raw.githubusercontent.com/PFC-Validator/PFC-Cluster/main/external-docker/kujira-price-feeder/harpoon.toml?3=4
           - name: SEEDPHRASE
             valueFrom:
               secretKeyRef: 
