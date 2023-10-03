@@ -414,8 +414,6 @@ address = "$ADDRESS"
 chain_id = "kaiyo-1"
 validator = "$VALIDATOR"
 prefix = "kujira"
-# Optional
-#fee_granter = "kujira..."
 
 [keyring]
 backend = "file"
