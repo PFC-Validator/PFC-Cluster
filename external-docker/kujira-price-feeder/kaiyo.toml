@@ -518,6 +518,9 @@ derivative_period = "30m"
 [contract_addresses.osmosisv2]
 SOMMOSMO = "627"
 STARSOSMO = "1096"
+ATOMSTATOM = "803"
+STOSMOOSMO = "833"
+MNTAOSMO = "1215"
 
 [[currency_pairs]]
 base = "RLB"
@@ -540,3 +543,10 @@ WSTETHWETH = "0x109830a1AAaD605BbF02a9dFA7B0B92EC2FB7dAa"
 RLBUSDC = "0x2322e5517a3cbc75a3f02d74c96f82dda120d841"
 RLBWETH = "0x510100d5143e011db24e2aa38abe85d73d5b2177"
 RLBUSDT = "0x33676385160f9d8f03a0db2821029882f7c79e93"
+
+
+[contract_addresses.camelotv2]
+KUJIUSDC = "0xDB7D929434F0a52fFE3E5631044776b23E6f8a67"
+
+[contract_addresses.camelotv3]
+WETHUSDC = "0x521aa84ab3fcc4c05cABaC24Dc3682339887B126"
