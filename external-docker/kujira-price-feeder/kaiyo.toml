@@ -278,11 +278,6 @@ providers = ["binance", "bitget", "bybit", "crypto", "kucoin", "lbank", "mexc", 
 
 [[currency_pairs]]
 base = "SCRT"
-quote = "BTC"
-providers = ["bkex"]
-
-[[currency_pairs]]
-base = "SCRT"
 quote = "USD"
 providers = ["kraken", "osmosis"]
 
@@ -546,7 +541,7 @@ providers = ["uniswapv3"]
 [[currency_pairs]]
 base = "HNT"
 quote = "USDT"
-providers = ["bitget", "gate", "okx", "kucoin", "bitmart", "bybit"]
+providers = ["bitget", "gate", "okx", "kucoin", "bybit"]
 
 [[currency_pairs]]
 base = "HNT"

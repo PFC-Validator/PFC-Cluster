@@ -66,7 +66,7 @@ providers = ["coinbase", "kraken", "osmosis"]
 [[currency_pairs]]
 base = "ATOM"
 quote = "USDT"
-providers = ["binance", "bitget",  "bybit", "crypto", "gate", "hitbtc", "huobi", "kucoin", "lbank", "mexc", "okx", "phemex", "poloniex", "xt"]
+providers = ["binance", "bitget", "bybit", "crypto", "gate", "hitbtc", "huobi", "kucoin", "lbank", "mexc", "okx", "phemex", "poloniex", "xt"]
 
 [[currency_pairs]]
 base = "AVAX"
@@ -274,11 +274,6 @@ providers = ["kraken"]
 base = "PAXG"
 quote = "USDT"
 providers = ["binance", "bitget", "bybit", "crypto", "kucoin", "lbank", "mexc", "phemex", "xt"]
-
-[[currency_pairs]]
-base = "SCRT"
-quote = "BTC"
-providers = ["bkex"]
 
 [[currency_pairs]]
 base = "SCRT"
@@ -544,7 +539,7 @@ providers = ["uniswapv3"]
 [[currency_pairs]]
 base = "HNT"
 quote = "USDT"
-providers = ["bitget", "gate", "okx", "kucoin", "bitmart", "bybit"]
+providers = ["bitget", "gate", "okx", "kucoin", "bybit"]
 
 [[currency_pairs]]
 base = "HNT"
