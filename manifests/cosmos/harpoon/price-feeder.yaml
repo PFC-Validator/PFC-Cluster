@@ -1,4 +1,5 @@
 ###
+# /api/v1/metrics?format=prometheus 
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -47,6 +48,9 @@ spec:
           limits:
             memory: "1Gi"
             cpu: "1500m"
+        ports:
+            - containerPort: 8171
+              name: price-server
         env:
           - name: ADDRESS
             valueFrom:
