@@ -29,12 +29,10 @@ spec:
   podTemplate:
     probes:
       strategy: None
-    image:  ghcr.io/pfc-developer/heighliner/kujira:v0.8.8.1
+    image:  ghcr.io/pfc-developer/heighliner/kujira:v0.9.0-patch
     resources:
       requests:
         memory: 16Gi
-#    nodeSelector:
-#      nodeLabel: harpoon
     affinity:
       podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
