@@ -29,6 +29,7 @@ kube-state-metrics:
         - ""
         resources:          
           - configmaps
+          - secrets
           - nodes
           - services
           - pods 
@@ -41,6 +42,32 @@ kube-state-metrics:
           - endpoints          
         verbs: [ "list", "watch" ]
       - apiGroups:
+        - apps
+        resources:
+        - statefulsets
+        - daemonsets
+        - deployments
+        - replicasets
+        verbs:
+        - list
+        - watch        
+      - apiGroups:
+        - batch
+        resources:
+        - cronjobs
+        - jobs
+        verbs:
+        - list
+        - watch        
+      - apiGroups:
+        - storage.k8s.io
+        resources:
+        - storageclasses
+        - volumeattachments
+        verbs:
+        - list
+        - watch     
+      - apiGroups:
         - networking.k8s.io
         resources:
         - networkpolicies
@@ -48,6 +75,7 @@ kube-state-metrics:
         verbs:
         - list
         - watch        
+   
   customResourceState:
     enabled: true
     config:
