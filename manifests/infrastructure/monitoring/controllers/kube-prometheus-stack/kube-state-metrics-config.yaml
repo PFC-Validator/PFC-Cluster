@@ -1,7 +1,7 @@
 kube-state-metrics:
   collectors: [ ]
-  extraArgs:
-    - --custom-resource-state-only=true
+#  extraArgs:
+#    - --custom-resource-state-only=true
   rbac:
     extraRules:
       - apiGroups:
@@ -24,7 +24,30 @@ kube-state-metrics:
           - imagerepositories
           - imagepolicies
           - imageupdateautomations
+        verbs: [ "list", "watch" ]          
+      - apiGroups:  
+        - ""
+        resources:          
+          - configmaps
+          - nodes
+          - services
+          - pods 
+          - resourcequotas
+          - replicationcontrollers
+          - limitranges
+          - persistentvolumeclaims
+          - persistentvolumes
+          - namespaces
+          - endpoints          
         verbs: [ "list", "watch" ]
+      - apiGroups:
+        - networking.k8s.io
+        resources:
+        - networkpolicies
+        - ingresses
+        verbs:
+        - list
+        - watch        
   customResourceState:
     enabled: true
     config:
