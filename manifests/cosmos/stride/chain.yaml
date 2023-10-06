@@ -20,7 +20,7 @@ spec:
     genesisURL: https://snapshots.polkachu.com/genesis/stride/genesis.json
     network: mainnet
     skipInvariants: true
-    snapshotURL: https://snapshots.polkachu.com/snapshots/stride/stride_5563822.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/stride/stride_5755892.tar.lz4
   podTemplate:
     image: ghcr.io/strangelove-ventures/heighliner/stride:v15.0.0
     resources:
@@ -30,7 +30,7 @@ spec:
   volumeClaimTemplate:
     resources:
       requests:
-        storage: 200Gi
+        storage: 400Gi
     accessModes: [ "ReadWriteOnce" ]
     storageClassName: ssd-persistent-block-store
   service:
