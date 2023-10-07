@@ -291,14 +291,14 @@ base = "STATOM"
 quote = "ATOM"
 providers = ["osmosisv2"]
 derivative = "twap"
-derivative_period = "30m"
+derivative_period = "10m"
 
 [[currency_pairs]]
 base = "STOSMO"
 quote = "OSMO"
 providers = ["osmosisv2"]
 derivative = "twap"
-derivative_period = "30m"
+derivative_period = "10m"
 
 [[currency_pairs]]
 base = "USDC"
@@ -491,7 +491,7 @@ base = "STARS"
 quote = "OSMO"
 providers = ["osmosisv2"]
 derivative = "twap"
-derivative_period = "30m"
+derivative_period = "10m"
 
 [[currency_pairs]]
 base = "STARS"
@@ -505,7 +505,7 @@ base = "SOMM"
 quote = "OSMO"
 providers = ["osmosisv2"]
 derivative = "twap"
-derivative_period = "30m"
+derivative_period = "10m"
 
 [[currency_pairs]]
 base = "SOMM"
