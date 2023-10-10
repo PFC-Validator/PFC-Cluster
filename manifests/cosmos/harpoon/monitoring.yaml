@@ -1,96 +1,54 @@
 ###
-# /api/v1/metrics?format=prometheus 
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: harpoon-price-feeder-state
-  namespace: cosmos
-spec:
-  storageClassName: ssd-persistent-block-store
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 60Mi
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  harpoon-price-feeder
+  name:  harpoon-chain-monitor
   namespace: cosmos
 spec:
   selector:
     matchLabels:
-      app: harpoon-price-feeder
+      app:  harpoon-chain-monitor
   template:
     metadata:
       labels:
-        app: harpoon-price-feeder
+        app:  harpoon-chain-monitor
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9300"        
     spec:
-      volumes: 
-        - name: harpoon-price-feeder-state
-          persistentVolumeClaim:
-            claimName: harpoon-price-feeder-state    
-      initContainers:
-      - name: fix-ownership
-        image: busybox:latest
-        command: ["sh","-c", "mkdir -p /state && chown -R 1137:1137 /state && ls -lR /state"]
-
-        volumeMounts:
-        - name: harpoon-price-feeder-state
-          mountPath: /state            
       containers:
-      - name: harpoon-price-feeder
-        image: ghcr.io/pfc-developer/kujira-price-feeder:v0.8.1
+      - name:  cosmos-exporter
+        image: ghcr.io/pfc-developer/cosmos-exporter:latest
           
         resources:
           limits:
             memory: "1Gi"
             cpu: "1500m"
         ports:
-            - containerPort: 8171
-              name: price-server
-        env:
-          - name: ADDRESS
-            valueFrom:
-              secretKeyRef: 
-                name: harpoon-price-feeder-secrets
-                key: ADDRESS
-          - name: VALIDATOR
-            valueFrom:
-              secretKeyRef: 
-                name: harpoon-price-feeder-secrets
-                key: VALIDATOR
-          # this links to a API server of a mainnet node.
-          - name: APISERVER
-            valueFrom:
-              secretKeyRef: 
-                name: harpoon-price-feeder-secrets
-                key: APISERVER
-
-          - name: RPCSERVER
-            value: http://harpoon-0.harpoon:26657
-          - name: GRPCSERVER
-            value: harpoon-0.harpoon:9090        
-          - name: CONFIGFILE
-            value: https://raw.githubusercontent.com/PFC-Validator/PFC-Cluster/main/external-docker/kujira-price-feeder/harpoon.toml?3=5
-          - name: SEEDPHRASE
-            valueFrom:
-              secretKeyRef: 
-                name: harpoon-price-feeder-secrets
-                key: SEEDPHRASE
-        volumeMounts:
-          - mountPath: /state
-            name: harpoon-price-feeder-state
+            - containerPort: 9300
+              name: prometheus
+              protocol: TCP
+        args:
+            - --denom=ukuji
+            - --denom-coefficient=1000000
+            - --bech-prefix=kujira 
+            - --node=kujira:9090 
+            - --tendermint-rpc=http://kujira:26657
+            - --single
+            - --validators kujiravaloper10csmmwu6tv3hqrfmyuqx08xyup7nkafedmcpl5
+            - --oracle
+            - --wallets kujira1zy6xs70lavuuyu0vqmlx57ycypaqcvphxc8t4a
+            - --proposals
+            - --upgrades
       affinity:
         # place the price feeder in the same zone as node it is pushing stuff into
         podAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
               matchExpressions:
-              - key:  app.kubernetes.io/instance
+              - key:  app.kubernetes.io/name
                 operator: In
                 values:
-                - harpoon-0
+                - harpoon
             topologyKey: "zone"  
