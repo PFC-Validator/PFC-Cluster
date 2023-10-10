@@ -1,0 +1,54 @@
+###
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  terra-chain-monitor
+  namespace: cosmos
+spec:
+  selector:
+    matchLabels:
+      app:  terra-chain-monitor
+  template:
+    metadata:
+      labels:
+        app:  terra-chain-monitor
+        kind-of: cosmos-exporter
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9300"        
+    spec:
+      containers:
+      - name:  cosmos-exporter
+        image: ghcr.io/pfc-developer/cosmos-exporter:v1.0.1
+          
+        resources:
+          limits:
+            memory: "1Gi"
+            cpu: "1500m"
+        ports:
+            - containerPort: 9300
+              name: prometheus
+              protocol: TCP
+        args:
+            - --denom=uluna
+            - --denom-coefficient=1000000
+            - --bech-prefix=terra 
+            - --node=pisco:9090 
+            - --tendermint-rpc=http://pisco:26657
+            - --single
+            - --validators=terravaloper1pphdny9hgu3v59jhea6gaxjwrtguul6rqyz5sj
+            - --proposals
+            - --upgrades
+            - --price=false
+      affinity:
+        # place the price feeder in the same zone as node it is pushing stuff into
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key:  app.kubernetes.io/name
+                operator: In
+                values:
+                - terra
+            topologyKey: "zone"  

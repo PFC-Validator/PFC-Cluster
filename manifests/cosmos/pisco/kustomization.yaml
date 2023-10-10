@@ -11,3 +11,4 @@ resources:
 - headless-service.yaml
 - headless-service-horcrux.yaml
 - horcrux-stateful.yaml
+- monitoring.yaml
