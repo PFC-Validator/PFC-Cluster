@@ -33,8 +33,8 @@ spec:
             - --denom=ukuji
             - --denom-coefficient=1000000
             - --bech-prefix=kujira 
-            - --node=kujira:9090 
-            - --tendermint-rpc=http://kujira:26657
+            - --node=harpoon:9090 
+            - --tendermint-rpc=http://harpoon:26657
             - --single
             - --validators=kujiravaloper10csmmwu6tv3hqrfmyuqx08xyup7nkafedmcpl5
             - --oracle
