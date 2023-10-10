@@ -50,5 +50,5 @@ spec:
               - key:  app.kubernetes.io/name
                 operator: In
                 values:
-                - terra
+                - pisco
             topologyKey: "zone"  
