@@ -3,16 +3,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  terra-chain-monitor
+  name:  pisco-chain-monitor
   namespace: cosmos
 spec:
   selector:
     matchLabels:
-      app:  terra-chain-monitor
+      app:  pisco-chain-monitor
   template:
     metadata:
       labels:
-        app:  terra-chain-monitor
+        app:  pisco-chain-monitor
         kind-of: cosmos-exporter
       annotations:
         prometheus.io/scrape: "true"
