@@ -13,4 +13,4 @@ resources:
 - horcrux-stateful.yaml
 - price-feeder-secrets.yaml
 - price-feeder.yaml
-- montioring.yaml
+- monitoring.yaml
