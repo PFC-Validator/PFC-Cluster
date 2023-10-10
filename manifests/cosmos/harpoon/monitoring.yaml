@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         app:  harpoon-chain-monitor
+        kind-of: cosmos-exporter
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/port: "9300"        
