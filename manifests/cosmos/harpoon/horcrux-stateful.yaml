@@ -14,6 +14,7 @@ spec:
         metadata:
             labels:
                 app: harpoon-horcrux
+                kind-of: horcrux
         spec:
             affinity:
               # place the horcrux in the same zone as the sentry
