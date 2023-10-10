@@ -36,9 +36,9 @@ spec:
             - --node=kujira:9090 
             - --tendermint-rpc=http://kujira:26657
             - --single
-            - --validators kujiravaloper10csmmwu6tv3hqrfmyuqx08xyup7nkafedmcpl5
+            - --validators=kujiravaloper10csmmwu6tv3hqrfmyuqx08xyup7nkafedmcpl5
             - --oracle
-            - --wallets kujira1zy6xs70lavuuyu0vqmlx57ycypaqcvphxc8t4a
+            - --wallets=kujira1zy6xs70lavuuyu0vqmlx57ycypaqcvphxc8t4a
             - --proposals
             - --upgrades
       affinity:
