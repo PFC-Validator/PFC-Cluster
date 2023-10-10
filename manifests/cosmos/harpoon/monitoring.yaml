@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name:  cosmos-exporter
-        image: ghcr.io/pfc-developer/cosmos-exporter:latest
+        image: ghcr.io/pfc-developer/cosmos-exporter:v1.0.0
           
         resources:
           limits:
@@ -42,6 +42,7 @@ spec:
             - --wallets=kujira1zy6xs70lavuuyu0vqmlx57ycypaqcvphxc8t4a
             - --proposals
             - --upgrades
+            - --price=false
       affinity:
         # place the price feeder in the same zone as node it is pushing stuff into
         podAffinity:
