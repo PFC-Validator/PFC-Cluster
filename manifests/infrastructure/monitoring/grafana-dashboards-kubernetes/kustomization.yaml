@@ -30,8 +30,8 @@ configMapGenerator:
 # System / Addons Dashboards
 #################################################
 
-- name: dashboards-k8s-system-api-server
-  files: [ ./dashboards/k8s-system-api-server.json ]
+#- name: dashboards-k8s-system-api-server
+#  files: [ ./dashboards/k8s-system-api-server.json ]
 
 #- name: dashboards-k8s-system-coredns
 #  files: [ ./dashboards/k8s-system-coredns.json ]
