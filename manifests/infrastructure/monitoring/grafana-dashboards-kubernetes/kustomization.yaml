@@ -45,4 +45,4 @@ configMapGenerator:
 #################################################
 
 - name: dashboards-cosmos
-  files: [ dashboards/cosmos.json ]
+  files: [ /manifests/infrastructure/monitoring/grafana-dashboards-kubernetes/dashboards/cosmos.json ]
