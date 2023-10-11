@@ -48,5 +48,5 @@ spec:
               - key:  app.kubernetes.io/name
                 operator: In
                 values:
-                - cosmoshub-rpc
+                - cosmoshub
             topologyKey: "zone"  
