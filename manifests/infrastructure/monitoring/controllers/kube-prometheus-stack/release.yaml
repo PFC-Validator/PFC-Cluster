@@ -52,7 +52,17 @@ spec:
             app.kubernetes.io/component: monitoring
     grafana:
       defaultDashboardsEnabled: false
-      adminPassword: flux
+      adminPassword: pfc-cluster
+      sidecar:
+        dashboards:
+          enabled: true
+          defaultFolderName: "General"
+          label: grafana_dashboard
+          labelValue: "1"
+          folderAnnotation: grafana_folder
+          searchNamespace: ALL
+          provider:
+            foldersFromFilesStructure: true
   postRenderers:
     - kustomize:
         patches:
