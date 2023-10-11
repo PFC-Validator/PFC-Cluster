@@ -33,8 +33,8 @@ spec:
             - --denom=uatom
             - --denom-coefficient=1000000
             - --bech-prefix=cosmos 
-            - --node=cosmoshub:9090 
-            - --tendermint-rpc=http://cosmoshub:26657
+            - --node=cosmoshub-rpc:9090 
+            - --tendermint-rpc=http://cosmoshub-rpc:26657
             - --single
             - --proposals
             - --upgrades
@@ -48,5 +48,5 @@ spec:
               - key:  app.kubernetes.io/name
                 operator: In
                 values:
-                - cosmoshub
+                - cosmoshub-rpc
             topologyKey: "zone"  

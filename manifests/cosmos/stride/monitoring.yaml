@@ -33,8 +33,8 @@ spec:
             - --denom=ustride
             - --denom-coefficient=1000000
             - --bech-prefix=stride 
-            - --node=stride:9090 
-            - --tendermint-rpc=http://stride:26657
+            - --node=stride-rpc:9090 
+            - --tendermint-rpc=http://stride-rpc:26657
             - --single
             - --proposals
             - --upgrades
@@ -48,5 +48,5 @@ spec:
               - key:  app.kubernetes.io/name
                 operator: In
                 values:
-                - stride
+                - stride-rpc
             topologyKey: "zone"  
