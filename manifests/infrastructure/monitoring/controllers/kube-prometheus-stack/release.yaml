@@ -41,11 +41,11 @@ spec:
 
     prometheus:
       prometheusSpec:
-        retention: 24h
+        retention: 336h
         resources:
           requests:
-            cpu: 200m
-            memory: 200Mi
+            cpu: 2000m
+            memory: 600Mi
         podMonitorNamespaceSelector: { }
         podMonitorSelector:
           matchLabels:
