@@ -15,29 +15,29 @@ configMapGenerator:
 #################################################
 
 - name: dashboards-k8s-views-global
-  files: [ dashboards/k8s-views-global.json ]
+  files: [ /manifests/infrastructure/monitoring/grafana-dashboards-kubernetes/dashboards/k8s-views-global.json ]
 
 - name: dashboards-k8s-views-namespaces
-  files: [ dashboards/k8s-views-namespaces.json ]
+  files: [ /manifests/infrastructure/monitoring/grafana-dashboards-kubernetes/dashboards/k8s-views-namespaces.json ]
 
 - name: dashboards-k8s-views-nodes
-  files: [ dashboards/k8s-views-nodes.json ]
+  files: [ /manifests/infrastructure/monitoring/grafana-dashboards-kubernetes/dashboards/k8s-views-nodes.json ]
 
 - name: dashboards-k8s-views-pods
-  files: [ dashboards/k8s-views-pods.json ]
+  files: [ /manifests/infrastructure/monitoring/grafana-dashboards-kubernetes/dashboards/k8s-views-pods.json ]
 
 #################################################
 # System / Addons Dashboards
 #################################################
 
 - name: dashboards-k8s-system-api-server
-  files: [ dashboards/k8s-system-api-server.json ]
+  files: [ /manifests/infrastructure/monitoring/grafana-dashboards-kubernetes/dashboards/k8s-system-api-server.json ]
 
 - name: dashboards-k8s-system-coredns
-  files: [ dashboards/k8s-system-coredns.json ]
+  files: [ /manifests/infrastructure/monitoring/grafana-dashboards-kubernetes/dashboards/k8s-system-coredns.json ]
 
 - name: dashboards-k8s-addons-prometheus
-  files: [ dashboards/k8s-addons-prometheus.json ]
+  files: [ /manifests/infrastructure/monitoring/grafana-dashboards-kubernetes/dashboards/k8s-addons-prometheus.json ]
 
 
 #################################################
