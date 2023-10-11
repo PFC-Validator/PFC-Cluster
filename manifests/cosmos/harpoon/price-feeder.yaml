@@ -12,7 +12,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 60Mi
+      storage: 100Mi
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -70,9 +70,9 @@ spec:
                 key: APISERVER
 
           - name: RPCSERVER
-            value: http://harpoon-0.harpoon:26657
+            value: http://harpoon:26657
           - name: GRPCSERVER
-            value: harpoon-0.harpoon:9090        
+            value: harpoon:9090        
           - name: CONFIGFILE
             value: https://raw.githubusercontent.com/PFC-Validator/PFC-Cluster/main/external-docker/kujira-price-feeder/harpoon.toml?3=5
           - name: SEEDPHRASE
@@ -89,8 +89,8 @@ spec:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
               matchExpressions:
-              - key:  app.kubernetes.io/instance
+              - key:  app.kubernetes.io/name
                 operator: In
                 values:
-                - harpoon-0
+                - harpoon
             topologyKey: "zone"  
