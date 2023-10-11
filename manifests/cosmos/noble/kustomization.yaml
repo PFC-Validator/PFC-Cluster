@@ -6,3 +6,4 @@ resources:
 - namespace.yaml
 - chain.yaml
 - ingress.yaml
+- monitoring.yaml

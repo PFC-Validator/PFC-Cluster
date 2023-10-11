@@ -1,0 +1,52 @@
+###
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  stride-chain-monitor
+  namespace: cosmos
+spec:
+  selector:
+    matchLabels:
+      app:  stride-chain-monitor
+  template:
+    metadata:
+      labels:
+        app:  stride-chain-monitor
+        kind-of: cosmos-exporter
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9300"        
+    spec:
+      containers:
+      - name:  cosmos-exporter
+        image: ghcr.io/pfc-developer/cosmos-exporter:v1.0.1
+        resources:
+          limits:
+            memory: "1Gi"
+            cpu: "1500m"
+        ports:
+            - containerPort: 9300
+              name: prometheus
+              protocol: TCP
+        args:
+            - --denom=ustride
+            - --denom-coefficient=1000000
+            - --bech-prefix=stride 
+            - --node=stride:9090 
+            - --tendermint-rpc=http://stride:26657
+            - --single
+            - --proposals
+            - --upgrades
+            - --price=true
+      affinity:
+        # place the price feeder in the same zone as node it is pushing stuff into
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key:  app.kubernetes.io/name
+                operator: In
+                values:
+                - stride
+            topologyKey: "zone"  
