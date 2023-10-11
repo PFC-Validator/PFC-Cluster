@@ -6,6 +6,7 @@ resources:
 configMapGenerator:
   - name: flux-grafana-dashboards
     files:
+      - dashboards/cosmos.json
       - dashboards/control-plane.json
       - dashboards/cluster.json
       - dashboards/logs.json
