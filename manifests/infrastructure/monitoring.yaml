@@ -37,21 +37,3 @@ spec:
     kind: GitRepository
     name: flux-system
   path: ./manifests/infrastructure/monitoring/configs
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1
-kind: Kustomization
-metadata:
-  name: monitoring-configs-kubernetes
-  namespace: flux-system
-spec:
-  dependsOn:
-    - name: monitoring-controllers
-  interval: 1h
-  retryInterval: 2m
-  timeout: 5m
-  prune: true
-  wait: true
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
-  path: ./manifests/infrastructure/monitoring/grafana-dashboards-kubernetes
