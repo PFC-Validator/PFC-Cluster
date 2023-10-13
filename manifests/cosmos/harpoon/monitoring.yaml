@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name:  cosmos-exporter
-        image: ghcr.io/pfc-developer/cosmos-exporter:v1.0.1
+        image: ghcr.io/pfc-developer/cosmos-exporter:v2.0.2
         resources:
           limits:
             memory: "1Gi"
@@ -29,6 +29,7 @@ spec:
             - containerPort: 9300
               name: prometheus
               protocol: TCP
+        entrypoint: /usr/local/bin/kuji-cosmos-exporter
         args:
             - --denom=ukuji
             - --denom-coefficient=1000000
