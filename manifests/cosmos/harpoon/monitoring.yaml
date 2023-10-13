@@ -29,7 +29,7 @@ spec:
             - containerPort: 9300
               name: prometheus
               protocol: TCP
-        entrypoint: /usr/local/bin/kuji-cosmos-exporter
+        command: [ /usr/local/bin/kuji-cosmos-exporter ]
         args:
             - --denom=ukuji
             - --denom-coefficient=1000000
