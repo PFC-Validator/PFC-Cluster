@@ -22,7 +22,7 @@ spec:
     skipInvariants: true
     snapshotURL: https://snapshots.polkachu.com/snapshots/stride/stride_5755892.tar.lz4
   podTemplate:
-    image: ghcr.io/strangelove-ventures/heighliner/stride:v15.0.0
+    image: ghcr.io/strangelove-ventures/heighliner/stride:v16.0.0
     resources:
       requests:
         memory: 16Gi
