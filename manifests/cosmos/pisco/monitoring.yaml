@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name:  cosmos-exporter
-        image: ghcr.io/pfc-developer/cosmos-exporter:v1.0.1
+        image: ghcr.io/pfc-developer/cosmos-exporter:v2.1.0
           
         resources:
           limits:
