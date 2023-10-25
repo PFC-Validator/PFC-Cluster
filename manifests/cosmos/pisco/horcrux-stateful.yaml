@@ -59,8 +59,8 @@ spec:
                     mountPath: /run/sign
             containers:
                 - name: horcrux-container
-                  image: ghcr.io/pfc-developer/horcrux-container:0.07
-                  command: ["/bin/launch.sh","pisco-1"]
+                  image: ghcr.io/pfc-developer/horcrux-container:0.09
+                  command: ["/bin/launch-all.sh","pisco-1"]
                   ports:
                     - containerPort: 2222
                       name: cosigner
