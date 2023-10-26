@@ -1,4 +1,4 @@
-FROM golang:1.19.7-alpine3.16 AS build-env
+FROM golang:1.20.8-alpine3.17 AS build-env
 
 # TARGETPLATFORM should be one of linux/amd64 or linux/arm64.
 ARG TARGETPLATFORM
@@ -88,8 +88,8 @@ COPY --from=build-env /usr/lib/libonig.so.5 /lib
 COPY --from=build-env /usr/lib/libcurl.so.4 /lib
 COPY --from=build-env /lib/libz.so.1 /lib
 COPY --from=build-env /usr/lib/libnghttp2.so.14 /lib
-COPY --from=build-env /lib/libssl.so.1.1 /lib
-COPY --from=build-env /lib/libcrypto.so.1.1 /lib
+COPY --from=build-env /lib/libssl.so.3 /lib
+COPY --from=build-env /lib/libcrypto.so.3 /lib
 COPY --from=build-env /usr/lib/libbrotlidec.so.1 /lib
 COPY --from=build-env /usr/lib/libbrotlicommon.so.1 /lib
 

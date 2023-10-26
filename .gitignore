@@ -17,3 +17,4 @@
 .DS_Store
 /external-docker/kujira-price-feeder/run.sh.local
 /external-docker/kujira-price-feeder/test
+.env
