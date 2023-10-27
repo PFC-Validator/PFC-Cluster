@@ -28,7 +28,7 @@ spec:
   podTemplate:
     probes:
       strategy: None
-    image: ghcr.io/pfc-developer/heighliner/terra:v2.5.0-rc6
+    image: ghcr.io/pfc-developer/heighliner/terra:v2.6.0-rc1
     resources:
       requests:
         memory: 16Gi
