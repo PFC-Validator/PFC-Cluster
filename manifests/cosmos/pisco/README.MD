@@ -32,5 +32,6 @@ now copy these into the shards.yaml.
 # **Remember**
 
 sops -e -i shards.yaml
+
 sops -e -i signers.yaml
 
