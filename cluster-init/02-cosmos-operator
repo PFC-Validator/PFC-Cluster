@@ -5,4 +5,7 @@ git clone https://github.com/strangelove-ventures/cosmos-operator.git
 make deploy IMG="ghcr.io/strangelove-ventures/cosmos-operator:<version you choose>"
 # PFC tag needs to have a match strangelove-ventures tag
 # v0.16.0
-make deploy IMG="ghcr.io/pfc-developer/cosmos-operator:<version you choose>"
+# v0.20.0-rc1
+make deploy IMG="ghcr.io/pfc-developer/cosmos-operator:make docker-build IMG="ghcr.io/pfc-developer/cosmos-operator:v0.20.0-rc1""
+
+make docker-build IMG="ghcr.io/pfc-developer/cosmos-operator:v0.20.0-rc1"
