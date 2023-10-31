@@ -27,15 +27,15 @@ spec:
       config:
         global:
           resolve_timeout: 4m
-        route:
-          group_wait: 20s
-          group_interval: 4m
-          repeat_interval: 4h
-          receiver: 'null'
-          routes: 
-          - receiver: pagerduty
-            group_by:
-            - severity
+#        route:
+#          group_wait: 20s
+#          group_interval: 4m
+#          repeat_interval: 4h
+#          receiver: 'null'
+#          routes: 
+#          - receiver: pagerduty
+#            group_by:
+#            - severity
 #            matchers:
 #            - namespace: pfc-testnet
 
