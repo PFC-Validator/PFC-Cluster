@@ -16,7 +16,7 @@ spec:
     repeatInterval: 2h      
   receivers:
     - name: slack_router
-      slack_configs:
+      slackConfigs:
         - api_url:
             name: alertmanager-secrets
             key: slack
