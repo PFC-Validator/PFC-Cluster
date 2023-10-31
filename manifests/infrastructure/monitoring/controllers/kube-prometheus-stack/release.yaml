@@ -36,8 +36,8 @@ spec:
           - receiver: pagerduty
             group_by:
             - severity
-            matchers:
-            - namespace: pfc-testnet
+#            matchers:
+#            - namespace: pfc-testnet
 
     prometheus:
       prometheusSpec:
