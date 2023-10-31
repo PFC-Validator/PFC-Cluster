@@ -32,7 +32,12 @@ spec:
           group_interval: 4m
           repeat_interval: 4h
           receiver: 'pagerduty'
-#          routes: 
+          routes: 
+          - receiver: pagerduty
+            groupBy:
+            - severity 
+#           matchers:
+#            - service=~"mysql"
 #            - receiver: 'slack-k8s-admin'
 #              matcher:
 #              - severity = 'warning'
