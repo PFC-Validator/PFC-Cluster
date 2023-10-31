@@ -31,18 +31,13 @@ spec:
           group_wait: 20s
           group_interval: 4m
           repeat_interval: 4h
-          receiver: 'pagerduty'
+          receiver: 'null'
           routes: 
           - receiver: pagerduty
-            groupBy:
-            - severity 
-#           matchers:
-#            - service=~"mysql"
-#            - receiver: 'slack-k8s-admin'
-#              matcher:
-#              - severity = 'warning'
-#        receivers:
-#        - name: null
+            group_by:
+            - severity
+            matchers:
+            - namespace: pfc-testnet
 
     prometheus:
       prometheusSpec:
