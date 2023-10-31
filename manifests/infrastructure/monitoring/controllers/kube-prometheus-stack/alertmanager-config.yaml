@@ -20,4 +20,4 @@ spec:
         - api_url:
             name: alertmanager-secrets
             key: slack
-          channel: '#alerts'
+          channel: 'alerts'
