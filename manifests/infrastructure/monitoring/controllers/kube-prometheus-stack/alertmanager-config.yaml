@@ -10,7 +10,7 @@ metadata:
 spec:
   route:
     groupBy: ['severity']
-    receiver: pagerduty
+    receiver: slack_router
     groupWait: 0s
     groupInterval: 5m
     repeatInterval: 2h      
