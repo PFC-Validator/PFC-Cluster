@@ -77,9 +77,13 @@ kube-state-metrics:
         - watch        
    
   customResourceState:
+    baseURL: "https://prometheus.pfc.zone/" 
+ 
     enabled: true
     config:
       spec:
+        baseURL: "https://prometheus.pfc.zone:443/" 
+ 
         resources:
           - groupVersionKind:
               group: kustomize.toolkit.fluxcd.io
