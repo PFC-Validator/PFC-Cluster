@@ -22,6 +22,7 @@ spec:
     valuesKey: kube-state-metrics-config.yaml
   # https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml
   values:
+    baseURL: "https://prometheus.pfc.zone/"
     alertmanager:      
       enabled: true
       config:
