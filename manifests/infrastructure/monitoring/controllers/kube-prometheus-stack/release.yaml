@@ -22,7 +22,6 @@ spec:
     valuesKey: kube-state-metrics-config.yaml
   # https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml
   values:
-    externalURL: "https://prometheus.pfc.zone/" 
     alertmanager:     
       enabled: true
       config:
@@ -41,8 +40,6 @@ spec:
 #            - namespace: pfc-testnet
 
     prometheus:
-      url: "https://prometheus.pfc.zone"
-      port: 443 
       prometheusSpec:
         retention: 336h
         resources:
