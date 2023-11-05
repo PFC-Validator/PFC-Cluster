@@ -502,26 +502,12 @@ base = "STARS"
 quote = "OSMO"
 providers = ["osmosisv2"]
 derivative = "twap"
-derivative_period = "10m"
-
-[[currency_pairs]]
-base = "STARS"
-quote = "USD"
-providers = ["osmosis"]
-derivative = "twap"
 derivative_period = "30m"
 
 [[currency_pairs]]
 base = "SOMM"
 quote = "OSMO"
 providers = ["osmosisv2"]
-derivative = "twap"
-derivative_period = "10m"
-
-[[currency_pairs]]
-base = "SOMM"
-quote = "USD"
-providers = ["osmosis"]
 derivative = "twap"
 derivative_period = "30m"
 
