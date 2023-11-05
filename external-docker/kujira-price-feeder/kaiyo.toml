@@ -215,7 +215,7 @@ derivative_period = "30m"
 [[currency_pairs]]
 base = "KUJI"
 quote = "USD"
-providers = [""mexc"]
+providers = ["mexc"]
 derivative = "twap"
 derivative_period = "30m"
 
