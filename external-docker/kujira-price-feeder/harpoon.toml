@@ -28,7 +28,7 @@ providers = 1
 
 [[provider_min_overrides]]
 denoms = ["KUJI"]
-providers = 2
+providers = 1
 
 [[provider_min_overrides]]
 denoms = ["WSTETH", "WETH"]
@@ -41,7 +41,7 @@ providers = 1
 [[currency_pairs]]
 base = "AKT"
 quote = "USD"
-providers = ["crypto", "kraken", "osmosis"]
+providers = ["crypto", "kraken"]
 
 [[currency_pairs]]
 base = "AKT"
@@ -61,7 +61,7 @@ providers = ["binance", "bitget", "bybit", "gate", "hitbtc", "huobi", "kucoin", 
 [[currency_pairs]]
 base = "ATOM"
 quote = "USD"
-providers = ["coinbase", "kraken", "osmosis"]
+providers = ["coinbase", "kraken"]
 
 [[currency_pairs]]
 base = "ATOM"
@@ -81,7 +81,7 @@ providers = ["binance", "bitget", "bybit", "crypto", "gate", "hitbtc", "huobi", 
 [[currency_pairs]]
 base = "BAND"
 quote = "USD"
-providers = ["bitfinex", "coinbase", "kraken", "osmosis"]
+providers = ["bitfinex", "coinbase", "kraken"]
 
 [[currency_pairs]]
 base = "BAND"
@@ -106,7 +106,7 @@ providers = ["binance", "bitget", "bybit", "crypto", "gate", "hitbtc", "huobi", 
 [[currency_pairs]]
 base = "CRO"
 quote = "USD"
-providers = ["coinbase", "osmosis"]
+providers = ["coinbase"]
 
 [[currency_pairs]]
 base = "CRO"
@@ -116,7 +116,7 @@ providers = ["bitget", "crypto", "gate", "kucoin", "lbank", "mexc", "okx", "xt"]
 [[currency_pairs]]
 base = "DOT"
 quote = "USD"
-providers = ["bitfinex", "coinbase", "crypto", "kraken", "osmosis"]
+providers = ["bitfinex", "coinbase", "crypto", "kraken"]
 
 [[currency_pairs]]
 base = "DOT"
@@ -141,7 +141,7 @@ providers = ["hitbtc"]
 [[currency_pairs]]
 base = "FET"
 quote = "USD"
-providers = ["bitfinex", "coinbase", "kraken", "osmosis"]
+providers = ["bitfinex", "coinbase", "kraken"]
 
 [[currency_pairs]]
 base = "FET"
@@ -176,7 +176,7 @@ providers = ["poloniex"]
 [[currency_pairs]]
 base = "INJ"
 quote = "USD"
-providers = ["coinbase", "kraken", "osmosis"]
+providers = ["coinbase", "kraken"]
 
 [[currency_pairs]]
 base = "INJ"
@@ -186,7 +186,7 @@ providers = ["binance", "bitget", "bybit", "crypto", "gate", "hitbtc", "huobi", 
 [[currency_pairs]]
 base = "JUNO"
 quote = "USD"
-providers = ["kraken", "osmosis"]
+providers = ["kraken"]
 
 [[currency_pairs]]
 base = "JUNO"
@@ -196,7 +196,7 @@ providers = ["bitget", "mexc"]
 [[currency_pairs]]
 base = "KAVA"
 quote = "USD"
-providers = ["coinbase", "kraken", "osmosis"]
+providers = ["coinbase", "kraken"]
 
 [[currency_pairs]]
 base = "KAVA"
@@ -214,7 +214,7 @@ derivative_period = "30m"
 [[currency_pairs]]
 base = "KUJI"
 quote = "USD"
-providers = ["osmosis"]
+providers = ["fin","mexc"]
 derivative = "twap"
 derivative_period = "30m"
 
@@ -238,7 +238,7 @@ providers = ["binance", "bitget", "bybit", "gate", "hitbtc", "huobi", "kucoin", 
 [[currency_pairs]]
 base = "LUNC"
 quote = "USD"
-providers = ["crypto", "osmosis"]
+providers = ["crypto"]
 
 [[currency_pairs]]
 base = "LUNC"
@@ -258,7 +258,7 @@ providers = ["binance", "bitget", "bybit", "gate", "hitbtc", "huobi", "kucoin", 
 [[currency_pairs]]
 base = "OSMO"
 quote = "USD"
-providers = ["crypto", "osmosis"]
+providers = ["crypto"]
 
 [[currency_pairs]]
 base = "OSMO"
@@ -278,12 +278,17 @@ providers = ["binance", "bitget", "bybit", "crypto", "kucoin", "lbank", "mexc", 
 [[currency_pairs]]
 base = "SCRT"
 quote = "USD"
-providers = ["kraken", "osmosis"]
+providers = ["kraken"]
 
 [[currency_pairs]]
 base = "SCRT"
 quote = "USDT"
 providers = ["binance", "bybit", "gate", "huobi", "kucoin", "lbank", "mexc"]
+
+[[currency_pairs]]
+base = "SCRT"
+quote = "BTC"
+providers = ["kucoin"]
 
 [[currency_pairs]]
 base = "STATOM"
@@ -302,7 +307,7 @@ derivative_period = "30m"
 [[currency_pairs]]
 base = "USDC"
 quote = "USD"
-providers = ["kraken", "osmosis"]
+providers = ["kraken"]
 
 [[currency_pairs]]
 base = "USDC"
@@ -312,7 +317,7 @@ providers = ["binance", "bitget", "bybit", "gate", "huobi", "kucoin", "lbank", "
 [[currency_pairs]]
 base = "USDT"
 quote = "USD"
-providers = ["binanceus", "coinbase", "crypto", "gate", "kraken", "osmosis"]
+providers = ["binanceus", "coinbase", "crypto", "gate", "kraken"]
 
 [[currency_pairs]]
 base = "USK"
@@ -329,7 +334,7 @@ providers = ["binance", "coinbase", "kucoin", "okx"]
 [[currency_pairs]]
 base = "WBTC"
 quote = "USD"
-providers = ["osmosis"]
+providers = ["bitget"]
 
 [[currency_pairs]]
 base = "WBTC"
@@ -349,6 +354,7 @@ quote = "USK"
 providers = ["finv2"]
 derivative = "twap"
 derivative_period = "30m"
+
 ## LINK ###
 [[currency_pairs]]
 base = "LINK"
@@ -396,15 +402,18 @@ timeout = "750ms"
 name = "osmosisv2"
 urls = [
   "https://osmosis-api.polkachu.com",
+   "https://api-osmosis-ia.cosmosia.notional.ventures",
+  "https://osmosis.rest.stakin-nodes.com",
+  "https://osmosis.api.kjnodes.com",
   "https://rest.cosmos.directory/osmosis"
 ]
 
-[[provider_endpoints]]
-name = "osmosis"
-urls = [
-  "https://api.osmosis.zone",
-  "https://api-osmosis.imperator.co",
-]
+#[[provider_endpoints]]
+#name = "osmosis"
+#urls = [
+#  "https://api.osmosis.zone",
+#  "https://api-osmosis.imperator.co",
+#]
 
 [account]
 address = "$ADDRESS"
@@ -494,7 +503,7 @@ derivative_period = "30m"
 [[currency_pairs]]
 base = "STARS"
 quote = "USD"
-providers = ["osmosis"]
+providers = ["osmosisv2"]
 derivative = "twap"
 derivative_period = "30m"
 
@@ -505,12 +514,12 @@ providers = ["osmosisv2"]
 derivative = "twap"
 derivative_period = "30m"
 
-[[currency_pairs]]
-base = "SOMM"
-quote = "USD"
-providers = ["osmosis"]
-derivative = "twap"
-derivative_period = "30m"
+#[[currency_pairs]]
+#base = "SOMM"
+#quote = "USD"
+#providers = ["osmosisv2"]
+#derivative = "twap"
+#derivative_period = "30m"
 
 [contract_addresses.osmosisv2]
 SOMMOSMO = "627"
