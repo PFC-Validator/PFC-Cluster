@@ -258,7 +258,7 @@ providers = ["binance", "bitget", "bybit", "gate", "hitbtc", "huobi", "kucoin", 
 [[currency_pairs]]
 base = "OSMO"
 quote = "USD"
-providers = ["crypto"]
+providers = ["crypto", "coinbase"]
 
 [[currency_pairs]]
 base = "OSMO"
@@ -307,7 +307,7 @@ derivative_period = "30m"
 [[currency_pairs]]
 base = "USDC"
 quote = "USD"
-providers = ["kraken"]
+providers = ["kraken", "coinbase"]
 
 [[currency_pairs]]
 base = "USDC"
@@ -402,7 +402,9 @@ timeout = "750ms"
 name = "osmosisv2"
 urls = [
   "https://osmosis-api.polkachu.com",
-   "https://api-osmosis-ia.cosmosia.notional.ventures",
+  "https://api.osmosis.zone",
+  "https://api-osmosis.imperator.co",
+  "https://api-osmosis-ia.cosmosia.notional.ventures",
   "https://osmosis.rest.stakin-nodes.com",
   "https://osmosis.api.kjnodes.com",
   "https://rest.cosmos.directory/osmosis"
