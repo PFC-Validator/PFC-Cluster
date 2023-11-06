@@ -20,9 +20,11 @@ spec:
         - apiURL:
             name: alertmanager-secrets
             key: slack
+            namespace: monitoring
           channel: '#alert'
     - name: pagerduty
       pagerdutyConfigs:
       - serviceKey:
           key: pagerDutySecret
           name: alertmanager-secrets
+          namespace: monitoring
