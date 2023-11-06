@@ -24,7 +24,7 @@ spec:
           channel: '#alert'
     - name: pagerduty
       pagerdutyConfigs:
-      - serviceKey:
-          key: pagerDutySecret
-          name: alertmanager-secrets
-          namespace: monitoring
+        - serviceKey:
+           key: pagerDutySecret
+           name: alertmanager-secrets
+           namespace: monitoring
