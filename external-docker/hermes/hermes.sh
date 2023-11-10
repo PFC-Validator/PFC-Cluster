@@ -1,51 +1,22 @@
 #!/bin/sh
-#APISERVER=$1
-#RPCSERVER=$2
-#GRPCSERVER=$3
-#CONFIGFILE=$4
-#ADDRESS=$5
-#VALIDATOR=$6
-#SEEDPHRASE=$7
 
-##if [ "$#" -ne 7 ]; 
-#then 
-#    echo /home/user/price-feed.sh APISERVER RPCSERVER GRPCSERVER CONFIGFILE ADDRESS VALIDATOR SEEDPHRASE 
-#    exit 1;
-#fi
-
-echo using the following
-echo APISERVER=$APISERVER
-echo RPCSERVER=$RPCSERVER
-echo GRPCSERVER=$GRPCSERVER
-echo CONFIGFILE=$CONFIGFILE
-echo ADDRESS=$ADDRESS
-echo VALIDATOR=$VALIDATOR
-echo SEEDPHRASE=XXXXX
-
+echo "-- using the following"
+echo 'CONFIGFILE='${CONFIGFILE}
 if [ "$CONFIGFILE" != "${CONFIGFILE#http://}" ] ; then
-    curl -s -L $CONFIGFILE -o /home/user/config.original
+    curl -s -L $CONFIGFILE -o /home/hermes/config.original
 elif [ "$CONFIGFILE" != "${CONFIGFILE#https://}" ]  ;then
-    curl  -L $CONFIGFILE -o /home/user/config.original
+    curl  -L $CONFIGFILE -o /home/hermes/config.original
+elif [ -d "$CONFIGFILE" ] ;then
+    cat $CONFIGFILE/*toml > /home/hermes/config.original
 else
-    cp $CONFIGFILE /home/user/config.original
+    cp $CONFIGFILE /home/hermes/config.original
 fi
 
-
-sed -e 's#\$API#'"${APISERVER}"'#g' /home/user/config.original > /home/user/config.toml
-sed -i -e "s#\$RPC#${RPCSERVER}#g;"  /home/user/config.toml
-sed -i -e "s#\$GRPC#${GRPCSERVER}#g;"  /home/user/config.toml
-
-sed -i -e "s#\$ADDRESS#${ADDRESS}#g;"  /home/user/config.toml
-sed -i -e "s#\$VALIDATOR#${VALIDATOR}#g;"  /home/user/config.toml
-
-rm -rf /home/user/.kujira
-kujirad init foo --chain-id bar --home /home/user/.kujira 2> /dev/null
-kujirad config keyring-backend file --home /home/user/.kujira
-echo $SEEDPHRASE > /home/user/makekey
-echo purple123 >> /home/user/makekey
-echo purple123 >> /home/user/makekey
-cat /home/user/makekey | kujirad keys add price-feed --recover --keyring-backend file
-echo "available keys"
-echo purple123 | kujirad keys list
-echo "starting feeder"
-echo 'purple123' | /bin/price-feeder config.toml
+# todo variable replacement
+cp /home/hermes/config.original /home/hermes/config.toml
+/home/hermes/init_keys.sh  /init  /home/hermes/config.toml
+echo "--"
+echo "-- wallet balances -- "
+echo "--"
+/home/hermes/balances.sh /init  /home/hermes/config.toml
+/usr/bin/hermes --config /home/hermes/config.toml health-check

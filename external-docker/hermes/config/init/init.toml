@@ -1,0 +1,36 @@
+[seeds]
+s1 = '/keys/seed.txt'
+inj = '/keys/seed_inj.txt'
+kaiyo='/keys/seed_kaiyo.txt'
+stride='/keys/seed_stride.txt'
+[paths]
+phoenix-1 = "m/44'/330'/0'/0/0"
+columbus-5 = "m/44'/330'/0'/0/0"
+cosmoshub-4 = ''
+secret-4 = "m/44'/529'/0'/0/0"
+injective-1= "m/44'/60'/0'/0/0"
+kaiyo-1= ''
+stride-1 = ''
+canto_7700-1 = "m/44'/60'/0'/0/0"
+migaloo-1 = ''
+mars-1 = ''
+chihuahua-1 = ''
+pacific-1 = ''
+noble-1 = ''
+dydx-mainnet-1 = ''
+
+[keys]
+phoenix-1 = 's1'
+columbus-5 = 's1'
+cosmoshub-4 = 's1'
+secret-4 = 's1'
+injective-1= 'inj'
+kaiyo-1= 'kaiyo'
+stride-1 = 'stride'
+canto_7700-1 = 's1'
+migaloo-1 = 's1'
+mars-1 = 's1'
+chihuahua-1 = 's1'
+pacific-1 = 's1'
+noble-1 = 's1'
+dydx-mainnet-1 = 's1'
