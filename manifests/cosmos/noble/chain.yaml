@@ -30,7 +30,7 @@ spec:
     skipInvariants: true
     snapshotURL: https://snapshots.polkachu.com/snapshots/noble/noble_3133270.tar.lz4
   podTemplate:
-    image: ghcr.io/strangelove-ventures/heighliner/noble:v3.1.0
+    image: ghcr.io/strangelove-ventures/heighliner/noble:v4.0.0
     resources:
       requests:
         memory: 16Gi
