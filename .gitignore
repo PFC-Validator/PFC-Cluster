@@ -8,6 +8,7 @@
 /machine-init/config.yaml
 /kube-config
 *.tmp.yaml
+*.swp
 
 /ansible/machines/*.yaml
 /ansible/files
@@ -17,5 +18,6 @@
 .DS_Store
 /external-docker/kujira-price-feeder/run.sh.local
 /external-docker/kujira-price-feeder/test
+/external-docker/hermes/test
 /external-docker/restaker/config/*json
 .env

@@ -6,6 +6,11 @@ make deploy IMG="ghcr.io/strangelove-ventures/cosmos-operator:<version you choos
 # PFC tag needs to have a match strangelove-ventures tag
 # v0.16.0
 # v0.20.0-rc1
-make deploy IMG="ghcr.io/pfc-developer/cosmos-operator:make docker-build IMG="ghcr.io/pfc-developer/cosmos-operator:v0.20.0-rc1""
+# v0.21.1
+# -- not needed -- make deploy IMG="ghcr.io/pfc-developer/cosmos-operator:v0.21.1"
+modify [manager tag](../manifests/infrastructure/cosmos-operator/manager/kustomization.yaml)
+and make sure you have the up2date config over from cosmos-operator
+
+make docker-build IMG="ghcr.io/pfc-developer/cosmos-operator:v0.21.1"
 
 make docker-build IMG="ghcr.io/pfc-developer/cosmos-operator:v0.20.0-rc1"
