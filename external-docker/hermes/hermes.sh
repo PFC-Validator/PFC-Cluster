@@ -19,4 +19,11 @@ echo "--"
 echo "-- wallet balances -- "
 echo "--"
 /home/hermes/balances.sh /init  /home/hermes/config.toml
+echo "--"
+echo "-- health check -- "
+echo "--"
 /usr/bin/hermes --config /home/hermes/config.toml health-check
+echo "--"
+echo "-- starting -- "
+echo "--"
+/usr/bin/hermes --config /home/hermes/config.toml start
