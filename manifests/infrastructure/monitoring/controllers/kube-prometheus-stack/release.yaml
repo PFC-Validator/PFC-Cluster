@@ -50,6 +50,14 @@ spec:
         podMonitorSelector:
           matchLabels:
             app.kubernetes.io/component: monitoring
+        storageSpec:
+          volumeClaimTemplate:
+            spec:
+              accessModes: [ "ReadWriteOnce" ]
+              storageClassName: ssd-persistent-block-store
+              resources:
+                requests:
+                  storage: 1Gi    
     grafana:
       defaultDashboardsEnabled: false
       adminPassword: pfc-cluster
