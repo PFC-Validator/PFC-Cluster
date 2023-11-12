@@ -57,7 +57,7 @@ spec:
               storageClassName: ssd-persistent-block-store
               resources:
                 requests:
-                  storage: 1Gi    
+                  storage: 50Gi    
     grafana:
       defaultDashboardsEnabled: false
       adminPassword: pfc-cluster
