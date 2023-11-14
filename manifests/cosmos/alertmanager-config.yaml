@@ -21,8 +21,3 @@ spec:
             name: alertmanager-secrets
             key: slack
           channel: 'alerts-cosmos'
-    - name: pagerduty
-      pagerdutyConfigs:
-      - serviceKey:
-          key: pagerDutySecret
-          name: alertmanager-secrets
