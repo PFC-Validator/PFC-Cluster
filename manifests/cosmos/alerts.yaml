@@ -22,3 +22,14 @@ spec:
         for: 10m
         labels:
           severity: warning
+  - name: cosmos.stalled_node
+    rules:
+      - alert: CosmosStalledNode
+        annotations:
+          description: Node isn't consuming CPU
+          summary: it's dead jim
+        expr: |-
+          rate(container_cpu_usage_seconds_total{container="node",namespace="cosmos"}[5m])<0.02
+        for: 10m
+        labels:
+          severity: critical
