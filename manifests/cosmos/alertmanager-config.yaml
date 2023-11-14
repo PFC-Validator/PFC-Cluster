@@ -1,0 +1,28 @@
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: AlertmanagerConfig
+metadata:
+  name: kube-prometheus-stack-alertmanagerconfig
+  namespace: cosmos
+  labels:
+    app.kubernetes.io/instance: kube-prometheus-stack
+    app.kubernetes.io/name: alertmanagerconfig
+    alertmanagerConfig: slack
+spec:
+  route:
+    groupBy: ['severity']
+    receiver: slack_router
+    groupWait: 0s
+    groupInterval: 5m
+    repeatInterval: 2h      
+  receivers:
+    - name: slack_router
+      slackConfigs:
+        - apiURL:
+            name: alertmanager-secrets
+            key: slack
+          channel: 'alerts-cosmos'
+    - name: pagerduty
+      pagerdutyConfigs:
+      - serviceKey:
+          key: pagerDutySecret
+          name: alertmanager-secrets

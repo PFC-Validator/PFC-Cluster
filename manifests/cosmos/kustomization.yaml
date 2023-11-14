@@ -8,3 +8,6 @@ resources:
 - pisco.yaml
 - harpoon.yaml 
 - noble.yaml
+- creds.yaml
+- alertmanager-config.yaml
+- alerts.yaml

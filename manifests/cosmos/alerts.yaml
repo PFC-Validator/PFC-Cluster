@@ -1,0 +1,24 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name:  kube-prometheus-stack-cosmos.rules
+  namespace: monitoring
+  labels:
+    app: kube-prometheus-stack  
+    role: alert-rules    
+    instance: kube-prometheus-stack
+    heritage: Helm
+    release: kube-prometheus-stack
+spec:    
+  groups:
+  - name: cosmos.wallet-balance
+    rules:
+      - alert: CosmosWalletBalance 
+        annotations:
+          description: wallet has less than 1 token 
+          summary: feed the meter
+        expr: |-
+          cosmos_wallet_balance{namespace="cosmos"}  < 1000000
+        for: 10m
+        labels:
+          severity: warning
