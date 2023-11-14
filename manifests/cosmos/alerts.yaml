@@ -18,7 +18,7 @@ spec:
           description: wallet has less than 1 token 
           summary: feed the meter
         expr: |-
-          cosmos_wallet_balance{namespace="cosmos"}  < 1000000
+          cosmos_wallet_balance{namespace="cosmos"}  < 1
         for: 10m
         labels:
           severity: warning
