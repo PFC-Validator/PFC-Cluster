@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name:  cosmos-exporter
-        image: ghcr.io/pfc-developer/cosmos-exporter:v1.0.1
+        image: ghcr.io/pfc-developer/cosmos-exporter:v2.1.3
         resources:
           limits:
             memory: "1Gi"
@@ -38,6 +38,7 @@ spec:
             - --single
             - --proposals
             - --upgrades
+            - --votes
             - --price=true
       affinity:
         # place the price feeder in the same zone as node it is pushing stuff into
