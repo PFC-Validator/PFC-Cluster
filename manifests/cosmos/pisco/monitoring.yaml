@@ -39,7 +39,7 @@ spec:
             - --single
             - --validators=terravaloper1pphdny9hgu3v59jhea6gaxjwrtguul6rqyz5sj
             - --proposals
-            - votes
+            - --votes
             - --upgrades
             - --price=false
       affinity:
