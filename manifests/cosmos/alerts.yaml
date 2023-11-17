@@ -66,7 +66,7 @@ spec:
           severity: info
       - alert: CosmosUpgradesSoon
         annotations:
-          description: chains about to be upgrade <1000 blocks
+          description: chains about to be upgraded in <1000 blocks
           summary: chain about to upgrade
         expr: |-
           cosmos_upgrade_plan{namespace="cosmos"} >0 and cosmos_upgrade_plan{namespace="cosmos"} < 1000
