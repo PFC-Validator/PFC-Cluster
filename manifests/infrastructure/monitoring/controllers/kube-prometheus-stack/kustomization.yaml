@@ -5,7 +5,7 @@ resources:
   - namespace.yaml
   - repository.yaml
   - release.yaml
-  - ingress.yaml
+ # - ingress.yaml
   - alertmanager-secrets.yaml
   - alertmanager-config.yaml
 configMapGenerator:

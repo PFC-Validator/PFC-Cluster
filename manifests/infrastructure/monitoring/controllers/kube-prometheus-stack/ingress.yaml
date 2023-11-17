@@ -1,94 +1,94 @@
-#
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-production
-    external-dns.alpha.kubernetes.io/hostname: prometheus.pfc.zone    
-    nginx.ingress.kubernetes.io/auth-type: basic
-    nginx.ingress.kubernetes.io/auth-secret: prometheus-auth
-    nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - PFC Cluster'
-  labels:
-    app.kubernetes.io/name: prometheus
-    app.kubernetes.io/version: 1.0.0
-  name: prometheus
-  namespace: monitoring
-spec:
-  ingressClassName: nginx
-  tls:
-  - hosts:
-    - prometheus.pfc.zone
-    secretName: prometheus-tls-secret
-  rules:
-  - host: prometheus.pfc.zone
-    http:
-      paths:
-      - backend:
-          service:
-            name: prometheus-operated
-            port:
-              number: 9090
-        path: /
-        pathType: Prefix
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-production
-    external-dns.alpha.kubernetes.io/hostname: alerts.pfc.zone    
-    nginx.ingress.kubernetes.io/auth-type: basic
-    nginx.ingress.kubernetes.io/auth-secret: prometheus-auth
-    nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - PFC Cluster'
-  labels:
-    app.kubernetes.io/name: alerts
-    app.kubernetes.io/version: 1.0.0
-  name: alerts
-  namespace: monitoring
-spec:
-  ingressClassName: nginx
-  tls:
-  - hosts:
-    - alerts.pfc.zone
-    secretName: alerts-tls-secret
-  rules:
-  - host: alerts.pfc.zone
-    http:
-      paths:
-      - backend:
-          service:
-            name: alertmanager-operated
-            port:
-              number: 9093
-        path: /
-        pathType: Prefix
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-production
-    external-dns.alpha.kubernetes.io/hostname: grafana.pfc.zone    
-  
-  labels:
-    app.kubernetes.io/name: grafana
-    app.kubernetes.io/version: 1.0.0
-  name: grafana
-  namespace: monitoring
-spec:
-  ingressClassName: nginx
-  tls:
-  - hosts:
-    - grafana.pfc.zone
-    secretName: grafana-tls-secret
-  rules:
-  - host: grafana.pfc.zone
-    http:
-      paths:
-      - backend:
-          service:
-            name: kube-prometheus-stack-grafana  
-            port:
-              number: 80
-        path: /
-        pathType: Prefix
+##
+#apiVersion: networking.k8s.io/v1
+#kind: Ingress
+#metadata:
+#  annotations:
+#    cert-manager.io/cluster-issuer: letsencrypt-production
+#    external-dns.alpha.kubernetes.io/hostname: prometheus.pfc.zone    
+#    nginx.ingress.kubernetes.io/auth-type: basic
+#    nginx.ingress.kubernetes.io/auth-secret: prometheus-auth
+#    nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - PFC Cluster'
+#  labels:
+#    app.kubernetes.io/name: prometheus
+#    app.kubernetes.io/version: 1.0.0
+#  name: prometheus
+#  namespace: monitoring
+#spec:
+#  ingressClassName: nginx
+#  tls:
+#  - hosts:
+#    - prometheus.pfc.zone
+#    secretName: prometheus-tls-secret
+#  rules:
+#  - host: prometheus.pfc.zone
+#    http:
+#      paths:
+#      - backend:
+#          service:
+#            name: prometheus-operated
+#            port:
+#              number: 9090
+#        path: /
+#        pathType: Prefix
+#---
+#apiVersion: networking.k8s.io/v1
+#kind: Ingress
+#metadata:
+#  annotations:
+#    cert-manager.io/cluster-issuer: letsencrypt-production
+#    external-dns.alpha.kubernetes.io/hostname: alerts.pfc.zone    
+#    nginx.ingress.kubernetes.io/auth-type: basic
+#    nginx.ingress.kubernetes.io/auth-secret: prometheus-auth
+#    nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - PFC Cluster'
+#  labels:
+#    app.kubernetes.io/name: alerts
+#    app.kubernetes.io/version: 1.0.0
+#  name: alerts
+#  namespace: monitoring
+#spec:
+#  ingressClassName: nginx
+#  tls:
+#  - hosts:
+#    - alerts.pfc.zone
+#    secretName: alerts-tls-secret
+#  rules:
+#  - host: alerts.pfc.zone
+#    http:
+#      paths:
+#      - backend:
+#          service:
+#            name: alertmanager-operated
+#            port:
+#              number: 9093
+#        path: /
+#        pathType: Prefix
+#---
+#apiVersion: networking.k8s.io/v1
+#kind: Ingress
+#metadata:
+#  annotations:
+#    cert-manager.io/cluster-issuer: letsencrypt-production
+#    external-dns.alpha.kubernetes.io/hostname: grafana.pfc.zone    
+#  
+#  labels:
+#    app.kubernetes.io/name: grafana
+#    app.kubernetes.io/version: 1.0.0
+#  name: grafana
+#  namespace: monitoring
+#spec:
+#  ingressClassName: nginx
+#  tls:
+#  - hosts:
+#    - grafana.pfc.zone
+#    secretName: grafana-tls-secret
+#  rules:
+#  - host: grafana.pfc.zone
+#    http:
+#      paths:
+#      - backend:
+#          service:
+#            name: kube-prometheus-stack-grafana  
+#            port:
+#              number: 80
+#        path: /
+#        pathType: Prefix

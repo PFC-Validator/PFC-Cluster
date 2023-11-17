@@ -32,15 +32,15 @@ spec:
           ingressClassName: nginx
           annotations:
             cert-manager.io/cluster-issuer: letsencrypt-production
-            external-dns.alpha.kubernetes.io/hostname: alert.pfc.zone    
+            external-dns.alpha.kubernetes.io/hostname: alerts.pfc.zone    
             nginx.ingress.kubernetes.io/auth-type: basic
             nginx.ingress.kubernetes.io/auth-secret: prometheus-auth
             nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - PFC Cluster'
           hosts: 
-            - alert.pfc.zone
+            - alerts.pfc.zone
           tls:
             - hosts:
-              - alert.pfc.zone
+              - alerts.pfc.zone
               secretName: alert-tls-secret
         
     prometheus:
@@ -67,15 +67,15 @@ spec:
         ingressClassName: nginx
         annotations:
           cert-manager.io/cluster-issuer: letsencrypt-production
-          external-dns.alpha.kubernetes.io/hostname: metrics.pfc.zone    
+          external-dns.alpha.kubernetes.io/hostname: prometheus.pfc.zone    
           nginx.ingress.kubernetes.io/auth-type: basic
           nginx.ingress.kubernetes.io/auth-secret: prometheus-auth
           nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - PFC Cluster'
         hosts: 
-          - metrics.pfc.zone
+          - prometheus.pfc.zone
         tls:
           - hosts:
-            - metrics.pfc.zone
+            - prometheus.pfc.zone
             secretName: metrics-tls-secret
 
     grafana:
@@ -128,16 +128,16 @@ spec:
         ingressClassName: nginx
         annotations:
           cert-manager.io/cluster-issuer: letsencrypt-production
-          external-dns.alpha.kubernetes.io/hostname: charts.pfc.zone    
+          external-dns.alpha.kubernetes.io/hostname: grafana.pfc.zone    
           nginx.ingress.kubernetes.io/auth-type: basic
           nginx.ingress.kubernetes.io/auth-secret: prometheus-auth
           nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - PFC Cluster'
         hosts: 
-          - charts.pfc.zone
+          - grafana.pfc.zone
         tls:
           - hosts:
-            - charts.pfc.zone
-            secretName: charts-tls-secret
+            - grafana.pfc.zone
+            secretName: grafana-tls-secret
         
   postRenderers:
     - kustomize:
