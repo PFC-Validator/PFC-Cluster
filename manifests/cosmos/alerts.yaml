@@ -33,3 +33,12 @@ spec:
         for: 10m
         labels:
           severity: critical
+      - alert: CosmosStalledHeight
+        annotations:
+          description: Height isn't going up
+          summary: it's dead jim
+        expr: |-
+          rate(cometbft_consensus_height{namespace="cosmos"}[10m]) == 0
+        for: 10m
+        labels:
+          severity: critical
