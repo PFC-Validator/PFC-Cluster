@@ -49,10 +49,10 @@ spec:
           description: proposals not voted on
           summary: feed the meter
         expr: |-
-          cosmos_validator_voting_proposals{namespace="cosmos"} >0
+          cosmos_validator_voting_proposals{namespace="cosmos",voted="no"} >0
         for: 100m
         labels:
-          severity: info
+          severity: warning
   - name: cosmos.upgrades
     rules:
       - alert: CosmosUpgrades
