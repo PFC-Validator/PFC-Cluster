@@ -62,7 +62,7 @@ spec:
               resources:
                 requests:
                   storage: 50Gi    
-        ingress:
+      ingress:
         enabled: true
         ingressClassName: nginx
         annotations:
