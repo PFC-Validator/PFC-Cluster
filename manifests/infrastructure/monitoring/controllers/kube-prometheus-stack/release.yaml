@@ -27,17 +27,6 @@ spec:
       config:
         global:
           resolve_timeout: 4m
-#        route:
-#          group_wait: 20s
-#          group_interval: 4m
-#          repeat_interval: 4h
-#          receiver: 'null'
-#          routes: 
-#          - receiver: pagerduty
-#            group_by:
-#            - severity
-#            matchers:
-#            - namespace: pfc-testnet
 
     prometheus:
       prometheusSpec:
@@ -103,6 +92,30 @@ spec:
             k8s-views-pods:
               url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
               token: ''
+    ingress:
+      enabled: true
+      ingressClassName: nginx
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-production
+        external-dns.alpha.kubernetes.io/hostname: metrics.pfc.zone    
+        nginx.ingress.kubernetes.io/auth-type: basic
+        nginx.ingress.kubernetes.io/auth-secret: prometheus-auth
+        nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - PFC Cluster'
+      hosts: 
+        - metrics.pfc.zone
+        - alert.pfc.zone
+        - chart.pfc.zone
+      tls:
+        - hosts:
+          - metrics.pfc.zone
+          secretName: metrics-tls-secret
+        - hosts:
+          - alert.pfc.zone
+          secretName: alert-tls-secret
+        - hosts:
+          - chart.pfc.zone
+          secretName: chart-tls-secret
+             
   postRenderers:
     - kustomize:
         patches:
