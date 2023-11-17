@@ -42,3 +42,34 @@ spec:
         for: 10m
         labels:
           severity: critical
+  - name: cosmos.active-props
+    rules:
+      - alert: CosmosActiveProposalsNotVoted
+        annotations:
+          description: proposals not voted on
+          summary: feed the meter
+        expr: |-
+          cosmos_validator_voting_proposals{namespace="cosmos"} >0
+        for: 100m
+        labels:
+          severity: info
+  - name: cosmos.upgrades
+    rules:
+      - alert: CosmosUpgrades
+        annotations:
+          description: chains upgrade
+          summary: chain has upgrade coming up
+        expr: |-
+          cosmos_upgrade_plan{namespace="cosmos"} >0
+        for: 10m
+        labels:
+          severity: info
+      - alert: CosmosUpgradesSoon
+        annotations:
+          description: chains about to be upgrade <1000 blocks
+          summary: chain about to upgrade
+        expr: |-
+          cosmos_upgrade_plan{namespace="cosmos"} < 1000
+        for: 10m
+        labels:
+          severity: warning
