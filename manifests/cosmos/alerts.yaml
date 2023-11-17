@@ -69,7 +69,7 @@ spec:
           description: chains about to be upgrade <1000 blocks
           summary: chain about to upgrade
         expr: |-
-          cosmos_upgrade_plan{namespace="cosmos"} < 1000
+          cosmos_upgrade_plan{namespace="cosmos"} >0 and cosmos_upgrade_plan{namespace="cosmos"} < 1000
         for: 10m
         labels:
           severity: warning
