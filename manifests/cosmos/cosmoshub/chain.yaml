@@ -16,7 +16,7 @@ spec:
     genesisURL: https://snapshots.polkachu.com/genesis/cosmos/genesis.json
     network: mainnet
     skipInvariants: true
-    snapshotURL: https://snapshots.polkachu.com/snapshots/cosmos/cosmos_17847245.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/cosmos/cosmos_17931837.tar.lz4
     
   podTemplate:
     image: ghcr.io/strangelove-ventures/heighliner/gaia:v13.0.1
