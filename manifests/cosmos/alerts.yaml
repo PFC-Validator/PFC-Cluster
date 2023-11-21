@@ -63,7 +63,7 @@ spec:
           cosmos_upgrade_plan{namespace="cosmos"} >0
         for: 10m
         labels:
-          severity: info
+          severity: warning
       - alert: CosmosUpgradesSoon
         annotations:
           description: chains about to be upgraded in <1000 blocks
@@ -72,4 +72,4 @@ spec:
           cosmos_upgrade_plan{namespace="cosmos"} >0 and cosmos_upgrade_plan{namespace="cosmos"} < 1000
         for: 10m
         labels:
-          severity: warning
+          severity: critical
