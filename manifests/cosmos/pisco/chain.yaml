@@ -25,10 +25,15 @@ spec:
     network: testnet
     skipInvariants: true
     snapshotURL: https://snapshots.polkachu.com/testnet-snapshots/terra/terra_8091291.tar.lz4
+    versions:
+      - height: 0
+        image: ghcr.io/pfc-developer/heighliner/terra:v2.6.0-rc1
+      - height: 8494000
+        image: ghcr.io/pfc-developer/heighliner/terra:v2.7.0
+    
   podTemplate:
     probes:
       strategy: None
-    image: ghcr.io/pfc-developer/heighliner/terra:v2.6.0-rc1
     resources:
       requests:
         memory: 16Gi
