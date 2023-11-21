@@ -34,8 +34,8 @@ spec:
     resources:
       requests:
         memory: 16Gi
-      affinity:
-        podAntiAffinity:
+    affinity:
+      podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
               matchExpressions:
