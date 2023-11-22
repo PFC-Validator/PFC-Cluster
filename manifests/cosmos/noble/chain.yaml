@@ -28,7 +28,7 @@ spec:
     genesisURL: https://snapshots.polkachu.com/genesis/noble/genesis.json
     network: mainnet
     skipInvariants: true
-    snapshotURL: https://snapshots.polkachu.com/snapshots/noble/noble_3598530.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/noble/noble_3613620.tar.lz4
   podTemplate:
     image: ghcr.io/strangelove-ventures/heighliner/noble:v4.0.2
     resources:
