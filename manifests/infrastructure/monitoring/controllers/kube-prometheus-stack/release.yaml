@@ -45,7 +45,8 @@ spec:
         
     prometheus:
       prometheusSpec:
-        retention: 336h
+      # about 10 days
+        retention: 250h
         resources:
           requests:
             cpu: 2000m
