@@ -60,7 +60,7 @@ spec:
             containers:
                 - name: horcrux-container
                   image: ghcr.io/pfc-developer/horcrux-container:0.12
-                  command: ["/bin/launch.sh","pisco-1","1000","500"]
+                  command: ["/bin/launch.sh","pisco-1","1000","1000"]
                   ports:
                     - containerPort: 2222
                       name: cosigner

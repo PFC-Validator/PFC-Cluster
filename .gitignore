@@ -21,3 +21,5 @@
 /external-docker/hermes/test
 /external-docker/restaker/config/*json
 .env
+# vscode cruft
+/cache
