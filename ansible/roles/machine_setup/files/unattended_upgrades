@@ -1,2 +1,4 @@
 Unattended-Upgrade::Automatic-Reboot "true";
-
+Unattended-Upgrade::Automatic-Reboot-Time "14:00";
+// check every 3 days. hopefully stopping ALL machines just rebooting at once 
+APT::Periodic::Unattended-Upgrade "3";
