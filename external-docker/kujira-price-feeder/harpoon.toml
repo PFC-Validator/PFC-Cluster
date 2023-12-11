@@ -516,12 +516,14 @@ derivative_period = "30m"
 #derivative = "twap"
 #derivative_period = "30m"
 
-[contract_addresses.osmosisv2]
-SOMMOSMO = "627"
-STARSOSMO = "1096"
-ATOMSTATOM = "803"
-STOSMOOSMO = "833"
-MNTAOSMO = "1215"
+
+[[currency_pairs]]
+base = "JUNO"
+quote = "OSMO"
+providers = ["osmosisv2"]
+derivative = "twap"
+derivative_period = "30m"
+
 
 [[currency_pairs]]
 base = "RLB"
@@ -573,3 +575,11 @@ KUJIUSDC = "0xDB7D929434F0a52fFE3E5631044776b23E6f8a67"
 
 [contract_addresses.camelotv3]
 WETHUSDC = "0x521aa84ab3fcc4c05cABaC24Dc3682339887B126"
+
+[contract_addresses.osmosisv2]
+SOMMOSMO = "627"
+STARSOSMO = "1096"
+ATOMSTATOM = "803"
+STOSMOOSMO = "833"
+MNTAOSMO = "1215"
+JUNOOSMO = "1097"

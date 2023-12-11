@@ -511,12 +511,6 @@ providers = ["osmosisv2"]
 derivative = "twap"
 derivative_period = "30m"
 
-[contract_addresses.osmosisv2]
-SOMMOSMO = "627"
-STARSOSMO = "1096"
-ATOMSTATOM = "803"
-STOSMOOSMO = "833"
-MNTAOSMO = "1215"
 
 [[currency_pairs]]
 base = "RLB"
@@ -555,6 +549,22 @@ providers = ["binance", "huobi", "okx", "bybit", "xt", "gate", "bitget", "kucoin
 base = "SOL"
 quote = "USD"
 providers = ["coinbase", "kraken"]
+
+[[currency_pairs]]
+base = "JUNO"
+quote = "OSMO"
+providers = ["osmosisv2"]
+derivative = "twap"
+derivative_period = "30m"
+
+[contract_addresses.osmosisv2]
+SOMMOSMO = "627"
+STARSOSMO = "1096"
+ATOMSTATOM = "803"
+STOSMOOSMO = "833"
+MNTAOSMO = "1215"
+JUNOOSMO = "1097"
+
 
 [contract_addresses.uniswapv3]
 USDCWETH = "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
