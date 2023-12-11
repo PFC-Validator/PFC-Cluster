@@ -13,4 +13,4 @@ kind: Kustomization
 images:
 - name: controller
   newName: ghcr.io/strangelove-ventures/cosmos-operator
-  newTag: v0.21.1
+  newTag: v0.21.5
