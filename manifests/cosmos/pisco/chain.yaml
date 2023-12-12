@@ -12,7 +12,10 @@ spec:
         index-events = ["tx.hash", "tx.height"]
         [rosetta]
         enable = false
-
+        [wasm]
+        query-contract-gas-limit = "10000000"
+        query_gas_limit = "10000000"
+        query-gas-limit = "10000000"
     binary: terrad
     chainID: pisco-1
     config:
