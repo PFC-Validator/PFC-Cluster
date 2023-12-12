@@ -393,6 +393,41 @@ derivative_period = "30m"
 base = "WETH"
 quote = "USDC"
 providers = ["uniswapv3"]
+[[currency_pairs]]
+base = "RIO"
+quote = "WETH"
+providers = ["uniswapv3"]
+derivative = "twap"
+derivative_period = "30m"
+
+[[currency_pairs]]
+base = "RIO"
+quote = "USDT"
+providers = ["mexc", “okx”]
+
+[contract_addresses.uniswapv3]                                                 
+WETHRIO = "0x5b7e3e37a1aa6369386e5939053779abd3597508"
+
+[[currency_pairs]]
+base = "NSTK"
+quote = "USK"
+providers = ["finv2"]
+derivative = "twap"
+derivative_period = "30m"
+
+[[currency_pairs]]
+base = "QCKUJI"
+quote = "KUJI"
+providers = ["finv2"]
+derivative = "twap"
+derivative_period = "30m"
+
+[[currency_pairs]]
+base = "QCMNTA"
+quote = "MNTA"
+providers = ["finv2"]
+derivative = "twap"
+derivative_period = "30m"
 
 [[provider_endpoints]]
 name = "fin"
@@ -466,10 +501,10 @@ KUJIUSDC = "kujira14hj2tavq8fpesdwxxcu44rty3hh90vhujrvcmstl4zr3txmfvw9sl4e867"
 MNTAUSDC = "kujira1ws9w7wl68prspv3rut3plv8249rm0ea0kk335swye3sl2slld4lqdmc0lv"
 WINKUSK = "kujira1qxtd87qus6uzvqs4jv9r0j9ccd4yla42s6qag7y8fp7hhv68nzas6hqxgw"
 AMPKUJIKUJI = "kujira1lse59wt7a5yksdd08mennt299katjkfzdhmh8hvck8ln08jktcmsxrnh8s"
+NSTKUSK = "kujira1ggtmfuktfcf6plhtdejyyqn5de5uge3tef0jv64ru68h2ctuvyqs3355mn"
+QCKUJIKUJI = "kujira14wsrem89304kpkl6d0j58dl6479eekwt047ccs0qzv9f60w80wzs8rjq4j"                          
+QCMNTAMNTA = "kujira1ujsr2ge7dr723kse7thjv2rm3k7dkmjaxqzdh8qkcnx5gqz57jsqxy4ker"
 
-[[provider_min_overrides]]
-denoms = ["NTRN"]
-providers = 1
 
 [contract_addresses.astroport_neutron]
 NTRNATOM = "neutron1e22zh5p8meddxjclevuhjmfj69jxfsa8uu3jvht72rv9d8lkhves6t8veq"
@@ -499,6 +534,14 @@ derivative_period = "30m"
 
 [[provider_min_overrides]]
 denoms = ["STARS", "SOMM"]
+providers = 1
+
+[[provider_min_overrides]]
+denoms = ["NTRN"]
+providers = 1
+
+[[provider_min_overrides]]                                                                                 
+denoms = ["QCKUJI", "QCMNTA", "NSTK"]
 providers = 1
 
 [[currency_pairs]]
