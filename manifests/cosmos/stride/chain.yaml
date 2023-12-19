@@ -20,13 +20,13 @@ spec:
     genesisURL: https://snapshots.polkachu.com/genesis/stride/genesis.json
     network: mainnet
     skipInvariants: true
-    snapshotURL: https://snapshots.polkachu.com/snapshots/stride/stride_6390645.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/stride/stride_6832674.tar.lz4
   podTemplate:
     image: ghcr.io/strangelove-ventures/heighliner/stride:v16.0.0
     resources:
       requests:
         memory: 16Gi
-  replicas: 1 # TODO change to 1 to use less resources
+  replicas: 2 # TODO change to 1 to use less resources
   volumeClaimTemplate:
     resources:
       requests:
