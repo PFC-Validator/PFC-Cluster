@@ -1,7 +1,7 @@
 # see https://github.com/polkachu/cosmos-validators/blob/main/roles/support_price_feeder/templates/kujira/mainnet.toml.j2
 # and https://gist.githubusercontent.com/starsquidnodes/c053265454acd3b24e243aff7c807653/raw/4f51538a9edfca9b047b3bb93fcf1bbcf17012d7/testnet-feeder-global
 gas_adjustment = 2.5
-gas_prices = "0.00125ukuji"
+gas_prices = "0.0034ukuji"
 enable_server = true
 enable_voter = true
 provider_timeout = "500ms"
