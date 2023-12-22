@@ -474,9 +474,8 @@ NTRNATOM = "neutron1e22zh5p8meddxjclevuhjmfj69jxfsa8uu3jvht72rv9d8lkhves6t8veq"
 
 [[provider_endpoints]]
 name = "astroport_neutron"
-urls = [
-  "https://rest.cosmos.directory/neutron"
-]
+url = "https://rest.cosmos.directory/neutron"
+
 
 [[currency_pairs]]
 base = "NTRN"
