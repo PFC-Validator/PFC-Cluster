@@ -42,6 +42,10 @@ providers = 1
 denoms = ["JUNO"]
 providers = 1
 
+[[provider_min_overrides]]
+denoms = ["AXL"]
+providers = 1
+
 [[currency_pairs]]
 base = "AKT"
 quote = "USD"
@@ -578,6 +582,15 @@ base = "SOL"
 quote = "USD"
 providers = ["coinbase", "kraken"]
 
+[[currency_pairs]]
+base = "AXL"
+quote = "USDT"
+providers = ["bitget", "bybit", "gate", "kucoin", "mexc"]
+
+[[currency_pairs]]
+base = "AXL"
+quote = "USD"
+providers = ["coinbase", "kraken", "crypto"]
 [contract_addresses.uniswapv3]
 USDCWETH = "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
 WSTETHWETH = "0x109830a1AAaD605BbF02a9dFA7B0B92EC2FB7dAa"
