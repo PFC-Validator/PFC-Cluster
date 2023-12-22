@@ -43,6 +43,10 @@ providers = 1
 denoms = ["RLB"]
 providers = 1
 
+[[provider_min_overrides]]
+denoms = ["AXL"]
+providers = 1
+
 [[currency_pairs]]
 base = "AKT"
 quote = "USD"
@@ -434,17 +438,19 @@ providers = ["finv2"]
 derivative = "twap"
 derivative_period = "30m"
 
-[[provider_endpoints]]
-name = "fin"
+[url_set.fin]
 urls = [
    "https://kaiyo-1.gigalixirapp.com", 
    "https://api-kujira.mintthemoon.xyz"
 ]
+
+[[provider_endpoints]]
+name = "fin"
+url_set = "fin"
 #rest = "https://kaiyo-1.gigalixirapp.com"
 timeout = "750ms"
 
-[[provider_endpoints]]
-name = "osmosisv2"
+[url_set.osmosisv2]
 urls = [
   "https://osmosis-api.polkachu.com",
   "https://api.osmosis.zone",
@@ -455,12 +461,9 @@ urls = [
   "https://rest.cosmos.directory/osmosis"
 ]
 
-#[[provider_endpoints]]
-#name = "osmosis"
-#urls = [
-#  "https://api.osmosis.zone",
-#  "https://api-osmosis.imperator.co",
-#]
+[[provider_endpoints]]
+name = "osmosisv2"
+url_set = "osmosisv2"
 
 [account]
 fee_granter = "kujira1vkje22mayn72r0a7kna6agv0sqm6k94ry9k6dd"
@@ -489,17 +492,24 @@ service_name = "price-feeder"
 type = "prometheus"
 prometheus_retention = 120
 
+[url_set.binance]
+urls = [
+  "https://api1.binance.com"
+]
 [[provider_endpoints]]
 name = "binance"
-rest = "https://api1.binance.com"
+url_set = "binance"
 websocket = "stream.binance.us:9443"
+
+[url_set.finv2]
+urls = [
+  "$API"
+]
 
 # this neeeds to be a mainnet API/LCD URL
 [[provider_endpoints]]
 name = "finv2"
-urls = [
-  "$API"
-]
+url_set = "finv2"
 
 [contract_addresses.finv2]
 KUJIUSDC = "kujira14hj2tavq8fpesdwxxcu44rty3hh90vhujrvcmstl4zr3txmfvw9sl4e867"
@@ -510,16 +520,22 @@ NSTKUSK = "kujira1ggtmfuktfcf6plhtdejyyqn5de5uge3tef0jv64ru68h2ctuvyqs3355mn"
 QCKUJIKUJI = "kujira14wsrem89304kpkl6d0j58dl6479eekwt047ccs0qzv9f60w80wzs8rjq4j"                          
 QCMNTAMNTA = "kujira1ujsr2ge7dr723kse7thjv2rm3k7dkmjaxqzdh8qkcnx5gqz57jsqxy4ker"
 
-
+[[provider_min_overrides]]
+denoms = ["NTRN"]
+providers = 1
 
 [contract_addresses.astroport_neutron]
 NTRNATOM = "neutron1e22zh5p8meddxjclevuhjmfj69jxfsa8uu3jvht72rv9d8lkhves6t8veq"
 
+[url_set.neutron]
+urls = [
+   "https://rest.cosmos.directory/neutron"
+]
+
 [[provider_endpoints]]
 name = "astroport_neutron"
-urls = [
-  "https://rest.cosmos.directory/neutron"
-]
+url_set = "neutron"
+
 
 [[currency_pairs]]
 base = "NTRN"
@@ -564,6 +580,20 @@ providers = ["osmosisv2"]
 derivative = "twap"
 derivative_period = "30m"
 
+#[[currency_pairs]]
+#base = "SOMM"
+#quote = "USD"
+#providers = ["osmosisv2"]
+#derivative = "twap"
+#derivative_period = "30m"
+
+[[currency_pairs]]
+base = "JUNO"
+quote = "OSMO"
+providers = ["osmosisv2"]
+derivative = "twap"
+derivative_period = "30m"
+
 
 [[currency_pairs]]
 base = "RLB"
@@ -592,7 +622,6 @@ base = "HNT"
 quote = "USD"
 providers = ["coinbase", "crypto"]
 
-
 [[currency_pairs]]
 base = "SOL"
 quote = "USDT"
@@ -609,6 +638,16 @@ quote = "OSMO"
 providers = ["osmosisv2"]
 derivative = "twap"
 derivative_period = "30m"
+
+[[currency_pairs]]
+base = "AXL"
+quote = "USDT"
+providers = ["bitget", "bybit", "gate", "kucoin", "mexc"]
+
+[[currency_pairs]]
+base = "AXL"
+quote = "USD"
+providers = ["coinbase", "kraken", "crypto"]
 
 [contract_addresses.osmosisv2]
 SOMMOSMO = "627"

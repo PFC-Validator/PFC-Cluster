@@ -35,11 +35,11 @@ denoms = ["WSTETH", "WETH"]
 providers = 1
 
 [[provider_min_overrides]]
-denoms = ["RLB"]
+denoms = ["JUNO"]
 providers = 1
 
 [[provider_min_overrides]]
-denoms = ["JUNO"]
+denoms = ["RLB"]
 providers = 1
 
 [[provider_min_overrides]]
@@ -397,6 +397,46 @@ base = "WETH"
 quote = "USDC"
 providers = ["uniswapv3"]
 
+[[currency_pairs]]
+base = "RIO"
+quote = "WETH"
+providers = ["uniswapv3"]
+derivative = "twap"
+derivative_period = "30m"
+
+[[currency_pairs]]
+base = "RIO"
+quote = "USDT"
+providers = ["mexc", "okx", "huobi"]
+
+[[currency_pairs]]
+base = "RIO"
+quote = "ETH"
+providers = ["pancakev3_bsc"]
+derivative = "twap"
+derivative_period = "30m"
+
+[[currency_pairs]]
+base = "NSTK"
+quote = "USK"
+providers = ["finv2"]
+derivative = "twap"
+derivative_period = "30m"
+
+[[currency_pairs]]
+base = "QCKUJI"
+quote = "KUJI"
+providers = ["finv2"]
+derivative = "twap"
+derivative_period = "30m"
+
+[[currency_pairs]]
+base = "QCMNTA"
+quote = "MNTA"
+providers = ["finv2"]
+derivative = "twap"
+derivative_period = "30m"
+
 [url_set.fin]
 urls = [
    "https://kaiyo-1.gigalixirapp.com", 
@@ -469,12 +509,14 @@ urls = [
 name = "finv2"
 url_set = "finv2"
 
-
 [contract_addresses.finv2]
 KUJIUSDC = "kujira14hj2tavq8fpesdwxxcu44rty3hh90vhujrvcmstl4zr3txmfvw9sl4e867"
 MNTAUSDC = "kujira1ws9w7wl68prspv3rut3plv8249rm0ea0kk335swye3sl2slld4lqdmc0lv"
 WINKUSK = "kujira1qxtd87qus6uzvqs4jv9r0j9ccd4yla42s6qag7y8fp7hhv68nzas6hqxgw"
 AMPKUJIKUJI = "kujira1lse59wt7a5yksdd08mennt299katjkfzdhmh8hvck8ln08jktcmsxrnh8s"
+NSTKUSK = "kujira1ggtmfuktfcf6plhtdejyyqn5de5uge3tef0jv64ru68h2ctuvyqs3355mn"
+QCKUJIKUJI = "kujira14wsrem89304kpkl6d0j58dl6479eekwt047ccs0qzv9f60w80wzs8rjq4j"                          
+QCMNTAMNTA = "kujira1ujsr2ge7dr723kse7thjv2rm3k7dkmjaxqzdh8qkcnx5gqz57jsqxy4ker"
 
 [[provider_min_overrides]]
 denoms = ["NTRN"]
@@ -514,6 +556,14 @@ derivative_period = "30m"
 denoms = ["STARS", "SOMM"]
 providers = 1
 
+[[provider_min_overrides]]
+denoms = ["NTRN"]
+providers = 1
+
+[[provider_min_overrides]]                                                                                 
+denoms = ["QCKUJI", "QCMNTA", "NSTK"]
+providers = 1
+
 [[currency_pairs]]
 base = "STARS"
 quote = "OSMO"
@@ -534,7 +584,6 @@ derivative_period = "30m"
 #providers = ["osmosisv2"]
 #derivative = "twap"
 #derivative_period = "30m"
-
 
 [[currency_pairs]]
 base = "JUNO"
@@ -571,7 +620,6 @@ base = "HNT"
 quote = "USD"
 providers = ["coinbase", "crypto"]
 
-
 [[currency_pairs]]
 base = "SOL"
 quote = "USDT"
@@ -583,6 +631,13 @@ quote = "USD"
 providers = ["coinbase", "kraken"]
 
 [[currency_pairs]]
+base = "JUNO"
+quote = "OSMO"
+providers = ["osmosisv2"]
+derivative = "twap"
+derivative_period = "30m"
+
+[[currency_pairs]]
 base = "AXL"
 quote = "USDT"
 providers = ["bitget", "bybit", "gate", "kucoin", "mexc"]
@@ -591,18 +646,6 @@ providers = ["bitget", "bybit", "gate", "kucoin", "mexc"]
 base = "AXL"
 quote = "USD"
 providers = ["coinbase", "kraken", "crypto"]
-[contract_addresses.uniswapv3]
-USDCWETH = "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
-WSTETHWETH = "0x109830a1AAaD605BbF02a9dFA7B0B92EC2FB7dAa"
-RLBUSDC = "0x2322e5517a3cbc75a3f02d74c96f82dda120d841"
-RLBWETH = "0x510100d5143e011db24e2aa38abe85d73d5b2177"
-RLBUSDT = "0x33676385160f9d8f03a0db2821029882f7c79e93"
-
-[contract_addresses.camelotv2]
-KUJIUSDC = "0xDB7D929434F0a52fFE3E5631044776b23E6f8a67"
-
-[contract_addresses.camelotv3]
-WETHUSDC = "0x521aa84ab3fcc4c05cABaC24Dc3682339887B126"
 
 [contract_addresses.osmosisv2]
 SOMMOSMO = "627"
@@ -611,3 +654,21 @@ ATOMSTATOM = "803"
 STOSMOOSMO = "833"
 MNTAOSMO = "1215"
 JUNOOSMO = "1097"
+
+
+[contract_addresses.uniswapv3]
+USDCWETH = "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
+WSTETHWETH = "0x109830a1AAaD605BbF02a9dFA7B0B92EC2FB7dAa"
+RLBUSDC = "0x2322e5517a3cbc75a3f02d74c96f82dda120d841"
+RLBWETH = "0x510100d5143e011db24e2aa38abe85d73d5b2177"
+RLBUSDT = "0x33676385160f9d8f03a0db2821029882f7c79e93"
+WETHRIO = "0x5b7e3e37a1aa6369386e5939053779abd3597508"
+
+[contract_addresses.camelotv2]
+KUJIUSDC = "0xDB7D929434F0a52fFE3E5631044776b23E6f8a67"
+
+[contract_addresses.camelotv3]
+WETHUSDC = "0x521aa84ab3fcc4c05cABaC24Dc3682339887B126"
+
+[contract_addresses.pancakev3_bsc]
+ETHRIO = "0x043681828303cdf9398f0768bf1da99feebf7ee8"
