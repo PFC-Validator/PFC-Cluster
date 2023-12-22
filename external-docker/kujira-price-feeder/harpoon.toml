@@ -454,13 +454,13 @@ prometheus_retention = 120
 
 [[provider_endpoints]]
 name = "binance"
-url = "https://api1.binance.com"
+urls = "https://api1.binance.com"
 websocket = "stream.binance.us:9443"
 
 # this neeeds to be a mainnet API/LCD URL
 [[provider_endpoints]]
 name = "finv2"
-url = "$API"
+urls = "$API"
 
 
 [contract_addresses.finv2]
@@ -478,7 +478,7 @@ NTRNATOM = "neutron1e22zh5p8meddxjclevuhjmfj69jxfsa8uu3jvht72rv9d8lkhves6t8veq"
 
 [[provider_endpoints]]
 name = "astroport_neutron"
-url = "https://rest.cosmos.directory/neutron"
+urls = "https://rest.cosmos.directory/neutron"
 
 
 [[currency_pairs]]
