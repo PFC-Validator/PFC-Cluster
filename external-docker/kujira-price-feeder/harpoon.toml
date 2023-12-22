@@ -398,6 +398,7 @@ urls = [
    "https://kaiyo-1.gigalixirapp.com", 
    "https://api-kujira.mintthemoon.xyz"
 ]
+
 [[provider_endpoints]]
 name = "fin"
 url_set = "fin"
@@ -418,13 +419,6 @@ urls = [
 [[provider_endpoints]]
 name = "osmosisv2"
 url_set = "osmosisv2"
-
-#[[provider_endpoints]]
-#name = "osmosis"
-#urls = [
-#  "https://api.osmosis.zone",
-#  "https://api-osmosis.imperator.co",
-#]
 
 [account]
 address = "$ADDRESS"
@@ -452,15 +446,24 @@ service_name = "price-feeder"
 type = "prometheus"
 prometheus_retention = 120
 
+[url_set.binance]
+urls = [
+  "https://api1.binance.com"
+]
 [[provider_endpoints]]
 name = "binance"
-urls = "https://api1.binance.com"
+url_set = "binance"
 websocket = "stream.binance.us:9443"
+
+[url_set.finv2]
+urls = [
+  "$API"
+]
 
 # this neeeds to be a mainnet API/LCD URL
 [[provider_endpoints]]
 name = "finv2"
-urls = "$API"
+url_set = "finv2"
 
 
 [contract_addresses.finv2]
@@ -476,9 +479,14 @@ providers = 1
 [contract_addresses.astroport_neutron]
 NTRNATOM = "neutron1e22zh5p8meddxjclevuhjmfj69jxfsa8uu3jvht72rv9d8lkhves6t8veq"
 
+[url_set.neutron]
+urls = [
+   "https://rest.cosmos.directory/neutron"
+]
+
 [[provider_endpoints]]
 name = "astroport_neutron"
-urls = "https://rest.cosmos.directory/neutron"
+url_set = "neutron"
 
 
 [[currency_pairs]]
