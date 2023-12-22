@@ -393,17 +393,18 @@ base = "WETH"
 quote = "USDC"
 providers = ["uniswapv3"]
 
-[[provider_endpoints]]
-name = "fin"
+[url_set.fin]
 urls = [
    "https://kaiyo-1.gigalixirapp.com", 
    "https://api-kujira.mintthemoon.xyz"
 ]
+[[provider_endpoints]]
+name = "fin"
+url_set = "fin"
 #rest = "https://kaiyo-1.gigalixirapp.com"
 timeout = "750ms"
 
-[[provider_endpoints]]
-name = "osmosisv2"
+[url_set.osmosisv2]
 urls = [
   "https://osmosis-api.polkachu.com",
   "https://api.osmosis.zone",
@@ -413,6 +414,10 @@ urls = [
   "https://osmosis.api.kjnodes.com",
   "https://rest.cosmos.directory/osmosis"
 ]
+
+[[provider_endpoints]]
+name = "osmosisv2"
+url_set = "osmosisv2"
 
 #[[provider_endpoints]]
 #name = "osmosis"
@@ -449,15 +454,14 @@ prometheus_retention = 120
 
 [[provider_endpoints]]
 name = "binance"
-urls = "https://api1.binance.com"
+url = "https://api1.binance.com"
 websocket = "stream.binance.us:9443"
 
 # this neeeds to be a mainnet API/LCD URL
 [[provider_endpoints]]
 name = "finv2"
-urls = [
-  "$API"
-]
+url = "$API"
+
 
 [contract_addresses.finv2]
 KUJIUSDC = "kujira14hj2tavq8fpesdwxxcu44rty3hh90vhujrvcmstl4zr3txmfvw9sl4e867"
