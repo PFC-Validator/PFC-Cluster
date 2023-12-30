@@ -21,7 +21,7 @@ threshold = "2"
 
 [[deviation_thresholds]]
 base = "KUJI"
-threshold = "2"
+threshold = "1"
 
 [[deviation_thresholds]]
 base = "WHALE"
