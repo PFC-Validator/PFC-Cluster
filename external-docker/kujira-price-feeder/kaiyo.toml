@@ -343,13 +343,8 @@ providers = ["binance", "coinbase", "kucoin", "okx"]
 
 [[currency_pairs]]
 base = "WBTC"
-quote = "USD"
-providers = ["bitget"]
-
-[[currency_pairs]]
-base = "WBTC"
 quote = "USDT"
-providers = ["bitget", "bybit", "crypto", "gate", "hitbtc", "mexc", "phemex", "poloniex", "xt"]
+providers = ["bitget", "bybit", "crypto", "gate", "hitbtc", "mexc", "phemex", "poloniex"]
 
 [[currency_pairs]]
 base = "MNTA"
@@ -620,7 +615,7 @@ providers = ["uniswapv3"]
 [[currency_pairs]]
 base = "HNT"
 quote = "USDT"
-providers = ["bitget", "gate", "okx", "kucoin", "bybit"]
+providers = ["bitget", "bitmart", "gate", "kucoin", "bybit"]
 
 [[currency_pairs]]
 base = "HNT"
