@@ -221,18 +221,17 @@ providers = ["mexc"]
 derivative = "twap"
 derivative_period = "30m"
 
-
 [[currency_pairs]]
 base = "KUJI"
-quote = "USD"
-providers = ["mexc"]
+quote = "USDC"
+providers = ["finv2"]
 derivative = "twap"
 derivative_period = "30m"
 
 [[currency_pairs]]
 base = "KUJI"
-quote = "USDC"
-providers = ["finv2"]
+quote = "WETH"
+providers = ["camelotv3"]
 derivative = "twap"
 derivative_period = "30m"
 
@@ -672,10 +671,9 @@ RLBWETH = "0x510100d5143e011db24e2aa38abe85d73d5b2177"
 RLBUSDT = "0x33676385160f9d8f03a0db2821029882f7c79e93"
 WETHRIO = "0x5b7e3e37a1aa6369386e5939053779abd3597508"
 
-[contract_addresses.camelotv2]
-KUJIUSDC = "0xDB7D929434F0a52fFE3E5631044776b23E6f8a67"
-
 [contract_addresses.camelotv3]
+WETHUSDC = "0x521aa84ab3fcc4c05cABaC24Dc3682339887B126"
+WETHGMX = "0xC99be44383BC8d82357F5A1D9ae9976EE9d75bee"
 WETHUSDC = "0x521aa84ab3fcc4c05cABaC24Dc3682339887B126"
 
 [contract_addresses.pancakev3_bsc]
