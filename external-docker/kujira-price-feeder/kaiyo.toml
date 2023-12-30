@@ -23,28 +23,30 @@ threshold = "2"
 base = "KUJI"
 threshold = "2"
 
-[[provider_min_overrides]]
-denoms = ["STATOM", "STOSMO", "MNTA", "WINK", "USK"]
-providers = 1
+[[deviation_thresholds]]
+base = "WHALE"
+threshold = "2"
 
 [[provider_min_overrides]]
-denoms = ["KUJI"]
-providers = 1
-
-[[provider_min_overrides]]
-denoms = ["WSTETH", "WETH"]
-providers = 1
-
-[[provider_min_overrides]]
-denoms = ["JUNO"]
-providers = 1
-
-[[provider_min_overrides]]
-denoms = ["RLB"]
-providers = 1
-
-[[provider_min_overrides]]
-denoms = ["AXL"]
+denoms = ["STATOM", 
+  "STOSMO", 
+  "MNTA", 
+  "WINK",
+  "USK",
+  "WHALE",
+  "NTRN", 
+  "AMPKUJI",
+  "STARS",
+  "SOMM",
+  "QCKUJI", 
+  "QCMNTA", 
+  "NSTK",
+  "WSTETH", 
+  "WETH",
+  "JUNO",
+  "RLB",
+  "AXL"
+]
 providers = 1
 
 [[currency_pairs]]
@@ -438,6 +440,27 @@ providers = ["finv2"]
 derivative = "twap"
 derivative_period = "30m"
 
+[[currency_pairs]]
+base = "WHALE"
+quote = "USDT"
+providers = ["mexc"]
+derivative = "twap"
+derivative_period = "30m"
+
+[[currency_pairs]]
+base = "WHALE"
+quote = "OSMO"
+providers = ["osmosisv2"]
+derivative = "twap"
+derivative_period = "30m"
+
+[[currency_pairs]]
+base = "WHALE"
+quote = "MNTA"
+providers = ["fin"]
+derivative = "twap"
+derivative_period = "30m"
+
 [url_set.fin]
 urls = [
    "https://kaiyo-1.gigalixirapp.com", 
@@ -519,10 +542,7 @@ AMPKUJIKUJI = "kujira1lse59wt7a5yksdd08mennt299katjkfzdhmh8hvck8ln08jktcmsxrnh8s
 NSTKUSK = "kujira1ggtmfuktfcf6plhtdejyyqn5de5uge3tef0jv64ru68h2ctuvyqs3355mn"
 QCKUJIKUJI = "kujira14wsrem89304kpkl6d0j58dl6479eekwt047ccs0qzv9f60w80wzs8rjq4j"                          
 QCMNTAMNTA = "kujira1ujsr2ge7dr723kse7thjv2rm3k7dkmjaxqzdh8qkcnx5gqz57jsqxy4ker"
-
-[[provider_min_overrides]]
-denoms = ["NTRN"]
-providers = 1
+WHALEMNTA = "kujira1865zmuchjd0g0xr2q5n6hm747s8xju5k8h6mympk4vmqefkuy3hqc66tcw"
 
 [contract_addresses.astroport_neutron]
 NTRNATOM = "neutron1e22zh5p8meddxjclevuhjmfj69jxfsa8uu3jvht72rv9d8lkhves6t8veq"
@@ -543,9 +563,6 @@ quote = "ATOM"
 providers = ["astroport_neutron"]
 derivative = "twap"
 derivative_period = "30m"
-[[provider_min_overrides]]
-denoms = ["AMPKUJI"]
-providers = 1
 
 [[currency_pairs]]
 base = "AMPKUJI"
@@ -554,17 +571,6 @@ providers = ["finv2"]
 derivative = "twap"
 derivative_period = "30m"
 
-[[provider_min_overrides]]
-denoms = ["STARS", "SOMM"]
-providers = 1
-
-[[provider_min_overrides]]
-denoms = ["NTRN"]
-providers = 1
-
-[[provider_min_overrides]]                                                                                 
-denoms = ["QCKUJI", "QCMNTA", "NSTK"]
-providers = 1
 
 [[currency_pairs]]
 base = "STARS"
@@ -656,7 +662,7 @@ ATOMSTATOM = "803"
 STOSMOOSMO = "833"
 MNTAOSMO = "1215"
 JUNOOSMO = "1097"
-
+WHALEOSMO = "1318"
 
 [contract_addresses.uniswapv3]
 USDCWETH = "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
