@@ -30,7 +30,7 @@ spec:
       - height: 0
         image: ghcr.io/pfc-developer/heighliner/kujira:v0.9.2
       - height: 22263500
-        image: ghcr.io/pfc-developer/heighliner/kujira:v0.9.3
+        image: ghcr.io/pfc-developer/heighliner/kujira:v0.9.3-1
   podTemplate:
     probes:
       strategy: None
