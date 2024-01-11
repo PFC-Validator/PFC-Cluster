@@ -20,7 +20,7 @@ spec:
     genesisURL: https://snapshots.polkachu.com/genesis/stride/genesis.json
     network: mainnet
     skipInvariants: true
-    snapshotURL: https://snapshots.polkachu.com/snapshots/stride/stride_6832674.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/stride/stride_7187938.tar.lz4
   podTemplate:
     image: ghcr.io/strangelove-ventures/heighliner/stride:v16.0.0
     resources:
