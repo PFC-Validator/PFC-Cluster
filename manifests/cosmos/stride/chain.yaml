@@ -21,8 +21,12 @@ spec:
     network: mainnet
     skipInvariants: true
     snapshotURL: https://snapshots.polkachu.com/snapshots/stride/stride_7187938.tar.lz4
+    versions:
+      - height: 0
+        image: ghcr.io/strangelove-ventures/heighliner/stride:v16.0.0
+      - height:  7244427 
+        image: ghcr.io/strangelove-ventures/heighliner/stride:v17.0.0
   podTemplate:
-    image: ghcr.io/strangelove-ventures/heighliner/stride:v16.0.0
     resources:
       requests:
         memory: 16Gi
