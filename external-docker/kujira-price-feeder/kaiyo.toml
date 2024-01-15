@@ -96,7 +96,8 @@ urls = [
 
 [url_set.rpc_ethereum]
 urls = [
-	"https://ethereumnodes.com"
+	"https://rpc.ankr.com/eth",
+	"https://ethereum.publicnode.com"
 ]
 
 
