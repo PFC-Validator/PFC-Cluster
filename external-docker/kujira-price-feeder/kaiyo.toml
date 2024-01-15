@@ -94,6 +94,11 @@ urls = [
   "https://rest.cosmos.directory/osmosis"
 ]
 
+[url_set.rpc_ethereum]
+urls = [
+	"https://ethereumnodes.com"
+]
+
 
 
 #
