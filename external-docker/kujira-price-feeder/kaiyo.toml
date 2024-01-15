@@ -48,10 +48,23 @@ urls = [
 urls = [
   "$API"
 ]
+
+[url_set.api_kujira]
+urls = [
+  "$API"
+]
+
+
 [url_set.neutron]
 urls = [
    "https://rest.cosmos.directory/neutron"
 ]
+[url_set.api_neutron]
+urls = [
+   "https://rest.cosmos.directory/neutron"
+]
+
+
 
 [url_set.fin]
 urls = [
@@ -60,6 +73,17 @@ urls = [
 ]
 
 [url_set.osmosisv2]
+urls = [
+  "https://osmosis-api.polkachu.com",
+  "https://api.osmosis.zone",
+  "https://api-osmosis.imperator.co",
+  "https://api-osmosis-ia.cosmosia.notional.ventures",
+  "https://osmosis.rest.stakin-nodes.com",
+  "https://osmosis.api.kjnodes.com",
+  "https://rest.cosmos.directory/osmosis"
+]
+
+[url_set.api_osmosis]
 urls = [
   "https://osmosis-api.polkachu.com",
   "https://api.osmosis.zone",
