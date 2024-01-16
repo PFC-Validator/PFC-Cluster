@@ -36,7 +36,7 @@ spec:
       - height: 8648000
         image: ghcr.io/pfc-developer/heighliner/terra:v2.8.0        
       - height: 9160000
-        image: ghcr.io/pfc-developer/heighliner/terra:v2.9.0        
+        image: ghcr.io/pfc-developer/heighliner/terra:v2.9.2       
       
   podTemplate:
     probes:
