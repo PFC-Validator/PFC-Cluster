@@ -100,6 +100,13 @@ urls = [
 	"https://ethereum.publicnode.com"
 ]
 
+# https://cosmos.directory/secretnetwork/nodes (REST)
+[url_set.api_secret]
+urls = [
+	"https://scrt-api.dalnim.finance",
+	"https://1rpc.io/scrt-lcd",
+	"https://lcd.secret.express"
+]
 
 
 #
@@ -657,6 +664,13 @@ quote = "USDT"
 providers = ["binance", "bybit", "gate", "huobi", "kucoin", "lbank", "mexc"]
 
 [[currency_pairs]]
+base = "SHD"
+quote = "MNTA"
+providers = ["finv2", "shade"]
+derivative = "twap"
+derivative_period = "30m"
+
+[[currency_pairs]]
 base = "SOL"
 quote = "USD"
 providers = ["coinbase", "kraken"]
@@ -849,10 +863,10 @@ denoms = [
     "JUNO",
     "MNTA",
     "NSTK",
-    "NTRN",
     "QCKUJI",
     "QCMNTA",
     "RLB",
+    "SHD",
     "SOMM",
     "STARS",
     "STATOM",
@@ -910,6 +924,10 @@ name = "osmosisv2"
 url_set = "api_osmosis"
 
 [[provider_endpoints]]
+name = "shade"
+url_set = "api_secret"
+
+[[provider_endpoints]]
 name = "uniswapv3"
 url_set = "rpc_ethereum"
 
@@ -930,6 +948,7 @@ MNTAUSDC = "kujira1ws9w7wl68prspv3rut3plv8249rm0ea0kk335swye3sl2slld4lqdmc0lv"
 NSTKUSK = "kujira1ggtmfuktfcf6plhtdejyyqn5de5uge3tef0jv64ru68h2ctuvyqs3355mn"
 QCKUJIKUJI = "kujira14wsrem89304kpkl6d0j58dl6479eekwt047ccs0qzv9f60w80wzs8rjq4j"
 QCMNTAMNTA = "kujira1ujsr2ge7dr723kse7thjv2rm3k7dkmjaxqzdh8qkcnx5gqz57jsqxy4ker"
+SHDMNTA = "kujira14u8ynhj7d8h2379yqj5q2ma0xxpvfjlrpauhzxgnj40ejq953mlsugux8d"
 SOMMMNTA = "kujira1nx5lqc2j4w0ak5dxevj82lar5kunxwj5yamr39xqfazmkksx4f2sksf0hz"
 STARSMNTA = "kujira1hsdzhyvuc2z3f8d3yae84uk62d69vk68vxgudkun7gccz6hvrvfq0vx6fd"
 STATOMMNTA = "kujira1l2x5c2fjjnw9uhrfhtme9snw3tzs4jt8cm0q2ysqssx6zskxatesjm7w7f"
@@ -950,6 +969,9 @@ NTRNUSDC = "1324"
 
 [contract_addresses.pancakev3_bsc]
 ETHRIO = "0x043681828303cdf9398f0768bf1da99feebf7ee8"
+
+[contract_addresses.shade]
+SHDMNTA = "secret1hyypq9cd207z2rrsxc7jdtljvfqdeu3gzafs87"
 
 [contract_addresses.uniswapv3]
 RLBWETH = "0x510100d5143e011db24e2aa38abe85d73d5b2177"
