@@ -42,7 +42,7 @@ spec:
           mountPath: /state            
       containers:
       - name: harpoon-price-feeder
-        image: ghcr.io/pfc-developer/kujira-price-feeder:v0.9.0
+        image: ghcr.io/pfc-developer/kujira-price-feeder:v0.10.0
           
         resources:
           limits:
