@@ -57,10 +57,16 @@ urls = [
 
 [url_set.neutron]
 urls = [
+	"https://neutron-rest.publicnode.com/",
+	"https://lcd-neutron.whispernode.com/",
+	"https://neutron-api.lavenderfive.com/",
    "https://rest.cosmos.directory/neutron"
 ]
 [url_set.api_neutron]
 urls = [
+	"https://neutron-rest.publicnode.com/",
+	"https://lcd-neutron.whispernode.com/",
+	"https://neutron-api.lavenderfive.com/",
    "https://rest.cosmos.directory/neutron"
 ]
 
