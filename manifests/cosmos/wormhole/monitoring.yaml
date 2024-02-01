@@ -1,0 +1,53 @@
+###
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  wormhole-chain-monitor
+  namespace: cosmos
+spec:
+  selector:
+    matchLabels:
+      app:  wormhole-chain-monitor
+  template:
+    metadata:
+      labels:
+        app:  wormhole-chain-monitor
+        kind-of: cosmos-exporter
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9300"        
+    spec:
+      containers:
+      - name:  wormhole-exporter
+        image: ghcr.io/pfc-developer/cosmos-exporter:v2.1.4
+        resources:
+          limits:
+            memory: "1Gi"
+            cpu: "1500m"
+        ports:
+            - containerPort: 9300
+              name: prometheus
+              protocol: TCP
+        args:
+            - --denom=utest
+            - --denom-coefficient=1000000
+            - --bech-prefix=wormhole 
+            - --node=wormhole-rpc:9090 
+            - --tendermint-rpc=http://wormhole-rpc:26657
+            - --single
+            #- --proposals
+            - --upgrades
+            #- --votes
+            #- --price=true
+      affinity:
+        # place the price feeder in the same zone as node it is pushing stuff into
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key:  app.kubernetes.io/name
+                operator: In
+                values:
+                - wormhole
+            topologyKey: "zone"  

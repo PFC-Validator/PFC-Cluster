@@ -1,0 +1,42 @@
+apiVersion: cosmos.strange.love/v1
+kind: CosmosFullNode
+metadata:
+  name: wormhole
+  namespace: cosmos
+  annotations:
+    prometheus.io/port: "prometheus"
+    prometheus.io/scrape: "true"
+spec:
+  chain:
+    app:
+      minGasPrice: "0.0utest"
+    binary: wormchaind
+    chainID: wormchain
+    config:
+      seeds: "8e7a0485dd956491a63cea0fac598e7588ef46f7@35.207.119.54:26656,8542cd7e6bf9d260fef543bc49e59be5a3fa9074@seed.publicnode.com:26656"
+
+      maxInboundPeers: 20
+      maxOutboundPeers: 70
+    genesisURL: https://github.com/wormhole-foundation/wormhole/blob/main/wormchain/mainnet/genesis.json
+    network: mainnet
+    skipInvariants: true
+    snapshotURL: https://dl.ccvalidators.com/SNAPSHOTS/wormchain/wormchain_5965220.tar.lz4
+    versions:
+      - height: 0
+        image: ghcr.io/pfc-developer/heighliner/wormhole:v2.23.40
+
+
+  podTemplate:
+    resources:
+      requests:
+        memory: 16Gi
+  replicas: 2 # TODO change to 1 to use less resources
+  volumeClaimTemplate:
+    resources:
+      requests:
+        storage: 600Gi
+    accessModes: [ "ReadWriteOnce" ]
+    storageClassName: ssd-persistent-block-store
+  service:
+    p2pTemplate:
+      type: NodePort

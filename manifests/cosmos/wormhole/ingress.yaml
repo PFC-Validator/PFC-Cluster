@@ -1,0 +1,63 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    external-dns.alpha.kubernetes.io/hostname: rpc.wormhole.yieldpay.money
+    nginx.ingress.kubernetes.io/enable-cors: "true"    
+  labels:
+    app.kubernetes.io/name: wormhole-rpc
+    app.kubernetes.io/version: 1.0.0
+  name: wormhole-rpc
+  namespace: cosmos
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: rpc.wormhole.yieldpay.money
+    http:
+      paths:
+      - backend:
+          service:
+            name: wormhole-rpc
+            port:
+              number: 26657
+        path: /
+        pathType: Prefix   
+  tls:
+  - hosts:
+    - rpc.wormhole.yieldpay.money
+    secretName: wormhole-cosmos-rpc-tls-secret
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+    external-dns.alpha.kubernetes.io/hostname: grpc.wormhole.yieldpay.money
+    cert-manager.io/cluster-issuer: letsencrypt-production
+  name: wormhole-grpc
+  namespace: cosmos
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: grpc.wormhole.yieldpay.money
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: wormhole-rpc
+            port:
+              number: 9090
+  tls:
+  - hosts:
+    - grpc.wormhole.yieldpay.money
+    secretName: wormhole-cosmos-grpc-tls-secret
+
+   
