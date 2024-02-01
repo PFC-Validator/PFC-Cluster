@@ -23,7 +23,7 @@ spec:
     snapshotURL: https://dl.ccvalidators.com/SNAPSHOTS/wormchain/wormchain_5965220.tar.lz4
     versions:
       - height: 0
-        image: ghcr.io/pfc-developer/heighliner/wormhole:v2.23.40
+        image: ghcr.io/pfc-developer/heighliner/wormchain:v2.23.40
 
 
   podTemplate:
