@@ -17,7 +17,7 @@ spec:
 
       maxInboundPeers: 20
       maxOutboundPeers: 70
-    genesisURL: https://github.com/wormhole-foundation/wormhole/blob/main/wormchain/mainnet/genesis.json
+    genesisURL: https://raw.githubusercontent.com/wormhole-foundation/wormhole/main/wormchain/mainnet/genesis.json
     network: mainnet
     skipInvariants: true
     snapshotURL: https://dl.ccvalidators.com/SNAPSHOTS/wormchain/wormchain_5965220.tar.lz4
