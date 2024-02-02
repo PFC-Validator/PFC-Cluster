@@ -20,7 +20,9 @@ spec:
     genesisURL: https://raw.githubusercontent.com/wormhole-foundation/wormhole/main/wormchain/mainnet/genesis.json
     network: mainnet
     skipInvariants: true
-    snapshotURL: https://dl.ccvalidators.com/SNAPSHOTS/wormchain/wormchain_5965220.tar.lz4
+    #snapshotURL: https://dl.ccvalidators.com/SNAPSHOTS/wormchain/wormchain_5965220.tar.lz4
+    snapshotURL: https://snapshot.pfc.zone/files/other/d.tar.lz4
+    
     versions:
       - height: 0
         image: ghcr.io/pfc-developer/heighliner/wormchain:v2.23.40
