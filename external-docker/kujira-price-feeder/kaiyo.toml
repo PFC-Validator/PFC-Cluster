@@ -888,6 +888,7 @@ derivative_period = "30m"
 [[provider_min_overrides]]
 denoms = [
     "AMPKUJI",
+    "FUZN",
     "JUNO",
     "KUJI",
     "MNTA",
