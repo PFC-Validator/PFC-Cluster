@@ -13,20 +13,19 @@ spec:
     binary: wormchaind
     chainID: wormchain
     config:
-      seeds: "8e7a0485dd956491a63cea0fac598e7588ef46f7@35.207.119.54:26656,8542cd7e6bf9d260fef543bc49e59be5a3fa9074@seed.publicnode.com:26656"
+      seeds: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:25956,8e7a0485dd956491a63cea0fac598e7588ef46f7@35.207.119.54:26656,8542cd7e6bf9d260fef543bc49e59be5a3fa9074@seed.publicnode.com:26656"
 
       maxInboundPeers: 20
       maxOutboundPeers: 70
-    genesisURL: https://raw.githubusercontent.com/wormhole-foundation/wormhole/main/wormchain/mainnet/genesis.json
+    genesisURL: https://snapshots.polkachu.com/genesis/wormchain/genesis.json
     network: mainnet
     skipInvariants: true
     #snapshotURL: https://dl.ccvalidators.com/SNAPSHOTS/wormchain/wormchain_5965220.tar.lz4
-    snapshotURL: https://snapshot.pfc.zone/files/other/d.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/wormchain/wormchain_6919055.tar.lz4
     
     versions:
       - height: 0
-        image: ghcr.io/pfc-developer/heighliner/wormchain:v2.23.40
-
+        image: ghcr.io/pfc-developer/heighliner/wormchain:v2.23.1
 
   podTemplate:
     resources:
