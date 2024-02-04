@@ -125,7 +125,7 @@
               "uid": "JGM4KV5nz"
             },
             "exemplar": true,
-            "expr": "rate(ibc_receive_packets{instance=\"$instance\", src_chain=\"$source_chain\", src_channel=\"$source_channel\"}[10m])",
+            "expr": "rate(receive_packets_confirmed_total{job=\"$job\", src_chain=\"$source_chain\", src_channel=\"$source_channel\"}[10m])",
             "hide": false,
             "interval": "",
             "legendFormat": "Receive",
@@ -137,7 +137,7 @@
               "uid": "JGM4KV5nz"
             },
             "exemplar": true,
-            "expr": "rate(ibc_timeout_packets{instance=\"$instance\", src_chain=\"$source_chain\", src_channel=\"$source_channel\"}[10m])",
+            "expr": "rate(timeout_packets_confirmed_total{job=\"$job\", src_chain=\"$source_chain\", src_channel=\"$source_channel\"}[10m])",
             "hide": false,
             "interval": "",
             "legendFormat": "Timeout",
