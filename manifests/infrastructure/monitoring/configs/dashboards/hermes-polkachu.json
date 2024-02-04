@@ -31,7 +31,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "JGM4KV5nz"
+          "uid": "prometheus"
         },
         "fieldConfig": {
           "defaults": {
@@ -111,10 +111,12 @@
               "type": "prometheus",
               "uid": "JGM4KV5nz"
             },
+            "editorMode": "code",
             "exemplar": true,
-            "expr": "rate(ibc_acknowledgment_packets{instance=\"$instance\", src_chain=\"$source_chain\", src_channel=\"$source_channel\"}[10m])",
+            "expr": "rate(acknowledgment_packets_confirmed_total{job=\"$job\", src_chain=\"$source_chain\", src_channel=\"$source_channel\"}[10m])",
             "interval": "",
             "legendFormat": "Acknowledgement",
+            "range": true,
             "refId": "A"
           },
           {
@@ -202,7 +204,7 @@
             },
             "editorMode": "code",
             "exemplar": true,
-            "expr": "workers{instance=\"$instance\"}\n",
+            "expr": "workers{job=\"$job\"}\n",
             "interval": "",
             "legendFormat": "",
             "range": true,
@@ -297,7 +299,7 @@
             },
             "editorMode": "code",
             "exemplar": true,
-            "expr": "rate(acknowledgment_packets_confirmed_total{instance=\"$instance\"}[10m])",
+            "expr": "rate(acknowledgment_packets_confirmed_total{job=\"$job\"}[10m])",
             "interval": "",
             "legendFormat": "{{ src_chain }}: {{ src_channel }}",
             "range": true,
@@ -353,7 +355,8 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green"
+                  "color": "green",
+                  "value": null
                 },
                 {
                   "color": "red",
@@ -391,7 +394,7 @@
             },
             "editorMode": "code",
             "exemplar": true,
-            "expr": "rate(receive_packets_confirmed_total{instance=\"$instance\"}[10m])",
+            "expr": "rate(receive_packets_confirmed_total{job=\"$job\"}[10m])",
             "interval": "",
             "legendFormat": "{{ src_chain }}: {{ src_channel }}",
             "range": true,
@@ -447,7 +450,8 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green"
+                  "color": "green",
+                  "value": null
                 },
                 {
                   "color": "red",
@@ -485,7 +489,7 @@
             },
             "editorMode": "code",
             "exemplar": true,
-            "expr": "rate(timeout_packets_confirmed_total{instance=\"$instance\"}[10m])",
+            "expr": "rate(timeout_packets_confirmed_total{job=\"$job\"}[10m])",
             "interval": "",
             "legendFormat": "{{ src_chain }}: {{ src_channel }}",
             "range": true,
@@ -505,22 +509,22 @@
         {
           "current": {
             "selected": true,
-            "text": "10.0.22.65:3001",
-            "value": "10.0.22.65:3001"
+            "text": "pfc-hermes-metrics",
+            "value": "pfc-hermes-metrics"
           },
           "datasource": {
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "definition": "label_values(acknowledgment_packets_confirmed_total,instance)",
+          "definition": "label_values(acknowledgment_packets_confirmed_total,job)",
           "hide": 0,
           "includeAll": false,
-          "label": "Instance",
+          "label": "job",
           "multi": false,
-          "name": "instance",
+          "name": "job",
           "options": [],
           "query": {
-            "query": "label_values(acknowledgment_packets_confirmed_total,instance)",
+            "query": "label_values(acknowledgment_packets_confirmed_total,job)",
             "refId": "PrometheusVariableQueryEditor-VariableQuery"
           },
           "refresh": 1,
@@ -532,14 +536,14 @@
         {
           "current": {
             "selected": true,
-            "text": "kaiyo-1",
-            "value": "kaiyo-1"
+            "text": "injective-1",
+            "value": "injective-1"
           },
           "datasource": {
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "definition": "label_values(acknowledgment_packets_confirmed_total{instance=\"$instance\"},src_chain)",
+          "definition": "label_values(acknowledgment_packets_confirmed_total{job=\"$job\"},src_chain)",
           "hide": 0,
           "includeAll": false,
           "label": "Source Chain",
@@ -547,7 +551,7 @@
           "name": "source_chain",
           "options": [],
           "query": {
-            "query": "label_values(acknowledgment_packets_confirmed_total{instance=\"$instance\"},src_chain)",
+            "query": "label_values(acknowledgment_packets_confirmed_total{job=\"$job\"},src_chain)",
             "refId": "PrometheusVariableQueryEditor-VariableQuery"
           },
           "refresh": 1,
@@ -559,14 +563,14 @@
         {
           "current": {
             "selected": true,
-            "text": "channel-5",
-            "value": "channel-5"
+            "text": "channel-4",
+            "value": "channel-4"
           },
           "datasource": {
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "definition": "label_values(acknowledgment_packets_confirmed_total{instance=\"$instance\", src_chain=\"$source_chain\"},src_channel)",
+          "definition": "label_values(acknowledgment_packets_confirmed_total{job=\"$job\", src_chain=\"$source_chain\"},src_channel)",
           "hide": 0,
           "includeAll": false,
           "label": "Source Channel",
@@ -574,7 +578,7 @@
           "name": "source_channel",
           "options": [],
           "query": {
-            "query": "label_values(acknowledgment_packets_confirmed_total{instance=\"$instance\", src_chain=\"$source_chain\"},src_channel)",
+            "query": "label_values(acknowledgment_packets_confirmed_total{job=\"$job\", src_chain=\"$source_chain\"},src_channel)",
             "refId": "PrometheusVariableQueryEditor-VariableQuery"
           },
           "refresh": 1,
@@ -593,6 +597,6 @@
     "timezone": "",
     "title": "Relayer Hermes - polkachu",
     "uid": "woHR_vQnk",
-    "version": 4,
+    "version": 5,
     "weekStart": ""
   }
