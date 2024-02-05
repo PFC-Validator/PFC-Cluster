@@ -9,7 +9,7 @@ metadata:
 spec:
   chain:
     app:
-      minGasPrice: "0.01utest"
+      minGasPrice: "0.0utest"
     binary: wormchaind
     chainID: wormchain
     config:
