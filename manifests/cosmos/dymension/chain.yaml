@@ -9,7 +9,7 @@ metadata:
 spec:
   chain:
     app:
-      minGasPrice: "0adym"
+      minGasPrice: "20000000000adym"
       pruning: 
         interval: 137
         strategy: custom 
