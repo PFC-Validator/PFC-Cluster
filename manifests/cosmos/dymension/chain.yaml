@@ -1,0 +1,57 @@
+apiVersion: cosmos.strange.love/v1
+kind: CosmosFullNode
+metadata:
+  name: dymension
+  namespace: cosmos
+  annotations:
+    prometheus.io/port: "prometheus"
+    prometheus.io/scrape: "true"
+spec:
+  chain:
+    app:
+      minGasPrice: "0adym"
+      pruning: 
+        interval: 137
+        strategy: custom 
+        keepRecent: 4889
+      overrides: |-
+        # Set app.toml overrides here. Such as:
+        index-events = ["tx.hash", "tx.height"]
+        [rosetta]
+        enable = false
+
+    binary: dymd
+    chainID: dymension_1100-1
+    config:
+      seeds: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:20556"
+      maxOutboundPeers: 70
+    genesisURL: https://snapshots.polkachu.com/genesis/dymension/genesis.json
+    network: mainnet
+    skipInvariants: true
+    snapshotURL: https://snapshots.polkachu.com/snapshots/dymension/dymension_26485.tar.lz4
+  podTemplate:
+    image: ghcr.io/strangelove-ventures/heighliner/dymension:v3.0.0
+    resources:
+      requests:
+        memory: 16Gi
+    affinity:
+      podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app.kubernetes.io/name
+                operator: In
+                values:
+                - dymension
+            topologyKey: "zone"        
+  replicas: 2 # TODO change to 1 to use less resources
+  volumeClaimTemplate:
+    resources:
+      requests:
+        storage: 400Gi
+    accessModes: [ "ReadWriteOnce" ]
+    storageClassName: ssd-persistent-block-store
+  service:
+    maxP2PExternalAddresses: 2
+    p2pTemplate:
+      type: NodePort

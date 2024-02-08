@@ -8,6 +8,7 @@ resources:
 - pisco.yaml
 - harpoon.yaml 
 - noble.yaml
+- dymension.yaml
 - wormhole.yaml
 - creds.yaml
 - alertmanager-config.yaml

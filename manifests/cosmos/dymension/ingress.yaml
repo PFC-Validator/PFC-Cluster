@@ -1,0 +1,63 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    external-dns.alpha.kubernetes.io/hostname: rpc.dymension.yieldpay.money
+    nginx.ingress.kubernetes.io/enable-cors: "true"    
+  labels:
+    app.kubernetes.io/name: dymension-rpc
+    app.kubernetes.io/version: 1.0.0
+  name: dymension-rpc
+  namespace: cosmos
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: rpc.dymension.yieldpay.money
+    http:
+      paths:
+      - backend:
+          service:
+            name: dymension-rpc
+            port:
+              number: 26657
+        path: /
+        pathType: Prefix   
+  tls:
+  - hosts:
+    - rpc.dymension.yieldpay.money
+    secretName: dymension-cosmos-rpc-tls-secret
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+    external-dns.alpha.kubernetes.io/hostname: grpc.dymension.yieldpay.money
+    cert-manager.io/cluster-issuer: letsencrypt-production
+  name: dymension-grpc
+  namespace: cosmos
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: grpc.dymension.yieldpay.money
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: dymension-rpc
+            port:
+              number: 9090
+  tls:
+  - hosts:
+    - grpc.dymension.yieldpay.money
+    secretName: dymension-cosmos-grpc-tls-secret
+
+   
