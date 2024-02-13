@@ -1,0 +1,65 @@
+history_db = "/state/feeder.db_v2"
+
+[account]
+address = "$ADDRESS"
+chain_id = "kev-1"
+validator = "$VALIDATOR"
+prefix = "kujira"
+
+[keyring]
+backend = "file"
+dir = "/home/user/.kujira"
+prefix = "kujira"
+
+[rpc]
+grpc_endpoint = "$GRPC"
+rpc_timeout = "100ms"
+tmrpc_endpoint = "$RPC"
+
+
+[server]
+listen_addr = "0.0.0.0:8171"
+read_timeout = "20s"
+verbose_cors = true
+write_timeout = "20s"
+
+[telemetry]
+enable_hostname = true
+enable_hostname_label = true
+enable_service_label = true
+enabled = true
+global_labels = [["chain-id", "kev-1"]]
+service_name = "price-feeder"
+type = "prometheus"
+
+[[healthchecks]]
+url = "https://hc-ping.com/HEALTHCHECK-UUID"
+timeout = "30s"
+
+[[deviation_thresholds]]
+base = "USDT"
+threshold = "2"
+
+[[provider_min_overrides]]
+denoms = ["BTC"]
+providers = 5
+
+[contract_addresses.finv2]
+KUJIUSDC = "kujira14hj2tavq8fpesdwxxcu44rty3hh90vhujrvcmstl4zr3txmfvw9sl4e867"
+WINKUSK = "kujira1qxtd87qus6uzvqs4jv9r0j9ccd4yla42s6qag7y8fp7hhv68nzas6hqxgw"
+
+[[currency_pairs]]
+base = "USDT"
+quote = "USD"
+providers = ["coinbase", "kraken", "crypto", "gate", "binanceus"]
+
+[[currency_pairs]]
+base = "BTC"
+quote = "USD"
+providers = ["coinbase", "kraken", "crypto"]
+
+[[currency_pairs]]
+base = "BTC"
+quote = "USDT"
+providers = ["binance", "mexc", "huobi"]
+
