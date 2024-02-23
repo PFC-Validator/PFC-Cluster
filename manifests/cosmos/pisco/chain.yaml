@@ -27,7 +27,7 @@ spec:
     genesisURL: "https://snapshots.polkachu.com/testnet-genesis/terra/genesis.json"
     network: testnet
     skipInvariants: true
-    snapshotURL: https://snapshots.polkachu.com/testnet-snapshots/terra/terra_9634167.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/testnet-snapshots/terra/terra_9840113.tar.lz4
     versions:
       - height: 0
         image: ghcr.io/pfc-developer/heighliner/terra:v2.6.0-rc1
