@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./manifests/cosmos/orai
+  path: ./manifests/cosmos/oraichain
   prune: true
   targetNamespace: cosmos
   sourceRef:
