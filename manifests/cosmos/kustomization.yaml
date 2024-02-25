@@ -9,7 +9,7 @@ resources:
 - harpoon.yaml 
 - noble.yaml
 - dymension.yaml
-#- wormhole.yaml
+- orai.yaml
 - creds.yaml
 - alertmanager-config.yaml
 - alerts.yaml
