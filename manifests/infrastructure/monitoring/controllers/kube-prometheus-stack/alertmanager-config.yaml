@@ -29,4 +29,4 @@ spec:
         - routingKey:
            key: pagerDutyIntegrationV2
            name: alertmanager-secrets
-           severity: '{{ if .CommonLabels.severity }}{{ .CommonLabels.severity | toLower }}{{ else }}critical{{ end }}'
+          severity: '{{ if .CommonLabels.severity }}{{ .CommonLabels.severity | toLower }}{{ else }}critical{{ end }}'
