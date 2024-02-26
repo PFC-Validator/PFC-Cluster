@@ -23,6 +23,10 @@ spec:
           channel: '#alert'
     - name: pagerduty
       pagerdutyConfigs:
-        - serviceKey:
-           key: pagerDutySecret
+#        - serviceKey:
+#           key: pagerDutyIntegrationKey
+#           name: alertmanager-secrets
+        - routingKey:
+           key: pagerDutyIntegrationV2
            name: alertmanager-secrets
+           severity: '{{ if .CommonLabels.severity }}{{ .CommonLabels.severity | toLower }}{{ else }}critical{{ end }}'
