@@ -8,6 +8,7 @@ metadata:
     app.kubernetes.io/name: alertmanagerconfig
     alertmanagerConfig: slack
 spec:
+  routes:
   route:
     groupBy: ['severity']
     receiver: slack_router
@@ -21,7 +22,7 @@ spec:
             name: alertmanager-secrets
             key: slack
           channel: '#alert'      
-    - name: pagerduty
+#    - name: pagerduty
       pagerdutyConfigs:
 #        - serviceKey:
 #           key: pagerDutyIntegrationKey
