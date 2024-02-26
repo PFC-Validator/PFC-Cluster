@@ -22,7 +22,7 @@ spec:
             name: alertmanager-secrets
             key: slack
           channel: '#alert'      
-    - name: pagerduty
+ #   - name: pagerduty
       pagerdutyConfigs:
 #        - serviceKey:
 #           key: pagerDutyIntegrationKey
