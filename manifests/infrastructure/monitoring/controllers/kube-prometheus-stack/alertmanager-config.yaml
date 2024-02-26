@@ -8,7 +8,7 @@ metadata:
     app.kubernetes.io/name: alertmanagerconfig
     alertmanagerConfig: slack
 spec:
-  routes:
+  #routes:
   route:
     groupBy: ['severity']
     receiver: slack_router
