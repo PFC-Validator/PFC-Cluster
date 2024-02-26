@@ -20,8 +20,7 @@ spec:
         - apiURL:
             name: alertmanager-secrets
             key: slack
-          channel: '#alert'
-          send_resolved: true
+          channel: '#alert'      
     - name: pagerduty
       pagerdutyConfigs:
 #        - serviceKey:
