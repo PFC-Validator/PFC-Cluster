@@ -40,7 +40,8 @@ spec:
     versions:
       - height: 0
         image: ghcr.io/pfc-developer/heighliner/oraichain:v0.41.6
-
+      - height: 16077107
+        image: ghcr.io/pfc-developer/heighliner/oraichain:v0.41.7
   podTemplate:
     resources:
       requests:
