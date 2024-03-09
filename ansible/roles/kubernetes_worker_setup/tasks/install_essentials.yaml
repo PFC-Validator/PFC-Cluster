@@ -39,12 +39,14 @@
 
 - name: add Kubernetes apt-key
   apt_key:
-    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+   # url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    url: https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key
     state: present
 
 - name: apt-add Kubernetes
   apt_repository:
-    repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+    #repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+    repo: deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /
     state: present
     filename: 'kubernetes'
 
