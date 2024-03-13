@@ -25,7 +25,7 @@ spec:
     genesisURL: https://snapshots.polkachu.com/testnet-genesis/kujira/genesis.json
     network: testnet
     skipInvariants: true
-    snapshotURL: https://snapshots.polkachu.com/testnet-snapshots/kujira/kujira_25176022.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/testnet-snapshots/kujira/kujira_25398818.tar.lz4
     versions:
       - height: 0
         image: ghcr.io/pfc-developer/heighliner/kujira:v0.9.2
