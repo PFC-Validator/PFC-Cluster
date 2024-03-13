@@ -25,7 +25,7 @@ ENV DIRECTORY_DOMAIN=cosmos.directory
 
 ENV MNEMONIC=NONE
 ENV ONLY_OPERATORS=true
-ENV NETWORKS_OVERRIDE_PATH=/config
+ENV NETWORKS_OVERRIDE_PATH=/config/networks.local.json
 
 VOLUME [ "/config" ]
 CMD npm run autostake

@@ -4,5 +4,6 @@ VERSION="$1"
 
 docker build  --progress=plain --build-arg VERSION=${VERSION} --build-arg TARGETPLATFORM="linux/amd64" -t ghcr.io/pfc-developer/hermes:${VERSION} .
 # --no-cache
+#docker tag ghcr.io/pfc-developer/hermes:${VERSION} ghcr.io/pfc-developer/hermes:${VERSION}.1
 docker push ghcr.io/pfc-developer/hermes:${VERSION}
 
