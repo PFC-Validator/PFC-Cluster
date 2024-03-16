@@ -8,6 +8,8 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
     external-dns.alpha.kubernetes.io/hostname: rpc.cosmoshub.yieldpay.finance
+    external-dns.alpha.kubernetes.io/target: cluster.yieldpay.finance
+    
     nginx.ingress.kubernetes.io/enable-cors: "true"
 
   labels:
@@ -40,6 +42,7 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
     external-dns.alpha.kubernetes.io/hostname: grpc.cosmoshub.yieldpay.finance
+    external-dns.alpha.kubernetes.io/target: cluster.yieldpay.finance
     cert-manager.io/cluster-issuer: letsencrypt-production
   name: cosmoshub-grpc
   namespace: cosmos

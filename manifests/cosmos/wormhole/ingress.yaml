@@ -8,6 +8,8 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
     external-dns.alpha.kubernetes.io/hostname: rpc.wormhole.yieldpay.money
+    external-dns.alpha.kubernetes.io/target: cluster.yieldpay.finance
+    
     nginx.ingress.kubernetes.io/enable-cors: "true"    
   labels:
     app.kubernetes.io/name: wormhole-rpc
@@ -39,6 +41,8 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
     external-dns.alpha.kubernetes.io/hostname: grpc.wormhole.yieldpay.money
+    external-dns.alpha.kubernetes.io/target: cluster.yieldpay.finance
+    
     cert-manager.io/cluster-issuer: letsencrypt-production
   name: wormhole-grpc
   namespace: cosmos

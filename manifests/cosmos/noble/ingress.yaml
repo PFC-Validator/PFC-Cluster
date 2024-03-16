@@ -8,6 +8,8 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
     external-dns.alpha.kubernetes.io/hostname: rpc.noble.pfc.zone
+    external-dns.alpha.kubernetes.io/target: cluster.pfc.zone
+    
     nginx.ingress.kubernetes.io/enable-cors: "true"    
   labels:
     app.kubernetes.io/name: noble-rpc
@@ -39,6 +41,7 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
     external-dns.alpha.kubernetes.io/hostname: grpc.noble.pfc.zone
+    external-dns.alpha.kubernetes.io/target: cluster.pfc.zone
     cert-manager.io/cluster-issuer: letsencrypt-production
   name: noble-grpc
   namespace: cosmos
