@@ -8,6 +8,7 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
     external-dns.alpha.kubernetes.io/hostname: rpc.dymension.yieldpay.money
+    external-dns.alpha.kubernetes.io/target: cluster.yieldpay.finance
     nginx.ingress.kubernetes.io/enable-cors: "true"    
   labels:
     app.kubernetes.io/name: dymension-rpc
@@ -39,6 +40,7 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
     external-dns.alpha.kubernetes.io/hostname: grpc.dymension.yieldpay.money
+    external-dns.alpha.kubernetes.io/target: cluster.yieldpay.finance
     cert-manager.io/cluster-issuer: letsencrypt-production
   name: dymension-grpc
   namespace: cosmos

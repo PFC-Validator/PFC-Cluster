@@ -409,12 +409,12 @@ base = "RIO"
 quote = "USDT"
 providers = ["mexc", "okx", "huobi"]
 
-[[currency_pairs]]
-base = "RIO"
-quote = "ETH"
-providers = ["pancakev3_bsc"]
-derivative = "twap"
-derivative_period = "30m"
+#[[currency_pairs]]
+#base = "RIO"
+#quote = "ETH"
+#providers = ["pancakev3_bsc"]
+#derivative = "twap"
+#derivative_period = "30m"
 
 [[currency_pairs]]
 base = "NSTK"

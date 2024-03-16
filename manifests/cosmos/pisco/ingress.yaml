@@ -7,7 +7,8 @@ kind: Ingress
 metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
-    external-dns.alpha.kubernetes.io/hostname: rpc.pisco.yieldpay.finance     
+    external-dns.alpha.kubernetes.io/hostname: rpc.pisco.yieldpay.finance, api.pisco.yieldpay.finance
+    external-dns.alpha.kubernetes.io/target: cluster.yieldpay.finance
     nginx.ingress.kubernetes.io/enable-cors: "true"
   labels:
     app.kubernetes.io/name: pisco-rpc
@@ -19,6 +20,7 @@ spec:
   tls:
   - hosts:
     - rpc.pisco.yieldpay.finance
+    - api.pisco.yieldpay.finance
     secretName: rpc-cosmos-pisco-tls-secret
   rules:
   - host: rpc.pisco.yieldpay.finance
@@ -31,26 +33,6 @@ spec:
               number: 26657
         path: /
         pathType: Prefix
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-production
-    external-dns.alpha.kubernetes.io/hostname: api.pisco.yieldpay.finance   
-    nginx.ingress.kubernetes.io/enable-cors: "true"
-  labels:
-    app.kubernetes.io/name: pisco-api
-    app.kubernetes.io/version: 1.0.0
-  name: pisco-api
-  namespace: cosmos
-spec:
-  ingressClassName: nginx
-  tls:
-  - hosts:
-    - api.pisco.yieldpay.finance
-    secretName: api-cosmos-pisco-tls-secret
-  rules:
   - host: api.pisco.yieldpay.finance
     http:
       paths:
