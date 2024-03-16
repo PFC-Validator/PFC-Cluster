@@ -29,9 +29,11 @@ LABEL org.opencontainers.image.description="Hermes Relayer"
 
 WORKDIR /home/hermes
 COPY hermes.sh /home/hermes/hermes.sh
+COPY hermes_cmd.sh /home/hermes/hermes_cmd.sh
 COPY init_keys.sh /home/hermes/init_keys.sh
 COPY balances.sh /home/hermes/balances.sh
 RUN ["chmod", "+x", "/home/hermes/hermes.sh"]
+RUN ["chmod", "+x", "/home/hermes/hermes_cmd.sh"]
 RUN ["chmod", "+x", "/home/hermes/init_keys.sh"]
 RUN ["chmod", "+x", "/home/hermes/balances.sh"]
 
