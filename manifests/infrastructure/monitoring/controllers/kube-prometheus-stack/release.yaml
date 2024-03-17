@@ -32,7 +32,8 @@ spec:
           ingressClassName: nginx
           annotations:
             cert-manager.io/cluster-issuer: letsencrypt-production
-            external-dns.alpha.kubernetes.io/hostname: alerts.pfc.zone    
+            external-dns.alpha.kubernetes.io/hostname: alerts.pfc.zone
+            external-dns.alpha.kubernetes.io/target: cluster.pfc.zone
             nginx.ingress.kubernetes.io/auth-type: basic
             nginx.ingress.kubernetes.io/auth-secret: prometheus-auth
             nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - PFC Cluster'
@@ -68,7 +69,8 @@ spec:
         ingressClassName: nginx
         annotations:
           cert-manager.io/cluster-issuer: letsencrypt-production
-          external-dns.alpha.kubernetes.io/hostname: prometheus.pfc.zone    
+          external-dns.alpha.kubernetes.io/hostname: prometheus.pfc.zone
+          external-dns.alpha.kubernetes.io/target: cluster.pfc.zone   
           nginx.ingress.kubernetes.io/auth-type: basic
           nginx.ingress.kubernetes.io/auth-secret: prometheus-auth
           nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - PFC Cluster'
@@ -129,7 +131,8 @@ spec:
         ingressClassName: nginx
         annotations:
           cert-manager.io/cluster-issuer: letsencrypt-production
-          external-dns.alpha.kubernetes.io/hostname: grafana.pfc.zone    
+          external-dns.alpha.kubernetes.io/hostname: grafana.pfc.zone
+          external-dns.alpha.kubernetes.io/target: cluster.pfc.zone   
           nginx.ingress.kubernetes.io/auth-type: basic
           nginx.ingress.kubernetes.io/auth-secret: prometheus-auth
           nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - PFC Cluster'
