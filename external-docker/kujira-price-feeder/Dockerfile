@@ -1,12 +1,13 @@
-FROM golang:1.20.8-alpine3.17 AS build-env
+#FROM golang:1.20.8-alpine3.17 AS build-env
+FROM golang:1.20-alpine3.18 AS build-env
 
 # TARGETPLATFORM should be one of linux/amd64 or linux/arm64.
 ARG TARGETPLATFORM
 
 # Use muslc for static libs
 ARG BUILD_TAGS="muslc"
-ARG VERSION=master
-ARG ORACLE_VERSION=v0.6.2
+ARG VERSION=v0.9.1
+ARG ORACLE_VERSION=v0.12.0
 ARG LD_FLAGS=-linkmode=external \
 -extldflags '-Wl,-z,muldefs -static'
 
