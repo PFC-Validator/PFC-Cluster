@@ -44,13 +44,11 @@ spec:
               {{ range .Labels.SortedPairs }} • *{{ .Name }}:* `{{ .Value }}`
               {{ end }}
             {{ end }}    
+
  #   - name: pagerduty
-      pagerdutyConfigs:
-#        - serviceKey:
-#           key: pagerDutyIntegrationKey
+#      pagerdutyConfigs:
+#        - routingKey:
+#           key: pagerDutyIntegrationV2
 #           name: alertmanager-secrets
-        - routingKey:
-           key: pagerDutyIntegrationV2
-           name: alertmanager-secrets
-          severity: 'critical'
+#          severity: 'critical'
           #severity: '{{ if .CommonLabels.severity }}{{ .CommonLabels.severity | toLower }}{{ else }}critical{{ end }}'
