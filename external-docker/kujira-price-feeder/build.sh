@@ -4,11 +4,13 @@ if [ "$#" -ne 1 ]; then echo "usage: $0 oracle-price-feeder version " >&2; exit 
 ORACLE_VERSION="$1"
 #git clone https://github.com/Team-Kujira/oracle-price-feeder.git
 #cd oracle-price-feeder/dockerfile || exit
-docker build --no-cache --progress=plain \
+#--no-cache
+docker build \
+	--progress=plain \
 	--build-arg VERSION=v0.9.1 \
 	--build-arg ORACLE_VERSION=${ORACLE_VERSION} \
 	-t ghcr.io/pfc-developer/kujira-price-feeder:${ORACLE_VERSION} .
 #	--build-arg TARGETPLATFORM="linux/amd64" \
 # --no-cache
-docker push ghcr.io/pfc-developer/kujira-price-feeder:${ORACLE_VERSION}
+echo docker push ghcr.io/pfc-developer/kujira-price-feeder:${ORACLE_VERSION}
 #$:${ORACLE_VERSION} .

@@ -48,4 +48,4 @@ cat /home/user/makekey | kujirad keys add price-feed --recover --keyring-backend
 echo "available keys"
 echo purple123 | kujirad keys list
 echo "starting feeder"
-echo 'purple123' | /bin/price-feeder config.toml
+echo 'purple123' | /usr/local/bin/price-feeder config.toml
