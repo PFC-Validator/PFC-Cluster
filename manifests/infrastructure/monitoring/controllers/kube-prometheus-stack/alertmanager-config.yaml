@@ -10,7 +10,7 @@ metadata:
 spec:
   #routes:
   route:
-    groupBy: ['severity']
+   # groupBy: ['severity']
     receiver: slack_router
     groupWait: 0s
     groupInterval: 5m
