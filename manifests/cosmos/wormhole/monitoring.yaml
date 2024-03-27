@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name:  wormhole-exporter
-        image: ghcr.io/pfc-developer/cosmos-exporter:v2.1.4
+        image: ghcr.io/pfc-developer/cosmos-exporter:v2.1.5
         resources:
           limits:
             memory: "1Gi"
