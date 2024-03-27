@@ -7,6 +7,10 @@ main readme is here - https://github.com/topolvm/topolvm/blob/main/deploy/README
 
 ## create the Volume Group
 ### NVMe example
+sgdisk -p /dev/nvme1n1
+sgdisk -p /dev/nvme0n1
+partprobe
+
 blkdiscard /dev/nvme0n1p4 -f
 blkdiscard /dev/nvme1n1p4 -f
 partprobe

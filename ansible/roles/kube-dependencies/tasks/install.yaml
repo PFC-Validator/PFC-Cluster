@@ -60,12 +60,13 @@
 
 - name: add Kubernetes apt-key
   apt_key:
-    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+  #curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+    url: https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key
     state: present
 
 - name: add Kubernetes' APT repository
   apt_repository:
-    repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+    repo: deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /
     state: present
     filename: 'kubernetes'
 
@@ -97,13 +98,13 @@
 
 - name: install Kubelet
   apt:
-    name: kubelet=1.28.*
+    name: kubelet=1.29.*
     state: present
     update_cache: true
 
 - name: install Kubeadm
   apt:
-    name: kubeadm=1.28.*
+    name: kubeadm=1.29.*
     state: present
 
 - name: apt-mark Kubernetes
@@ -131,19 +132,19 @@
     value: 1
 
 - name: check Kubelet args in Kubelet config
-  shell: grep "^Environment=\"KUBELET_EXTRA_ARGS=" /etc/systemd/system/kubelet.service.d/10-kubeadm.conf || true
+  shell: grep "^Environment=\"KUBELET_EXTRA_ARGS=" /lib/systemd/system/kubelet.service.d/10-kubeadm.conf || true
   register: check_args
 
 - name: add runtime args in Kubelet config
   lineinfile:
-    dest: "/etc/systemd/system/kubelet.service.d/10-kubeadm.conf"
+    dest: "/lib/systemd/system/kubelet.service.d/10-kubeadm.conf"
     line: "Environment=\"KUBELET_EXTRA_ARGS= --runtime-cgroups=/system.slice/containerd.service --container-runtime-endpoint=unix:///run/containerd/containerd.sock\""
     insertafter: '\[Service\]'
   when: check_args.stdout == ""
 
 - name: master - install Kubectl
   apt:
-    name: kubectl=1.28.*
+    name: kubectl=1.29.*
     state: present
   when: inventory_hostname in groups['k8_master']
 
