@@ -38,10 +38,12 @@
   changed_when: false
 
 - name: add Kubernetes apt-key
-  apt_key:   
+  command: 'curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg'
+  changed_when: true
+ # apt_key:   
   #curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
-    url: https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key
-    state: present
+ #   url: https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key
+ #   state: present
 
 - name: apt-add Kubernetes
   apt_repository:    

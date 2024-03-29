@@ -11,6 +11,8 @@ this cluster is using 'zone' for affinity.
 
 for example. 
 ```
+kubectl get nodes --show-labels
+
 kubectl label node w-lsw-nl-01 provider=lsw zone=lsw-nl
 ```
 ## cilium
