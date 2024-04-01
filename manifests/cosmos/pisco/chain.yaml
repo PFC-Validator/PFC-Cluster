@@ -66,5 +66,6 @@ spec:
   service:
     maxP2PExternalAddresses: 3
     p2pTemplate:
+      externalTrafficPolicy: Cluster
       type: NodePort
   type: Sentry

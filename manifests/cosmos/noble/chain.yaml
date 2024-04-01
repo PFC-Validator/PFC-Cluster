@@ -53,4 +53,5 @@ spec:
     storageClassName: ssd-persistent-block-store
   service:
     p2pTemplate:
+      externalTrafficPolicy: Cluster
       type: NodePort

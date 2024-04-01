@@ -62,6 +62,7 @@ spec:
   service:
     p2pTemplate:
       type: NodePort
+      externalTrafficPolicy: Cluster      
 #    rpcTemplate:
 #      type: ClusterIP
   type: Sentry

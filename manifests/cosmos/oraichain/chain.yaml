@@ -73,4 +73,5 @@ spec:
   service:
     maxP2PExternalAddresses: 2  
     p2pTemplate:
+      externalTrafficPolicy: Cluster
       type: NodePort
