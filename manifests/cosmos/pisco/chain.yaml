@@ -39,7 +39,10 @@ spec:
         image: ghcr.io/pfc-developer/heighliner/terra:v2.9.2
       - height: 9992000
         image: ghcr.io/pfc-developer/heighliner/terra:v2.10.0
-     
+      - height: 10602000
+        image: ghcr.io/pfc-developer/heighliner/terra:v2.11.0
+        setHaltHeight: true
+
   podTemplate:
     probes:
       strategy: None
