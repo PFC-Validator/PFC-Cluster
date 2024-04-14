@@ -13,5 +13,5 @@ docker build \
 	-t ghcr.io/pfc-developer/kujira-price-feeder:${ORACLE_VERSION} .
 #	--build-arg TARGETPLATFORM="linux/amd64" \
 # --no-cache
-echo docker push ghcr.io/pfc-developer/kujira-price-feeder:${ORACLE_VERSION}
+docker push ghcr.io/pfc-developer/kujira-price-feeder:${ORACLE_VERSION}
 #$:${ORACLE_VERSION} .
