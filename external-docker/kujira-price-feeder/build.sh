@@ -6,6 +6,7 @@ ORACLE_VERSION="$1"
 #cd oracle-price-feeder/dockerfile || exit
 #--no-cache
 docker build \
+	--no-cache \
 	--progress=plain \
 	--build-arg VERSION=v0.9.1 \
 	--build-arg ORACLE_VERSION=${ORACLE_VERSION} \
