@@ -1,0 +1,81 @@
+apiVersion: cosmos.strange.love/v1
+kind: CosmosFullNode
+metadata:
+  name: osmo-test
+  namespace: cosmos
+spec:
+  chain:
+    app:
+      minGasPrice:  "0.0025uosmo"
+      overrides: |-
+        # Set app.toml overrides here. Such as:
+        arbitrage-min-gas-fee = "10"
+        min-gas-price-for-high-gas-tx = ".01"
+        query-gas-limit="1000000"
+        index-events = ["tx.hash", "tx.height"]
+        adaptive-fee-enabled = "true"
+        [rosetta]
+        enable = false
+        [osmosis-mempool]
+        # This is the max allowed gas any tx.
+        # This is only for local mempool purposes, and thus     is only ran on check tx.
+        max-gas-wanted-per-tx = "25000000"
+
+        # This is the minimum gas fee any arbitrage tx should have, denominated in uosmo per gas
+        # Default value of ".005" then means that a tx with 1 million gas costs (.005 uosmo/gas) * 1_000_000 gas = .005 osmo
+        arbitrage-min-gas-fee = "10"
+
+        # This is the minimum gas fee any tx with high gas demand should have, denominated in uosmo per gas
+        # Default value of ".0025" then means that a tx with 1 million gas costs (.0025 uosmo/gas) * 1_000_000 gas = .0025 osmo
+        min-gas-price-for-high-gas-tx = ".01"
+
+        # This parameter enables EIP-1559 like fee market logic in the mempool
+        adaptive-fee-enabled = "true"
+
+    binary: osmosisd
+    chainID: osmo-test-5
+    config:
+      seeds: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@testnet-seeds.polkachu.com:12556"
+      maxOutboundPeers: 70  
+      overrides: |-
+        [tx_index]
+        indexer = "kv"
+    genesisURL: "https://snapshots.polkachu.com/testnet-genesis/osmosis/genesis.json"
+    network: mainnet
+    #skipInvariants: true
+    skipInvariants: false
+   # snapshotURL: https://snapshots.polkachu.com/snapshots/osmosis/osmosis_14573196.tar.lz4
+    snapshotURL: https://osmosis.fra1.digitaloceanspaces.com/osmo-test-5/snapshots/v24/osmotest5_6771178.tar.lz4
+    versions:
+      - height: 0
+        image:  ghcr.io/pfc-developer/heighliner/osmosis:v24.0.0
+  
+  podTemplate:
+    probes:
+      strategy: None
+    resources:
+      requests:
+        memory: 16Gi
+    affinity:
+      podAntiAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+            - key: app.kubernetes.io/name
+              operator: In
+              values:
+              - osmo-test
+          topologyKey: "zone"            
+  replicas: 2 # TODO change to 1 to use less resources
+  volumeClaimTemplate:
+    resources:
+      requests:
+        storage: 600Gi
+    accessModes: [ "ReadWriteOnce" ]
+    storageClassName: ssd-persistent-block-store
+  service:
+    maxP2PExternalAddresses: 2
+    p2pTemplate:
+      type: NodePort
+      externalTrafficPolicy: Cluster
+  type: FullNode

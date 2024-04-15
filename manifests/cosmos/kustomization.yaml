@@ -10,6 +10,7 @@ resources:
 - noble.yaml
 - dymension.yaml
 - orai.yaml
+- osmo-test-5.yaml
 - creds.yaml
 - alertmanager-config.yaml
 - alerts.yaml

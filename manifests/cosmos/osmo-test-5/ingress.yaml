@@ -1,0 +1,67 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    external-dns.alpha.kubernetes.io/hostname: rpc.osmo.test.yieldpay.finance
+    external-dns.alpha.kubernetes.io/target: cluster.yieldpay.finance
+    
+    nginx.ingress.kubernetes.io/enable-cors: "true"    
+  labels:
+    app.kubernetes.io/name: osmosis-test-rpc
+    app.kubernetes.io/version: 1.0.0
+  name: osmo-test-rpc
+  namespace: cosmos
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: rpc.osmo.test.yieldpay.finance
+    http:
+      paths:
+      - backend:
+          service:
+            name: osmo-test-rpc
+            port:
+              number: 26657
+        path: /
+        pathType: Prefix   
+  tls:
+  - hosts:
+    - rpc.osmo.test.yieldpay.finance
+    secretName: osmo-test-cosmos-rpc-tls-secret
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+    external-dns.alpha.kubernetes.io/hostname: grpc.osmo.test.yieldpay.finance
+    external-dns.alpha.kubernetes.io/target: cluster.yieldpay.finance
+    
+    cert-manager.io/cluster-issuer: letsencrypt-production
+  name: osmo-test-grpc
+  namespace: cosmos
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: grpc.osmo.test.yieldpay.finance
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: osmo-test-rpc
+            port:
+              number: 9090
+  tls:
+  - hosts:
+    - grpc.osmo.test.yieldpay.finance
+    secretName: osmo-test-cosmos-grpc-tls-secret
+
+   
