@@ -35,7 +35,7 @@ spec:
     binary: osmosisd
     chainID: osmo-test-5
     config:
-      seeds: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@testnet-seeds.polkachu.com:12556"
+      seeds: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@testnet-seeds.polkachu.com:12556,0f9a9c694c46bd28ad9ad6126e923993fc6c56b1@137.184.181.105:26656"
       maxOutboundPeers: 70  
       overrides: |-
         [tx_index]
