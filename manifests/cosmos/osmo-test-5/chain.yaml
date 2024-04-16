@@ -48,7 +48,7 @@ spec:
     snapshotURL: https://osmosis.fra1.digitaloceanspaces.com/osmo-test-5/snapshots/v24/osmotest5_6771178.tar.lz4
     versions:
       - height: 0
-        image:  ghcr.io/pfc-developer/heighliner/osmosis:v24.0.0
+        image: ghcr.io/strangelove-ventures/heighliner/osmosis:v24.0.0-rc0
   
   podTemplate:
     probes:
