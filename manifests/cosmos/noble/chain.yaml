@@ -29,8 +29,14 @@ spec:
     network: mainnet
     skipInvariants: true
     snapshotURL: https://snapshots.polkachu.com/snapshots/noble/noble_5262392.tar.lz4
+    versions:
+      - height: 0
+        image: ghcr.io/pfc-developer/heighliner/noble:v4.0.3
+      - height: 5797500
+        image: ghcr.io/strangelove-ventures/heighliner/noble:v4.1.0
+ 
   podTemplate:
-    image: ghcr.io/pfc-developer/heighliner/noble:v4.0.3
+   # image: ghcr.io/pfc-developer/heighliner/noble:v4.0.3
     resources:
       requests:
         memory: 16Gi
