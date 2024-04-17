@@ -46,7 +46,7 @@ spec:
   podTemplate:
     resources:
       requests:
-        memory: 32Gi
+        memory: 24Gi
     affinity:
       podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
@@ -61,7 +61,7 @@ spec:
   volumeClaimTemplate:
     resources:
       requests:
-        storage: 400Gi
+        storage: 200Gi
     accessModes: [ "ReadWriteOnce" ]
     storageClassName: ssd-persistent-block-store
   service:
