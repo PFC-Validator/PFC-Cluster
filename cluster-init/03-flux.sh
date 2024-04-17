@@ -105,11 +105,11 @@ spec:
 
 
 --
-https://discord.com/api/webhooks/1161775333574443108/ziIjCByA5xUhehMDayI9Z23CZsClzXKGlhDYsFFsQAjGZiU3jeazVuomJhzGM9TzVRwX
+https://discord.com/api/webhooks/xxx/xxx
 
 
 kubectl -n flux-system create secret generic discord-url \
---from-literal=address=https://discord.com/api/webhooks/1161775333574443108/ziIjCByA5xUhehMDayI9Z23CZsClzXKGlhDYsFFsQAjGZiU3jeazVuomJhzGM9TzVRwX
+--from-literal=address=https://discord.com/api/webhooks/xxxx/xxx
 
 flux create alert-provider new-provider \
   --type discord \
