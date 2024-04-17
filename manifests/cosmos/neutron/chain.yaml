@@ -1,0 +1,71 @@
+apiVersion: cosmos.strange.love/v1
+kind: CosmosFullNode
+metadata:
+  name: neutron
+  namespace: cosmos
+  annotations:
+    prometheus.io/port: "prometheus"
+    prometheus.io/scrape: "true"
+spec:
+  chain:
+    app:
+      minGasPrice: "0.0053untrn"
+      #haltHeight: 16200000
+      overrides: |-
+        # Set app.toml overrides here. Such as:
+        index-events = ["tx.hash", "tx.height"]
+        pruning-keep-recent = "7203"
+        pruning-keep-every = "1000"
+        pruning-interval = "11"
+        [rosetta]
+        enable = false
+        [wasm]
+        query-contract-gas-limit = "10000000"
+        query_gas_limit = "10000000"
+        query-gas-limit = "10000000"
+        memory_cache_size = 400 
+
+    binary: neutrond
+    chainID: neutron-1
+    config:
+      seeds: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:19156"
+
+      #maxInboundPeers: 20
+      #maxOutboundPeers: 70
+      overrides: |-
+        [tx_index]
+        indexer = "kv"
+    genesisURL:  https://snapshots.polkachu.com/genesis/neutron/genesis.json
+    network: mainnet
+    skipInvariants: true
+    snapshotURL: https://snapshots.polkachu.com/snapshots/neutron/neutron_9284064.tar.lz4
+    versions:
+      - height: 0
+        image: ghcr.io/strangelove-ventures/heighliner/neutron:v3.0.2
+
+  podTemplate:
+    resources:
+      requests:
+        memory: 32Gi
+    affinity:
+      podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app.kubernetes.io/name
+                operator: In
+                values:
+                - neutron
+            topologyKey: "zone"  
+  replicas: 2 # TODO change to 1 to use less resources
+  volumeClaimTemplate:
+    resources:
+      requests:
+        storage: 400Gi
+    accessModes: [ "ReadWriteOnce" ]
+    storageClassName: ssd-persistent-block-store
+  service:
+    maxP2PExternalAddresses: 2  
+    p2pTemplate:
+      externalTrafficPolicy: Cluster
+      type: NodePort

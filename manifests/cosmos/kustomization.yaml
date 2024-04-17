@@ -7,6 +7,7 @@ resources:
 - cosmoshub.yaml
 - pisco.yaml
 - harpoon.yaml 
+- neutron.yaml
 - noble.yaml
 - dymension.yaml
 - orai.yaml

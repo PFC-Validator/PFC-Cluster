@@ -1,0 +1,51 @@
+###
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  neutron-chain-monitor
+  namespace: cosmos
+spec:
+  selector:
+    matchLabels:
+      app:  neutron-chain-monitor
+  template:
+    metadata:
+      labels:
+        app:  neutron-chain-monitor
+        kind-of: cosmos-exporter
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9300"        
+    spec:
+      containers:
+      - name:  cosmos-exporter
+        image: ghcr.io/pfc-developer/cosmos-exporter:v2.1.5
+        resources:
+          limits:
+            memory: "1Gi"
+            cpu: "1500m"
+        ports:
+            - containerPort: 9300
+              name: prometheus
+              protocol: TCP
+        args:
+            - --denom=untrn
+            - --denom-coefficient=1000000
+            - --bech-prefix=neutron 
+            - --node=neutron-rpc:9090 
+            - --tendermint-rpc=http://neutron-rpc:26657
+            - --single
+            - --proposals
+            - --upgrades
+      affinity:
+        # place the price feeder in the same zone as node it is pushing stuff into
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key:  app.kubernetes.io/name
+                operator: In
+                values:
+                - neutron
+            topologyKey: "zone"  
