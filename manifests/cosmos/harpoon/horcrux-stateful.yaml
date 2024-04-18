@@ -59,8 +59,8 @@ spec:
                     mountPath: /run/sign
             containers:
                 - name: horcrux-container
-                  image: ghcr.io/pfc-developer/horcrux-container:0.14
-                  command: ["/bin/launch-all.sh","harpoon-4","1000","500"]
+                  image: ghcr.io/pfc-developer/horcrux-container:v3.3.0
+                  command: ["/bin/launch.sh","harpoon-4","1000","500"]
                   ports:
                     - containerPort: 2222
                       name: cosigner
