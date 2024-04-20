@@ -29,8 +29,12 @@ spec:
     network: mainnet
     skipInvariants: true
     snapshotURL: https://snapshots.polkachu.com/snapshots/dymension/dymension_26485.tar.lz4
+    versions:
+      - height: 0
+        image: ghcr.io/strangelove-ventures/heighliner/dymension:v3.0.0
+      - height: 1159000
+        image: ghcr.io/strangelove-ventures/heighliner/dymension:v3.1.0
   podTemplate:
-    image: ghcr.io/strangelove-ventures/heighliner/dymension:v3.0.0
     resources:
       requests:
         memory: 16Gi
