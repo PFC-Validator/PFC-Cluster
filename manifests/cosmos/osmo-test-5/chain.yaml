@@ -45,7 +45,7 @@ spec:
     #skipInvariants: true
     skipInvariants: false
    # snapshotURL: https://snapshots.polkachu.com/snapshots/osmosis/osmosis_14573196.tar.lz4
-    snapshotURL: https://osmosis.fra1.digitaloceanspaces.com/osmo-test-5/snapshots/v24/osmotest5_6771178.tar.lz4
+    snapshotURL: https://osmosis.fra1.digitaloceanspaces.com/osmo-test-5/snapshots/v24/osmotest5_6909753.tar.lz4
     versions:
       - height: 0
         image: ghcr.io/strangelove-ventures/heighliner/osmosis:v24.0.0-rc0
@@ -70,7 +70,7 @@ spec:
   volumeClaimTemplate:
     resources:
       requests:
-        storage: 600Gi
+        storage: 200Gi
     accessModes: [ "ReadWriteOnce" ]
     storageClassName: ssd-persistent-block-store
   service:
