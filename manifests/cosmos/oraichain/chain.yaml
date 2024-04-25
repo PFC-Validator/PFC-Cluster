@@ -37,7 +37,7 @@ spec:
       maxOutboundPeers: 70
       overrides: |-
         [consensus]
-        timeout_commit= "1000ms"
+        timeout_commit= "500ms"
         [tx_index]
         indexer = "kv"
     genesisURL:  https://raw.githubusercontent.com/oraichain/oraichain-static-files/master/genesis.json
