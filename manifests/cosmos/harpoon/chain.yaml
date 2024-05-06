@@ -35,6 +35,8 @@ spec:
         image: ghcr.io/pfc-developer/heighliner/kujira:v1.0.0    
       - height: 26980000
         image: ghcr.io/pfc-developer/heighliner/kujira:v1.0.2
+      - height: 27900000
+        image: ghcr.io/pfc-developer/heighliner/kujira:v1.1.0-beta
         setHaltHeight: true   
   podTemplate:
     probes:
