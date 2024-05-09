@@ -20,8 +20,8 @@ spec:
     genesisURL: https://snapshots.polkachu.com/genesis/stride/genesis.json
     network: mainnet
     skipInvariants: true
-    #snapshotURL: https://snapshots.polkachu.com/snapshots/stride/stride_8919379.tar.lz4
-    snapshotURL:  https://stride.snapshot.stavr.tech/stride-snap.tar.lz4 
+    snapshotURL: https://snapshots.polkachu.com/snapshots/stride/stride_8920571.tar.lz4
+  
     versions:
       - height: 0
         image: ghcr.io/strangelove-ventures/heighliner/stride:v16.0.0
