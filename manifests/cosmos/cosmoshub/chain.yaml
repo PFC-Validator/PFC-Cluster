@@ -16,7 +16,8 @@ spec:
     genesisURL: https://snapshots.polkachu.com/genesis/cosmos/genesis.json
     network: mainnet
     skipInvariants: true
-    snapshotURL: https://snapshots.polkachu.com/snapshots/cosmos/cosmos_20321023.tar.lz4
+#    snapshotURL: https://snapshots.polkachu.com/snapshots/cosmos/cosmos_20321023.tar.lz4
+    snapshotURL: https://snapshots.lavenderfive.com/snapshots/cosmoshub/latest.tar.lz4
     versions:
       - height: 0
         image: ghcr.io/strangelove-ventures/heighliner/gaia:v13.0.1
