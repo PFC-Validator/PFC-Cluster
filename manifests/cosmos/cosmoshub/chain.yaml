@@ -31,7 +31,7 @@ spec:
   podTemplate:
     resources:
       requests:
-        memory: 16Gi
+        memory: 24Gi
     affinity:
       podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
