@@ -11,8 +11,8 @@ RUN cargo build --release
 
 FROM ubuntu:latest
 LABEL maintainer="hello@informal.systems"
-ARG UID=1000
-ARG GID=1000
+ARG UID=1001
+ARG GID=1001
 
 RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates wget
 RUN update-ca-certificates
