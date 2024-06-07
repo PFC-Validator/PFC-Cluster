@@ -35,3 +35,4 @@ spec:
         default: true
       service:
         enabled: false
+        type: NodePort
