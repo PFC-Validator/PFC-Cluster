@@ -65,5 +65,3 @@ spec:
   - hosts:
     - grpc.orai.pfc.zone
     secretName: oraichain-cosmos-grpc-tls-secret
-
-   
