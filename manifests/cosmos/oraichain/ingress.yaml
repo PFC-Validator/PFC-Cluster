@@ -9,7 +9,8 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-production
     external-dns.alpha.kubernetes.io/hostname: rpc.orai.pfc.zone
     external-dns.alpha.kubernetes.io/target: cluster.pfc.zone
-    
+    nginx.ingress.kubernetes.io/limit-rps: "10"
+    nginx.ingress.kubernetes.io/limit-connections: "5"
     nginx.ingress.kubernetes.io/enable-cors: "true"    
   labels:
     app.kubernetes.io/name: oraichain-rpc
@@ -40,10 +41,11 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+    nginx.ingress.kubernetes.io/limit-rps: "10"
+    nginx.ingress.kubernetes.io/limit-connections: "5"
     external-dns.alpha.kubernetes.io/hostname: grpc.orai.pfc.zone
     external-dns.alpha.kubernetes.io/target: cluster.pfc.zone
     cert-manager.io/cluster-issuer: letsencrypt-production
-    nginx.ingress.kubernetes.io/limit-rps: "10"
   name: oraichain-grpc
   namespace: cosmos
 spec:
