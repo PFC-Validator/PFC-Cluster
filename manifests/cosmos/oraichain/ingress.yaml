@@ -43,6 +43,7 @@ metadata:
     external-dns.alpha.kubernetes.io/hostname: grpc.orai.pfc.zone
     external-dns.alpha.kubernetes.io/target: cluster.pfc.zone
     cert-manager.io/cluster-issuer: letsencrypt-production
+    nginx.ingress.kubernetes.io/limit-rps: "10"
   name: oraichain-grpc
   namespace: cosmos
 spec:
