@@ -12,5 +12,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
 - name: controller
+#  newName: controller
+#  newTag: latest
   newName: ghcr.io/strangelove-ventures/cosmos-operator
-  newTag: v0.21.10
+  newTag: v0.22.0
