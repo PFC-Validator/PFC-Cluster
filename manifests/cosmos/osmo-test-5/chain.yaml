@@ -45,7 +45,8 @@ spec:
     #skipInvariants: true
     skipInvariants: false
    # snapshotURL: https://snapshots.polkachu.com/snapshots/osmosis/osmosis_14573196.tar.lz4
-    snapshotURL: https://osmosis.fra1.digitaloceanspaces.com/osmo-test-5/snapshots/v24/osmotest5_6909753.tar.lz4
+   # https://snapshots.testnet.osmosis.zone/
+    snapshotURL: https://osmosis.fra1.digitaloceanspaces.com/osmo-test-5/snapshots/v25/osmotest5_9425183.tar.lz4
     versions:
       - height: 0
         image: ghcr.io/strangelove-ventures/heighliner/osmosis:v24.0.0-rc0
