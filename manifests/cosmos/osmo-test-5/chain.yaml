@@ -50,7 +50,7 @@ spec:
       - height: 0
         image: ghcr.io/strangelove-ventures/heighliner/osmosis:v24.0.0-rc0
       - height: 7391500
-        image:  ghcr.io/strangelove-ventures/heighliner/osmosis:v25.1.1
+        image:  ghcr.io/pfc-developer/heighliner/osmosis:v25.1.1
   podTemplate:
     probes:
       strategy: None
