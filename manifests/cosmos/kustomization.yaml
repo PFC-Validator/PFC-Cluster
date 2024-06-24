@@ -5,13 +5,13 @@ resources:
 - namespace.yaml 
 - stride.yaml
 - cosmoshub.yaml
-- pisco.yaml
-- harpoon.yaml 
+#- pisco.yaml
+#- harpoon.yaml 
 - neutron.yaml
 - noble.yaml
 - dymension.yaml
 - orai.yaml
-- osmo-test-5.yaml
+#- osmo-test-5.yaml
 - creds.yaml
 - alertmanager-config.yaml
 - alerts.yaml
