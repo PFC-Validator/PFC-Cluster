@@ -58,6 +58,9 @@ spec:
     resources:
       requests:
         memory: 32Gi
+        cpu: 4000m    
+      limits:
+        memory: 64Gi        
     affinity:
       podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
@@ -68,6 +71,9 @@ spec:
                 values:
                 - oraichain
             topologyKey: "zone"  
+  selfHeal:
+    heightDriftMitigation:
+      threshold: 10  
   replicas: 2 # TODO change to 1 to use less resources
   volumeClaimTemplate:
     resources:
