@@ -99,6 +99,10 @@ urls = [
   "https://osmosis.api.kjnodes.com",
   "https://rest.cosmos.directory/osmosis"
 ]
+[url_set.api_migaloo]
+urls = [
+  "http://whitewhale-rpc.pfc:1317"
+]
 
 [url_set.rpc_ethereum]
 urls = [
