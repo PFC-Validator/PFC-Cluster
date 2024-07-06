@@ -106,6 +106,12 @@ urls = [
 	"https://ethereum.publicnode.com"
 ]
 
+[url_set.rpc_arbitrum]
+urls = [
+	"https://arb1.arbitrum.io/rpc",
+	"https://arbitrum-one-rpc.publicnode.com"
+]
+
 # https://cosmos.directory/secretnetwork/nodes (REST)
 [url_set.api_secret]
 urls = [
