@@ -139,7 +139,7 @@ providers = ["gate", "huobi", "kucoin"]
 [[currency_pairs]]
 base = "AMPKUJI"
 quote = "KUJI"
-providers = ["finv2"]
+providers = ["finv2", "unstake"]
 derivative = "twap"
 derivative_period = "30m"
 
@@ -215,13 +215,6 @@ providers = [
 
 [[currency_pairs]]
 base = "AXL"
-quote = "MNTA"
-providers = ["fin"]
-derivative = "twap"
-derivative_period = "30m"
-
-[[currency_pairs]]
-base = "AXL"
 quote = "USD"
 providers = ["coinbase", "crypto", "kraken"]
 
@@ -288,6 +281,11 @@ providers = [
 ]
 
 [[currency_pairs]]
+base = "CACAO"
+quote = "BTC"
+providers = ["maya"]
+
+[[currency_pairs]]
 base = "CRO"
 quote = "USDT"
 providers = ["bitget", "crypto", "gate", "kucoin", "lbank", "okx", "xt"]
@@ -314,6 +312,16 @@ providers = [
     "poloniex",
     "xt",
 ]
+
+[[currency_pairs]]
+base = "DYDX"
+quote = "USDT"
+providers = ["binance", "gate", "huobi", "kucoin", "okx"]
+
+[[currency_pairs]]
+base = "DYDX"
+quote = "USDC"
+providers = ["bitget"]
 
 [[currency_pairs]]
 base = "DYM"
@@ -454,6 +462,10 @@ base = "JUNO"
 quote = "USD"
 providers = ["kraken"]
 
+[provider_weight.JUNO]
+osmosisv2 = 1
+kraken = 2
+
 [[currency_pairs]]
 base = "KAVA"
 quote = "USD"
@@ -475,8 +487,15 @@ providers = [
 
 [[currency_pairs]]
 base = "KUJI"
+quote = "USDT"
+providers = ["coinex"]
+derivative = "twap"
+derivative_period = "10m"
+
+[[currency_pairs]]
+base = "KUJI"
 quote = "USDC"
-providers = ["fin"]
+providers = ["finv2"]
 derivative = "twap"
 derivative_period = "30m"
 
@@ -486,6 +505,27 @@ quote = "WETH"
 providers = ["camelotv3"]
 derivative = "twap"
 derivative_period = "30m"
+
+[[currency_pairs]]
+base = "KUJI"
+quote = "CACAO"
+providers = ["maya"]
+derivative = "twap"
+derivative_period = "30m"
+
+[[currency_pairs]]
+base = "KUJI"
+quote = "OSMO"
+providers = ["osmosisv2"]
+derivative = "twap"
+derivative_period = "30m"
+
+[[currency_pairs]]
+base = "KUJI"
+quote = "USD"
+providers = ["kraken"]
+derivative = "twap"
+derivative_period = "10m"
 
 [[currency_pairs]]
 base = "LINK"
@@ -591,7 +631,7 @@ derivative_period = "30m"
 [[currency_pairs]]
 base = "NTRN"
 quote = "USDT"
-providers = ["binance", "bitget", "gate", "kucoin", "phemex"]
+providers = ["binance", "bitget", "bitmart", "gate", "kucoin", "phemex"]
 
 [[currency_pairs]]
 base = "OSMO"
@@ -624,14 +664,14 @@ providers = [
 [[currency_pairs]]
 base = "QCKUJI"
 quote = "KUJI"
-providers = ["finv2"]
+providers = ["finv2", "unstake"]
 derivative = "twap"
 derivative_period = "30m"
 
 [[currency_pairs]]
 base = "QCMNTA"
 quote = "MNTA"
-providers = ["finv2"]
+providers = ["finv2", "unstake"]
 derivative = "twap"
 derivative_period = "30m"
 
@@ -644,15 +684,8 @@ derivative_period = "30m"
 
 [[currency_pairs]]
 base = "RIO"
-quote = "WBNB"
-providers = ["pancakev3_bsc"]
-derivative = "twap"
-derivative_period = "30m"
-
-[[currency_pairs]]
-base = "RIO"
 quote = "USDT"
-providers = ["bingx", "okx"]
+providers = ["bingx", "coinex", "kucoin", "okx", "pionex"]
 
 [[currency_pairs]]
 base = "RLB"
@@ -710,6 +743,11 @@ quote = "OSMO"
 providers = ["osmosisv2"]
 derivative = "twap"
 derivative_period = "30m"
+
+[[currency_pairs]]
+base = "SOMM"
+quote = "USDT"
+providers = ["coinex"]
 
 [[currency_pairs]]
 base = "STARS"
@@ -809,13 +847,6 @@ quote = "USDT"
 providers = ["binance", "bitget", "bybit", "gate", "huobi", "kucoin", "okx"]
 
 [[currency_pairs]]
-base = "WBNB"
-quote = "ETH"
-providers = ["pancakev3_bsc"]
-derivative = "twap"
-derivative_period = "30m"
-
-[[currency_pairs]]
 base = "WBTC"
 quote = "BTC"
 providers = ["binance", "coinbase", "kucoin", "okx"]
@@ -841,7 +872,7 @@ providers = ["uniswapv3"]
 [[currency_pairs]]
 base = "WHALE"
 quote = "MNTA"
-providers = ["fin"]
+providers = ["finv2"]
 derivative = "twap"
 derivative_period = "30m"
 
@@ -849,6 +880,13 @@ derivative_period = "30m"
 base = "WHALE"
 quote = "OSMO"
 providers = ["osmosisv2"]
+derivative = "twap"
+derivative_period = "30m"
+
+[[currency_pairs]]
+base = "WHALE"
+quote = "USDC"
+providers = ["whitewhale_whale"]
 derivative = "twap"
 derivative_period = "30m"
 
@@ -873,9 +911,9 @@ derivative_period = "30m"
 [[provider_min_overrides]]
 denoms = [
     "AMPKUJI",
+    "CACAO",
     "FUZN",
     "JUNO",
-    "KUJI",
     "MNTA",
     "NSTK",
     "QCKUJI",
@@ -889,13 +927,16 @@ denoms = [
     "STKATOM",
     "STOSMO",
     "USK",
-    "WBNB",
     "WETH",
     "WHALE",
     "WINK",
     "WSTETH",
 ]
 providers = 1
+
+[[provider_min_overrides]]
+denoms = ["KUJI"]
+providers = 2
 
 #
 #  DEVIATION THRESHOLDS
@@ -906,11 +947,11 @@ base = "KUJI"
 threshold = "2"
 
 [[deviation_thresholds]]
-base = "USDT"
+base = "RIO"
 threshold = "2"
 
 [[deviation_thresholds]]
-base = "WHALE"
+base = "SOMM"
 threshold = "2"
 
 [[deviation_thresholds]]
@@ -922,7 +963,11 @@ base = "STKATOM"
 threshold = "2"
 
 [[deviation_thresholds]]
-base = "RIO"
+base = "USDT"
+threshold = "2"
+
+[[deviation_thresholds]]
+base = "WHALE"
 threshold = "2"
 
 #
@@ -934,20 +979,22 @@ name = "astroport_neutron"
 url_set = "api_neutron"
 
 [[provider_endpoints]]
+name = "camelotv3"
+url_set = "rpc_arbitrum"
+
+[[provider_endpoints]]
 name = "dexter"
 url_set = "api_persistence"
 
 [[provider_endpoints]]
-name = "fin"
-url_set = "fin"
-
-[[provider_endpoints]]
 name = "finv2"
 url_set = "api_kujira"
+volume_blocks = 20
 
 [[provider_endpoints]]
 name = "osmosisv2"
 url_set = "api_osmosis"
+volume_blocks = 20
 
 [[provider_endpoints]]
 name = "shade"
@@ -956,6 +1003,15 @@ url_set = "api_secret"
 [[provider_endpoints]]
 name = "uniswapv3"
 url_set = "rpc_ethereum"
+
+[[provider_endpoints]]
+name = "unstake"
+url_set = "api_kujira"
+
+[[provider_endpoints]]
+name = "whitewhale_whale"
+url_set = "api_migaloo"
+volume_blocks = 20
 
 [contract_addresses.astroport_neutron]
 NTRNATOM = "neutron1e22zh5p8meddxjclevuhjmfj69jxfsa8uu3jvht72rv9d8lkhves6t8veq"
@@ -986,20 +1042,20 @@ USDCUSK = "kujira15a657mgszm30vdhytpmfslcyc4cztn5lsuv9rxzwdqmuwgd8znps8l3yy2"
 WHALEMNTA = "kujira1865zmuchjd0g0xr2q5n6hm747s8xju5k8h6mympk4vmqefkuy3hqc66tcw"
 WINKUSK = "kujira1qxtd87qus6uzvqs4jv9r0j9ccd4yla42s6qag7y8fp7hhv68nzas6hqxgw"
 
+[contract_addresses.maya]
+BTCCACAO = "BTC.BTC"
+KUJICACAO = "KUJI.KUJI"
+
 [contract_addresses.osmosisv2]
 ATOMSTKATOM = "886"
 JUNOOSMO = "1097"
+KUJIOSMO = "744"
 MNTAOSMO = "1215"
-SOMMOSMO = "627"
-STARSOSMO = "604"
-STATOMATOM = "1136"
+SOMMOSMO = "1103"
+STARSOSMO = "1096"
+STATOMATOM = "1283"
 STOSMOOSMO = "833"
 WHALEOSMO = "1318"
-NTRNUSDC = "1324"
-
-[contract_addresses.pancakev3_bsc]
-ETHWBNB = "0x7d05c84581f0c41ad80ddf677a510360bae09a5a"
-RIOWBNB = "0x3b4568933f86122e3a19814b1d42aa27fe429c3b"
 
 [contract_addresses.shade]
 ATOMSTKATOM = "secret18537ttv4l4k2ea0xp6ay3sv4c243fyjtj2uqz7"
@@ -1010,3 +1066,51 @@ RLBWETH = "0x510100d5143e011db24e2aa38abe85d73d5b2177"
 USDCWETH = "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
 WETHRIO = "0x5b7e3e37a1aa6369386e5939053779abd3597508"
 WSTETHWETH = "0x109830a1AAaD605BbF02a9dFA7B0B92EC2FB7dAa"
+
+[contract_addresses.unstake]
+AMPKUJIKUJI = "kujira1x0rx0543jpjfpuskusaca54d2t8f6v6m3eaqwpgahxtmq7kc7vls2j3hth"
+QCKUJIKUJI = "kujira1hmk8wy7vk0v0vpqasv6zv7hm3n2vce4m3yzkns6869j8h4u5qk2q0xndku"
+QCMNTAMNTA = "kujira1ql30ep2a4f3cswhrr8sjp54t56l7qz7n7jzcnux2m286k6ev7s8q6m8jnp"
+
+[contract_addresses.velodromev2]
+KUJIWETH = "0x763C9dC392B6BEFe79Fa227056dD9279bAbb4E14"
+
+[contract_addresses.whitewhale_whale]
+WHALEUSDC = "migaloo1xv4ql6t6r8zawlqn2tyxqsrvjpmjfm6kvdfvytaueqe3qvcwyr7shtx0hj"
+
+[decimals.osmosisv2]
+JUNO = 6
+KUJI = 6
+OSMO = 6
+SOMM = 6
+STARS = 6
+WHALE = 6
+
+[decimals.finv2]
+FUZN = 6
+KUJI = 6
+MNTA = 6
+NSTK = 6
+SOMM = 6
+STARS = 6
+USDC = 6
+USK = 6
+WHALE = 6
+WINK = 6
+
+[decimals.whitewhale_whale]
+USDC = 6
+WHALE = 6
+
+[decimals.unstake]
+KUJI = 6
+MNTA = 6
+
+[decimals.camelotv3]
+KUJI = 6
+WETH = 18
+
+[periods.unstake]
+AMPKUJIKUJI = 14
+QCKUJIKUJI = 14
+QCMNTAMNTA = 21
