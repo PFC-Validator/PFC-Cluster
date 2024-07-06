@@ -7,6 +7,14 @@ spec:
   chain:
     app:
       minGasPrice: 0.001uatom
+      overrides: |-
+        # Set app.toml overrides here. Such as:
+        index-events = ["tx.hash", "tx.height"]
+        pruning-keep-recent = "7203"
+        pruning-keep-every = "1000"
+        pruning-interval = "11"
+        [rosetta]
+        enable = false      
     binary: gaiad
     chainID: cosmoshub-4
     config:
@@ -33,7 +41,7 @@ spec:
   podTemplate:
     resources:
       requests:
-        memory: 24Gi
+        memory: 32Gi
     affinity:
       podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
