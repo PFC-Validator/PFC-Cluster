@@ -99,10 +99,6 @@ urls = [
   "https://osmosis.api.kjnodes.com",
   "https://rest.cosmos.directory/osmosis"
 ]
-[url_set.api_migaloo]
-urls = [
-  "http://whitewhale-rpc.pfc:1317"
-]
 
 [url_set.rpc_ethereum]
 urls = [
@@ -115,7 +111,6 @@ urls = [
 	"https://arb1.arbitrum.io/rpc",
 	"https://arbitrum-one-rpc.publicnode.com"
 ]
-
 # https://cosmos.directory/secretnetwork/nodes (REST)
 [url_set.api_secret]
 urls = [
@@ -131,6 +126,10 @@ urls = [
 	"https://persistence-rest.publicnode.com/",
 	"https://persistence-api.polkachu.com/",
 	"https://rest.core.persistence.one/"
+]
+[url_set.api_migaloo]
+urls = [
+  "http://whitewhale-rpc.pfc:1317"
 ]
 #
 #  CURRENCY PAIRS
