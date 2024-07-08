@@ -1,0 +1,133 @@
+gas_adjustment = 2.5
+gas_prices = "0.0034ukuji"
+enable_server = true
+enable_voter = true
+provider_timeout = "500ms"
+
+history_db = "/state/feeder.db_v2"
+
+[server]
+listen_addr = "0.0.0.0:8171"
+read_timeout = "20s"
+verbose_cors = true
+write_timeout = "20s"
+
+[account]
+fee_granter = "kujira1vkje22mayn72r0a7kna6agv0sqm6k94ry9k6dd"
+address = "$ADDRESS"
+chain_id = "kaiyo-1"
+validator = "$VALIDATOR"
+prefix = "kujira"
+
+[keyring]
+backend = "file"
+dir = "/home/user/.kujira"
+prefix = "kujira"
+
+[rpc]
+grpc_endpoint = "$GRPC"
+rpc_timeout = "100ms"
+tmrpc_endpoint = "$RPC"
+
+[telemetry]
+enable_hostname = true
+enable_hostname_label = true
+enable_service_label = true
+enabled = true
+global_labels = [["chain_id", "kaiyo-1"]]
+service_name = "price-feeder"
+type = "prometheus"
+prometheus_retention = 120
+
+[url_set.binance]
+urls = [
+  "https://api1.binance.com"
+]
+
+[url_set.finv2]
+urls = [
+  "$API"
+]
+
+[url_set.api_kujira]
+urls = [
+  "$API"
+]
+
+
+[url_set.neutron]
+urls = [
+	"https://neutron-rest.publicnode.com/",
+	"https://lcd-neutron.whispernode.com/",
+	"https://neutron-api.lavenderfive.com/",
+   "https://rest.cosmos.directory/neutron"
+]
+[url_set.api_neutron]
+urls = [
+	"https://neutron-rest.publicnode.com/",
+	"https://lcd-neutron.whispernode.com/",
+	"https://neutron-api.lavenderfive.com/",
+   "https://rest.cosmos.directory/neutron"
+]
+
+
+
+[url_set.fin]
+urls = [
+   "https://kaiyo-1.gigalixirapp.com", 
+   "https://api-kujira.mintthemoon.xyz"
+]
+
+[url_set.osmosisv2]
+urls = [
+  "https://osmosis-api.polkachu.com",
+  "https://api.osmosis.zone",
+  "https://api-osmosis.imperator.co",
+  "https://api-osmosis-ia.cosmosia.notional.ventures",
+  "https://osmosis.rest.stakin-nodes.com",
+  "https://osmosis.api.kjnodes.com",
+  "https://rest.cosmos.directory/osmosis"
+]
+
+[url_set.api_osmosis]
+urls = [
+  "https://osmosis-api.polkachu.com",
+  "https://api.osmosis.zone",
+  "https://api-osmosis.imperator.co",
+  "https://api-osmosis-ia.cosmosia.notional.ventures",
+  "https://osmosis.rest.stakin-nodes.com",
+  "https://osmosis.api.kjnodes.com",
+  "https://rest.cosmos.directory/osmosis"
+]
+
+[url_set.rpc_ethereum]
+urls = [
+	"https://rpc.ankr.com/eth",
+	"https://ethereum.publicnode.com"
+]
+
+[url_set.rpc_arbitrum]
+urls = [
+	"https://arb1.arbitrum.io/rpc",
+	"https://arbitrum-one-rpc.publicnode.com"
+]
+# https://cosmos.directory/secretnetwork/nodes (REST)
+[url_set.api_secret]
+urls = [
+	"https://scrt-api.dalnim.finance",
+	"https://1rpc.io/scrt-lcd",
+	"https://lcd.secret.express"
+]
+
+# providers: dexter
+# https://cosmos.directory/persistence/nodes (REST)
+[url_set.api_persistence]
+urls = [
+	"https://persistence-rest.publicnode.com/",
+	"https://persistence-api.polkachu.com/",
+	"https://rest.core.persistence.one/"
+]
+[url_set.api_migaloo]
+urls = [
+  "http://whitewhale-rpc.pfc:1317"
+]
