@@ -73,3 +73,14 @@ spec:
         for: 10m
         labels:
           severity: critical
+  - name: cosmos.missedBlocks
+    rules:
+      - alert: CosmosBlocks
+        annotations:
+          description: You're Missing Blocks
+          summary: missing blocks
+        expr: |-
+          increase(cosmos_validator_missed_blocks{namespace="cosmos"}[60m])>10
+        for: 10m
+        labels:
+          severity: critical          
