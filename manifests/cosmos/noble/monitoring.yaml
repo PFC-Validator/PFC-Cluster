@@ -36,9 +36,9 @@ spec:
             - --node=noble-rpc:9090 
             - --tendermint-rpc=http://noble-rpc:26657
             - --single
-            #- --propv1
+            - --propv1
             #- --proposals
-            #- --upgrades
+            - --upgrades
             #- --price=true
       affinity:
         # place the price feeder in the same zone as node it is pushing stuff into
