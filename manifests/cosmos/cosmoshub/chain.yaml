@@ -10,6 +10,7 @@ spec:
       overrides: |-
         # Set app.toml overrides here. Such as:
         index-events = ["tx.hash", "tx.height"]
+        pruning = "custom"
         pruning-keep-recent = "7203"
         pruning-keep-every = "1000"
         pruning-interval = "11"
