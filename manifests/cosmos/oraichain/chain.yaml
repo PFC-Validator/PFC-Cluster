@@ -53,6 +53,8 @@ spec:
         image: ghcr.io/pfc-developer/heighliner/oraichain:v0.41.8
       - height: 21627705
         image: ghcr.io/pfc-developer/heighliner/oraichain:v0.42.0
+      - height: 28107890
+        image: ghcr.io/pfc-developer/heighliner/oraichain:v0.42.1        
         setHaltHeight: true 
   podTemplate:
     resources:
