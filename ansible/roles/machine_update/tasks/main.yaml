@@ -1,0 +1,3 @@
+---
+- name: Update machine
+  import_tasks: update_machine.yaml

@@ -28,6 +28,10 @@ hetzner, ovh, leaseweb
 
 once it passes 'machine_init' there may still be remnants of old install. TBD to clean them up
 
+```
+ansible-playbook -i machines/machine_init.yaml ./machine_init.yml
+```
+
 ## kubernetes
 
 utilizes a different format for the inventory [machine_post.yaml](./machines/machine_post.yaml.sample)
