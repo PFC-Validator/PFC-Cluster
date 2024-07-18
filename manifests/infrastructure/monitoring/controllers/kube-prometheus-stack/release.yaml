@@ -6,7 +6,8 @@ spec:
   interval: 1h
   chart:
     spec:
-      version: "53.x"
+      #version: "53.x"
+      version: "61.3"
       chart: kube-prometheus-stack
       sourceRef:
         kind: HelmRepository
@@ -63,7 +64,7 @@ spec:
               storageClassName: ssd-persistent-block-store
               resources:
                 requests:
-                  storage: 50Gi    
+                  storage: 100Gi    
       ingress:
         enabled: true
         ingressClassName: nginx
