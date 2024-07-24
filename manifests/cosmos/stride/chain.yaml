@@ -46,6 +46,8 @@ spec:
         image: ghcr.io/strangelove-ventures/heighliner/stride:v21.0.0
       - height: 8681868 
         image: ghcr.io/strangelove-ventures/heighliner/stride:v22.0.0
+      - height: 10077001 
+        image: ghcr.io/strangelove-ventures/heighliner/stride:v23.0.0
 
   podTemplate:
     resources:
