@@ -53,7 +53,7 @@ spec:
     resources:
       requests:
         memory: 16Gi
-  replicas: 2 # TODO change to 1 to use less resources
+  replicas: 1 # TODO change to 1 to use less resources
   volumeClaimTemplate:
     resources:
       requests:
