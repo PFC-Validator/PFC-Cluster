@@ -41,7 +41,7 @@ spec:
             - --votes
             - --price=false
             - --params=false
-            - --external-node=oraichain-mainnet-grpc.autostake.com:443
+            - --external-node=grpc-oraichain.mms.team:443
       affinity:
         # place the price feeder in the same zone as node it is pushing stuff into
         podAffinity:
