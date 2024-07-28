@@ -37,8 +37,9 @@ spec:
             - --node=cosmoshub-rpc:9090 
             - --tendermint-rpc=http://cosmoshub-rpc:26657
             - --single
-            - --proposals
+#            - --proposals
             - --upgrades
+            - --propv1            
             - --price=false
             - --params=false
             - --external-node=cosmoshub-grpc.lavenderfive.com:443
