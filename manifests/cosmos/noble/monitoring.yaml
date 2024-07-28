@@ -36,7 +36,7 @@ spec:
             - --node=noble-rpc:9090 
             - --tendermint-rpc=http://noble-rpc:26657
             - --single
-            - --propv1
+           # - --propv1
             #- --proposals
             - --upgrades
             - --price=false
