@@ -37,7 +37,7 @@ spec:
             - --tendermint-rpc=http://neutron-rpc:26657
             - --single
 #            - --proposals
-            - --propv1=true
+#            - --propv1=true
             - --upgrades
             - --price=false
             - --params=false
