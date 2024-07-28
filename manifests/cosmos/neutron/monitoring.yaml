@@ -36,12 +36,12 @@ spec:
             - --node=neutron-rpc:9090 
             - --tendermint-rpc=http://neutron-rpc:26657
             - --single
-            - --proposals
+#            - --proposals
             - --propv1=true
             - --upgrades
             - --price=false
             - --params=false
-            - --external-node=neutron-grpc.lavenderfive.com:443
+            - --external-node=grpc-kralum.neutron-1.neutron.org:80
       affinity:
         # place the price feeder in the same zone as node it is pushing stuff into
         podAffinity:
