@@ -731,7 +731,7 @@ providers = ["binance", "bybit", "gate", "huobi", "kucoin", "lbank"]
 [[currency_pairs]]
 base = "SEI"
 quote = "USD"
-providers = ["coinbase"]
+providers = ["coinbase", "kraken"]
 
 [[currency_pairs]]
 base = "SEI"
@@ -744,7 +744,6 @@ providers = [
     "bybit",
     "gate",
     "huobi",
-    "kraken",
     "kucoin",
     "pionex",
     "xt",
