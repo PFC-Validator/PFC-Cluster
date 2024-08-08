@@ -50,7 +50,8 @@ spec:
       #emergency upgrade.
 #       image: ghcr.io/pfc-developer/heighliner/neutron:v4.0.1
         image: ghcr.io/pfc-developer/heighliner/neutron:v4.1.0
-
+      - height: 13261400
+        image: ghcr.io/pfc-developer/heighliner/neutron:v4.2.0
         setHaltHeight: true
   podTemplate:
     resources:
