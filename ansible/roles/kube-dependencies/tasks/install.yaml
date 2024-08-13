@@ -58,15 +58,22 @@
     repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable"
     filename: "docker-jammy"
 
+- name: add Kubernetes apt-key x curl
+  shell: curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+  args:
+    creates: /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+  #state: file
+  
+
 - name: add Kubernetes apt-key
   apt_key:
-  #curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
-    url: https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key
+  #curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+    url: https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key
     state: present
 
 - name: add Kubernetes' APT repository
   apt_repository:
-    repo: deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /
+    repo: deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /
     state: present
     filename: 'kubernetes'
 
@@ -98,13 +105,13 @@
 
 - name: install Kubelet
   apt:
-    name: kubelet=1.29.*
+    name: kubelet=1.30.*
     state: present
     update_cache: true
 
 - name: install Kubeadm
   apt:
-    name: kubeadm=1.29.*
+    name: kubeadm=1.30.*
     state: present
 
 - name: apt-mark Kubernetes
@@ -144,7 +151,7 @@
 
 - name: master - install Kubectl
   apt:
-    name: kubectl=1.29.*
+    name: kubectl=1.30.*
     state: present
   when: inventory_hostname in groups['k8_master']
 

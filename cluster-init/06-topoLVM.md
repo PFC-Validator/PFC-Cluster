@@ -9,13 +9,19 @@ main readme is here - https://github.com/topolvm/topolvm/blob/main/deploy/README
 ### NVMe example
 sgdisk -p /dev/nvme1n1
 sgdisk -p /dev/nvme0n1
+sgdisk -p /dev/nvme2n1
+sgdisk -p /dev/nvme3n1
+
 partprobe
 
 blkdiscard /dev/nvme0n1p4 -f
 blkdiscard /dev/nvme1n1p4 -f
+
+blkdiscard /dev/nvme2n1p1 -f
+blkdiscard /dev/nvme3n1p1 -f
 partprobe
-pvcreate /dev/nvme0n1p4 /dev/nvme1n1p4
-vgcreate VG-topolvm /dev/nvme0n1p4 /dev/nvme1n1p4
+pvcreate /dev/nvme0n1p4 /dev/nvme1n1p4 /dev/nvme2n1p1 /dev/nvme3n1p1
+vgcreate VG-topolvm /dev/nvme0n1p4 /dev/nvme1n1p4 /dev/nvme2n1p1 /dev/nvme3n1p1
 vgs
 
 ### SDA example
