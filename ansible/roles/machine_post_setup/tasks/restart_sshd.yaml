@@ -1,6 +1,6 @@
 - name: refresh sshd
   systemd: 
-    name: sshd
+    name: ssh
     state: restarted
     enabled: yes
     daemon_reload: yes

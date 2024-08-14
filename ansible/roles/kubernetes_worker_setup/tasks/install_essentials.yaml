@@ -6,7 +6,7 @@
 
 - name: add Docker's APT repository
   apt_repository:
-    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable"
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu noble stable"
     filename: "docker"
 
 - name: apt-update-container
