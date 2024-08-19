@@ -19,6 +19,7 @@
 /external-docker/kujira-price-feeder/run.sh.local
 /external-docker/kujira-price-feeder/test
 /external-docker/hermes/test
+/external-docker/tmkms
 /external-docker/restaker/config/*json
 .env
 # vscode cruft

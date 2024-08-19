@@ -34,6 +34,14 @@
     regexp: '^  advertiseAddress: .*?$'
     replace: "  advertiseAddress: {{ master1_ip.stdout }}"
 
+# this is for the *FIRST* node
+# should be sudo kubeadm join xxxxx:6443 --token 9vr73a.a8uxyaju799qwdjv --discovery-token-ca-cert-hash sha256:xxxx --control-plane --certificate-key xxxxx
+# for subsequent. 
+# cert-key via
+# kubeadm init phase upload-certs --upload-certs
+# and then use
+# kubeadm token create --print-join-command --kubeconfig /etc/kubernetes/admin.conf --certificate-key xxxxxx
+# to get the command
 - name: control plane init
   shell: kubeadm init  --config /tmp/init-defaults --upload-certs
   register: kubeadmout

@@ -17,11 +17,11 @@ partprobe
 blkdiscard /dev/nvme0n1p4 -f
 blkdiscard /dev/nvme1n1p4 -f
 
-blkdiscard /dev/nvme2n1p1 -f
-blkdiscard /dev/nvme3n1p1 -f
+blkdiscard /dev/nvme2n1 -f
+blkdiscard /dev/nvme3n1 -f
 partprobe
-pvcreate /dev/nvme0n1p4 /dev/nvme1n1p4 /dev/nvme2n1p1 /dev/nvme3n1p1
-vgcreate VG-topolvm /dev/nvme0n1p4 /dev/nvme1n1p4 /dev/nvme2n1p1 /dev/nvme3n1p1
+pvcreate /dev/nvme0n1p4 /dev/nvme1n1p4 /dev/nvme2n1 /dev/nvme3n1
+vgcreate VG-topolvm /dev/nvme0n1p4 /dev/nvme1n1p4 /dev/nvme2n1 /dev/nvme3n1
 vgs
 
 ### SDA example
