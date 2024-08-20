@@ -1,4 +1,13 @@
 ---
-- name: LSW SGdisk sda
-  command: "sgdisk -N=0 -s /dev/sda"
+#- name: LSW SGdisk sda
+#  command: "sgdisk -N=0 -s /dev/sda"
+# LSW just picks a random disk to install stuff on.. yay LSW
+- name: LSW SGdisk nvm (disk 0)
+  command: "sgdisk -N=0 -s /dev/nvme0n1"
+- name: LSW SGdisk nvm (disk 1)
+  command: "sgdisk -N=0 -s /dev/nvme1n1"
+- name: LSW SGdisk nvm (disk 2)
+  command: "sgdisk -N=0 -s /dev/nvme2n1"
+- name: LSW SGdisk nvm (disk 3)
+  command: "sgdisk -N=0 -s /dev/nvme3n1"    
   

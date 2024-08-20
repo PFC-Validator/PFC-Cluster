@@ -30,5 +30,6 @@
       - software-properties-common 
       - apt-transport-https 
       - ca-certificates
+      - gdisk
     state: latest
     update_cache: true

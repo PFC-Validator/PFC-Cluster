@@ -5,7 +5,7 @@
   roles:
     - machine_post_setup
 
-- hosts: k8_master
+- hosts: k8_control_plane
   gather_facts: no
   become: true
   roles:
