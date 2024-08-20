@@ -67,7 +67,7 @@ spec:
   volumeClaimTemplate:
     resources:
       requests:
-        storage: 200Gi
+        storage: 100Gi
     accessModes: [ "ReadWriteOnce" ]
     storageClassName: ssd-persistent-block-store
   service:
