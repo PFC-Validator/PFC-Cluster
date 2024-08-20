@@ -43,11 +43,20 @@ spec:
       - height: 21835200
         image: ghcr.io/strangelove-ventures/heighliner/gaia:v19.0.0  
         setHaltHeight: true        
-  podTemplate:
+  podTemplate:  
     resources:
       requests:
         memory: 32Gi
     affinity:
+      nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: provider
+                operator: In
+                values:
+                - lsw
+                - ovh            
       podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
