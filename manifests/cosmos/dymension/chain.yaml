@@ -28,7 +28,7 @@ spec:
     genesisURL: https://snapshots.polkachu.com/genesis/dymension/genesis.json
     network: mainnet
     skipInvariants: true
-    snapshotURL: https://snapshots.polkachu.com/snapshots/dymension/dymension_2874300.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/dymension/dymension_2983751.tar.lz4
     versions:
       - height: 0
         image: ghcr.io/strangelove-ventures/heighliner/dymension:v3.0.0
@@ -39,6 +39,15 @@ spec:
       requests:
         memory: 16Gi
     affinity:
+      nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: provider
+                operator: In
+                values:
+                - lsw
+                - ovh               
       podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
