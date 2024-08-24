@@ -32,6 +32,7 @@ spec:
     - yieldpay.finance
     - pfc.zone
     - yieldpay.money
+    - dalnim.finance
     env:
     - name: CF_API_TOKEN
       valueFrom:
