@@ -9,3 +9,4 @@ resources:
 - monitoring.yaml
 - private-repo.yaml
 - storage/
+- metallb.yaml
