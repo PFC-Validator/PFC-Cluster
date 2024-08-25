@@ -7,7 +7,6 @@ spec:
   interval: 10m0s
   path: ./manifests/apps/
   prune: true
- # targetNamespace: rook-ceph
   sourceRef:
     kind: GitRepository
     name: flux-system
