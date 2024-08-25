@@ -25,5 +25,6 @@ spec:
         name: metallb
         namespace:  metallb-system
       interval: 1m
- # values:
+  values:
+    loadbalancerClass: "metal"
    
