@@ -36,3 +36,13 @@ exit
 #kubectl apply -f ./cilium-control-plane.yaml
 
 #kubectl exec -n kube-system  cilium-796pc
+
+helm upgrade cilium cilium/cilium --version 1.16.1 \
+  --namespace=kube-system \
+  --set upgradeCompatibility=1.14.0
+
+helm upgrade cilium cilium/cilium --version 1.16.1 \
+  --namespace kube-system \
+  --reuse-values \
+  --set nodeIPAM.enabled=true
+kubectl -n kube-system rollout restart deployment/cilium-operator  
