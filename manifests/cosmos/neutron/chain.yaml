@@ -39,7 +39,7 @@ spec:
     network: mainnet
     skipInvariants: true
     #snapshotURL: https://snapshots.polkachu.com/snapshots/neutron/neutron_13261533.tar.lz4
-    snapshotURL: https://snapshots.polkachu.com/snapshots/neutron/neutron_13808808.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/neutron/neutron_13875994.tar.lz4
     versions:
       - height: 0
         image: ghcr.io/strangelove-ventures/heighliner/neutron:v3.0.2
@@ -74,7 +74,7 @@ spec:
   volumeClaimTemplate:
     resources:
       requests:
-        storage: 200Gi
+        storage: 250Gi
     accessModes: [ "ReadWriteOnce" ]
     storageClassName: ssd-persistent-block-store
   service:
