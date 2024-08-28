@@ -44,5 +44,7 @@ helm upgrade cilium cilium/cilium --version 1.16.1 \
 helm upgrade cilium cilium/cilium --version 1.16.1 \
   --namespace kube-system \
   --reuse-values \
-  --set nodeIPAM.enabled=true
+  --set nodeIPAM.enabled=true 
+ # --set routingMode=tunnel
+
 kubectl -n kube-system rollout restart deployment/cilium-operator  

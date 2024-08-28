@@ -54,7 +54,7 @@ spec:
       - height: 13261400
         image: ghcr.io/pfc-developer/heighliner/neutron:v4.2.0
       - height: 13711950
-        image: ghcr.io/pfc-developer/heighliner/neutron:v4.2.1       
+        image: ghcr.io/pfc-developer/heighliner/neutron:v4.2.2  
         setHaltHeight: true
   podTemplate:
     resources:
