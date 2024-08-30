@@ -3,7 +3,7 @@ kind: VolumeSnapshotClass
 metadata:
   name:  ssd-persistent-snapclass
   annotations:
-    snapshot.storage.kubernetes.io/is-default-class: "true"  
+    snapshot.storage.kubernetes.io/is-default-class: "true"      
 driver: local.csi.openebs.io
 deletionPolicy: Delete
 parameters:  
