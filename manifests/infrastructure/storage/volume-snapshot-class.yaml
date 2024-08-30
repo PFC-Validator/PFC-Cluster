@@ -6,3 +6,6 @@ metadata:
     snapshot.storage.kubernetes.io/is-default-class: "true"  
 driver: local.csi.openebs.io
 deletionPolicy: Delete
+parameters:  
+  storage: "lvm"
+  volgroup: "VG-topolvm"
