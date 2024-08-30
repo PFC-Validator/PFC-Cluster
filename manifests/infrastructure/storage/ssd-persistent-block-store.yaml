@@ -3,6 +3,7 @@ kind: StorageClass
 metadata:
   name: ssd-persistent-block-store
 parameters:
+  is-default-class: "true"
   storage: "lvm"
   volgroup: "VG-topolvm"
 provisioner: local.csi.openebs.io
