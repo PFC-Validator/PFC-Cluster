@@ -25,12 +25,12 @@ vgcreate VG-topolvm /dev/nvme0n1p4 /dev/nvme1n1p4 /dev/nvme2n1 /dev/nvme3n1
 vgs
 
 ### SDA example
-dd if=/dev/zero of=/dev/sda5 bs=1M count=1000
+dd if=/dev/zero of=/dev/sda bs=1M count=1000
 dd if=/dev/zero of=/dev/sdb bs=1M count=1000
 
 partprobe
-pvcreate /dev/sda5 /dev/sdb
-vgcreate VG-topolvm /dev/sda5 /dev/sdb
+pvcreate /dev/sda /dev/sdb
+vgcreate VG-topolvm /dev/sda /dev/sdb
 vgs
 
 ## install LVMd
