@@ -25,7 +25,7 @@ spec:
     genesisURL: https://snapshots.polkachu.com/genesis/cosmos/genesis.json
     network: mainnet
     skipInvariants: true
-    snapshotURL: https://snapshots.polkachu.com/snapshots/cosmos/cosmos_21835469.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/cosmos/cosmos_22031971.tar.lz4
   #  snapshotURL: https://snapshots.lavenderfive.com/snapshots/cosmoshub/latest.tar.lz4
     versions:
       - height: 0
@@ -42,7 +42,7 @@ spec:
         image: ghcr.io/strangelove-ventures/heighliner/gaia:v18.0.0
       - height: 21835200
         image: ghcr.io/strangelove-ventures/heighliner/gaia:v19.1.0  
-      - height: 22031971
+      - height: 22051400
         image: ghcr.io/strangelove-ventures/heighliner/gaia:v19.2.0        
         setHaltHeight: false        
   podTemplate:  
