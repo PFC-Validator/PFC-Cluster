@@ -29,7 +29,7 @@ spec:
     genesisURL: https://snapshots.polkachu.com/genesis/stride/genesis.json
     network: mainnet
     skipInvariants: true
-    snapshotURL: https://snapshots.polkachu.com/snapshots/stride/stride_10539254.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/stride/stride_10755734.tar.lz4
   
     versions:
       - height: 0
@@ -48,6 +48,8 @@ spec:
         image: ghcr.io/strangelove-ventures/heighliner/stride:v22.0.0
       - height: 10077001 
         image: ghcr.io/pfc-developer/heighliner/stride:v23.0.1
+      - height: 10755734 
+        image: ghcr.io/strangelove-ventures/heighliner/stride:v24.0.0
 
   podTemplate:
     resources:
