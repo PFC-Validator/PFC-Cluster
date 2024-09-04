@@ -6,3 +6,4 @@ resources:
 - infrastructure.yaml
 - cosmos.yaml
 - tenants.yaml
+#- apps.yaml
