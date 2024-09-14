@@ -29,7 +29,7 @@ spec:
     genesisURL: https://snapshots.polkachu.com/genesis/stride/genesis.json
     network: mainnet
     skipInvariants: true
-    snapshotURL: https://snapshots.polkachu.com/snapshots/stride/stride_10755734.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/stride/stride_11060246.tar.lz4
   
     versions:
       - height: 0
