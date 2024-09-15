@@ -2,8 +2,8 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: ssd-persistent-block-store
-#  annotations:  
-#    storageclass.kubernetes.io/is-default-class: "true"
+  annotations:  
+    storageclass.kubernetes.io/is-default-class: "true"
 parameters:  
   storage: "lvm"
   volgroup: "VG-topolvm"
@@ -24,9 +24,6 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: openebs-lvmpv
-  annotations:  
-    storageclass.kubernetes.io/is-default-class: "true"
-
 parameters:
   storage: "lvm"
   volgroup: "VG-topolvm"
