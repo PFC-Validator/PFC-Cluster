@@ -38,16 +38,7 @@ spec:
     resources:
       requests:
         memory: 16Gi
-    affinity:
-      nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: provider
-                operator: In
-                values:
-                - lsw
-                - ovh               
+    affinity:          
       podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
