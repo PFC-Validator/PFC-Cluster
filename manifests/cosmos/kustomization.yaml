@@ -9,7 +9,7 @@ resources:
 #- harpoon.yaml 
 - neutron.yaml
 - noble.yaml
-#- dymension.yaml
+- dymension.yaml
 - orai.yaml
 #- osmo-test-5.yaml
 - creds.yaml

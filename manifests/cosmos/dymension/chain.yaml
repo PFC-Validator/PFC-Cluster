@@ -28,7 +28,7 @@ spec:
     genesisURL: https://snapshots.polkachu.com/genesis/dymension/genesis.json
     network: mainnet
     skipInvariants: true
-    snapshotURL: https://snapshots.polkachu.com/snapshots/dymension/dymension_3389211.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/dymension/dymension_3404656.tar.lz4
     versions:
       - height: 0
         image: ghcr.io/strangelove-ventures/heighliner/dymension:v3.0.0
