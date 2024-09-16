@@ -6,4 +6,5 @@ resources:
 - namespace.yaml
 - chain.yaml
 - ingress.yaml
+- headless-service.yaml
 - monitoring.yaml
