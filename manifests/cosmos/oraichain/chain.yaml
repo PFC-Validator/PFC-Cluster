@@ -67,16 +67,7 @@ spec:
         cpu: 4000m    
       limits:
         memory: 64Gi        
-    affinity:
-      nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: provider
-                operator: In
-                values:
-                - lsw
-                - ovh            
+    affinity:    
       podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
@@ -85,7 +76,7 @@ spec:
                 operator: In
                 values:
                 - oraichain
-            topologyKey: "zone"  
+            topologyKey: "provider"  
   selfHeal:
     heightDriftMitigation:
       threshold: 10  
