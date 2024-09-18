@@ -41,7 +41,9 @@ spec:
       - height: 11148012
       # actually 7947000
         image: ghcr.io/strangelove-ventures/heighliner/noble:v6.0.0                
-    #    setHaltHeight: true
+      - height: 	12240000
+        image: ghcr.io/strangelove-ventures/heighliner/noble:v7.0.0
+        setHaltHeight: true
   podTemplate:
     resources:
       requests:
