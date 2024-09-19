@@ -33,6 +33,7 @@ spec:
     - pfc.zone
     - yieldpay.money
     - dalnim.finance
+    - bodhi.money
     env:
     - name: CF_API_TOKEN
       valueFrom:
