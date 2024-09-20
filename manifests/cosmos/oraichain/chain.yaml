@@ -67,7 +67,16 @@ spec:
         cpu: 4000m    
       limits:
         memory: 64Gi        
-    affinity:    
+    affinity:
+      nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: provider
+                operator: In
+                values:
+                - lsw
+                - ovh    
       podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
