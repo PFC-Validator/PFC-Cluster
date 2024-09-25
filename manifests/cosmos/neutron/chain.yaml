@@ -39,7 +39,7 @@ spec:
     network: mainnet
     skipInvariants: true
     #snapshotURL: https://snapshots.polkachu.com/snapshots/neutron/neutron_13261533.tar.lz4
-    snapshotURL: https://snapshots.polkachu.com/snapshots/neutron/neutron_14673795.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/neutron/neutron_14970746.tar.lz4
     versions:
       - height: 0
         image: ghcr.io/strangelove-ventures/heighliner/neutron:v3.0.2
