@@ -27,6 +27,11 @@
   modprobe: 
     name: br_netfilter
     state: present
+    
+- name: modprobe br_netfilter
+  modprobe: 
+    name: nvme_tcp
+    state: present
 
 - name: SySCTL
   template:

@@ -1,12 +1,19 @@
 ---
-- name: add Docker apt-key
-  apt_key:
+#- name: add Docker apt-key
+#  apt_key:
+#    url: https://download.docker.com/linux/ubuntu/gpg
+#    state: present
+
+- name: Install the APT key of Docker's APT repo
+  become: true
+  ansible.builtin.get_url:
     url: https://download.docker.com/linux/ubuntu/gpg
-    state: present
+    dest: /etc/apt/keyrings/docker.asc
+    mode: a+r
 
 - name: add Docker's APT repository
   apt_repository:
-    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu noble stable"
+    repo: "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu noble stable"
     filename: "docker"
 
 - name: apt-update-container
@@ -38,7 +45,7 @@
   changed_when: false
 
 - name: add Kubernetes apt-key
-  command: 'curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg'
+  command: 'curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg'
   changed_when: true
  # apt_key:   
   #curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
@@ -47,7 +54,7 @@
 
 - name: apt-add Kubernetes
   apt_repository:    
-    repo: deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /
+    repo: deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /
     state: present
     filename: 'kubernetes'
 
