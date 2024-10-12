@@ -87,7 +87,7 @@ spec:
                 operator: In
                 values:
                 - oraichain
-            topologyKey: "provider"  
+            topologyKey: "zone"  
   selfHeal:
     heightDriftMitigation:
       threshold: 10  
