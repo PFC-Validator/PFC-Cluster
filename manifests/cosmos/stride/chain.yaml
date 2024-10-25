@@ -55,6 +55,16 @@ spec:
     resources:
       requests:
         memory: 16Gi
+    affinity:
+      nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: provider
+                operator: In
+                values:
+                - lsw
+                - ovh          
   replicas: 1 # TODO change to 1 to use less resources
   volumeClaimTemplate:
     resources:
