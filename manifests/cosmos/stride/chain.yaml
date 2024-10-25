@@ -64,7 +64,16 @@ spec:
                 operator: In
                 values:
                 - lsw
-                - ovh          
+                - ovh
+      podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app.kubernetes.io/name
+                operator: In
+                values:
+                - stride
+            topologyKey: "zone"                      
   replicas: 1 # TODO change to 1 to use less resources
   volumeClaimTemplate:
     resources:
