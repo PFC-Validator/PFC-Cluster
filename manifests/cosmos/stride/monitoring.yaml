@@ -52,4 +52,4 @@ spec:
                 operator: In
                 values:
                 - stride
-            topologyKey: "zone"  
+            topologyKey: "provider"  
