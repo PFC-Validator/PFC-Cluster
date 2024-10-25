@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
 - monitor.yaml
 - namespace.yaml 
-#- stride.yaml
+- stride.yaml
 - cosmoshub.yaml
 #- pisco.yaml
 #- harpoon.yaml 
