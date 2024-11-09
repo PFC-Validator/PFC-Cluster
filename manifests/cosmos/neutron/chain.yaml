@@ -39,7 +39,7 @@ spec:
     network: mainnet
     skipInvariants: true
     #snapshotURL: https://snapshots.polkachu.com/snapshots/neutron/neutron_13261533.tar.lz4
-    snapshotURL: https://snapshots.polkachu.com/snapshots/neutron/neutron_15899993.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/neutron/neutron_16574244.tar.lz4
     versions:
       - height: 0
         image: ghcr.io/strangelove-ventures/heighliner/neutron:v3.0.2
@@ -57,7 +57,9 @@ spec:
         image: ghcr.io/pfc-developer/heighliner/neutron:v4.2.3
       - height: 13711951
         image: ghcr.io/strangelove-ventures/heighliner/neutron:v4.2.4
-  #      setHaltHeight: true
+      - height: 16738000
+        image: ghcr.io/strangelove-ventures/heighliner/neutron:v5.0.0
+        setHaltHeight: true
   podTemplate:
     resources:
       requests:
