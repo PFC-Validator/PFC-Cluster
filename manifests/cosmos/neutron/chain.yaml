@@ -58,7 +58,9 @@ spec:
         image: ghcr.io/strangelove-ventures/heighliner/neutron:v4.2.4
       - height: 16738000
         image: ghcr.io/strangelove-ventures/heighliner/neutron:v5.0.1
-        setHaltHeight: true
+      - height: 17211441 #not correct
+        image: ghcr.io/strangelove-ventures/heighliner/neutron:v5.0.2
+       # setHaltHeight: true
   podTemplate:
     resources:
       requests:
