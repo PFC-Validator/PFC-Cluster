@@ -59,12 +59,12 @@ spec:
       - height: 16738000
         image: ghcr.io/strangelove-ventures/heighliner/neutron:v5.0.1
       - height: 17177900
-        image: ghcr.io/strangelove-ventures/heighliner/neutron:v5.0.2
+        image: https://snapshots.polkachu.com/snapshots/neutron/neutron_17383169.tar.lz4
        # setHaltHeight: true
   podTemplate:
     resources:
       requests:
-        memory: 10Gi
+        memory: 16Gi
     affinity:
       nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
