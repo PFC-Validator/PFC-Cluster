@@ -5,7 +5,7 @@ kind: Kustomization
 resources:
 - cosmos-operator.yaml
 - ingress.yaml
-#- monitoring.yaml
+- monitoring.yaml
 - private-repo.yaml
 - storage/
 #- metallb.yaml
