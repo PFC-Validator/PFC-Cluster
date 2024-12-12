@@ -1,0 +1,55 @@
+###
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  celestia-chain-monitor
+  namespace: cosmos
+spec:
+  selector:
+    matchLabels:
+      app:  celestia-chain-monitor
+  template:
+    metadata:
+      labels:
+        app:  celestia-chain-monitor
+        kind-of: cosmos-exporter
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9300"        
+    spec:
+      containers:
+      - name:  cosmos-exporter
+        image: ghcr.io/pfc-developer/cosmos-exporter:v2.1.7
+        resources:
+          limits:
+            memory: "1Gi"
+            cpu: "1500m"
+        ports:
+            - containerPort: 9300
+              name: prometheus
+              protocol: TCP
+        args:
+            - --denom=ustake
+            - --denom-coefficient=1000000
+            - --bech-prefix=celestia 
+            - --node=celestia-rpc:9090 
+            - --tendermint-rpc=http://celestia-rpc:26657
+            - --single
+            #- --propv1
+            #- --proposals
+            - --upgrades
+            - --price=false
+            - --params=false
+            - --external-node=grpc.celestia.nodestake.org:443
+      affinity:
+        # place the price feeder in the same zone as node it is pushing stuff into
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key:  app.kubernetes.io/name
+                operator: In
+                values:
+                - celestia
+            topologyKey: "zone"  

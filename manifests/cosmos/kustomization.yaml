@@ -9,6 +9,7 @@ resources:
 #- harpoon.yaml 
 - neutron.yaml
 - noble.yaml
+- celestia.yaml
 - dymension.yaml
 - orai.yaml
 #- osmo-test-5.yaml

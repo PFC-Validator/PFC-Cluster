@@ -1,0 +1,67 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    external-dns.alpha.kubernetes.io/hostname: rpc.celestia.pfc.zone
+    external-dns.alpha.kubernetes.io/target: cluster.pfc.zone
+    nginx.ingress.kubernetes.io/enable-cors: "true" 
+    nginx.ingress.kubernetes.io/limit-rps: "10"
+    nginx.ingress.kubernetes.io/limit-connections: "5"    
+  labels:
+    app.kubernetes.io/name: celestia-rpc
+    app.kubernetes.io/version: 1.0.0
+  name: celestia-rpc
+  namespace: cosmos
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: rpc.celestia.pfc.zone
+    http:
+      paths:
+      - backend:
+          service:
+            name: celestia-rpc
+            port:
+              number: 26657
+        path: /
+        pathType: Prefix   
+  tls:
+  - hosts:
+    - rpc.celestia.pfc.zone
+    secretName: celestia-cosmos-rpc-tls-secret
+#---
+#apiVersion: networking.k8s.io/v1
+#kind: Ingress
+#metadata:
+#  annotations:
+#    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+#    nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+#    external-dns.alpha.kubernetes.io/hostname: grpc.celestia.pfc.zone
+#    external-dns.alpha.kubernetes.io/target: cluster.pfc.zone
+#    cert-manager.io/cluster-issuer: letsencrypt-production
+#  name: celestia-grpc
+#  namespace: cosmos
+#spec:
+#  ingressClassName: nginx
+#  rules:
+#  - host: grpc.celestia.pfc.zone
+#    http:
+#      paths:
+#      - path: /
+#        pathType: Prefix
+#        backend:
+#          service:
+#            name: celestia-rpc
+#            port:
+#              number: 9090
+#  tls:
+#  - hosts:
+#    - grpc.celestia.pfc.zone
+#    secretName: celestia-cosmos-grpc-tls-secret
+#
+#   

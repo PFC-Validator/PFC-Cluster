@@ -1,0 +1,69 @@
+apiVersion: cosmos.strange.love/v1
+kind: CosmosFullNode
+metadata:
+  name: celestia
+  namespace: cosmos
+  annotations:
+    prometheus.io/port: "prometheus"
+    prometheus.io/scrape: "true"
+spec:
+  chain:
+    app:
+      minGasPrice: "0.002079utia"
+      pruning: 
+        interval: 137
+        strategy: custom 
+        keepRecent: 4889
+      overrides: |-
+        # Set app.toml overrides here. Such as:
+        index-events = ["tx.hash", "tx.height"]
+        [rosetta]
+        enable = false
+
+    binary: celestia-appd
+    chainID: celestia
+    config:
+      seeds: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:11656"
+      maxOutboundPeers: 70
+    genesisURL: https://snapshots.polkachu.com/genesis/celestia/genesis.json
+    network: mainnet
+    skipInvariants: true
+    snapshotURL: https://snapshots.polkachu.com/snapshots/celestia/celestia_2991891.tar.lz4
+    versions:
+      - height: 0
+        image: ghcr.io/strangelove-ventures/heighliner/celestia:v3.0.2-race
+
+  podTemplate:
+    resources:
+      requests:
+        memory: 16Gi
+    affinity:
+      nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: provider
+                operator: In
+                values:
+                - lsw
+                - ovh        
+      podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app.kubernetes.io/name
+                operator: In
+                values:
+                - celestia
+            topologyKey: "zone"        
+  replicas: 2 # TODO change to 1 to use less resources
+  volumeClaimTemplate:
+    resources:
+      requests:
+        storage: 400Gi
+    accessModes: [ "ReadWriteOnce" ]
+    storageClassName: ssd-persistent-block-store
+  service:
+    maxP2PExternalAddresses: 2
+    p2pTemplate:
+      type: NodePort
