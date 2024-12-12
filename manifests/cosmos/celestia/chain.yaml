@@ -22,6 +22,8 @@ spec:
 
     binary: celestia-appd
     chainID: celestia
+    additionalStartArgs:
+      - --force-no-bbr
     config:
       seeds: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:11656"
       maxOutboundPeers: 70
