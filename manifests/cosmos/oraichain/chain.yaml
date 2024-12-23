@@ -14,7 +14,7 @@ spec:
       overrides: |-
         # Set app.toml overrides here. Such as:
         index-events = ["tx.hash", "tx.height"]
-        pruning-keep-recent = "7203"
+        pruning-keep-recent = "27203"
         pruning-keep-every = "1000"
         pruning-interval = "11"
         [rosetta]
@@ -72,7 +72,7 @@ spec:
   podTemplate:
     resources:
       requests:
-        memory: 32Gi
+        memory: 48Gi
         cpu: 4000m    
       limits:
         memory: 64Gi        
@@ -102,7 +102,7 @@ spec:
   volumeClaimTemplate:
     resources:
       requests:
-        storage: 500Gi
+        storage: 750Gi
     accessModes: [ "ReadWriteOnce" ]
     storageClassName: ssd-persistent-block-store
   service:
