@@ -28,7 +28,7 @@ spec:
     genesisURL: https://snapshots.polkachu.com/genesis/noble/genesis.json
     network: mainnet
     skipInvariants: true
-    snapshotURL: https://snapshots.polkachu.com/snapshots/noble/noble_15410565.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/noble/noble_18405520.tar.lz4
     versions:
       - height: 0
         image: ghcr.io/pfc-developer/heighliner/noble:v4.0.3
