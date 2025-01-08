@@ -14,7 +14,7 @@ LABEL maintainer="hello@informal.systems"
 ARG UID=1001
 ARG GID=1001
 
-RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates wget
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates wget vim curl 
 RUN update-ca-certificates
 RUN groupadd -g ${GID} hermes && useradd -l -m hermes -s /bin/bash -u ${UID} -g ${GID}
 
