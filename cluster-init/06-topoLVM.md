@@ -4,7 +4,7 @@ this is a work in progress. I am not using it yet.
 ## intro
 This is still manual, but will eventually go into ansible.
 main readme is here - https://github.com/topolvm/topolvm/blob/main/deploy/README.md
-# sgdisk -N=0 -s /dev/nvme1n1
+# sgdisk -N=0 -s /dev/nvme2n1
 
 ## create the Volume Group
 ### NVMe example
