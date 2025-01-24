@@ -52,7 +52,7 @@ spec:
     resources:
       requests:
         cpu: 3
-        memory: 32Gi
+        memory: 24Gi
     affinity:     
       nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
