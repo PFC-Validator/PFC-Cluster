@@ -47,11 +47,12 @@ spec:
   #  snapshotURL: https://snapshots.lavenderfive.com/snapshots/pryzm/latest.tar.zst
     snapshotURL: https://support.synergynodes.com/snapshots/pryzm_mainnet/pryzm_3979762.tar.lz4
   podTemplate:
-    probes:
-      strategy: None
+  #  probes:
+  #    strategy: None
     resources:
       requests:
-        memory: 16Gi
+        cpu: 3
+        memory: 32Gi
     affinity:     
       nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
