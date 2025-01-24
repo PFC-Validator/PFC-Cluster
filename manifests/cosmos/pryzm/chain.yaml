@@ -1,0 +1,88 @@
+apiVersion: cosmos.strange.love/v1
+kind: CosmosFullNode
+metadata:
+  name: pryzm
+  namespace: cosmos
+spec:
+  chain:
+    app:
+      pruning: 
+        interval: 137
+        strategy: custom 
+        keepRecent: 4889    
+      minGasPrice: "0.0025ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2,500000000ibc/DE63D8AC34B752FB7D4CAA7594145EDE1C9FC256AC6D4043D0F12310EB8FC255,0.025ibc/13B2C536BB057AC79D5616B8EA1B9540EC1F2170718CAFF6F0083C966FFFED0B,0.002ibc/BF28D9C17E0306B194D50F51C3B2590BEAD15E04E03ADD34C3A26E62D85C9676,0.015ibc/B8AF5D92165F35AB31F3FC7C7B444B9D240760FA5D406C49D24862BD0284E395,0.02ibc/BFAAB7870A9AAABF64A7366DAAA0B8E5065EAA1FCE762F45677DC24BE796EF65,0.01factory/pryzm1jnhcsa5ddjsjq2t97v6a82z542rduxvtw6wd9h/uauuu,10000000000ibc/F8CA5236869F819BC006EEF088E67889A26E4140339757878F0F4E229CDDA858,10000000000ibc/120DC39B61CC121E91525C1D51624E41BBE74C537D7B0BE50BBFF9A00E37B6EE,0.002ibc/FA78980867B7E87F382CDA00275C55DDC248CABC7DEE27AC6868CCF97DD5E02F,0.0025ibc/EA6E1E8BA2EB9F681C4BD12C8C81A46530A62934F2BD561B120A00F46946CE87"
+      overrides: |-
+        # Set app.toml overrides here. Such as:
+        denom-to-suggest = "upryzm"
+      
+        [rosetta]
+        enable = false     
+    binary: pryzmd
+    chainID: pryzm-1
+    config:      
+      seeds: "3fce94795e925fb28e95acbaf1e5bd16e6885824@seed.pryzm.zone:26656,20e1000e88125698264454a884812746c2eb4807@seeds.lavenderfive.com:24856,ebc272824924ea1a27ea3183dd0b9ba713494f83@pryzm-mainnet-seed.autostake.com:27406"    
+      maxOutboundPeers: 70
+      overrides: |-
+        [tx_index]
+        indexer = "kv"
+    genesisURL: "https://storage.googleapis.com/pryzm-zone/pryzm-1/genesis.json"
+    network: testnet
+    skipInvariants: true
+    versions:
+    - image: ghcr.io/pfc-developer/heighliner/pryzm:v0.16.0
+      height: 0     
+    - image: ghcr.io/pfc-developer/heighliner/pryzm:v0.17.0
+      height: 542700
+    - image: ghcr.io/pfc-developer/heighliner/pryzm:v0.18.0      
+      height: 935800
+    - image: ghcr.io/pfc-developer/heighliner/pryzm:v0.19.0      
+      height: 2115500
+    - image: ghcr.io/pfc-developer/heighliner/pryzm:v0.21.0-1     
+      height: 3326700
+    - image: ghcr.io/pfc-developer/heighliner/pryzm:v0.22.1
+      height: 3830300
+      setHaltHeight: true        
+  #  snapshotURL :  https://support.synergynodes.com/snapshots/pryzm_mainnet/pryzm_3123297.tar.lz4
+   # snapshotURL: https://support.synergynodes.com/snapshots/pryzm_mainnet/pryzm_86759.tar.lz4
+  #  snapshotURL: https://snapshots.lavenderfive.com/snapshots/pryzm/latest.tar.zst
+    snapshotURL: https://support.synergynodes.com/snapshots/pryzm_mainnet/pryzm_3979762.tar.lz4
+  podTemplate:
+    probes:
+      strategy: None
+    resources:
+      requests:
+        memory: 16Gi
+    affinity:     
+      nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: provider
+                operator: In
+                values:
+                - lsw
+                - ovh
+      podAntiAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+            - key: app.kubernetes.io/name
+              operator: In
+              values:
+              - pryzm
+          topologyKey: "zone"             
+  selfHeal:
+    heightDriftMitigation:
+      threshold: 10  
+  replicas: 2
+  volumeClaimTemplate:
+    resources:
+      requests:
+        storage: 400Gi
+    accessModes: [ "ReadWriteOnce" ]
+    storageClassName: ssd-persistent-block-store
+  service:
+    maxP2PExternalAddresses: 2
+    p2pTemplate:
+      type: NodePort
+  type: FullNode

@@ -3,16 +3,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  pisco-chain-monitor
+  name:  pryzm-chain-monitor
   namespace: cosmos
 spec:
   selector:
     matchLabels:
-      app:  pisco-chain-monitor
+      app:  pryzm-chain-monitor
   template:
     metadata:
       labels:
-        app:  pisco-chain-monitor
+        app:  pryzm-chain-monitor
         kind-of: cosmos-exporter
       annotations:
         prometheus.io/scrape: "true"
@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name:  cosmos-exporter
-        image: ghcr.io/pfc-developer/cosmos-exporter:v2.1.5
+        image: ghcr.io/pfc-developer/cosmos-exporter:v2.1.7
           
         resources:
           limits:
@@ -30,18 +30,19 @@ spec:
             - containerPort: 9300
               name: prometheus
               protocol: TCP
+        command: [ /usr/local/bin/pryzm-cosmos-exporter ]              
         args:
-            - --denom=uluna
+        #    - --denom=upryzm
+            - --denom=factory/pryzm1jnhcsa5ddjsjq2t97v6a82z542rduxvtw6wd9h/uauuu
             - --denom-coefficient=1000000
-            - --bech-prefix=terra 
-            - --node=pisco:9090 
-            - --tendermint-rpc=http://pisco:26657
+            - --bech-prefix=pryzm
+            - --node=pryzm:9090 
+            - --tendermint-rpc=http://pryzm:26657
             - --single
-            - --validators=terravaloper1pphdny9hgu3v59jhea6gaxjwrtguul6rqyz5sj
-            - --proposals
-            - --votes
-            - --upgrades
+            - --lcd=http://pryzm:1317            
             - --price=false
+            - --params=false   
+            - --external-node=grpc.pryzm.zone:443         
       affinity:
         # place the price feeder in the same zone as node it is pushing stuff into
         podAffinity:
@@ -51,5 +52,5 @@ spec:
               - key:  app.kubernetes.io/name
                 operator: In
                 values:
-                - pisco
+                - pryzm
             topologyKey: "zone"  

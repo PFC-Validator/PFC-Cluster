@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: harpoon
-  namespace: cosmos
+  name: pryzm
+  namespace: pfc
 spec:
   selector:
-    app.kubernetes.io/name: harpoon
+    app.kubernetes.io/name: pryzm
   clusterIP: None
   ports:
   - protocol: TCP

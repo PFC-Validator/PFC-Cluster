@@ -1,0 +1,109 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    external-dns.alpha.kubernetes.io/hostname: rpc.pryzm.pfc.zone, api.pryzm.pfc.zone
+    external-dns.alpha.kubernetes.io/target: cluster.pfc.zone
+    external-dns.alpha.kubernetes.io/externalName: cluster.pfc.zone
+
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+  labels:
+    app.kubernetes.io/name: pryzm-rpc
+    app.kubernetes.io/version: 1.0.0
+  name: pryzm-rpc
+  namespace: cosmos
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - rpc.pryzm.pfc.zone
+    - api.pryzm.pfc.zone
+    secretName: cosmos-pryzm-cosmos-rpc-tls-secret
+  rules:
+  - host: rpc.pryzm.pfc.zone
+    http:
+      paths:
+      - backend:
+          service:
+            name: pryzm-rpc
+            port:
+              number: 26657
+        path: /
+        pathType: Prefix
+  - host: api.pryzm.pfc.zone
+    http:
+      paths:
+      - backend:
+          service:
+            name: pryzm-rpc
+            port:
+              number: 1317
+        path: /
+        pathType: Prefix
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+    external-dns.alpha.kubernetes.io/hostname: grpc.pryzm.pfc.zone
+    external-dns.alpha.kubernetes.io/target: cluster.pfc.zone
+    external-dns.alpha.kubernetes.io/externalName: cluster.pfc.zone
+
+    cert-manager.io/cluster-issuer: letsencrypt-production
+  name: pryzm-grpc
+  namespace: cosmos
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: grpc.pryzm.pfc.zone
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: pryzm-rpc
+            port:
+              number: 9090
+  tls:
+  - hosts:
+    - grpc.pryzm.pfc.zone
+    secretName: pryzm-cosmos-cosmos-grpc-tls-secret
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+    external-dns.alpha.kubernetes.io/hostname: grpcw.pryzm.pfc.zone
+    external-dns.alpha.kubernetes.io/target: cluster.pfc.zone
+    external-dns.alpha.kubernetes.io/externalName: cluster.pfc.zone
+
+    cert-manager.io/cluster-issuer: letsencrypt-production
+  name: pryzmgrpcw
+  namespace: cosmos
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: grpcw.pryzm.pfc.zone
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: pryzm-rpc
+            port:
+              number: 9090
+  tls:
+  - hosts:
+    - grpcw.pryzm.pfc.zone
+    secretName: pryzm-cosmos-cosmos-grpcw-tls-secret    
