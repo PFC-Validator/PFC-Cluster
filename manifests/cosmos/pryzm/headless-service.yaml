@@ -11,3 +11,12 @@ spec:
   - protocol: TCP
     port: 1234
     targetPort: 1234
+  - protocol: TCP
+    port: 26657
+    targetPort: 26657
+  - protocol: TCP
+    port: 1317
+    targetPort: 1317
+  - protocol: TCP
+    port: 9091
+    targetPort: 9091
