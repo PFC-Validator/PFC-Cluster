@@ -38,7 +38,7 @@ spec:
     genesisURL:  https://snapshots.polkachu.com/genesis/neutron/genesis.json
     network: mainnet
     skipInvariants: true
-    snapshotURL: https://snapshots.polkachu.com/snapshots/neutron/neutron_18913484.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/neutron/neutron_19274186.tar.lz4
     versions:
       - height: 0
         image: ghcr.io/strangelove-ventures/heighliner/neutron:v3.0.2
@@ -71,7 +71,7 @@ spec:
     resources:
       requests:
         memory: 16Gi
-        cpu: 2
+        cpu: 6
     affinity:
       nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
