@@ -50,6 +50,8 @@ spec:
         image: ghcr.io/pfc-developer/heighliner/stride:v23.0.1
       - height: 10755734 
         image: ghcr.io/strangelove-ventures/heighliner/stride:v24.0.0
+      - height: 15533551 
+        image: ghcr.io/strangelove-ventures/heighliner/stride:v25.1.0
 
   podTemplate:
     resources:
