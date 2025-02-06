@@ -41,6 +41,8 @@ spec:
       height: 3326700
     - image: ghcr.io/pfc-developer/heighliner/pryzm:v0.22.1
       height: 3830300
+    - image: ghcr.io/pfc-developer/heighliner/pryzm:v0.24.0
+      height: 4184100
       setHaltHeight: true        
   #  snapshotURL :  https://support.synergynodes.com/snapshots/pryzm_mainnet/pryzm_3123297.tar.lz4
    # snapshotURL: https://support.synergynodes.com/snapshots/pryzm_mainnet/pryzm_86759.tar.lz4
