@@ -38,7 +38,7 @@ spec:
     genesisURL:  https://snapshots.polkachu.com/genesis/neutron/genesis.json
     network: mainnet
     skipInvariants: true
-    snapshotURL: https://snapshots.polkachu.com/snapshots/neutron/neutron_19955326.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/neutron/neutron_19997540.tar.lz4
     versions:
       - height: 0
         image: ghcr.io/strangelove-ventures/heighliner/neutron:v3.0.2
@@ -67,10 +67,10 @@ spec:
       - height: 18906878
         image: ghcr.io/strangelove-ventures/heighliner/neutron:v5.0.6
        # setHaltHeight: true
-      - height: 19660000
-        image: ghcr.io/strangelove-ventures/heighliner/neutron:v5.0.7
-      - height: 19947000
-        image: ghcr.io/strangelove-ventures/heighliner/neutron:v5.1.0
+#      - height: 19660000
+#        image: ghcr.io/strangelove-ventures/heighliner/neutron:v5.0.7
+#      - height: 19947000
+#        image: ghcr.io/strangelove-ventures/heighliner/neutron:v5.1.0
 
   podTemplate:
     resources:
