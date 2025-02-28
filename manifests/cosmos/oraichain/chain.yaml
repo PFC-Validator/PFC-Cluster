@@ -27,6 +27,8 @@ spec:
         [state-sync]
         snapshot-interval = 1000
         snapshot-keep-recent = 2
+        [mempool]
+        max-txs = -1
     binary: oraid
     chainID: Oraichain
     config:
