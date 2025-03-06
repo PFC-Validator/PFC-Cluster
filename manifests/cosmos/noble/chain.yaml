@@ -46,7 +46,7 @@ spec:
       - height: 15374999
         image: ghcr.io/strangelove-ventures/heighliner/noble:v8.0.4
       - height: 22414000
-        image: ghcr.io/strangelove-ventures/heighliner/noble:v8.0.6        
+        image: ghcr.io/strangelove-ventures/heighliner/noble:v8.0.7
         setHaltHeight: true
   podTemplate:
     resources:
