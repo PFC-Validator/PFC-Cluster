@@ -13,8 +13,7 @@ spec:
       overrides: |
         index-events = ["tx.hash", "tx.height"]
         pruning = "custom"
-        pruning-keep-recent = "7203"
-        pruning-keep-every = "1000"
+        pruning-keep-recent = "7203"        
         pruning-interval = "11"
     binary: strided
     chainID: stride-1
@@ -29,7 +28,7 @@ spec:
     genesisURL: https://snapshots.polkachu.com/genesis/stride/genesis.json
     network: mainnet
     skipInvariants: true
-    snapshotURL: https://snapshots.polkachu.com/snapshots/stride/stride_16360757.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/stride/stride_16447877.tar.lz4
   
     versions:
       - height: 0
@@ -77,11 +76,11 @@ spec:
                 values:
                 - stride
             topologyKey: "zone"                      
-  replicas: 1 # TODO change to 1 to use less resources
+  replicas: 2 # TODO change to 1 to use less resources
   volumeClaimTemplate:
     resources:
       requests:
-        storage: 400Gi
+        storage: 500Gi
     accessModes: [ "ReadWriteOnce" ]
     storageClassName: ssd-persistent-block-store
   service:
