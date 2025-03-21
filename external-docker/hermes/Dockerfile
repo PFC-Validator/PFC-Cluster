@@ -1,7 +1,24 @@
-FROM rust:1-buster AS build-env
+#FROM rust:1-buster AS build-env
+FROM rust:1-bullseye AS build-env
 
 ARG VERSION=master
+ARG PROTOC_VERSION=28.3
+
 WORKDIR /root
+# Install protoc
+RUN ARCH=$(uname -m) && \
+    if [ "$ARCH" = "x86_64" ]; then \
+        ARCH=x86_64; \
+    elif [ "$ARCH" = "aarch64" ]; then \
+        ARCH=aarch_64;\
+    else \
+        echo "Unsupported architecture: $ARCH"; exit 1; \
+    fi && \
+    wget https://github.com/protocolbuffers/protobuf/releases/download/v$PROTOC_VERSION/protoc-$PROTOC_VERSION-linux-$ARCH.zip -O /tmp/protoc.zip && \
+    unzip /tmp/protoc.zip -d /usr/local && \
+    rm -rf /tmp/protoc.zip
+RUN apt update && apt install -y clang libssl-dev pkg-config
+
 RUN git clone https://github.com/informalsystems/hermes.git
 WORKDIR /root/hermes
 RUN git fetch
@@ -10,7 +27,7 @@ RUN cargo build --release
 
 
 FROM ubuntu:latest
-LABEL maintainer="hello@informal.systems"
+LABEL maintainer="hello@informal.systems,pfc@pfc.zone"
 ARG UID=1001
 ARG GID=1001
 
@@ -19,6 +36,19 @@ RUN update-ca-certificates
 RUN groupadd -g ${GID} hermes && useradd -l -m hermes -s /bin/bash -u ${UID} -g ${GID}
 
 WORKDIR /home/hermes
+
+RUN ARCH=$(uname -m) && \
+    if [ "$ARCH" = "x86_64" ]; then \
+        DEB_URL=http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2.24_amd64.deb; \
+    elif [ "$ARCH" = "aarch64" ]; then \
+        DEB_URL=http://ports.ubuntu.com/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_arm64.deb; \
+    else \
+        echo "Unsupported architecture: $ARCH"; exit 1; \
+    fi && \
+    wget $DEB_URL -O /tmp/libssl1.1.deb && \
+    dpkg -i /tmp/libssl1.1.deb && \
+    rm -rf /tmp/libssl1.1.deb
+
 RUN wget -O /usr/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
 RUN chmod 755 /usr/bin/yq
 
