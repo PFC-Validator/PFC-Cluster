@@ -1,13 +1,13 @@
-FROM node:18-slim
+FROM node:20.15-buster
 
 # TARGETPLATFORM should be one of linux/amd64 or linux/arm64.
 ARG TARGETPLATFORM
 
-ARG GIT_VERSION=v2.11.0
+ARG GIT_VERSION=v2.13.1
 
 # Install cli tools for building and final image
 RUN apt-get update
-RUN apt-get install -y make git bash gcc  ncurses-dev curl jq python3 g++
+RUN apt-get install -y make git bash gcc ncurses-dev curl jq python3 g++
 
 # Build Chain Binary
 WORKDIR /
