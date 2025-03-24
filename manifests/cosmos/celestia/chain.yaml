@@ -30,7 +30,7 @@ spec:
     genesisURL: https://snapshots.polkachu.com/genesis/celestia/genesis.json
     network: mainnet
     skipInvariants: true
-    snapshotURL: https://snapshots.polkachu.com/snapshots/celestia/celestia_4384557.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/celestia/celestia_4566830.tar.lz4
     versions:
       - height: 0
         image: ghcr.io/strangelove-ventures/heighliner/celestia:v3.2.0
