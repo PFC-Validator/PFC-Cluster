@@ -55,7 +55,7 @@ spec:
       - height: 24592000
         image: ghcr.io/strangelove-ventures/heighliner/gaia:v22.3.1
       - height: 25002500
-        image: ghcr.io/strangelove-ventures/heighliner/gaia:v23.0.1        
+        image: ghcr.io/pfc-developer/heighliner/gaia:v23.0.1        
         setHaltHeight: false        
   podTemplate:  
     resources:
