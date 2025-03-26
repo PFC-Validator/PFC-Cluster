@@ -28,7 +28,7 @@ spec:
     genesisURL: https://snapshots.polkachu.com/genesis/noble/genesis.json
     network: mainnet
     skipInvariants: true
-    snapshotURL: https://snapshots.polkachu.com/snapshots/noble/noble_23633695.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/noble/noble_23697494.tar.lz4
     versions:
       - height: 0
         image: ghcr.io/pfc-developer/heighliner/noble:v4.0.3
@@ -47,6 +47,8 @@ spec:
         image: ghcr.io/strangelove-ventures/heighliner/noble:v8.0.4
       - height: 22414000
         image: ghcr.io/strangelove-ventures/heighliner/noble:v9.0.1
+      - height: 23660000
+        image: ghcr.io/strangelove-ventures/heighliner/noble:v9.0.3
         setHaltHeight: true
   podTemplate:
     resources:
