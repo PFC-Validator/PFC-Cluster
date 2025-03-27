@@ -27,6 +27,8 @@ spec:
       interval: 1m
   values:
     controller:
+      admissionWebhooks:
+       enabled: false
       hostNetwork: true
       hostPort:
         enabled: true
