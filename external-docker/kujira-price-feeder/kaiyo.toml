@@ -756,12 +756,12 @@ providers = ["finv2", "shade"]
 derivative = "twap"
 derivative_period = "30m"
 
-[[currency_pairs]]
-base = "SHD"
-quote = "USDT"
-providers = ["bitmart"]
-derivative = "twap"
-derivative_period = "30m"
+#[[currency_pairs]]
+#base = "SHD"
+#quote = "USDT"
+#providers = ["bitmart"]
+#derivative = "twap"
+#derivative_period = "30m"
 
 [[currency_pairs]]
 base = "SOL"
