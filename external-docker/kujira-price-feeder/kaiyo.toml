@@ -102,6 +102,7 @@ urls = [
 
 [url_set.rpc_ethereum]
 urls = [
+    "http://geth-service.eth:8545",
 	"https://rpc.ankr.com/eth",
 	"https://ethereum.publicnode.com"
 ]
