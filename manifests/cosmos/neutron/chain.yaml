@@ -74,7 +74,8 @@ spec:
         image: ghcr.io/strangelove-ventures/heighliner/neutron:v5.1.2
       - height: 20396500
         image: ghcr.io/strangelove-ventures/heighliner/neutron:v5.1.3
-
+      - height: 22041500
+        image: ghcr.io/strangelove-ventures/heighliner/neutron:v6.0.0
   podTemplate:
     resources:
       requests:
