@@ -17,6 +17,7 @@ spec:
       overrides: |-
         # Set app.toml overrides here. Such as:
         index-events = ["tx.hash", "tx.height"]
+        iavl-disable-fastnode = true
         [rosetta]
         enable = false
 
