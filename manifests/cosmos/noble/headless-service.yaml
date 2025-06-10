@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: noble
+  namespace: cosmos
+spec:
+  selector:
+    app.kubernetes.io/name: noble
+  clusterIP: None
+  ports:
+  - protocol: TCP
+    port: 1234
+    targetPort: 1234

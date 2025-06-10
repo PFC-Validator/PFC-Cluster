@@ -7,3 +7,4 @@ resources:
 - chain.yaml
 - ingress.yaml
 - monitoring.yaml
+- headless-service.yaml
