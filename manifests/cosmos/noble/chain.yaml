@@ -24,12 +24,13 @@ spec:
     binary: nobled
     chainID: noble-1
     config:
-      seeds: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:21556"
+      seeds: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:21556,20e1000e88125698264454a884812746c2eb4807@seeds.lavenderfive.com:21590,b85358e035343a3b15e77e1102857dcdaf70053b@seeds.bluestake.net:25556"
       maxOutboundPeers: 70
     genesisURL: https://snapshots.polkachu.com/genesis/noble/genesis.json
     network: mainnet
     skipInvariants: true
-    snapshotURL: https://snapshots.polkachu.com/snapshots/noble/noble_28592252.tar.lz4
+    #snapshotURL: https://snapshots.polkachu.com/snapshots/noble/noble_28592252.tar.lz4
+    snapshotURL: https://snapshots.bluestake.net/noble/noble-1-pruned-28601871.tar.lz4
     versions:
       - height: 0
         image: ghcr.io/pfc-developer/heighliner/noble:v4.0.3
