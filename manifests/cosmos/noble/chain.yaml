@@ -52,7 +52,7 @@ spec:
       - height: 23660000
         image: ghcr.io/strangelove-ventures/heighliner/noble:v9.0.3
       - height: 28613000
-        image: ghcr.io/strangelove-ventures/heighliner/noble:v10.0.0
+        image: ghcr.io/pfc-developer/heighliner/noble:v10.0.0
         setHaltHeight: true
   podTemplate:
     resources:
