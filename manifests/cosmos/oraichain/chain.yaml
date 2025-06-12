@@ -95,7 +95,7 @@ spec:
   podTemplate:
     resources:
       requests:
-        memory: 48Gi
+        memory: 32Gi
         cpu: 4000m    
       limits:
         memory: 64Gi        
