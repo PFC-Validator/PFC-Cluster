@@ -48,7 +48,7 @@ spec:
     skipInvariants: true
     #snapshotURL: https://snapshot.pfc.zone/files/oraichain/oraichain.latest.tar.lz4
     #snapshotURL: https://support.synergynodes.com/snapshots/oraichain/oraichain_60421536.tar.lz4
-    snapshotURL: https://server-2.itrocket.net/mainnet/oraichain/oraichain_2025-06-12_64294332_snap.tar.lz4
+    snapshotURL: https://server-2.itrocket.net/mainnet/oraichain/oraichain_2025-06-16_64795309_snap.tar.lz4
 
     versions:
       - height: 0
