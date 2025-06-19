@@ -20,9 +20,9 @@ spec:
         [rosetta]
         enable = false
         [wasm]
-        query-contract-gas-limit = "10000000"
-        query_gas_limit = "10000000"
-        query-gas-limit = "10000000"
+        query-contract-gas-limit = "40000000"
+        query_gas_limit = "40000000"
+        query-gas-limit = "40000000"
         memory_cache_size = 400 
 
     binary: neutrond
