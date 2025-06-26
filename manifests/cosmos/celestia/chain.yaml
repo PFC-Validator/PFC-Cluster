@@ -30,7 +30,7 @@ spec:
     genesisURL: https://snapshots.polkachu.com/genesis/celestia/genesis.json
     network: mainnet
     skipInvariants: true
-    snapshotURL: https://snapshots.polkachu.com/snapshots/celestia/celestia_5397082.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/celestia/celestia_6137568.tar.lz4
     versions:
       - height: 0
         image: ghcr.io/strangelove-ventures/heighliner/celestia:v3.7.0
@@ -63,7 +63,7 @@ spec:
   volumeClaimTemplate:
     resources:
       requests:
-        storage: 500Gi
+        storage: 300Gi
     accessModes: [ "ReadWriteOnce" ]
     storageClassName: ssd-persistent-block-store
   service:
