@@ -24,7 +24,7 @@ spec:
       maxOutboundPeers: 100
     genesisURL: https://snapshots.polkachu.com/genesis/cosmos/genesis.json
     network: mainnet
-    skipInvariants: true
+    skipInvariants: false
     snapshotURL: https://snapshots.polkachu.com/snapshots/cosmos/cosmos_26348246.tar.lz4
   #  snapshotURL: https://snapshots.lavenderfive.com/snapshots/cosmoshub/latest.tar.lz4
     versions:
