@@ -34,6 +34,8 @@ spec:
     versions:
       - height: 0
         image: ghcr.io/strangelove-ventures/heighliner/celestia:v3.7.0
+      - height: 6680339
+        image: ghcr.io/pfc-developer/heighliner/celestia:v4.0.10
 
   podTemplate:
     resources:
