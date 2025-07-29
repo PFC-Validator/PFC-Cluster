@@ -29,7 +29,7 @@ spec:
       maxOutboundPeers: 50
     genesisURL: https://snapshots.polkachu.com/genesis/celestia/genesis.json
     network: mainnet
-    skipInvariants: true
+    skipInvariants: false
     snapshotURL: https://snapshots.polkachu.com/snapshots/celestia/celestia_6137568.tar.lz4
     versions:
       - height: 0
