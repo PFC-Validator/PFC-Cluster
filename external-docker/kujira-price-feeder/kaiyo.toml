@@ -117,7 +117,7 @@ urls = [
 urls = [
 	"https://scrt-api.dalnim.finance",
 	"https://1rpc.io/scrt-lcd",
-	"https://lcd.secret.express"
+#	"https://lcd.secret.express"
 ]
 
 # providers: dexter
@@ -130,7 +130,7 @@ urls = [
 ]
 [url_set.api_migaloo]
 urls = [
-  "http://whitewhale-rpc.pfc:1317"
+  "https://migaloo-api.polkachu.com",  
 ]
 #
 #  CURRENCY PAIRS
