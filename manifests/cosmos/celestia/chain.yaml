@@ -30,12 +30,14 @@ spec:
     genesisURL: https://snapshots.polkachu.com/genesis/celestia/genesis.json
     network: mainnet
     skipInvariants: false
-    snapshotURL: https://snapshots.polkachu.com/snapshots/celestia/celestia_6693857.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/celestia/celestia_6761619.tar.lz4
     versions:
       - height: 0
         image: ghcr.io/strangelove-ventures/heighliner/celestia:v3.7.0
       - height: 6680339
         image: ghcr.io/pfc-developer/heighliner/celestia:v4.0.10
+      - height: 6748820
+        image: ghcr.io/pfc-developer/heighliner/celestia:v5.0.1
 
   podTemplate:
     resources:
