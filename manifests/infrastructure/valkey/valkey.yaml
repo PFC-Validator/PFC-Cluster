@@ -26,6 +26,7 @@ spec:
   chart:
     spec:
       chart: valkey-operator
+      version: "v0.0.59"
       sourceRef:
         kind: HelmRepository
         name: oci-hyperspike-valkey
