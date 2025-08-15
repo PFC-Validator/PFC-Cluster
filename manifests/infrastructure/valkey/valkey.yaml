@@ -1,0 +1,33 @@
+# manifests/infrastructure/external-dns/external-dns.yaml
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name:  valkey-operator-system
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: oci-hyperspike-valkey
+  namespace: valkey-operator-system
+spec:
+  interval: 1m
+  url: oci://ghcr.io/hyperspike/valkey-operator
+  type: oci
+
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: valkey-operator
+  namespace:  valkey-operator-system
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: valkey-operator
+      sourceRef:
+        kind: HelmRepository
+        name: oci-hyperspike-valkey
+        namespace: valkey-operator-system
+      interval: 1m

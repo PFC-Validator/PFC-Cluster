@@ -7,3 +7,4 @@ resources:
 - private-repo.yaml
 - storage/
 - cnpg.yaml
+- valkey.yaml
