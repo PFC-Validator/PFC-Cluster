@@ -12,7 +12,8 @@ metadata:
   namespace: valkey-operator-system
 spec:
   interval: 1m
-  url: oci://ghcr.io/hyperspike/valkey-operator
+  url: oci://ghcr.io/hyperspike
+  #/valkey-operator
   type: oci
 
 ---
