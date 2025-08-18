@@ -1,0 +1,9 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: oci-operator-strimzi
+  namespace: strimzi-operator-system
+spec:
+  interval: 1m
+  url: oci://quay.io/strimzi-helm
+  type: oci

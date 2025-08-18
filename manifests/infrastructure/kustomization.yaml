@@ -8,3 +8,4 @@ resources:
 - storage/
 - cnpg.yaml
 #- valkey.yaml
+- strimzi.yaml
