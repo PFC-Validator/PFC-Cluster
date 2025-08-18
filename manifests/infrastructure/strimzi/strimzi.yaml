@@ -15,3 +15,8 @@ spec:
         name: oci-operator-strimzi
         namespace: strimzi-operator-system
       interval: 1m
+  values:
+    watchAnyNamespace: true
+    dashboards:
+      enabled: true 
+      namespace: monitoring
