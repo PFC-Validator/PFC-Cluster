@@ -47,9 +47,9 @@ spec:
     network: mainnet
     skipInvariants: true
     #snapshotURL: https://snapshot.pfc.zone/files/oraichain/oraichain.latest.tar.lz4
-    #snapshotURL: https://support.synergynodes.com/snapshots/oraichain/oraichain_60421536.tar.lz4
-    snapshotURL: https://server-2.itrocket.net/mainnet/oraichain/oraichain_2025-07-25_69743588_snap.tar.lz4
-
+    snapshotURL: https://support.synergynodes.com/snapshots/oraichain/oraichain_73380229.tar.lz4
+    #snapshotURL: https://server-2.itrocket.net/mainnet/oraichain/oraichain_2025-07-25_69743588_snap.tar.lz4
+    
     versions:
       - height: 0
         image: ghcr.io/pfc-developer/heighliner/oraichain:v0.41.6
