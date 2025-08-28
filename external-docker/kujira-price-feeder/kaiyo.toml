@@ -641,7 +641,7 @@ providers = [
 
 [[currency_pairs]]
 base = "MNTA"
-quote = "USDC"
+quote = "USK"
 providers = ["finv2"]
 derivative = "twap"
 derivative_period = "30m"
@@ -1087,7 +1087,8 @@ AQLAUSDC = "kujira1nswv58h3acql85587rkusqx3zn7k9qx3a3je8wqd3xnw39erpwnsddsm8z"
 FUZNUSK = "kujira1w6gpsfn55ufh3g3pf6qjrdhfj6rp09zqmruvgvzupkl39mtlpcdqw2ys7e"
 KARTUSK = "kujira19n770r9q5haax7mfgy8acrgz7gsamgyjhcvqvxfgrq25983lc42qtszngq"
 KUJIUSDC = "kujira1pw96huy6z02uk8hdpruk6g8u700dp8yxjhp46c24rwkzay2lfd3quqdum5"
-MNTAUSDC = "kujira1ws9w7wl68prspv3rut3plv8249rm0ea0kk335swye3sl2slld4lqdmc0lv"
+#MNTAUSDC = "kujira1ws9w7wl68prspv3rut3plv8249rm0ea0kk335swye3sl2slld4lqdmc0lv"
+MNTAUSK = "kujira1mf4v3x3pkuthha5a4r9jd0slgulcxkucy4weuqsvx2n030twduzqewuznf"
 NSTKUSK = "kujira1ggtmfuktfcf6plhtdejyyqn5de5uge3tef0jv64ru68h2ctuvyqs3355mn"
 QCKUJIKUJI = "kujira14wsrem89304kpkl6d0j58dl6479eekwt047ccs0qzv9f60w80wzs8rjq4j"
 QCMNTAMNTA = "kujira1ujsr2ge7dr723kse7thjv2rm3k7dkmjaxqzdh8qkcnx5gqz57jsqxy4ker"
