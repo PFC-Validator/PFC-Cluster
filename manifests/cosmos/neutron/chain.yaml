@@ -39,8 +39,8 @@ spec:
     genesisURL:  https://snapshots.polkachu.com/genesis/neutron/genesis.json
     network: mainnet
     skipInvariants: true
-  #  snapshotURL: https://snapshots.polkachu.com/snapshots/neutron/neutron_19997540.tar.lz4
-    snapshotURL: https://mainnet-snapshots.citizenweb3.com/neutron/snapshot_latest.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/neutron/neutron_34487899.tar.lz4
+  #  snapshotURL: https://mainnet-snapshots.citizenweb3.com/neutron/snapshot_latest.tar.lz4
     versions:
       - height: 0
         image: ghcr.io/strangelove-ventures/heighliner/neutron:v3.0.2
