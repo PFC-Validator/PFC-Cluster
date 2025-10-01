@@ -39,7 +39,7 @@ spec:
     genesisURL:  https://snapshots.polkachu.com/genesis/neutron/genesis.json
     network: mainnet
     skipInvariants: true
-    snapshotURL: https://snapshots.polkachu.com/snapshots/neutron/neutron_36101632.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/neutron/neutron_36267747.tar.lz4
   #  snapshotURL: https://mainnet-snapshots.citizenweb3.com/neutron/snapshot_latest.tar.lz4
     versions:
       - height: 0
