@@ -39,7 +39,7 @@ spec:
     genesisURL:  https://snapshots.polkachu.com/genesis/neutron/genesis.json
     network: mainnet
     skipInvariants: true
-    snapshotURL: https://snapshots.polkachu.com/snapshots/neutron/neutron_36267747.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/neutron/neutron_36450408.tar.lz4
   #  snapshotURL: https://mainnet-snapshots.citizenweb3.com/neutron/snapshot_latest.tar.lz4
     versions:
       - height: 0
@@ -85,6 +85,8 @@ spec:
         image: ghcr.io/pfc-developer/heighliner/neutron:v6.0.3
       - height: 33397000
         image: ghcr.io/pfc-developer/heighliner/neutron:v8.0.0
+      - height: 36430000
+        image: ghcr.io/pfc-developer/heighliner/neutron:v8.1.0
   podTemplate:
     resources:
       requests:
