@@ -55,6 +55,8 @@ spec:
         image: ghcr.io/pfc-developer/heighliner/noble:v10.0.0
       - height: 32239645
         image: ghcr.io/pfc-developer/heighliner/noble:v10.1.0
+      - height: 32239645
+        image: ghcr.io/pfc-developer/heighliner/noble:v10.1.1
         setHaltHeight: true
   podTemplate:
     resources:
