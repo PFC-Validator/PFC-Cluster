@@ -29,7 +29,7 @@ spec:
     genesisURL: https://snapshots.polkachu.com/genesis/noble/genesis.json
     network: mainnet
     skipInvariants: true
-    snapshotURL: https://snapshots.polkachu.com/snapshots/noble/noble_32221347.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/noble/noble_36888336.tar.lz4
     #snapshotURL: https://snapshots.bluestake.net/noble/noble-1-pruned-28601871.tar.lz4
     versions:
       - height: 0
