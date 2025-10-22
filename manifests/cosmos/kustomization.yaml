@@ -5,7 +5,7 @@ resources:
 - namespace.yaml 
 - stride.yaml
 - cosmoshub.yaml
-- neutron.yaml
+#- neutron.yaml
 - noble.yaml
 - celestia.yaml
 #- dymension.yaml
