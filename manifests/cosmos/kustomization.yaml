@@ -7,7 +7,7 @@ resources:
 - cosmoshub.yaml
 #- neutron.yaml
 - noble.yaml
-- celestia.yaml
+#- celestia.yaml
 #- dymension.yaml
 - orai.yaml
 - pryzm.yaml
