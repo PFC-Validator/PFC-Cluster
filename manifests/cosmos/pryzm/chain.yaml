@@ -57,7 +57,7 @@ spec:
   #  snapshotURL :  https://support.synergynodes.com/snapshots/pryzm_mainnet/pryzm_3123297.tar.lz4
    # snapshotURL: https://support.synergynodes.com/snapshots/pryzm_mainnet/pryzm_86759.tar.lz4
   #  snapshotURL: https://snapshots.lavenderfive.com/snapshots/pryzm/latest.tar.zst
-    snapshotURL: https://support.synergynodes.com/snapshots/pryzm_mainnet/pryzm_6283529.tar.lz4
+    snapshotURL: https://support.synergynodes.com/snapshots/pryzm_mainnet/pryzm_8146781.tar.lz4 
   podTemplate:
   #  probes:
   #    strategy: None
