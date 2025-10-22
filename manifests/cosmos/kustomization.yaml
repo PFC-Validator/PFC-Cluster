@@ -8,7 +8,7 @@ resources:
 - neutron.yaml
 - noble.yaml
 - celestia.yaml
-- dymension.yaml
+#- dymension.yaml
 - orai.yaml
 - pryzm.yaml
 #- osmo-test-5.yaml
