@@ -25,7 +25,7 @@ spec:
     genesisURL: https://snapshots.polkachu.com/genesis/cosmos/genesis.json
     network: mainnet
     skipInvariants: false
-    snapshotURL: https://snapshots.polkachu.com/snapshots/cosmos/cosmos_27768184.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/cosmos/cosmos_28074921.tar.lz4
   #  snapshotURL: https://snapshots.lavenderfive.com/snapshots/cosmoshub/latest.tar.lz4
     versions:
       - height: 0
