@@ -6,7 +6,7 @@ resources:
 - stride.yaml
 - cosmoshub.yaml
 #- neutron.yaml
-- noble.yaml
+#- noble.yaml
 #- celestia.yaml
 #- dymension.yaml
 - orai.yaml
