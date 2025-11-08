@@ -57,7 +57,7 @@ spec:
   #  snapshotURL :  https://support.synergynodes.com/snapshots/pryzm_mainnet/pryzm_3123297.tar.lz4
    # snapshotURL: https://support.synergynodes.com/snapshots/pryzm_mainnet/pryzm_86759.tar.lz4
   #  snapshotURL: https://snapshots.lavenderfive.com/snapshots/pryzm/latest.tar.zst
-    snapshotURL: https://support.synergynodes.com/snapshots/pryzm_mainnet/pryzm_8146781.tar.lz4 
+    snapshotURL: https://snapshots.polkachu.com/snapshots/pryzm/pryzm_8408760.tar.lz4
   podTemplate:
   #  probes:
   #    strategy: None
@@ -65,25 +65,7 @@ spec:
       requests:
         cpu: 3
         memory: 24Gi
-    affinity:     
-      nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: provider
-                operator: In
-                values:
-                - lsw
-                - ovh
-      podAntiAffinity:
-        requiredDuringSchedulingIgnoredDuringExecution:
-        - labelSelector:
-            matchExpressions:
-            - key: app.kubernetes.io/name
-              operator: In
-              values:
-              - pryzm
-          topologyKey: "zone"             
+    
   selfHeal:
     heightDriftMitigation:
       threshold: 10  
