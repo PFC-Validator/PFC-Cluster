@@ -26,3 +26,5 @@ spec:
         namespace: traefik
       interval: 1m
 #  values:
+#    service:
+#      type: LoadBalancer"
