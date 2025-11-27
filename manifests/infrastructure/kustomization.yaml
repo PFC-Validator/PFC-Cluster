@@ -6,6 +6,6 @@ resources:
 - monitoring.yaml
 - private-repo.yaml
 - storage/
-- cnpg.yaml
+#- cnpg.yaml
 #- valkey.yaml
-- strimzi.yaml
+#- strimzi.yaml
