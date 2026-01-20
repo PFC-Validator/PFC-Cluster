@@ -10,7 +10,7 @@ resources:
 #- celestia.yaml
 #- dymension.yaml
 - orai.yaml
-- pryzm.yaml
+# - pryzm.yaml
 #- osmo-test-5.yaml
 - creds.yaml
 - alertmanager-config.yaml
