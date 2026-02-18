@@ -9,7 +9,7 @@ resources:
 #- noble.yaml
 #- celestia.yaml
 #- dymension.yaml
-- orai.yaml
+#- orai.yaml
 # - pryzm.yaml
 #- osmo-test-5.yaml
 - creds.yaml
