@@ -73,9 +73,12 @@ spec:
       - height: 29288700
         #image: ghcr.io/pfc-developer/heighliner/gaia:v25.3.0
         image: ghcr.io/pfc-developer/heighliner/gaia-imp:v25.3.1
-        setHaltHeight: false        
+    
       - height: 29837600
         image: ghcr.io/pfc-developer/heighliner/gaia:v26.0.0
+      - height: 30151300
+        image: ghcr.io/pfc-developer/heighliner/gaia:v27.0.0
+        setHaltHeight: false
   podTemplate:  
     resources:
       requests:
