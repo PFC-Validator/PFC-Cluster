@@ -95,7 +95,7 @@ spec:
               - key: app.kubernetes.io/name
                 operator: In
                 values:
-                - kujira
+                - cosmoshub
             topologyKey: "kubernetes.io/hostname"              
   replicas: 2 # TODO change to 1 to use less resources
   volumeClaimTemplate:
