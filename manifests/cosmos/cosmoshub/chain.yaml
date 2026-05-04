@@ -25,7 +25,7 @@ spec:
     genesisURL: https://snapshots.polkachu.com/genesis/cosmos/genesis.json
     network: mainnet
     skipInvariants: false
-    snapshotURL: https://snapshots.polkachu.com/snapshots/cosmos/cosmos_30476587.tar.lz4
+    snapshotURL: https://snapshots.polkachu.com/snapshots/cosmos/cosmos_30955651.tar.lz4
   #  snapshotURL: https://snapshots.lavenderfive.com/snapshots/cosmoshub/latest.tar.lz4
     versions:
       - height: 0
@@ -87,7 +87,16 @@ spec:
       requests:
         cpu: 2
         memory: 16Gi
-              
+    affinity:
+      podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app.kubernetes.io/name
+                operator: In
+                values:
+                - kujira
+            topologyKey: "kubernetes.io/hostname"              
   replicas: 2 # TODO change to 1 to use less resources
   volumeClaimTemplate:
     resources:
