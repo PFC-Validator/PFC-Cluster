@@ -1,4 +1,13 @@
 # manifests/infrastructure/cert-manager/cert-manager.yaml
+#---
+#apiVersion: source.toolkit.fluxcd.io/v1beta2
+#kind: HelmRepository
+#metadata:
+#  name: jetstack
+#  namespace: cert-manager
+#spec:
+#  interval: 5m0s
+#  url: https://charts.jetstack.io
 ---
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
@@ -7,7 +16,8 @@ metadata:
   namespace: cert-manager
 spec:
   interval: 5m0s
-  url: https://charts.jetstack.io
+  url: oci://quay.io/jetstack/charts
+  type: oci
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
