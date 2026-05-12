@@ -3,15 +3,8 @@ kind: Kustomization
 resources:
 - monitor.yaml
 - namespace.yaml 
-#- stride.yaml
 - cosmoshub.yaml
-#- neutron.yaml
-#- noble.yaml
-#- celestia.yaml
-#- dymension.yaml
-#- orai.yaml
-# - pryzm.yaml
-#- osmo-test-5.yaml
+
 - creds.yaml
 - alertmanager-config.yaml
 - alerts.yaml
